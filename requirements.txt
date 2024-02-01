@@ -1,0 +1,6 @@
+torch==1.9.1+cu111 -f https://download.pytorch.org/whl/torch_stable.html
+pytorch_lightning==1.5.10
+PyYAML>=6.0
+wandb>=0.12.7
+gensim
+pandas

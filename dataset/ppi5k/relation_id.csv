@@ -1,0 +1,8 @@
+id,rel string
+0,binding
+1,expression
+2,activation
+3,catalysis
+4,reaction
+5,ptmod
+6,inhibition

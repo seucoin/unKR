@@ -1,0 +1,20 @@
+data_path: ./data/nl27k/trainnl1.tsv
+out_data_path: ./data_for_psl_nl
+#relation_id_path: ./data/relation_id.tsv
+Auto_remove_duplicate_triples: True
+psl_model_name: demo
+inference_method: LazyMPEInference
+origin_data: True
+dealed_data_folder: data/nl27k
+
+predicates:
+  - name: concept_competeswith
+    size: 2
+    closed: False
+rules:
+  - concept_competeswith(P1, P2) & concept_competeswith(P2, P3) & P1!=P3 -> concept_competeswith(P1, P3) .
+
+use_target: False
+use_truth: False
+inferred_result_path: test_success
+out_softlogic_filename: softlogic1.tsv
