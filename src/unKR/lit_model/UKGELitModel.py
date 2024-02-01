@@ -111,12 +111,6 @@ class UKGELitModel(BaseLitModel):
 
     def validation_epoch_end(self, results) -> None:
         outputs = self.get_results(results, "Eval")
-        with open(os.path.join(self.args.data_path, "ndcg_test.pickle"), 'rb') as f:
-            hr_map = pickle.load(f)  # unpickle
-        ent_num = self.args.num_ent
-        ndcg, exp_ndcg = mean_ndcg(hr_map, self.model, ent_num)
-        outputs["Test_ndcg"] = ndcg
-        outputs["Test_exp_ndcg"] = exp_ndcg
 
         self.log_dict(outputs, prog_bar=True, on_epoch=True)
 
@@ -172,13 +166,6 @@ class UKGELitModel(BaseLitModel):
 
     def test_epoch_end(self, results) -> None:
         outputs = self.get_results(results, "Test")
-
-        with open(os.path.join(self.args.data_path, "ndcg_test.pickle"), 'rb') as f:
-            hr_map = pickle.load(f)  # unpickle
-        ent_num = self.args.num_ent
-        ndcg, exp_ndcg = mean_ndcg(hr_map, self.model, ent_num)
-        outputs["Test_ndcg"] = ndcg
-        outputs["Test_exp_ndcg"] = exp_ndcg
 
         self.log_dict(outputs, prog_bar=True, on_epoch=True)
 

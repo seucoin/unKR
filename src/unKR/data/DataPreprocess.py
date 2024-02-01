@@ -162,34 +162,35 @@ class UKGData(object):
 
                 self.test_triples.append((h, r, t, w))
 
-        softlogic_temp_path = os.path.join(self.args.data_path, "softlogic.tsv")
-        if os.path.exists(softlogic_temp_path):
-            with open(os.path.join(self.args.data_path, "softlogic.tsv"), encoding='utf-8') as fin:
-                for line in fin:
-                    line = line.rstrip('\n').split('\t')
-                    h, r, t, w = line[0], line[1], line[2], float(line[3])
+        if self.args.model_name == 'UKGE_PSL':
+            softlogic_temp_path = os.path.join(self.args.data_path, "softlogic.tsv")
+            if os.path.exists(softlogic_temp_path):
+                with open(os.path.join(self.args.data_path, "softlogic.tsv"), encoding='utf-8') as fin:
+                    for line in fin:
+                        line = line.rstrip('\n').split('\t')
+                        h, r, t, w = line[0], line[1], line[2], float(line[3])
 
-                    if self.ent2id.get(h) == None:
-                        last_e += 1
-                        self.ent2id[h] = last_e
-                        self.id2ent[last_e] = h
+                        if self.ent2id.get(h) == None:
+                            last_e += 1
+                            self.ent2id[h] = last_e
+                            self.id2ent[last_e] = h
 
-                    if self.ent2id.get(t) == None:
-                        last_e += 1
-                        self.ent2id[t] = last_e
-                        self.id2ent[last_e] = t
+                        if self.ent2id.get(t) == None:
+                            last_e += 1
+                            self.ent2id[t] = last_e
+                            self.id2ent[last_e] = t
 
-                    if self.rel2id.get(r) == None:
-                        last_r += 1
-                        self.rel2id[r] = last_r
-                        self.id2rel = r
+                        if self.rel2id.get(r) == None:
+                            last_r += 1
+                            self.rel2id[r] = last_r
+                            self.id2rel = r
 
-                    h = self.ent2id[h]
-                    r = self.rel2id[r]
-                    t = self.ent2id[t]
-                    self.PSL_triples.append((h, r, t, w))
+                        h = self.ent2id[h]
+                        r = self.rel2id[r]
+                        t = self.ent2id[t]
+                        self.PSL_triples.append((h, r, t, w))
 
-        self.RatioOfPSL = len(self.PSL_triples) / len(self.train_triples) # calculate the ratio of the number of PSL samples to the number of training samples.
+            self.RatioOfPSL = len(self.PSL_triples) / len(self.train_triples) # calculate the ratio of the number of PSL samples to the number of training samples.
 
         # When train student_model in UPGAT, get pseudo_triples as below.
         if self.args.model_name == 'UPGAT' and not self.args.teacher_model:
