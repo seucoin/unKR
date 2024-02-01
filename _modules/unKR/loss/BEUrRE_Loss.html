@@ -1,0 +1,474 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>unKR.loss.BEUrRE_Loss &#8212; unKR 0.8 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/unKR/loss/BEUrRE_Loss';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">unKR 0.8 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">Install</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Experiment Result</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../result.html">Results</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Parameters Description</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Parameters.html">Description of basic parameters</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Package</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../unKR.html">unKR</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../unKR.data.html">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../unKR.eval_task.html">Eval_Task</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../unKR.lit_model.html">Lit_Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../unKR.loss.html">loss</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../unKR.model.html">Model</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../nssmodel.html">NSSModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../ssmodel.html">SSModel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for unKR.loss.BEUrRE_Loss</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+
+<div class="viewcode-block" id="BEUrRE_Loss"><a class="viewcode-back" href="../../../unKR.loss.html#unKR.loss.BEUrRE_Loss.BEUrRE_Loss">[docs]</a><span class="k">class</span> <span class="nc">BEUrRE_Loss</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The loss function of BEUrRE</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        args: Some pre-set parameters, etc</span>
+<span class="sd">        model: The BEUrRE model for training.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">BEUrRE_Loss</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+
+<div class="viewcode-block" id="BEUrRE_Loss.get_logic_loss"><a class="viewcode-back" href="../../../unKR.loss.html#unKR.loss.BEUrRE_Loss.BEUrRE_Loss.get_logic_loss">[docs]</a>    <span class="k">def</span> <span class="nf">get_logic_loss</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">ids</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculates the logic loss for the model based on transitive and composite rule regularizations.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            model: The BEUrRE model instance.</span>
+<span class="sd">            ids: Tensor of triple ids.</span>
+<span class="sd">            args: Model configuration parameters including regularization coefficients.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            The logic loss calculated from transitive and composite rule regularizations.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ids</span> <span class="o">=</span> <span class="n">ids</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">long</span><span class="p">)</span>
+        <span class="c1"># transitive rule loss regularization</span>
+        <span class="n">transitive_coff</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">regularization</span><span class="p">[</span><span class="s1">&#39;transitive&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gpu</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">transitive_coff</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">transitive_rule_reg</span> <span class="o">=</span> <span class="n">transitive_coff</span> <span class="o">*</span> <span class="n">model</span><span class="o">.</span><span class="n">transitive_rule_loss</span><span class="p">(</span><span class="n">ids</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">transitive_rule_reg</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="c1"># composite rule loss regularization</span>
+        <span class="n">composite_coff</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">regularization</span><span class="p">[</span><span class="s1">&#39;composite&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gpu</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">composite_coff</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">composition_rule_reg</span> <span class="o">=</span> <span class="n">composite_coff</span> <span class="o">*</span> <span class="n">model</span><span class="o">.</span><span class="n">composition_rule_loss</span><span class="p">(</span><span class="n">ids</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">composition_rule_reg</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">return</span> <span class="p">(</span><span class="n">transitive_rule_reg</span> <span class="o">+</span> <span class="n">composition_rule_reg</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">ids</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="BEUrRE_Loss.main_mse_loss"><a class="viewcode-back" href="../../../unKR.loss.html#unKR.loss.BEUrRE_Loss.BEUrRE_Loss.main_mse_loss">[docs]</a>    <span class="k">def</span> <span class="nf">main_mse_loss</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">ids</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Computes the Mean Squared Error (MSE) loss for the model.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            model: The BEUrRE model instance.</span>
+<span class="sd">            ids: Tensor of triple ids(the confidence of negative samples is zero).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            mse: The MSE loss for the given triples.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">(</span><span class="n">reduction</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+        <span class="n">prediction</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">ids</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">long</span><span class="p">),</span> <span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">ids</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">truth</span> <span class="o">=</span> <span class="n">ids</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">truth</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">ids</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">gpu</span><span class="p">)</span>
+
+        <span class="n">mse</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">prediction</span><span class="p">,</span> <span class="n">truth</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">mse</span></div>
+
+
+<div class="viewcode-block" id="BEUrRE_Loss.L2_regularization"><a class="viewcode-back" href="../../../unKR.loss.html#unKR.loss.BEUrRE_Loss.BEUrRE_Loss.L2_regularization">[docs]</a>    <span class="k">def</span> <span class="nf">L2_regularization</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">ids</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Computes the L2 regularization loss for the model.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            model: The BEUrRE model instance.</span>
+<span class="sd">            ids: Tensor of triple ids.</span>
+<span class="sd">            args: Model configuration parameters including regularization coefficients.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            L2_reg: The L2 regularization loss.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ids</span> <span class="o">=</span> <span class="n">ids</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">long</span><span class="p">)</span>
+        <span class="n">regularization</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">regularization</span>
+        <span class="n">device</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">gpu</span>
+
+        <span class="c1"># regularization on delta</span>
+        <span class="n">delta_coff</span><span class="p">,</span> <span class="n">min_coff</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">regularization</span><span class="p">[</span><span class="s1">&#39;delta&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">regularization</span><span class="p">[</span><span class="s1">&#39;min&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">to</span><span class="p">(</span>
+            <span class="n">device</span><span class="p">)</span>
+        <span class="n">delta_reg1</span> <span class="o">=</span> <span class="n">delta_coff</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">delta_embedding</span><span class="p">[</span><span class="n">ids</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]]),</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+        <span class="n">delta_reg2</span> <span class="o">=</span> <span class="n">delta_coff</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">delta_embedding</span><span class="p">[</span><span class="n">ids</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]]),</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+        <span class="n">min_reg1</span> <span class="o">=</span> <span class="n">min_coff</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">min_embedding</span><span class="p">[</span><span class="n">ids</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+        <span class="n">min_reg2</span> <span class="o">=</span> <span class="n">min_coff</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">min_embedding</span><span class="p">[</span><span class="n">ids</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+        <span class="n">rel_trans_coff</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">regularization</span><span class="p">[</span><span class="s1">&#39;rel_trans&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+        <span class="n">rel_trans_reg</span> <span class="o">=</span> <span class="n">rel_trans_coff</span> <span class="o">*</span> <span class="p">(</span>
+                <span class="n">torch</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">rel_trans_for_head</span><span class="p">[</span><span class="n">ids</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]]),</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">+</span> \
+                <span class="n">torch</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">rel_trans_for_tail</span><span class="p">[</span><span class="n">ids</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]]),</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+        <span class="p">)</span>
+
+        <span class="n">rel_scale_coff</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">regularization</span><span class="p">[</span><span class="s1">&#39;rel_scale&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+        <span class="n">rel_scale_reg</span> <span class="o">=</span> <span class="n">rel_scale_coff</span> <span class="o">*</span> <span class="p">(</span>
+                <span class="n">torch</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">rel_scale_for_head</span><span class="p">[</span><span class="n">ids</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]]),</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">+</span> \
+                <span class="n">torch</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">rel_scale_for_tail</span><span class="p">[</span><span class="n">ids</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]]),</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+        <span class="p">)</span>
+
+        <span class="n">L2_reg</span> <span class="o">=</span> <span class="n">delta_reg1</span> <span class="o">+</span> <span class="n">delta_reg2</span> <span class="o">+</span> <span class="n">min_reg1</span> <span class="o">+</span> <span class="n">min_reg2</span> <span class="o">+</span> <span class="n">rel_trans_reg</span> <span class="o">+</span> <span class="n">rel_scale_reg</span>
+
+        <span class="k">return</span> <span class="n">L2_reg</span></div>
+
+
+<div class="viewcode-block" id="BEUrRE_Loss.forward"><a class="viewcode-back" href="../../../unKR.loss.html#unKR.loss.BEUrRE_Loss.BEUrRE_Loss.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">ids</span><span class="p">,</span> <span class="n">negative_samples</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculating the total loss including MSE loss, logic loss, and L2 regularization.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            model: The BEUrRE model instance.</span>
+<span class="sd">            ids: Tensor of positive triple ids.</span>
+<span class="sd">            negative_samples: Tensor of negative triple ids.</span>
+<span class="sd">            args: Model configuration parameters including regularization coefficients.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            loss: The total loss combining MSE loss, logic loss, and L2 regularization.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">NEG_RATIO</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">pos_loss</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">main_mse_loss</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">ids</span><span class="p">)</span>
+
+        <span class="n">negative_samples</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">random_negative_sampling</span><span class="p">(</span><span class="n">ids</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">long</span><span class="p">),</span> <span class="n">ids</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">])</span>
+
+        <span class="n">neg_loss</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">main_mse_loss</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">negative_samples</span><span class="p">)</span>
+
+        <span class="n">main_loss</span> <span class="o">=</span> <span class="n">pos_loss</span> <span class="o">+</span> <span class="n">NEG_RATIO</span> <span class="o">*</span> <span class="n">neg_loss</span>
+
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="s1">&#39;RULE_CONFIGS&#39;</span><span class="p">):</span>
+            <span class="n">logic_loss</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_logic_loss</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">ids</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">logic_loss</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">L2_reg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">L2_regularization</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">ids</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+
+        <span class="n">loss</span> <span class="o">=</span> <span class="n">main_loss</span> <span class="o">+</span> <span class="n">L2_reg</span> <span class="o">+</span> <span class="n">logic_loss</span>
+
+        <span class="k">return</span> <span class="n">loss</span></div></div>
+</pre></div>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By SEU
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, SEUKGE.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

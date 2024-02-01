@@ -1,0 +1,889 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>unKR.model.NSSModel.BEUrRE &#8212; unKR 0.8 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/unKR/model/NSSModel/BEUrRE';</script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">unKR 0.8 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../install.html">Install</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Experiment Result</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../result.html">Results</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Parameters Description</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../Parameters.html">Description of basic parameters</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Package</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../unKR.html">unKR</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../unKR.data.html">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../unKR.eval_task.html">Eval_Task</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../unKR.lit_model.html">Lit_Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../unKR.loss.html">loss</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../unKR.model.html">Model</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../nssmodel.html">NSSModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../ssmodel.html">SSModel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for unKR.model.NSSModel.BEUrRE</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+<span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
+<span class="kn">from</span> <span class="nn">torch.distributions</span> <span class="kn">import</span> <span class="n">uniform</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+
+<div class="viewcode-block" id="BEUrRE"><a class="viewcode-back" href="../../../../nssmodel.html#unKR.model.NSSModel.BEUrRE.BEUrRE">[docs]</a><span class="k">class</span> <span class="nc">BEUrRE</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;`Probabilistic Box Embeddings for Uncertain Knowledge Graph Reasoning`_ (BEUrRE), which utilizes the geometry of boxes</span>
+<span class="sd">    to calibrate probabilistic semantics and facilitating the incorporation of relational constraints.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        args: Model configuration parameters.</span>
+<span class="sd">        min_init_value: Initial value range for the minimum boundary of entity boxes. This range is used for uniformly initializing the minimum boundary of each entity box.</span>
+<span class="sd">        delta_init_value: Initial value range for the size change (delta) of entity boxes. This range is used for uniformly initializing the size change of each entity box.</span>
+<span class="sd">        min_embedding: Embedding for the minimum boundary of entities, initialized using min_init_value</span>
+<span class="sd">        delta_embedding: Embedding for the size change (delta) of entity boxes, initialized using delta_init_value</span>
+<span class="sd">        rel_trans_for_head: Relation-specific translation parameters for head entities</span>
+<span class="sd">        rel_scale_for_head: Relation-specific scaling parameters for head entities</span>
+<span class="sd">        rel_trans_for_tail: Relation-specific translation parameters for tail entities</span>
+<span class="sd">        rel_scale_for_tail: Relation-specific scaling parameters for tail entities</span>
+<span class="sd">        true_head, true_tail: Variables used for filtering negative samples to ensure that generated negative samples are not true triples.</span>
+<span class="sd">        gumbel_beta: The beta parameter for the Gumbel distribution, controlling the softness of intersections in box embeddings.</span>
+<span class="sd">        device: Specifies the device for model training, such as GPU.</span>
+<span class="sd">        ratio: The ratio of negative samples to positive samples, used for generating negative samples during training.</span>
+<span class="sd">        vocab_size: Total number of entities</span>
+<span class="sd">        alpha: A small numeric value to prevent division by zero in calculations.</span>
+<span class="sd">        clamp_min, clamp_max: Used to limit the range of gradients and embedding values to prevent numeric overflow or excessively large values.</span>
+<span class="sd">        REL_VOCAB_SIZE: Total number of relations</span>
+
+<span class="sd">    .. _Probabilistic Box Embeddings for Uncertain Knowledge Graph Reasoning: https://aclanthology.org/2021.naacl-main.68</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">min_init_value</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">delta_init_value</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">BEUrRE</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">delta_init_value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">delta_init_value</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.001</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">min_init_value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">min_init_value</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1e-4</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">euler_gamma</span> <span class="o">=</span> <span class="mf">0.57721566490153286060</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">min_init_value</span> <span class="o">=</span> <span class="n">min_init_value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">delta_init_value</span> <span class="o">=</span> <span class="n">delta_init_value</span>
+
+        <span class="n">min_embedding</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">init_embedding</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">num_ent</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">emb_dim</span><span class="p">,</span> <span class="n">min_init_value</span><span class="p">)</span>
+        <span class="n">delta_embedding</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">init_embedding</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">num_ent</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">emb_dim</span><span class="p">,</span> <span class="n">delta_init_value</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">min_embedding</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="n">min_embedding</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">delta_embedding</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="n">delta_embedding</span><span class="p">)</span>
+
+        <span class="n">rel_trans_for_head</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">num_rel</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">emb_dim</span><span class="p">)</span>
+        <span class="n">rel_scale_for_head</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">num_rel</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">emb_dim</span><span class="p">)</span>
+        <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">normal_</span><span class="p">(</span><span class="n">rel_trans_for_head</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">std</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">)</span>  <span class="c1"># 1e-4 before</span>
+        <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">normal_</span><span class="p">(</span><span class="n">rel_scale_for_head</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">std</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>  <span class="c1"># 0.2 before</span>
+
+        <span class="n">rel_trans_for_tail</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">num_rel</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">emb_dim</span><span class="p">)</span>
+        <span class="n">rel_scale_for_tail</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">num_rel</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">emb_dim</span><span class="p">)</span>
+        <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">normal_</span><span class="p">(</span><span class="n">rel_trans_for_tail</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">std</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">)</span>
+        <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">normal_</span><span class="p">(</span><span class="n">rel_scale_for_tail</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">std</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+
+        <span class="c1"># make nn.Parameter</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rel_trans_for_head</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel_scale_for_head</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="n">rel_trans_for_head</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gpu</span><span class="p">)),</span> <span class="n">nn</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span>
+            <span class="n">rel_scale_for_head</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gpu</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rel_trans_for_tail</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel_scale_for_tail</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="n">rel_trans_for_tail</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gpu</span><span class="p">)),</span> <span class="n">nn</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span>
+            <span class="n">rel_scale_for_tail</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">gpu</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">true_head</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">true_tail</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>  <span class="c1"># for negative sample filtering</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gumbel_beta</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">GUMBEL_BETA</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">gpu</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ratio</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">num_neg</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vocab_size</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">num_ent</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">1e-16</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clamp_min</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clamp_max</span> <span class="o">=</span> <span class="mf">1e10</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">REL_VOCAB_SIZE</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">num_rel</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span>
+
+
+<div class="viewcode-block" id="BEUrRE.forward"><a class="viewcode-back" href="../../../../nssmodel.html#unKR.model.NSSModel.BEUrRE.BEUrRE.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ids</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The functions used in the training phase</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ids: The quadruples ids, as (h, r, t, c), shape:[batch_size, 4].</span>
+<span class="sd">            train: mode</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            pos_predictions: The confidence score of triples.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">head_boxes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform_head_boxes</span><span class="p">(</span><span class="n">ids</span><span class="p">)</span>
+        <span class="n">tail_boxes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform_tail_boxes</span><span class="p">(</span><span class="n">ids</span><span class="p">)</span>
+
+        <span class="n">intersection_boxes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">head_boxes</span><span class="p">,</span> <span class="n">tail_boxes</span><span class="p">)</span>
+
+        <span class="n">log_intersection</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_volumes</span><span class="p">(</span><span class="n">intersection_boxes</span><span class="p">)</span>
+
+        <span class="c1"># condition on subject or object</span>
+        <span class="n">log_prob</span> <span class="o">=</span> <span class="n">log_intersection</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_volumes</span><span class="p">(</span><span class="n">tail_boxes</span><span class="p">)</span>
+
+        <span class="n">pos_predictions</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">log_prob</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">pos_predictions</span></div>
+
+<div class="viewcode-block" id="BEUrRE.get_score"><a class="viewcode-back" href="../../../../nssmodel.html#unKR.model.NSSModel.BEUrRE.BEUrRE.get_score">[docs]</a>    <span class="k">def</span> <span class="nf">get_score</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The functions used in the testing phase</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            batch: A batch of data.</span>
+<span class="sd">            mode: Choose head-predict or tail-predict.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            scores: The confidence score of triples.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">triples</span> <span class="o">=</span> <span class="n">batch</span><span class="p">[</span><span class="s2">&quot;positive_sample&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">long</span><span class="p">)</span>
+        <span class="n">triples</span> <span class="o">=</span> <span class="n">triples</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;tail_predict&quot;</span><span class="p">:</span>
+            <span class="n">scores</span> <span class="o">=</span> <span class="p">[]</span>
+
+            <span class="c1"># Repeating head-entities and relations to construct all possible triples</span>
+            <span class="n">head_entities</span> <span class="o">=</span> <span class="n">triples</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">vocab_size</span><span class="p">)</span>
+            <span class="n">relations</span> <span class="o">=</span> <span class="n">triples</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">vocab_size</span><span class="p">)</span>
+            <span class="n">tail_entities</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vocab_size</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">long</span><span class="p">)</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">triples</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">gpu</span><span class="p">)</span>
+
+            <span class="n">bs_triples</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">head_entities</span><span class="p">,</span> <span class="n">relations</span><span class="p">,</span> <span class="n">tail_entities</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">bs_triples</span><span class="p">:</span>
+                <span class="n">score</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+                <span class="n">scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+
+            <span class="n">scores</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">scores</span>
+
+        <span class="k">elif</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;head_predict&quot;</span><span class="p">:</span>
+            <span class="n">scores</span> <span class="o">=</span> <span class="p">[]</span>
+
+            <span class="c1"># Repeating tail-entities and relations to construct all possible triples</span>
+            <span class="n">head_entities</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vocab_size</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">long</span><span class="p">)</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">triples</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">gpu</span><span class="p">)</span>
+            <span class="n">relations</span> <span class="o">=</span> <span class="n">triples</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">vocab_size</span><span class="p">)</span>
+            <span class="n">tail_entities</span> <span class="o">=</span> <span class="n">triples</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">vocab_size</span><span class="p">)</span>
+
+            <span class="n">bs_triples</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">head_entities</span><span class="p">,</span> <span class="n">relations</span><span class="p">,</span> <span class="n">tail_entities</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">bs_triples</span><span class="p">:</span>
+                <span class="n">score</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+                <span class="n">scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+
+            <span class="n">scores</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">scores</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">triples</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="BEUrRE.transform_head_boxes"><a class="viewcode-back" href="../../../../nssmodel.html#unKR.model.NSSModel.BEUrRE.BEUrRE.transform_head_boxes">[docs]</a>    <span class="k">def</span> <span class="nf">transform_head_boxes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ids</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Transforms head entity boxes based on the relation-specific parameters.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ids: The quadruples ids, as (h, r, t, c), shape:[batch_size, 4].</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            head_boxes: Transformed head entity boxes after applying relation-specific affine transformations.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">head_boxes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_entity_boxes</span><span class="p">(</span><span class="n">ids</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+
+        <span class="n">rel_ids</span> <span class="o">=</span> <span class="n">ids</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">relu</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
+
+        <span class="n">translations</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel_trans_for_head</span><span class="p">[</span><span class="n">rel_ids</span><span class="p">]</span>
+        <span class="n">scales</span> <span class="o">=</span> <span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rel_scale_for_head</span><span class="p">[</span><span class="n">rel_ids</span><span class="p">])</span>
+
+        <span class="c1"># affine transformation</span>
+        <span class="n">head_boxes</span><span class="o">.</span><span class="n">min_embed</span> <span class="o">+=</span> <span class="n">translations</span>
+        <span class="n">head_boxes</span><span class="o">.</span><span class="n">delta_embed</span> <span class="o">*=</span> <span class="n">scales</span>
+        <span class="n">head_boxes</span><span class="o">.</span><span class="n">max_embed</span> <span class="o">=</span> <span class="n">head_boxes</span><span class="o">.</span><span class="n">min_embed</span> <span class="o">+</span> <span class="n">head_boxes</span><span class="o">.</span><span class="n">delta_embed</span>
+
+        <span class="k">return</span> <span class="n">head_boxes</span></div>
+
+<div class="viewcode-block" id="BEUrRE.transform_tail_boxes"><a class="viewcode-back" href="../../../../nssmodel.html#unKR.model.NSSModel.BEUrRE.BEUrRE.transform_tail_boxes">[docs]</a>    <span class="k">def</span> <span class="nf">transform_tail_boxes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ids</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Transforms tail entity boxes based on the relation-specific parameters.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ids: The quadruples ids, as (h, r, t, c), shape:[batch_size, 4].</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            tail_boxes: Transformed tail entity boxes after applying relation-specific affine transformations.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">tail_boxes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_entity_boxes</span><span class="p">(</span><span class="n">ids</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">])</span>
+
+        <span class="n">rel_ids</span> <span class="o">=</span> <span class="n">ids</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">relu</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
+
+        <span class="n">translations</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel_trans_for_tail</span><span class="p">[</span><span class="n">rel_ids</span><span class="p">]</span>
+        <span class="n">scales</span> <span class="o">=</span> <span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rel_scale_for_tail</span><span class="p">[</span><span class="n">rel_ids</span><span class="p">])</span>
+
+        <span class="c1"># affine transformation</span>
+        <span class="n">tail_boxes</span><span class="o">.</span><span class="n">min_embed</span> <span class="o">+=</span> <span class="n">translations</span>
+        <span class="n">tail_boxes</span><span class="o">.</span><span class="n">delta_embed</span> <span class="o">*=</span> <span class="n">scales</span>
+        <span class="n">tail_boxes</span><span class="o">.</span><span class="n">max_embed</span> <span class="o">=</span> <span class="n">tail_boxes</span><span class="o">.</span><span class="n">min_embed</span> <span class="o">+</span> <span class="n">tail_boxes</span><span class="o">.</span><span class="n">delta_embed</span>
+
+        <span class="k">return</span> <span class="n">tail_boxes</span></div>
+
+
+<div class="viewcode-block" id="BEUrRE.intersection"><a class="viewcode-back" href="../../../../nssmodel.html#unKR.model.NSSModel.BEUrRE.BEUrRE.intersection">[docs]</a>    <span class="k">def</span> <span class="nf">intersection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">boxes1</span><span class="p">,</span> <span class="n">boxes2</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Computes the intersection of two sets of boxes using the Gumbel softmax trick.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            boxes1: The first set of entity boxes.</span>
+<span class="sd">            boxes2: The second set of entity boxes.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            intersection_box: The intersection of the two sets of boxes.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">intersections_min</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gumbel_beta</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">logsumexp</span><span class="p">(</span>
+            <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">((</span><span class="n">boxes1</span><span class="o">.</span><span class="n">min_embed</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">gumbel_beta</span><span class="p">,</span> <span class="n">boxes2</span><span class="o">.</span><span class="n">min_embed</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">gumbel_beta</span><span class="p">)),</span>
+            <span class="mi">0</span>
+        <span class="p">)</span>
+        <span class="n">intersections_min</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">max</span><span class="p">(</span>
+            <span class="n">intersections_min</span><span class="p">,</span>
+            <span class="n">torch</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">boxes1</span><span class="o">.</span><span class="n">min_embed</span><span class="p">,</span> <span class="n">boxes2</span><span class="o">.</span><span class="n">min_embed</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">intersections_max</span> <span class="o">=</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">gumbel_beta</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">logsumexp</span><span class="p">(</span>
+            <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">((</span><span class="o">-</span><span class="n">boxes1</span><span class="o">.</span><span class="n">max_embed</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">gumbel_beta</span><span class="p">,</span> <span class="o">-</span><span class="n">boxes2</span><span class="o">.</span><span class="n">max_embed</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">gumbel_beta</span><span class="p">)),</span>
+            <span class="mi">0</span>
+        <span class="p">)</span>
+        <span class="n">intersections_max</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">min</span><span class="p">(</span>
+            <span class="n">intersections_max</span><span class="p">,</span>
+            <span class="n">torch</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">boxes1</span><span class="o">.</span><span class="n">max_embed</span><span class="p">,</span> <span class="n">boxes2</span><span class="o">.</span><span class="n">max_embed</span><span class="p">)</span>
+        <span class="p">)</span>
+
+        <span class="n">intersection_box</span> <span class="o">=</span> <span class="n">Box</span><span class="p">(</span><span class="n">intersections_min</span><span class="p">,</span> <span class="n">intersections_max</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">intersection_box</span></div>
+
+<div class="viewcode-block" id="BEUrRE.log_volumes"><a class="viewcode-back" href="../../../../nssmodel.html#unKR.model.NSSModel.BEUrRE.BEUrRE.log_volumes">[docs]</a>    <span class="k">def</span> <span class="nf">log_volumes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">boxes</span><span class="p">,</span> <span class="n">temp</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">gumbel_beta</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1.</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculates the logarithm of the volumes of boxes.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            boxes: A set of entity boxes.</span>
+<span class="sd">            temp: The temperature parameter for the softplus function.</span>
+<span class="sd">            gumbel_beta: The beta parameter for the Gumbel distribution.</span>
+<span class="sd">            scale: Scaling factor for the volumes.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            log_vol: The logarithm of the volumes of the given boxes.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">eps</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">finfo</span><span class="p">(</span><span class="n">boxes</span><span class="o">.</span><span class="n">min_embed</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span><span class="o">.</span><span class="n">tiny</span>  <span class="c1"># type: ignore</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">scale</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">scale</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">scale</span>
+
+        <span class="n">log_vol</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
+            <span class="n">torch</span><span class="o">.</span><span class="n">log</span><span class="p">(</span>
+                <span class="n">F</span><span class="o">.</span><span class="n">softplus</span><span class="p">(</span><span class="n">boxes</span><span class="o">.</span><span class="n">delta_embed</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">euler_gamma</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">gumbel_beta</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="n">temp</span><span class="p">)</span><span class="o">.</span><span class="n">clamp_min</span><span class="p">(</span><span class="n">eps</span><span class="p">)</span>
+            <span class="p">),</span>
+            <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span>
+        <span class="p">)</span> <span class="o">+</span> <span class="n">torch</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">log_vol</span></div>
+
+<div class="viewcode-block" id="BEUrRE.get_entity_boxes"><a class="viewcode-back" href="../../../../nssmodel.html#unKR.model.NSSModel.BEUrRE.BEUrRE.get_entity_boxes">[docs]</a>    <span class="k">def</span> <span class="nf">get_entity_boxes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entities</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retrieves entity boxes based on entity indices.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            entities: A tensor containing indices of entities.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            boxes: A Box object representing the boxes of the specified entities.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">min_rep</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_embedding</span><span class="p">[</span><span class="n">entities</span><span class="p">]</span>  <span class="c1"># batchsize * embedding_size</span>
+        <span class="n">delta_rep</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">delta_embedding</span><span class="p">[</span><span class="n">entities</span><span class="p">]</span>
+        <span class="n">max_rep</span> <span class="o">=</span> <span class="n">min_rep</span> <span class="o">+</span> <span class="n">torch</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">delta_rep</span><span class="p">)</span>
+        <span class="n">boxes</span> <span class="o">=</span> <span class="n">Box</span><span class="p">(</span><span class="n">min_rep</span><span class="p">,</span> <span class="n">max_rep</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">boxes</span></div>
+
+<div class="viewcode-block" id="BEUrRE.init_embedding"><a class="viewcode-back" href="../../../../nssmodel.html#unKR.model.NSSModel.BEUrRE.BEUrRE.init_embedding">[docs]</a>    <span class="k">def</span> <span class="nf">init_embedding</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vocab_size</span><span class="p">,</span> <span class="n">embed_dim</span><span class="p">,</span> <span class="n">init_value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initializes embeddings uniformly within a specified range.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            vocab_size: The number of unique entities.</span>
+<span class="sd">            embed_dim: The dimension of the embeddings.</span>
+<span class="sd">            init_value: A tuple indicating the range for uniform initialization.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            box_embed: Initialized embeddings.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">distribution</span> <span class="o">=</span> <span class="n">uniform</span><span class="o">.</span><span class="n">Uniform</span><span class="p">(</span><span class="n">init_value</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">init_value</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">box_embed</span> <span class="o">=</span> <span class="n">distribution</span><span class="o">.</span><span class="n">sample</span><span class="p">((</span><span class="n">vocab_size</span><span class="p">,</span> <span class="n">embed_dim</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">box_embed</span></div>
+
+<div class="viewcode-block" id="BEUrRE.random_negative_sampling"><a class="viewcode-back" href="../../../../nssmodel.html#unKR.model.NSSModel.BEUrRE.BEUrRE.random_negative_sampling">[docs]</a>    <span class="k">def</span> <span class="nf">random_negative_sampling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">positive_samples</span><span class="p">,</span> <span class="n">pos_probs</span><span class="p">,</span> <span class="n">neg_per_pos</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generates negative samples by corrupting either the head or the tail of positive samples.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            positive_samples: Tensor of positive samples.</span>
+<span class="sd">            pos_probs: confidence score of positive samples.</span>
+<span class="sd">            neg_per_pos: Number of negative samples to generate per positive sample.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            negative_samples: Tensor of generated negative samples.</span>
+<span class="sd">            neg_probs: confidence score negative samples (0).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">neg_per_pos</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">neg_per_pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">num_neg</span>
+        <span class="n">negative_samples1</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">repeat_interleave</span><span class="p">(</span><span class="n">positive_samples</span><span class="p">,</span> <span class="n">neg_per_pos</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">negative_samples2</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">repeat_interleave</span><span class="p">(</span><span class="n">positive_samples</span><span class="p">,</span> <span class="n">neg_per_pos</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="n">corrupted_heads</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">get_negative_samples_for_one_positive</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">neg_per_pos</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;corrupt_head&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">pos</span> <span class="ow">in</span> <span class="n">positive_samples</span><span class="p">]</span>
+        <span class="n">corrupted_tails</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">get_negative_samples_for_one_positive</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">neg_per_pos</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;corrupt_tail&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">pos</span> <span class="ow">in</span> <span class="n">positive_samples</span><span class="p">]</span>
+
+        <span class="n">negative_samples1</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">(</span><span class="n">corrupted_heads</span><span class="p">)</span>
+        <span class="n">negative_samples2</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">(</span><span class="n">corrupted_tails</span><span class="p">)</span>
+        <span class="n">negative_samples</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">((</span><span class="n">negative_samples1</span><span class="p">,</span> <span class="n">negative_samples2</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">gpu</span><span class="p">)</span>
+        <span class="n">neg_probs</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">negative_samples</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">pos_probs</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">gpu</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">negative_samples</span><span class="p">,</span> <span class="n">neg_probs</span></div>
+
+<div class="viewcode-block" id="BEUrRE.random_negative_sampling0"><a class="viewcode-back" href="../../../../nssmodel.html#unKR.model.NSSModel.BEUrRE.BEUrRE.random_negative_sampling0">[docs]</a>    <span class="k">def</span> <span class="nf">random_negative_sampling0</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">positive_samples</span><span class="p">,</span> <span class="n">pos_probs</span><span class="p">,</span> <span class="n">neg_per_pos</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generates negative samples randomly without checking against true triples.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            positive_samples: Tensor of positive samples.</span>
+<span class="sd">            pos_probs: confidence score of positive samples.</span>
+<span class="sd">            neg_per_pos: Number of negative samples to generate per positive sample.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            negative_samples: Tensor of generated negative samples.</span>
+<span class="sd">            neg_probs: confidence score negative samples (0).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">neg_per_pos</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">neg_per_pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">num_neg</span>
+        <span class="n">negative_samples1</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">repeat_interleave</span><span class="p">(</span><span class="n">positive_samples</span><span class="p">,</span> <span class="n">neg_per_pos</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">negative_samples2</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">repeat_interleave</span><span class="p">(</span><span class="n">positive_samples</span><span class="p">,</span> <span class="n">neg_per_pos</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="c1"># corrupt tails</span>
+        <span class="n">corrupted_heads</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vocab_size</span><span class="p">,</span> <span class="p">(</span><span class="n">negative_samples1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],))</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">gpu</span><span class="p">)</span>
+        <span class="n">corrupted_tails</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vocab_size</span><span class="p">,</span> <span class="p">(</span><span class="n">negative_samples1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],))</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">gpu</span><span class="p">)</span>
+
+        <span class="c1">#filter</span>
+        <span class="n">bad_heads_idxs</span> <span class="o">=</span> <span class="p">(</span><span class="n">corrupted_heads</span> <span class="o">==</span> <span class="n">negative_samples1</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">bad_tails_idxs</span> <span class="o">=</span> <span class="p">(</span><span class="n">corrupted_tails</span> <span class="o">==</span> <span class="n">negative_samples2</span><span class="p">[:,</span><span class="mi">2</span><span class="p">])</span>
+        <span class="n">corrupted_heads</span><span class="p">[</span><span class="n">bad_heads_idxs</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vocab_size</span><span class="p">,</span> <span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">bad_heads_idxs</span><span class="p">),))</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+        <span class="n">corrupted_tails</span><span class="p">[</span><span class="n">bad_tails_idxs</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vocab_size</span><span class="p">,</span> <span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">bad_tails_idxs</span><span class="p">),))</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+
+        <span class="n">negative_samples1</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">corrupted_heads</span>
+        <span class="n">negative_samples2</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">corrupted_tails</span>
+        <span class="n">negative_samples</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">((</span><span class="n">negative_samples1</span><span class="p">,</span> <span class="n">negative_samples2</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">gpu</span><span class="p">)</span>
+        <span class="n">neg_probs</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">negative_samples</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">pos_probs</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">gpu</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">negative_samples</span><span class="p">,</span> <span class="n">neg_probs</span></div>
+
+<div class="viewcode-block" id="BEUrRE.get_negative_samples_for_one_positive"><a class="viewcode-back" href="../../../../nssmodel.html#unKR.model.NSSModel.BEUrRE.BEUrRE.get_negative_samples_for_one_positive">[docs]</a>    <span class="k">def</span> <span class="nf">get_negative_samples_for_one_positive</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">positive_sample</span><span class="p">,</span> <span class="n">neg_per_pos</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generates negative samples for one positive sample by corrupting head or tail.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            positive_sample: A single positive sample.</span>
+<span class="sd">            neg_per_pos: Number of negative samples to generate.</span>
+<span class="sd">            mode: &#39;corrupt_head&#39; or &#39;corrupt_tail&#39; indicating which part of the triple to corrupt.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            negative_sample: Generated negative samples for the given positive sample.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">head</span><span class="p">,</span> <span class="n">relation</span><span class="p">,</span> <span class="n">tail</span> <span class="o">=</span> <span class="n">positive_sample</span>
+        <span class="n">negative_sample_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">negative_sample_size</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">negative_sample_size</span> <span class="o">&lt;</span> <span class="n">neg_per_pos</span><span class="p">:</span>
+            <span class="n">negative_sample</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">num_ent</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">neg_per_pos</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+
+            <span class="c1"># filter true values</span>
+            <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;corrupt_head&#39;</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">relation</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">tail</span><span class="p">))</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">true_head</span><span class="p">:</span>  <span class="c1"># filter true heads</span>
+                <span class="c1"># For test data, some (relation, tail) pairs may be unseen and not in self.true_head</span>
+                <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">in1d</span><span class="p">(</span>
+                    <span class="n">negative_sample</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">true_head</span><span class="p">[(</span><span class="nb">int</span><span class="p">(</span><span class="n">relation</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">tail</span><span class="p">))],</span>
+                    <span class="n">assume_unique</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                    <span class="n">invert</span><span class="o">=</span><span class="kc">True</span>
+                <span class="p">)</span>
+                <span class="n">negative_sample</span> <span class="o">=</span> <span class="n">negative_sample</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;corrupt_tail&#39;</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">head</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">relation</span><span class="p">))</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">true_tail</span><span class="p">:</span>
+                <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">in1d</span><span class="p">(</span>
+                    <span class="n">negative_sample</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">true_tail</span><span class="p">[(</span><span class="nb">int</span><span class="p">(</span><span class="n">head</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">relation</span><span class="p">))],</span>
+                    <span class="n">assume_unique</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                    <span class="n">invert</span><span class="o">=</span><span class="kc">True</span>
+                <span class="p">)</span>
+                <span class="n">negative_sample</span> <span class="o">=</span> <span class="n">negative_sample</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+            <span class="n">negative_sample_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">negative_sample</span><span class="p">)</span>
+            <span class="n">negative_sample_size</span> <span class="o">+=</span> <span class="n">negative_sample</span><span class="o">.</span><span class="n">size</span>
+
+        <span class="n">negative_sample</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">negative_sample_list</span><span class="p">)[:</span><span class="n">neg_per_pos</span><span class="p">]</span>
+
+        <span class="n">negative_sample</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">negative_sample</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">negative_sample</span></div>
+
+
+<div class="viewcode-block" id="BEUrRE.head_transformation"><a class="viewcode-back" href="../../../../nssmodel.html#unKR.model.NSSModel.BEUrRE.BEUrRE.head_transformation">[docs]</a>    <span class="k">def</span> <span class="nf">head_transformation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">head_boxes</span><span class="p">,</span> <span class="n">rel_ids</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Applies affine transformation to head boxes based on the relation.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            head_boxes: Box objects for head entities.</span>
+<span class="sd">            rel_ids: Relation indices corresponding to the head entities.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            head_boxes: Transformed Box objects for head entities.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">relu</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
+        <span class="n">translations</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel_trans_for_head</span><span class="p">[</span><span class="n">rel_ids</span><span class="p">]</span>
+        <span class="n">scales</span> <span class="o">=</span> <span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rel_scale_for_head</span><span class="p">[</span><span class="n">rel_ids</span><span class="p">])</span>
+        <span class="c1"># affine transformation</span>
+        <span class="n">head_boxes</span><span class="o">.</span><span class="n">min_embed</span> <span class="o">+=</span> <span class="n">translations</span>
+        <span class="n">head_boxes</span><span class="o">.</span><span class="n">delta_embed</span> <span class="o">*=</span> <span class="n">scales</span>
+        <span class="n">head_boxes</span><span class="o">.</span><span class="n">max_embed</span> <span class="o">=</span> <span class="n">head_boxes</span><span class="o">.</span><span class="n">min_embed</span> <span class="o">+</span> <span class="n">head_boxes</span><span class="o">.</span><span class="n">delta_embed</span>
+
+        <span class="k">return</span> <span class="n">head_boxes</span></div>
+
+<div class="viewcode-block" id="BEUrRE.tail_transformation"><a class="viewcode-back" href="../../../../nssmodel.html#unKR.model.NSSModel.BEUrRE.BEUrRE.tail_transformation">[docs]</a>    <span class="k">def</span> <span class="nf">tail_transformation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tail_boxes</span><span class="p">,</span> <span class="n">rel_ids</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Applies affine transformation to tail boxes based on the relation.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            tail_boxes: Box objects for tail entities.</span>
+<span class="sd">            rel_ids: Relation indices corresponding to the tail entities.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            tail_boxes: Transformed Box objects for tail entities.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">relu</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
+        <span class="n">translations</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel_trans_for_tail</span><span class="p">[</span><span class="n">rel_ids</span><span class="p">]</span>
+        <span class="n">scales</span> <span class="o">=</span> <span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rel_scale_for_tail</span><span class="p">[</span><span class="n">rel_ids</span><span class="p">])</span>
+        <span class="c1"># affine transformation</span>
+        <span class="n">tail_boxes</span><span class="o">.</span><span class="n">min_embed</span> <span class="o">+=</span> <span class="n">translations</span>
+        <span class="n">tail_boxes</span><span class="o">.</span><span class="n">delta_embed</span> <span class="o">*=</span> <span class="n">scales</span>
+        <span class="n">tail_boxes</span><span class="o">.</span><span class="n">max_embed</span> <span class="o">=</span> <span class="n">tail_boxes</span><span class="o">.</span><span class="n">min_embed</span> <span class="o">+</span> <span class="n">tail_boxes</span><span class="o">.</span><span class="n">delta_embed</span>
+
+        <span class="k">return</span> <span class="n">tail_boxes</span></div>
+
+<div class="viewcode-block" id="BEUrRE.get_entity_boxes_detached"><a class="viewcode-back" href="../../../../nssmodel.html#unKR.model.NSSModel.BEUrRE.BEUrRE.get_entity_boxes_detached">[docs]</a>    <span class="k">def</span> <span class="nf">get_entity_boxes_detached</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entities</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        For logic constraint. We only want to optimize relation parameters, so detach entity parameters</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            entities: A tensor containing indices of entities.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            boxes: A Box object representing the boxes of the specified entities without attached gradients.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">min_rep</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_embedding</span><span class="p">[</span><span class="n">entities</span><span class="p">]</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+        <span class="n">delta_rep</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">delta_embedding</span><span class="p">[</span><span class="n">entities</span><span class="p">]</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+        <span class="n">max_rep</span> <span class="o">=</span> <span class="n">min_rep</span> <span class="o">+</span> <span class="n">torch</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">delta_rep</span><span class="p">)</span>
+        <span class="n">boxes</span> <span class="o">=</span> <span class="n">Box</span><span class="p">(</span><span class="n">min_rep</span><span class="p">,</span> <span class="n">max_rep</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">boxes</span></div>
+
+<div class="viewcode-block" id="BEUrRE.transitive_rule_loss"><a class="viewcode-back" href="../../../../nssmodel.html#unKR.model.NSSModel.BEUrRE.BEUrRE.transitive_rule_loss">[docs]</a>    <span class="k">def</span> <span class="nf">transitive_rule_loss</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ids</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Computes the loss for enforcing the transitive rule in the model.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ids: Tensor of triple ids.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            vol_loss: Volume loss enforcing the transitivity rule.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">subsets</span> <span class="o">=</span> <span class="p">[</span><span class="n">ids</span><span class="p">[(</span><span class="n">ids</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">r</span><span class="p">)</span><span class="o">.</span><span class="n">nonzero</span><span class="p">()</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="mi">1</span><span class="p">),:]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">RULE_CONFIGS</span><span class="p">[</span><span class="s1">&#39;transitive&#39;</span><span class="p">][</span><span class="s1">&#39;relations&#39;</span><span class="p">]]</span>
+        <span class="n">sub_ids</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">(</span><span class="n">subsets</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="c1"># only optimize relation parameters</span>
+        <span class="n">head_boxes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_entity_boxes_detached</span><span class="p">(</span><span class="n">sub_ids</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+        <span class="n">tail_boxes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_entity_boxes_detached</span><span class="p">(</span><span class="n">sub_ids</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">])</span>
+        <span class="n">head_boxes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head_transformation</span><span class="p">(</span><span class="n">head_boxes</span><span class="p">,</span> <span class="n">sub_ids</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">tail_boxes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tail_transformation</span><span class="p">(</span><span class="n">tail_boxes</span><span class="p">,</span> <span class="n">sub_ids</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
+
+        <span class="n">intersection_boxes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">head_boxes</span><span class="p">,</span> <span class="n">tail_boxes</span><span class="p">)</span>
+
+        <span class="n">log_intersection</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_volumes</span><span class="p">(</span><span class="n">intersection_boxes</span><span class="p">)</span>
+
+        <span class="c1"># P(f_r(epsilon_box)|g_r(epsilon_box)) should be 1</span>
+        <span class="n">vol_loss</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">torch</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">log_intersection</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_volumes</span><span class="p">(</span><span class="n">tail_boxes</span><span class="p">)))</span>
+
+        <span class="k">return</span> <span class="n">vol_loss</span></div>
+
+<div class="viewcode-block" id="BEUrRE.composition_rule_loss"><a class="viewcode-back" href="../../../../nssmodel.html#unKR.model.NSSModel.BEUrRE.BEUrRE.composition_rule_loss">[docs]</a>    <span class="k">def</span> <span class="nf">composition_rule_loss</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ids</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Computes the loss for enforcing the composition rule in the model.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ids: Tensor of triple ids.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            vol_loss: Volume loss enforcing the composition rule.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">rels</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">rid</span><span class="p">):</span>
+            <span class="c1"># fill a tensor with relation id</span>
+            <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">size</span><span class="p">,),</span> <span class="n">rid</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">long</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">biconditioning</span><span class="p">(</span><span class="n">boxes1</span><span class="p">,</span> <span class="n">boxes2</span><span class="p">):</span>
+            <span class="n">intersection_boxes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">boxes1</span><span class="p">,</span> <span class="n">boxes2</span><span class="p">)</span>
+            <span class="n">log_intersection</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_volumes</span><span class="p">(</span><span class="n">intersection_boxes</span><span class="p">)</span>
+            <span class="c1"># || 1-P(Box2|Box1) ||</span>
+            <span class="n">condition_on_box1</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">torch</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">log_intersection</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_volumes</span><span class="p">(</span><span class="n">boxes1</span><span class="p">)))</span>
+            <span class="c1"># || 1-P(Box1|Box2) ||</span>
+            <span class="n">condition_on_box2</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">torch</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">log_intersection</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_volumes</span><span class="p">(</span><span class="n">boxes2</span><span class="p">)))</span>
+            <span class="n">loss</span> <span class="o">=</span> <span class="n">condition_on_box1</span> <span class="o">+</span> <span class="n">condition_on_box2</span>
+
+            <span class="k">return</span> <span class="n">loss</span>
+
+        <span class="n">vol_loss</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">rule_combn</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">RULE_CONFIGS</span><span class="p">[</span><span class="s1">&#39;composite&#39;</span><span class="p">][</span><span class="s1">&#39;relations&#39;</span><span class="p">]:</span>
+            <span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="n">r3</span> <span class="o">=</span> <span class="n">rule_combn</span>
+            <span class="n">r1_triples</span> <span class="o">=</span> <span class="n">ids</span><span class="p">[(</span><span class="n">ids</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">r1</span><span class="p">)</span><span class="o">.</span><span class="n">nonzero</span><span class="p">()</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="p">:]</span>
+            <span class="n">r2_triples</span> <span class="o">=</span> <span class="n">ids</span><span class="p">[(</span><span class="n">ids</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">r2</span><span class="p">)</span><span class="o">.</span><span class="n">nonzero</span><span class="p">()</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="p">:]</span>
+
+            <span class="c1"># use heads and tails from r1, r2 as reasonable entity samples to help optimize relation parameters</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">r1_triples</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">r2_triples</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">entities</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cartesian_prod</span><span class="p">(</span><span class="n">r1_triples</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">r2_triples</span><span class="p">[:,</span><span class="mi">2</span><span class="p">])</span>
+                <span class="n">head_ids</span><span class="p">,</span> <span class="n">tail_ids</span> <span class="o">=</span> <span class="n">entities</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">entities</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
+                <span class="n">size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">entities</span><span class="p">)</span>
+
+                <span class="c1"># only optimize relation parameters</span>
+                <span class="n">head_boxes_r1r2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_entity_boxes_detached</span><span class="p">(</span><span class="n">head_ids</span><span class="p">)</span>
+                <span class="n">tail_boxes_r1r2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_entity_boxes_detached</span><span class="p">(</span><span class="n">tail_ids</span><span class="p">)</span>
+                <span class="n">r1r2_head</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head_transformation</span><span class="p">(</span><span class="n">head_boxes_r1r2</span><span class="p">,</span> <span class="n">rels</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">r1</span><span class="p">))</span>
+                <span class="n">r1r2_head</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head_transformation</span><span class="p">(</span><span class="n">r1r2_head</span><span class="p">,</span> <span class="n">rels</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">r2</span><span class="p">))</span>
+                <span class="n">r1r2_tail</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tail_transformation</span><span class="p">(</span><span class="n">tail_boxes_r1r2</span><span class="p">,</span> <span class="n">rels</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">r1</span><span class="p">))</span>
+                <span class="n">r1r2_tail</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tail_transformation</span><span class="p">(</span><span class="n">r1r2_tail</span><span class="p">,</span> <span class="n">rels</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">r2</span><span class="p">))</span>
+
+                <span class="c1"># head_boxes_r1r2 have been modified in transformation</span>
+                <span class="c1"># so make separate box objects with the same parameters</span>
+                <span class="n">head_boxes_r3</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_entity_boxes_detached</span><span class="p">(</span><span class="n">head_ids</span><span class="p">)</span>
+                <span class="n">tail_boxes_r3</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_entity_boxes_detached</span><span class="p">(</span><span class="n">tail_ids</span><span class="p">)</span>
+                <span class="n">r3_head</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head_transformation</span><span class="p">(</span><span class="n">head_boxes_r3</span><span class="p">,</span> <span class="n">rels</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">r3</span><span class="p">))</span>
+                <span class="n">r3_tail</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tail_transformation</span><span class="p">(</span><span class="n">tail_boxes_r3</span><span class="p">,</span> <span class="n">rels</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">r3</span><span class="p">))</span>
+
+                <span class="n">head_transform_loss</span> <span class="o">=</span> <span class="n">biconditioning</span><span class="p">(</span><span class="n">r1r2_head</span><span class="p">,</span> <span class="n">r3_head</span><span class="p">)</span>
+                <span class="n">tail_transform_loss</span> <span class="o">=</span> <span class="n">biconditioning</span><span class="p">(</span><span class="n">r1r2_tail</span><span class="p">,</span> <span class="n">r3_tail</span><span class="p">)</span>
+                <span class="n">vol_loss</span> <span class="o">+=</span> <span class="n">head_transform_loss</span>
+                <span class="n">vol_loss</span> <span class="o">+=</span> <span class="n">tail_transform_loss</span>
+        <span class="k">return</span> <span class="n">vol_loss</span></div></div>
+
+
+<div class="viewcode-block" id="Box"><a class="viewcode-back" href="../../../../nssmodel.html#unKR.model.NSSModel.BEUrRE.Box">[docs]</a><span class="k">class</span> <span class="nc">Box</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A class representing an n-dimensional axis-aligned hyperrectangle (box) in the embedding space.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        min_embed: The minimum boundary vector of the box in the embedding space.</span>
+<span class="sd">        max_embed: The maximum boundary vector of the box in the embedding space.</span>
+<span class="sd">        delta_embed: The difference between the maximum and minimum boundaries, representing the size of the box in each dimension.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_embed</span><span class="p">,</span> <span class="n">max_embed</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">min_embed</span> <span class="o">=</span> <span class="n">min_embed</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_embed</span> <span class="o">=</span> <span class="n">max_embed</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">delta_embed</span> <span class="o">=</span> <span class="n">max_embed</span> <span class="o">-</span> <span class="n">min_embed</span></div>
+</pre></div>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By SEU
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, SEUKGE.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

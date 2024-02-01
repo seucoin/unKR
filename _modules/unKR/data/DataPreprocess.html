@@ -1,0 +1,1191 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>unKR.data.DataPreprocess &#8212; unKR 0.8 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/unKR/data/DataPreprocess';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">unKR 0.8 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">Install</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Experiment Result</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../result.html">Results</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Parameters Description</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Parameters.html">Description of basic parameters</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Package</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../unKR.html">unKR</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../unKR.data.html">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../unKR.eval_task.html">Eval_Task</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../unKR.lit_model.html">Lit_Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../unKR.loss.html">loss</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../unKR.model.html">Model</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../nssmodel.html">NSSModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../ssmodel.html">SSModel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for unKR.data.DataPreprocess</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">copy</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">Dataset</span><span class="p">,</span> <span class="n">DataLoader</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span> <span class="k">as</span> <span class="n">ddict</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+
+<div class="viewcode-block" id="UKGData"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGData">[docs]</a><span class="k">class</span> <span class="nc">UKGData</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Data preprocessing of ukg data.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        args: Some pre-set parameters, such as dataset path, etc. </span>
+<span class="sd">        ent2id: Encoding the entity in triples, type: dict.</span>
+<span class="sd">        rel2id: Encoding the relation in triples, type: dict.</span>
+<span class="sd">        id2ent: Decoding the entity in triples, type: dict.</span>
+<span class="sd">        id2rel: Decoding the realtion in triples, type: dict.</span>
+<span class="sd">        train_triples: Record the triples for training, type: list.</span>
+<span class="sd">        valid_triples: Record the triples for validation, type: list.</span>
+<span class="sd">        test_triples: Record the triples for testing, type: list.</span>
+<span class="sd">        PSL_triples: Record the triples for softlogic, type: list. (will be used in UKGE_PSL)</span>
+<span class="sd">        pseudo_triples: Record the triples for pseudo, type: list. (will be used in UPGAT)</span>
+<span class="sd">        all_true_triples: Record all triples including train,valid and test, type: list.</span>
+<span class="sd">        hr2t_train: Record the tail corresponding to the same head and relation, type: defaultdict(class:set).</span>
+<span class="sd">        rt2h_train: Record the head corresponding to the same tail and relation, type: defaultdict(class:set).</span>
+<span class="sd">        h2rt_train: Record the tail, relation corresponding to the same head, type: defaultdict(class:set).</span>
+<span class="sd">        t2rh_train: Record the head, realtion corresponding to the same tail, type: defaultdict(class:set).</span>
+<span class="sd">        hr2t_total: Record the tail corresponding to the same head and relation in whole dataset(train + val + test), type: defaultdict(class:set).</span>
+<span class="sd">        rt2h_total: Record the head corresponding to the same tail and relation in whole dataset(train + val + test), type: defaultdict(class:set).</span>
+<span class="sd">        RatioOfPSL: Record the ratio of the number of PSL samples to the number of training samples. (will be used in UKGE_PSL)</span>
+<span class="sd">        pseudo_dataiter: Record the data in dataloader. (will be used in UPGAT)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span>
+
+        <span class="c1"># basic part</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rel2id</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id2ent</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id2rel</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="c1"># store the ID of the sample</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">train_triples</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">valid_triples</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">test_triples</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">PSL_triples</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">all_true_triples</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="c1"># for PSL</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">RatioOfPSL</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="c1"># for UPGAT</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pseudo_triples</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pseudo_dataiter</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="c1"># for calculating nDCG</span>
+        <span class="c1"># self.hr_map = {}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hr2t_train</span> <span class="o">=</span> <span class="n">ddict</span><span class="p">(</span><span class="nb">set</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rt2h_train</span> <span class="o">=</span> <span class="n">ddict</span><span class="p">(</span><span class="nb">set</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">h2rt_train</span> <span class="o">=</span> <span class="n">ddict</span><span class="p">(</span><span class="nb">set</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">t2rh_train</span> <span class="o">=</span> <span class="n">ddict</span><span class="p">(</span><span class="nb">set</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hr2t_total</span> <span class="o">=</span> <span class="n">ddict</span><span class="p">(</span><span class="nb">set</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rt2h_total</span> <span class="o">=</span> <span class="n">ddict</span><span class="p">(</span><span class="nb">set</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">get_id</span><span class="p">()</span>
+        <span class="c1"># self.get_ndcg_test_data()</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">use_weight</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">count_frequency</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">train_triples</span><span class="p">)</span>
+
+<div class="viewcode-block" id="UKGData.get_id"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGData.get_id">[docs]</a>    <span class="k">def</span> <span class="nf">get_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get entity/relation id, and entity/relation number.</span>
+
+<span class="sd">        Update:</span>
+<span class="sd">            self.ent2id: Entity to id.</span>
+<span class="sd">            self.rel2id: Relation to id.</span>
+<span class="sd">            self.id2ent: id to Entity.</span>
+<span class="sd">            self.id2rel: id to Relation.</span>
+<span class="sd">            self.args.num_ent: Entity number.</span>
+<span class="sd">            self.args.num_rel: Relation number.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">last_e</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="n">last_r</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">data_path</span><span class="p">,</span> <span class="s2">&quot;train.tsv&quot;</span><span class="p">),</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fin</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fin</span><span class="p">:</span>
+                <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+                <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="nb">float</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">h</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">last_e</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">h</span><span class="p">]</span> <span class="o">=</span> <span class="n">last_e</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">id2ent</span><span class="p">[</span><span class="n">last_e</span><span class="p">]</span> <span class="o">=</span> <span class="n">h</span>
+
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">last_e</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="n">last_e</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">id2ent</span><span class="p">[</span><span class="n">last_e</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span>
+
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">last_r</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">rel2id</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">=</span> <span class="n">last_r</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">id2rel</span><span class="p">[</span><span class="n">last_r</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span>
+
+                <span class="n">h</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">h</span><span class="p">]</span>
+                <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel2id</span><span class="p">[</span><span class="n">r</span><span class="p">]</span>
+                <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">t</span><span class="p">]</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">train_triples</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">data_path</span><span class="p">,</span> <span class="s2">&quot;val.tsv&quot;</span><span class="p">),</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fin</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fin</span><span class="p">:</span>
+                <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+                <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="nb">float</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">h</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">last_e</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">h</span><span class="p">]</span> <span class="o">=</span> <span class="n">last_e</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">id2ent</span><span class="p">[</span><span class="n">last_e</span><span class="p">]</span> <span class="o">=</span> <span class="n">h</span>
+
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">last_e</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="n">last_e</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">id2ent</span><span class="p">[</span><span class="n">last_e</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span>
+
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">last_r</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">rel2id</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">=</span> <span class="n">last_r</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">id2rel</span><span class="p">[</span><span class="n">last_r</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span>
+
+                <span class="n">h</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">h</span><span class="p">]</span>
+                <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel2id</span><span class="p">[</span><span class="n">r</span><span class="p">]</span>
+                <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">t</span><span class="p">]</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">valid_triples</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">data_path</span><span class="p">,</span> <span class="s2">&quot;test.tsv&quot;</span><span class="p">),</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fin</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fin</span><span class="p">:</span>
+                <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+                <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="nb">float</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">h</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">last_e</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">h</span><span class="p">]</span> <span class="o">=</span> <span class="n">last_e</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">id2ent</span><span class="p">[</span><span class="n">last_e</span><span class="p">]</span> <span class="o">=</span> <span class="n">h</span>
+
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">last_e</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="n">last_e</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">id2ent</span><span class="p">[</span><span class="n">last_e</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span>
+
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">last_r</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">rel2id</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">=</span> <span class="n">last_r</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">id2rel</span><span class="p">[</span><span class="n">last_r</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span>
+
+                <span class="n">h</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">h</span><span class="p">]</span>
+                <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel2id</span><span class="p">[</span><span class="n">r</span><span class="p">]</span>
+                <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">t</span><span class="p">]</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">test_triples</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>
+
+        <span class="n">softlogic_temp_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">data_path</span><span class="p">,</span> <span class="s2">&quot;softlogic.tsv&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">softlogic_temp_path</span><span class="p">):</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">data_path</span><span class="p">,</span> <span class="s2">&quot;softlogic.tsv&quot;</span><span class="p">),</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fin</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fin</span><span class="p">:</span>
+                    <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+                    <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="nb">float</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">h</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">last_e</span> <span class="o">+=</span> <span class="mi">1</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">h</span><span class="p">]</span> <span class="o">=</span> <span class="n">last_e</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">id2ent</span><span class="p">[</span><span class="n">last_e</span><span class="p">]</span> <span class="o">=</span> <span class="n">h</span>
+
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">last_e</span> <span class="o">+=</span> <span class="mi">1</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="n">last_e</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">id2ent</span><span class="p">[</span><span class="n">last_e</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span>
+
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">last_r</span> <span class="o">+=</span> <span class="mi">1</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">rel2id</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">=</span> <span class="n">last_r</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">id2rel</span> <span class="o">=</span> <span class="n">r</span>
+
+                    <span class="n">h</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">h</span><span class="p">]</span>
+                    <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel2id</span><span class="p">[</span><span class="n">r</span><span class="p">]</span>
+                    <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">t</span><span class="p">]</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">PSL_triples</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">RatioOfPSL</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">PSL_triples</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">train_triples</span><span class="p">)</span> <span class="c1"># calculate the ratio of the number of PSL samples to the number of training samples.</span>
+
+        <span class="c1"># When train student_model in UPGAT, get pseudo_triples as below.</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">model_name</span> <span class="o">==</span> <span class="s1">&#39;UPGAT&#39;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">teacher_model</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">data_path</span><span class="p">,</span> <span class="s2">&quot;pseudo.tsv&quot;</span><span class="p">),</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fin</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fin</span><span class="p">:</span>
+                    <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+                    <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">pseudo_triples</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">pseudo_bs</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pseudo_triples</span><span class="p">)</span> <span class="o">//</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">train_triples</span><span class="p">)</span><span class="o">//</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">train_bs</span><span class="p">)</span>
+            <span class="n">pseudo_dataloader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pseudo_triples</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">pseudo_bs</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">num_workers</span><span class="p">,</span> <span class="n">pin_memory</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">drop_last</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pseudo_dataiter</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">pseudo_dataloader</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">all_true_triples</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">train_triples</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">valid_triples</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">test_triples</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">pseudo_triples</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">all_true_triples</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">train_triples</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">valid_triples</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">test_triples</span>
+            <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">num_ent</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">num_rel</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rel2id</span><span class="p">)</span></div>
+
+    <span class="c1"># def get_ndcg_test_data(self):</span>
+    <span class="c1">#     # 使用test_triples构造成hr_map</span>
+    <span class="c1">#     with open(os.path.join(self.args.data_path, &quot;ndcg_test.pickle&quot;), &#39;rb&#39;) as f:</span>
+    <span class="c1">#         self.hr_map = pickle.load(f)  # unpickle</span>
+
+        <span class="c1"># self.hr_map = {}</span>
+        <span class="c1"># for triple in self.test_triples:</span>
+        <span class="c1">#     h, r, t, w = triple</span>
+        <span class="c1">#     if self.hr_map.get(h) is None:</span>
+        <span class="c1">#         self.hr_map[h] = {}</span>
+        <span class="c1">#     if self.hr_map[h].get(r) is None:</span>
+        <span class="c1">#         self.hr_map[h][r] = {t: w}</span>
+        <span class="c1">#     else:</span>
+        <span class="c1">#         self.hr_map[h][r][t] = w</span>
+
+        <span class="c1"># tmp = 0</span>
+        <span class="c1"># for h in self.hr_map:</span>
+        <span class="c1">#     for r in self.hr_map[h]:</span>
+        <span class="c1">#         tmp = max(tmp, len(self.hr_map[h][r].keys()))</span>
+        <span class="c1">#</span>
+        <span class="c1"># print(self.hr_map)</span>
+        <span class="c1"># print(len(self.hr_map.keys()))</span>
+        <span class="c1"># print(tmp)</span>
+        <span class="c1"># exit(0)</span>
+
+
+<div class="viewcode-block" id="UKGData.get_hr2t_rt2h_from_train"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGData.get_hr2t_rt2h_from_train">[docs]</a>    <span class="k">def</span> <span class="nf">get_hr2t_rt2h_from_train</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the set of hr2t and rt2h from train dataset, the data type is numpy.</span>
+
+<span class="sd">        Update:</span>
+<span class="sd">            self.hr2t_train: The set of hr2t.</span>
+<span class="sd">            self.rt2h_train: The set of rt2h.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">for</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">train_triples</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">hr2t_train</span><span class="p">[(</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">)]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rt2h_train</span><span class="p">[(</span><span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">)]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">hr2t_train</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">hr2t_train</span><span class="p">[(</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">)]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hr2t_train</span><span class="p">[(</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">)]))</span>
+        <span class="k">for</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">rt2h_train</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rt2h_train</span><span class="p">[(</span><span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">)]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rt2h_train</span><span class="p">[(</span><span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">)]))</span></div>
+
+    <span class="c1"># Add by Messi</span>
+<div class="viewcode-block" id="UKGData.get_hr2t_rt2h_from_total"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGData.get_hr2t_rt2h_from_total">[docs]</a>    <span class="k">def</span> <span class="nf">get_hr2t_rt2h_from_total</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the set of hr2t and rt2h from whole dataset(train+val+test), the data type is numpy.</span>
+
+<span class="sd">        Update:</span>
+<span class="sd">            self.hr2t_total: The set of hr2t in whole dataset.</span>
+<span class="sd">            self.rt2h_total: The set of rt2h in whole dataset.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">all_true_triples</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">hr2t_total</span><span class="p">[(</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">)]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rt2h_total</span><span class="p">[(</span><span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">)]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">hr2t_total</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">hr2t_total</span><span class="p">[(</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">)]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hr2t_total</span><span class="p">[(</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">)]))</span>
+        <span class="k">for</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">rt2h_total</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rt2h_total</span><span class="p">[(</span><span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">)]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rt2h_total</span><span class="p">[(</span><span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">)]))</span></div>
+
+<div class="viewcode-block" id="UKGData.count_frequency"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGData.count_frequency">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">count_frequency</span><span class="p">(</span><span class="n">triples</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;Get frequency of a partial triple like (head, relation) or (relation, tail).</span>
+
+<span class="sd">        The frequency will be used for subsampling like word2vec.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            triples: Sampled triples.</span>
+<span class="sd">            start: Initial count number.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            count: Record the number of (head, relation).</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">head</span><span class="p">,</span> <span class="n">relation</span><span class="p">,</span> <span class="n">tail</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">triples</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">head</span><span class="p">,</span> <span class="n">relation</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">count</span><span class="p">:</span>
+                <span class="n">count</span><span class="p">[(</span><span class="n">head</span><span class="p">,</span> <span class="n">relation</span><span class="p">)]</span> <span class="o">=</span> <span class="n">start</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">count</span><span class="p">[(</span><span class="n">head</span><span class="p">,</span> <span class="n">relation</span><span class="p">)]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">tail</span><span class="p">,</span> <span class="o">-</span><span class="n">relation</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">count</span><span class="p">:</span>
+                <span class="n">count</span><span class="p">[(</span><span class="n">tail</span><span class="p">,</span> <span class="o">-</span><span class="n">relation</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">=</span> <span class="n">start</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">count</span><span class="p">[(</span><span class="n">tail</span><span class="p">,</span> <span class="o">-</span><span class="n">relation</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">count</span></div>
+
+<div class="viewcode-block" id="UKGData.get_h2rt_t2hr_from_train"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGData.get_h2rt_t2hr_from_train">[docs]</a>    <span class="k">def</span> <span class="nf">get_h2rt_t2hr_from_train</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the set of h2rt and t2hr from train dataset, the data type is numpy.</span>
+
+<span class="sd">        Update:</span>
+<span class="sd">            self.h2rt_train: The set of h2rt.</span>
+<span class="sd">            self.t2rh_train: The set of t2hr.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">train_triples</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">h2rt_train</span><span class="p">[</span><span class="n">h</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">t2rh_train</span><span class="p">[</span><span class="n">t</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">r</span><span class="p">,</span> <span class="n">h</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">h2rt_train</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">h2rt_train</span><span class="p">[</span><span class="n">h</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h2rt_train</span><span class="p">[</span><span class="n">h</span><span class="p">]))</span>
+        <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">t2rh_train</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">t2rh_train</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">t2rh_train</span><span class="p">[</span><span class="n">t</span><span class="p">]))</span></div>
+
+<div class="viewcode-block" id="UKGData.get_hr_train"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGData.get_hr_train">[docs]</a>    <span class="k">def</span> <span class="nf">get_hr_train</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;Change the generation mode of batch.</span>
+<span class="sd">        Merging triples which have same head and relation for 1vsN training mode.</span>
+
+<span class="sd">        update:</span>
+<span class="sd">            self.train_triples: The tuple(hr, t) list for training</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">t_triples</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">train_triples</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">train_triples</span> <span class="o">=</span> <span class="p">[(</span><span class="n">hr</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">t</span><span class="p">))</span> <span class="k">for</span> <span class="p">(</span><span class="n">hr</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">hr2t_train</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span></div></div>
+
+
+<div class="viewcode-block" id="UKGEBaseSampler"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler">[docs]</a><span class="k">class</span> <span class="nc">UKGEBaseSampler</span><span class="p">(</span><span class="n">UKGData</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        data processing for UKG data, the sampling method is consistent with NeuralKG (https://github.com/zjukg/NeuralKG)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">get_hr2t_rt2h_from_train</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">get_hr2t_rt2h_from_total</span><span class="p">()</span>
+
+<div class="viewcode-block" id="UKGEBaseSampler.corrupt_head"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.corrupt_head">[docs]</a>    <span class="k">def</span> <span class="nf">corrupt_head</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">num_max</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Negative sampling of head entities.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            t: Tail entity in triple.</span>
+<span class="sd">            r: Relation in triple.</span>
+<span class="sd">            num_max: The maximum of negative samples generated</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            neg: The negative sample of head entity filtering out the positive head entity.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">tmp</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">num_ent</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">num_max</span><span class="p">,))</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">filter_flag</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">tmp</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">in1d</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rt2h_total</span><span class="p">[(</span><span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">)],</span> <span class="n">assume_unique</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">invert</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">neg</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">neg</span></div>
+
+<div class="viewcode-block" id="UKGEBaseSampler.corrupt_tail"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.corrupt_tail">[docs]</a>    <span class="k">def</span> <span class="nf">corrupt_tail</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">num_max</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Negative sampling of tail entities.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            h: Head entity in triple.</span>
+<span class="sd">            r: Relation in triple.</span>
+<span class="sd">            num_max: The maximum of negative samples generated</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            neg: The negative sample of tail entity filtering out the positive tail entity.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">tmp</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">num_ent</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">num_max</span><span class="p">,))</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">filter_flag</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">tmp</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">in1d</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hr2t_total</span><span class="p">[(</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">)],</span> <span class="n">assume_unique</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">invert</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">neg</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">neg</span></div>
+
+<div class="viewcode-block" id="UKGEBaseSampler.head_batch"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.head_batch">[docs]</a>    <span class="k">def</span> <span class="nf">head_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">neg_size</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Negative sampling of head entities.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            h: Head entity in triple</span>
+<span class="sd">            t: Tail entity in triple.</span>
+<span class="sd">            r: Relation in triple.</span>
+<span class="sd">            neg_size: The size of negative samples.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            The negative sample of head entity. [neg_size]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">neg_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">neg_cur_size</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">neg_cur_size</span> <span class="o">&lt;</span> <span class="n">neg_size</span><span class="p">:</span>
+            <span class="n">neg_tmp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">corrupt_head</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">num_max</span><span class="o">=</span><span class="p">(</span><span class="n">neg_size</span> <span class="o">-</span> <span class="n">neg_cur_size</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="n">neg_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">neg_tmp</span><span class="p">)</span>
+            <span class="n">neg_cur_size</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">neg_tmp</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">neg_list</span><span class="p">)[:</span><span class="n">neg_size</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="UKGEBaseSampler.tail_batch"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.tail_batch">[docs]</a>    <span class="k">def</span> <span class="nf">tail_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">neg_size</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Negative sampling of tail entities.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            h: Head entity in triple</span>
+<span class="sd">            t: Tail entity in triple.</span>
+<span class="sd">            r: Relation in triple.</span>
+<span class="sd">            neg_size: The size of negative samples.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            The negative sample of tail entity. [neg_size]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">neg_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">neg_cur_size</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">neg_cur_size</span> <span class="o">&lt;</span> <span class="n">neg_size</span><span class="p">:</span>
+            <span class="n">neg_tmp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">corrupt_tail</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">num_max</span><span class="o">=</span><span class="p">(</span><span class="n">neg_size</span> <span class="o">-</span> <span class="n">neg_cur_size</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="n">neg_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">neg_tmp</span><span class="p">)</span>
+            <span class="n">neg_cur_size</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">neg_tmp</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">neg_list</span><span class="p">)[:</span><span class="n">neg_size</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="UKGEBaseSampler.get_train"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.get_train">[docs]</a>    <span class="k">def</span> <span class="nf">get_train</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">train_triples</span></div>
+
+<div class="viewcode-block" id="UKGEBaseSampler.get_valid"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.get_valid">[docs]</a>    <span class="k">def</span> <span class="nf">get_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">valid_triples</span></div>
+
+<div class="viewcode-block" id="UKGEBaseSampler.get_test"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.get_test">[docs]</a>    <span class="k">def</span> <span class="nf">get_test</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">test_triples</span></div>
+
+<div class="viewcode-block" id="UKGEBaseSampler.get_PSL"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.get_PSL">[docs]</a>    <span class="k">def</span> <span class="nf">get_PSL</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">PSL_triples</span></div>
+
+<div class="viewcode-block" id="UKGEBaseSampler.get_all_true_triples"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.get_all_true_triples">[docs]</a>    <span class="k">def</span> <span class="nf">get_all_true_triples</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">all_true_triples</span></div>
+
+<div class="viewcode-block" id="UKGEBaseSampler.get_hr_map"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.get_hr_map">[docs]</a>    <span class="k">def</span> <span class="nf">get_hr_map</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">hr_map</span></div></div>
+
+
+<div class="viewcode-block" id="GMUCData"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCData">[docs]</a><span class="k">class</span> <span class="nc">GMUCData</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Data processing for few-shot GMUC &amp; GMUC+ data.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        args: Some pre-set parameters, such as dataset path, etc.</span>
+<span class="sd">        ent2id: Encoding the entity in triples, type: dict.</span>
+<span class="sd">        rel2id: Encoding the relation in triples, type: dict.</span>
+<span class="sd">        symbol2id: Encoding the entity and relation in triples, type: dict.</span>
+<span class="sd">        e1rel_e2: Record the tail corresponding to the same head and relation, type: defaultdict(class:list).</span>
+<span class="sd">        rele1_e2: Record the tail corresponding to the same relation and head, type: defaultdict(class:dict).</span>
+<span class="sd">        train_tasks: Record the triples for training, type: dict.</span>
+<span class="sd">        dev_tasks: Record the triples for validation, type: dict.</span>
+<span class="sd">        test_tasks: Record the triples for testing, type: dict.</span>
+<span class="sd">        task_pool: A task is a relation, type: list.</span>
+<span class="sd">        path_graph: Background triples, type: list.</span>
+<span class="sd">        type2ents: All entities of the same type, type: defaultdict(class:set).</span>
+<span class="sd">        known_rels: The triples of path_graph and train_tasks, type: defaultdict(class:list).</span>
+<span class="sd">        num_tasks: The number of tasks, type: int.</span>
+<span class="sd">        rel2candidates: Record the entities corresponding to the same relation, type: list.</span>
+<span class="sd">        ent2ic: Calculate IIC for every entity, type: dict.</span>
+<span class="sd">        rel_uc1: Calculate IIC for every relation, type: dict.</span>
+<span class="sd">        rel_uc2: Calculate IIC for every relation, type: dict.</span>
+<span class="sd">        connections: Neighbor information for each entity, type: numpy.</span>
+<span class="sd">        e1_rele2: Record the relation and tail corresponding to the same head, type: defaultdict(class:list).</span>
+<span class="sd">        e1_degrees: Record the number of neighbors per entity, type: defaultdict(class:int).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rel2id</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">symbol2id</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># ent + rel</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rel2candidates</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">e1rel_e2</span> <span class="o">=</span> <span class="n">ddict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rele1_e2</span> <span class="o">=</span> <span class="n">ddict</span><span class="p">(</span><span class="nb">dict</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">train_tasks</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/train_tasks.json&#39;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dev_tasks</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/dev_tasks.json&#39;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">test_tasks</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/test_tasks.json&#39;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">task_pool</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">train_tasks</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_tasks</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">task_pool</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">path_graph</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/path_graph&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type2ents</span> <span class="o">=</span> <span class="n">ddict</span><span class="p">(</span><span class="nb">set</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">known_rels</span> <span class="o">=</span> <span class="n">ddict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">get_tasks</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">get_rel2candidates</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">get_e1rel_e2</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">get_rele1_e2</span><span class="p">()</span>
+        <span class="n">degrees</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">build_graph</span><span class="p">(</span><span class="n">max_</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">max_neighbor</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">has_ont</span><span class="p">:</span>  <span class="c1"># for GMUC+</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ent2ic</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rel_uc1</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rel_uc2</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">get_ontology</span><span class="p">()</span>
+
+<div class="viewcode-block" id="GMUCData.get_tasks"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCData.get_tasks">[docs]</a>    <span class="k">def</span> <span class="nf">get_tasks</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get entity/relation id, and entity/relation number.</span>
+
+<span class="sd">        Update:</span>
+<span class="sd">            self.ent2id: Entity to id.</span>
+<span class="sd">            self.rel2id: Relation to id.</span>
+<span class="sd">            self.symbol2id: Entity and relation to id.</span>
+<span class="sd">            self.args.num_ent: Entity number.</span>
+<span class="sd">            self.args.num_rel: Relation number.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">eid</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="n">rid</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">train_tasks</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">rid</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">rel2id</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">rid</span>
+            <span class="k">for</span> <span class="n">triple</span> <span class="ow">in</span> <span class="n">v</span><span class="p">:</span>
+                <span class="n">e1</span><span class="p">,</span> <span class="n">rel</span><span class="p">,</span> <span class="n">e2</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">triple</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">triple</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">triple</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">triple</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">e1</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">eid</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">e1</span><span class="p">]</span> <span class="o">=</span> <span class="n">eid</span>
+
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">e2</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">eid</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">e2</span><span class="p">]</span> <span class="o">=</span> <span class="n">eid</span>
+
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dev_tasks</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">rid</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">rel2id</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">rid</span>
+            <span class="k">for</span> <span class="n">triple</span> <span class="ow">in</span> <span class="n">v</span><span class="p">:</span>
+                <span class="n">e1</span><span class="p">,</span> <span class="n">rel</span><span class="p">,</span> <span class="n">e2</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">triple</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">triple</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">triple</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">triple</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">e1</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">eid</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">e1</span><span class="p">]</span> <span class="o">=</span> <span class="n">eid</span>
+
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">e2</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">eid</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">e2</span><span class="p">]</span> <span class="o">=</span> <span class="n">eid</span>
+
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">test_tasks</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">rid</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">rel2id</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">rid</span>
+            <span class="k">for</span> <span class="n">triple</span> <span class="ow">in</span> <span class="n">v</span><span class="p">:</span>
+                <span class="n">e1</span><span class="p">,</span> <span class="n">rel</span><span class="p">,</span> <span class="n">e2</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">triple</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">triple</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">triple</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">triple</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">e1</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">eid</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">e1</span><span class="p">]</span> <span class="o">=</span> <span class="n">eid</span>
+
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">e2</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">eid</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">e2</span><span class="p">]</span> <span class="o">=</span> <span class="n">eid</span>
+
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">path_graph</span><span class="p">:</span>
+            <span class="n">e1</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">e2</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">rid</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">rel2id</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">rid</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="s1">&#39;_inv&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">rid</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">rel2id</span><span class="p">[</span><span class="n">k</span> <span class="o">+</span> <span class="s1">&#39;_inv&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">rid</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">e1</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">eid</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">e1</span><span class="p">]</span> <span class="o">=</span> <span class="n">eid</span>
+
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">e2</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">eid</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">e2</span><span class="p">]</span> <span class="o">=</span> <span class="n">eid</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">num_ent</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">num_rel</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rel2id</span><span class="p">)</span>
+
+        <span class="n">symbol_id</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel2id</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;OOV&#39;</span><span class="p">]:</span>
+                <span class="n">symbol_id</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
+                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;OOV&#39;</span><span class="p">]:</span>
+                <span class="n">symbol_id</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
+                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="n">symbol_id</span><span class="p">[</span><span class="s1">&#39;PAD&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">symbol2id</span> <span class="o">=</span> <span class="n">symbol_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">symbol2vec</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_symbols</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">symbol2id</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c1"># one for &#39;PAD&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">num_symbols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_symbols</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pad_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_symbols</span></div>
+
+<div class="viewcode-block" id="GMUCData.get_rel2candidates"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCData.get_rel2candidates">[docs]</a>    <span class="k">def</span> <span class="nf">get_rel2candidates</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the set of rel2candidates. A candidate is an entity under a relationship.</span>
+
+<span class="sd">        Update:</span>
+<span class="sd">            self.known_rels: The set of known_rels.</span>
+<span class="sd">            self.type2ents: The set of type2ents.</span>
+<span class="sd">            self.rel2candidates: Obtain 1000 entities of the same type as a candidate set.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># known_rels = path_graph + train_tasks</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">path_graph</span><span class="p">:</span>
+            <span class="n">e1</span><span class="p">,</span> <span class="n">rel</span><span class="p">,</span> <span class="n">e2</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">known_rels</span><span class="p">[</span><span class="n">rel</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">e1</span><span class="p">,</span> <span class="n">rel</span><span class="p">,</span> <span class="n">e2</span><span class="p">,</span> <span class="n">s</span><span class="p">])</span>
+
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">triples</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">train_tasks</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">known_rels</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">triples</span>
+
+        <span class="n">all_reason_relations</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">known_rels</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dev_tasks</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">test_tasks</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="n">all_reason_relation_triples</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">known_rels</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dev_tasks</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">test_tasks</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_reason_relations</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_reason_relation_triples</span><span class="p">)</span>
+
+        <span class="c1"># rel2candidates = {rel: [tail entity candidates]}</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">dataset_name</span> <span class="o">==</span> <span class="s2">&quot;nl27k&quot;</span><span class="p">:</span>
+            <span class="n">ents</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">ents</span><span class="p">:</span>
+                <span class="n">type_</span> <span class="o">=</span> <span class="n">ent</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">type2ents</span><span class="p">[</span><span class="n">type_</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">ent</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">rel</span><span class="p">,</span> <span class="n">triples</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">all_reason_relations</span><span class="p">,</span> <span class="n">all_reason_relation_triples</span><span class="p">):</span>
+                <span class="c1"># all possible tail entity type</span>
+                <span class="n">possible_types</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+                <span class="k">for</span> <span class="n">triple</span> <span class="ow">in</span> <span class="n">triples</span><span class="p">:</span>
+                    <span class="n">tail_type</span> <span class="o">=</span> <span class="n">triple</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+                    <span class="n">possible_types</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tail_type</span><span class="p">)</span>
+
+                <span class="c1"># all possible tail entity candiates</span>
+                <span class="n">candidates</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="k">for</span> <span class="n">tail_type</span> <span class="ow">in</span> <span class="n">possible_types</span><span class="p">:</span>
+                    <span class="n">candidates</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">type2ents</span><span class="p">[</span><span class="n">tail_type</span><span class="p">])</span>
+
+                <span class="n">candidates</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">candidates</span><span class="p">))</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">candidates</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">:</span>
+                    <span class="n">candidates</span> <span class="o">=</span> <span class="n">candidates</span><span class="p">[:</span><span class="mi">1000</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">rel2candidates</span><span class="p">[</span><span class="n">rel</span><span class="p">]</span> <span class="o">=</span> <span class="n">candidates</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">rel</span><span class="p">,</span> <span class="n">triples</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">all_reason_relations</span><span class="p">,</span> <span class="n">all_reason_relation_triples</span><span class="p">):</span>
+                <span class="n">candidates</span> <span class="o">=</span> <span class="p">[]</span>
+
+                <span class="k">for</span> <span class="n">triple</span> <span class="ow">in</span> <span class="n">triples</span><span class="p">:</span>
+                    <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">triple</span>
+                    <span class="n">candidates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+                    <span class="n">candidates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+                <span class="n">candidates</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">candidates</span><span class="p">))</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">candidates</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">:</span>
+                    <span class="n">candidates</span> <span class="o">=</span> <span class="n">candidates</span><span class="p">[:</span><span class="mi">1000</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">rel2candidates</span><span class="p">[</span><span class="n">rel</span><span class="p">]</span> <span class="o">=</span> <span class="n">candidates</span></div>
+
+<div class="viewcode-block" id="GMUCData.get_e1rel_e2"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCData.get_e1rel_e2">[docs]</a>    <span class="k">def</span> <span class="nf">get_e1rel_e2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the set of e1rel_e2 from all dataset.</span>
+
+<span class="sd">        Update:</span>
+<span class="sd">            self.e1rel_e2: The set of e1rel_e2.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">task_triples</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">train_tasks</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dev_tasks</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">test_tasks</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+        <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">task_triples</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">triple</span> <span class="ow">in</span> <span class="n">task</span><span class="p">:</span>
+                <span class="n">e1</span><span class="p">,</span> <span class="n">rel</span><span class="p">,</span> <span class="n">e2</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">triple</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">e1rel_e2</span><span class="p">[</span><span class="n">e1</span> <span class="o">+</span> <span class="n">rel</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e2</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GMUCData.get_rele1_e2"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCData.get_rele1_e2">[docs]</a>    <span class="k">def</span> <span class="nf">get_rele1_e2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the set of get_rele1_e2 from dev and test dataset.</span>
+
+<span class="sd">        Update:</span>
+<span class="sd">            self.rele1_e2: The set of rele1_e2.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">tasks</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dev_tasks</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">test_tasks</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+
+        <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">tasks</span><span class="p">:</span>
+            <span class="n">d</span> <span class="o">=</span> <span class="n">ddict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">triple</span> <span class="ow">in</span> <span class="n">task</span><span class="p">:</span>
+                <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">triple</span>
+                <span class="n">d</span><span class="p">[</span><span class="n">h</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rele1_e2</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span></div>
+
+<div class="viewcode-block" id="GMUCData.get_ontology"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCData.get_ontology">[docs]</a>    <span class="k">def</span> <span class="nf">get_ontology</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the IIC of the entity and UC of the relation.</span>
+
+<span class="sd">        IIC(c) = 1-\frac{log(hypo(c)+1)}{log(n)}</span>
+
+<span class="sd">        UC_r1(r)=\sum_{h \in D_r, t \in R_r} (UC_e(h) + UC_e(t))</span>
+<span class="sd">        UC_r2(r) = |D_r| * |R_r|</span>
+
+<span class="sd">        Update:</span>
+<span class="sd">            self.ent2ic: The set of rele1_e2.</span>
+<span class="sd">            self.rel_uc1: The set of rele1_e2.</span>
+<span class="sd">            self.rel_uc2: The set of rele1_e2.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">df_ont</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/ontology.csv&#39;</span><span class="p">)</span>
+        <span class="n">pairs</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">concept_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df_ont</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">df_ont</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;rel&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;is_A&#39;</span><span class="p">:</span>
+                <span class="n">c1</span> <span class="o">=</span> <span class="n">df_ont</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">]</span>
+                <span class="n">c2</span> <span class="o">=</span> <span class="n">df_ont</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">]</span>
+                <span class="n">pairs</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">))</span>  <span class="c1"># c1是c2的子类</span>
+                <span class="n">concept_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">c1</span><span class="p">)</span>
+                <span class="n">concept_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">c2</span><span class="p">)</span>
+
+        <span class="c1"># Extract the range and domain of the relationship</span>
+        <span class="c1"># Get all the relationships</span>
+        <span class="n">relation_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="n">df_domain</span> <span class="o">=</span> <span class="n">df_ont</span><span class="p">[</span><span class="n">df_ont</span><span class="o">.</span><span class="n">rel</span> <span class="o">==</span> <span class="s1">&#39;domain&#39;</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df_domain</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+            <span class="n">e</span> <span class="o">=</span> <span class="n">df_domain</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">]</span>
+            <span class="n">relation_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="c1"># Extract entity types</span>
+        <span class="n">entity_set</span> <span class="o">=</span> <span class="n">concept_set</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">relation_set</span><span class="p">)</span>
+
+        <span class="c1"># Calculate the sub-words for each entity type</span>
+        <span class="n">hypo_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>  <span class="c1"># The next subordinate word of the entity</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">entity_set</span><span class="p">:</span>
+            <span class="n">hypo_list</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="c1"># Look for the subterfuge of this entity</span>
+            <span class="k">for</span> <span class="n">pair</span> <span class="ow">in</span> <span class="n">pairs</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">i</span><span class="p">:</span>
+                    <span class="n">hypo_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pair</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">hypo_dict</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">hypo_list</span>
+
+        <span class="n">real_hypo_dict</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">hypo_dict</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">entity_set</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">real_hypo_dict</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+                <span class="n">real_hypo_dict</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">real_hypo_dict</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+            <span class="n">real_hypo_dict</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">real_hypo_dict</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+
+        <span class="c1"># Calculate the IC value of the entity</span>
+        <span class="n">ent_type_ic</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">entity_set</span><span class="p">:</span>
+            <span class="n">ent_type_ic</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">real_hypo_dict</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">292</span><span class="p">)</span>
+
+        <span class="n">ent2uc</span> <span class="o">=</span> <span class="n">ddict</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+        <span class="n">rel2uc1</span> <span class="o">=</span> <span class="n">ddict</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>  <span class="c1"># uc(h)+uc(t)</span>
+        <span class="n">rel2uc2</span> <span class="o">=</span> <span class="n">ddict</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>  <span class="c1"># |domain|*|range|</span>
+
+        <span class="n">ent2type</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">df_type</span> <span class="o">=</span> <span class="n">df_ont</span><span class="p">[</span><span class="n">df_ont</span><span class="o">.</span><span class="n">rel</span> <span class="o">==</span> <span class="s1">&#39;type&#39;</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df_type</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+            <span class="n">h</span> <span class="o">=</span> <span class="n">df_type</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">]</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="n">df_type</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">]</span>
+            <span class="n">ent2type</span><span class="p">[</span><span class="n">h</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span>
+
+        <span class="n">ent</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ent</span><span class="p">:</span>
+            <span class="n">type_</span> <span class="o">=</span> <span class="n">ent2type</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">ent2uc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">ent_type_ic</span><span class="p">[</span><span class="n">type_</span><span class="p">]</span>
+        <span class="n">ent_uc</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ent2uc</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+        <span class="n">mu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">ent_uc</span><span class="p">)</span>
+        <span class="n">sigma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">ent_uc</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">ent2uc</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">ent2uc</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">v</span> <span class="o">-</span> <span class="n">mu</span><span class="p">)</span> <span class="o">/</span> <span class="n">sigma</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ent2ic</span> <span class="o">=</span> <span class="n">ent2uc</span>
+
+        <span class="c1"># Calculate the UC value of the relation</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">known_rels</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">rel</span> <span class="o">=</span> <span class="n">k</span>
+            <span class="n">domain_</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+            <span class="n">range_</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">v</span><span class="p">:</span>
+                <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">_</span>
+                <span class="n">h_type</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+                <span class="n">t_type</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+                <span class="n">domain_</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">h_type</span><span class="p">)</span>
+                <span class="n">range_</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">t_type</span><span class="p">)</span>
+            <span class="n">ic_sum</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">domain_</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">range_</span><span class="p">:</span>
+                    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="n">ic_sum</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">ent_type_ic</span><span class="p">[</span><span class="s1">&#39;concept:&#39;</span> <span class="o">+</span> <span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">ent_type_ic</span><span class="p">[</span><span class="s1">&#39;concept:&#39;</span> <span class="o">+</span> <span class="n">j</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+
+            <span class="n">rel2uc1</span><span class="p">[</span><span class="n">rel</span><span class="p">]</span> <span class="o">=</span> <span class="n">ic_sum</span> <span class="o">/</span> <span class="n">count</span>
+            <span class="n">rel2uc2</span><span class="p">[</span><span class="n">rel</span><span class="p">]</span> <span class="o">=</span> <span class="n">count</span>
+
+        <span class="c1"># normalization</span>
+        <span class="n">rel_uc1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">rel2uc1</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+        <span class="n">rel_uc2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">rel2uc2</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+        <span class="n">mu1</span><span class="p">,</span> <span class="n">mu2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">rel_uc1</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">rel_uc2</span><span class="p">)</span>
+        <span class="n">sigma1</span><span class="p">,</span> <span class="n">sigma2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">rel_uc1</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">rel_uc2</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">rel2uc1</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">rel2uc1</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">v</span> <span class="o">-</span> <span class="n">mu1</span><span class="p">)</span> <span class="o">/</span> <span class="n">sigma1</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">rel2uc2</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">rel2uc2</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">v</span> <span class="o">-</span> <span class="n">mu2</span><span class="p">)</span> <span class="o">/</span> <span class="n">sigma2</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">rel_uc1</span> <span class="o">=</span> <span class="n">rel2uc1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rel_uc2</span> <span class="o">=</span> <span class="n">rel2uc2</span></div>
+
+<div class="viewcode-block" id="GMUCData.build_graph"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCData.build_graph">[docs]</a>    <span class="k">def</span> <span class="nf">build_graph</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">max_</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Build the graph according to path_graph.</span>
+
+<span class="sd">        Update:</span>
+<span class="sd">            self.connections: The set of connections.</span>
+<span class="sd">            self.e1_rele2: The set of e1_rele2.</span>
+<span class="sd">            self.e1_degrees: The set of e1_degrees.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">connections</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">num_ent</span><span class="p">,</span> <span class="n">max_</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">pad_id</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">e1_rele2</span> <span class="o">=</span> <span class="n">ddict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">e1_degrees</span> <span class="o">=</span> <span class="n">ddict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">data_path</span> <span class="o">+</span> <span class="s1">&#39;/path_graph&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">lines</span><span class="p">):</span>
+                <span class="n">e1</span><span class="p">,</span> <span class="n">rel</span><span class="p">,</span> <span class="n">e2</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">e1_rele2</span><span class="p">[</span><span class="n">e1</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">symbol2id</span><span class="p">[</span><span class="n">rel</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">symbol2id</span><span class="p">[</span><span class="n">e2</span><span class="p">],</span> <span class="nb">float</span><span class="p">(</span><span class="n">s</span><span class="p">)))</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">e1_rele2</span><span class="p">[</span><span class="n">e2</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">symbol2id</span><span class="p">[</span><span class="n">rel</span> <span class="o">+</span> <span class="s1">&#39;_inv&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">symbol2id</span><span class="p">[</span><span class="n">e1</span><span class="p">],</span> <span class="nb">float</span><span class="p">(</span><span class="n">s</span><span class="p">)))</span>
+
+        <span class="n">degrees</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">ent</span><span class="p">,</span> <span class="n">id_</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="c1"># Take out a neighbor of a head entity</span>
+            <span class="n">neighbors</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">e1_rele2</span><span class="p">[</span><span class="n">ent</span><span class="p">]</span>
+            <span class="c1"># The number of this neighbor is limited only to max_</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">neighbors</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">max_</span><span class="p">:</span>
+                <span class="n">neighbors</span> <span class="o">=</span> <span class="n">neighbors</span><span class="p">[:</span><span class="n">max_</span><span class="p">]</span>
+            <span class="n">degrees</span><span class="p">[</span><span class="n">ent</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">neighbors</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">e1_degrees</span><span class="p">[</span><span class="n">id_</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">neighbors</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">neighbors</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">connections</span><span class="p">[</span><span class="n">id_</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># relation</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">connections</span><span class="p">[</span><span class="n">id_</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">_</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># tail entity</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">connections</span><span class="p">[</span><span class="n">id_</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">_</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># confidence</span>
+        <span class="k">return</span> <span class="n">degrees</span></div></div>
+
+
+<div class="viewcode-block" id="GMUCBaseSampler"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCBaseSampler">[docs]</a><span class="k">class</span> <span class="nc">GMUCBaseSampler</span><span class="p">(</span><span class="n">GMUCData</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Traditional GMUC random sampling mode.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+
+<div class="viewcode-block" id="GMUCBaseSampler.generate_false"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCBaseSampler.generate_false">[docs]</a>    <span class="k">def</span> <span class="nf">generate_false</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_triples</span><span class="p">,</span> <span class="n">candidates</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Generate false triples.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            query_triples: Query set.</span>
+<span class="sd">            candidates: All entities that belong to the relationship.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            false_pairs: False triples.(confidence = 0)</span>
+<span class="sd">            false_left: The head entity of false triples.</span>
+<span class="sd">            false_right: The tail entity of false triples.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">false_pairs</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">false_left</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">false_right</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">triple</span> <span class="ow">in</span> <span class="n">query_triples</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">num_neg</span><span class="p">):</span>
+                <span class="n">e_h</span> <span class="o">=</span> <span class="n">triple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">rel</span> <span class="o">=</span> <span class="n">triple</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+                <span class="n">e_t</span> <span class="o">=</span> <span class="n">triple</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+                <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+                    <span class="n">noise</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">candidates</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">noise</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">e1rel_e2</span><span class="p">[</span><span class="n">e_h</span> <span class="o">+</span> <span class="n">rel</span><span class="p">])</span> <span class="ow">and</span> <span class="n">noise</span> <span class="o">!=</span> <span class="n">e_t</span><span class="p">:</span>
+                        <span class="k">break</span>
+                <span class="n">false_pairs</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">symbol2id</span><span class="p">[</span><span class="n">e_h</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">symbol2id</span><span class="p">[</span><span class="n">noise</span><span class="p">],</span> <span class="mf">0.0</span><span class="p">])</span>  <span class="c1"># (h, t, s)</span>
+                <span class="n">false_left</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">e_h</span><span class="p">])</span>
+                <span class="n">false_right</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">noise</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="n">false_pairs</span><span class="p">,</span> <span class="n">false_left</span><span class="p">,</span> <span class="n">false_right</span></div>
+
+<div class="viewcode-block" id="GMUCBaseSampler.get_train"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCBaseSampler.get_train">[docs]</a>    <span class="k">def</span> <span class="nf">get_train</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="p">}</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">train_tasks</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span></div>
+
+<div class="viewcode-block" id="GMUCBaseSampler.get_valid"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCBaseSampler.get_valid">[docs]</a>    <span class="k">def</span> <span class="nf">get_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="p">}</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dev_tasks</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span></div>
+
+<div class="viewcode-block" id="GMUCBaseSampler.get_test"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCBaseSampler.get_test">[docs]</a>    <span class="k">def</span> <span class="nf">get_test</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="p">}</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">test_tasks</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span></div></div>
+</pre></div>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By SEU
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, SEUKGE.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

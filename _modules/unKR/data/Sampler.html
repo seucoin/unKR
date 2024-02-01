@@ -1,0 +1,782 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>unKR.data.Sampler &#8212; unKR 0.8 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/unKR/data/Sampler';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">unKR 0.8 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">Install</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Experiment Result</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../result.html">Results</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Parameters Description</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Parameters.html">Description of basic parameters</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Package</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../unKR.html">unKR</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../unKR.data.html">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../unKR.eval_task.html">Eval_Task</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../unKR.lit_model.html">Lit_Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../unKR.loss.html">loss</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../unKR.model.html">Model</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../nssmodel.html">NSSModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../ssmodel.html">SSModel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for unKR.data.Sampler</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">.DataPreprocess</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">torch.autograd</span> <span class="kn">import</span> <span class="n">Variable</span>
+
+
+<div class="viewcode-block" id="UKGEUniSampler"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGEUniSampler">[docs]</a><span class="k">class</span> <span class="nc">UKGEUniSampler</span><span class="p">(</span><span class="n">UKGEBaseSampler</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Random negative sampling </span>
+<span class="sd">    Filtering out positive samples and selecting some samples randomly as negative samples.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        cross_sampling_flag: The flag of cross sampling head and tail negative samples.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cross_sampling_flag</span> <span class="o">=</span> <span class="mi">0</span>
+
+<div class="viewcode-block" id="UKGEUniSampler.sampling"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGEUniSampler.sampling">[docs]</a>    <span class="k">def</span> <span class="nf">sampling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Filtering out positive samples and selecting some samples randomly as negative samples.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            data: The triples used to be sampled.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            batch_data: The training data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">batch_data</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">neg_ent_sample</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">subsampling_weight</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cross_sampling_flag</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">cross_sampling_flag</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cross_sampling_flag</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">batch_data</span><span class="p">[</span><span class="s1">&#39;mode&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;head-batch&quot;</span>
+            <span class="k">for</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+                <span class="n">neg_head</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head_batch</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">num_neg</span><span class="p">)</span>
+                <span class="n">neg_ent_sample</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">neg_head</span><span class="p">)</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">use_weight</span><span class="p">:</span>
+                    <span class="n">weight</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">[(</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">)]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">[(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="n">r</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)]</span>
+                    <span class="n">subsampling_weight</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">weight</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">batch_data</span><span class="p">[</span><span class="s1">&#39;mode&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;tail-batch&quot;</span>
+            <span class="k">for</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+                <span class="n">neg_tail</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tail_batch</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">num_neg</span><span class="p">)</span>
+                <span class="n">neg_ent_sample</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">neg_tail</span><span class="p">)</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">use_weight</span><span class="p">:</span>
+                    <span class="n">weight</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">[(</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">)]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">[(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="n">r</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)]</span>
+                    <span class="n">subsampling_weight</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">weight</span><span class="p">)</span>
+        <span class="n">batch_data</span><span class="p">[</span><span class="s2">&quot;ori_data&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span> <span class="c1"># storage the original data, it will be used in PASSLEAFLitModel.</span>
+        <span class="n">batch_data</span><span class="p">[</span><span class="s2">&quot;positive_sample&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+        <span class="n">batch_data</span><span class="p">[</span><span class="s1">&#39;negative_sample&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">neg_ent_sample</span><span class="p">))</span>
+        <span class="n">batch_data</span><span class="p">[</span><span class="s1">&#39;true_head&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rt2h_train</span>
+        <span class="n">batch_data</span><span class="p">[</span><span class="s1">&#39;true_tail&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hr2t_train</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">use_weight</span><span class="p">:</span>
+            <span class="n">batch_data</span><span class="p">[</span><span class="s2">&quot;subsampling_weight&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">subsampling_weight</span><span class="p">))</span>
+
+        <span class="c1"># When train student_model in UPGAT, get pseudo_sample and adj_matrix as below.</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">model_name</span> <span class="o">==</span> <span class="s1">&#39;UPGAT&#39;</span><span class="p">:</span>
+            <span class="n">train_data</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="n">item</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">train_triples</span><span class="p">])</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">teacher_model</span><span class="p">:</span>
+                <span class="n">pseudo_data</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="n">item</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">pseudo_triples</span><span class="p">])</span>
+                <span class="n">train_data</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">((</span><span class="n">train_data</span><span class="p">,</span> <span class="n">pseudo_data</span><span class="p">),</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">batch_data</span><span class="p">[</span><span class="s2">&quot;pseudo_sample&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pseudo_dataiter</span><span class="p">),</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+                    <span class="n">pseudo_dataloader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pseudo_triples</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">pseudo_bs</span><span class="p">,</span>
+                                                   <span class="n">num_workers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">num_workers</span><span class="p">,</span> <span class="n">pin_memory</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                                   <span class="n">drop_last</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">pseudo_dataiter</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">pseudo_dataloader</span><span class="p">)</span>
+                    <span class="n">batch_data</span><span class="p">[</span><span class="s2">&quot;pseudo_sample&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pseudo_dataiter</span><span class="p">),</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">head</span><span class="p">,</span> <span class="n">rela</span><span class="p">,</span> <span class="n">tail</span> <span class="o">=</span> <span class="n">train_data</span><span class="o">.</span><span class="n">t</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">adj_matrix</span> <span class="o">=</span> <span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">((</span><span class="n">head</span><span class="p">,</span> <span class="n">tail</span><span class="p">)),</span> <span class="n">rela</span><span class="p">)</span>
+            <span class="n">batch_data</span><span class="p">[</span><span class="s2">&quot;adj_matrix&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">adj_matrix</span>
+        <span class="k">return</span> <span class="n">batch_data</span></div>
+
+<div class="viewcode-block" id="UKGEUniSampler.uni_sampling"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGEUniSampler.uni_sampling">[docs]</a>    <span class="k">def</span> <span class="nf">uni_sampling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="n">batch_data</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">neg_head_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">neg_tail_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+            <span class="n">neg_head</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head_batch</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">num_neg</span><span class="p">)</span>
+            <span class="n">neg_head_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">neg_head</span><span class="p">)</span>
+            <span class="n">neg_tail</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tail_batch</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">num_neg</span><span class="p">)</span>
+            <span class="n">neg_tail_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">neg_tail</span><span class="p">)</span>
+
+        <span class="n">batch_data</span><span class="p">[</span><span class="s2">&quot;positive_sample&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+        <span class="n">batch_data</span><span class="p">[</span><span class="s1">&#39;negative_head&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arrary</span><span class="p">(</span><span class="n">neg_head_list</span><span class="p">))</span>
+        <span class="n">batch_data</span><span class="p">[</span><span class="s1">&#39;negative_tail&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arrary</span><span class="p">(</span><span class="n">neg_tail_list</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">batch_data</span></div>
+
+<div class="viewcode-block" id="UKGEUniSampler.get_sampling_keys"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGEUniSampler.get_sampling_keys">[docs]</a>    <span class="k">def</span> <span class="nf">get_sampling_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">model_name</span> <span class="o">==</span> <span class="s1">&#39;UPGAT&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">teacher_model</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;positive_sample&#39;</span><span class="p">,</span> <span class="s1">&#39;negative_sample&#39;</span><span class="p">,</span> <span class="s1">&#39;mode&#39;</span><span class="p">,</span> <span class="s1">&#39;adj_matrix&#39;</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;positive_sample&#39;</span><span class="p">,</span> <span class="s1">&#39;negative_sample&#39;</span><span class="p">,</span> <span class="s1">&#39;mode&#39;</span><span class="p">,</span> <span class="s1">&#39;adj_matrix&#39;</span><span class="p">,</span> <span class="s1">&#39;pseudo_sample&#39;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;positive_sample&#39;</span><span class="p">,</span> <span class="s1">&#39;negative_sample&#39;</span><span class="p">,</span> <span class="s1">&#39;mode&#39;</span><span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="UKGEPSLSampler"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGEPSLSampler">[docs]</a><span class="k">class</span> <span class="nc">UKGEPSLSampler</span><span class="p">(</span><span class="n">UKGEBaseSampler</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Random negative sampling Filtering out positive samples and selecting some samples randomly as negative samples.</span>
+<span class="sd">    UKGEPSLSampler is for UKGE_PSL</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        cross_sampling_flag: The flag of cross sampling head and tail negative samples.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cross_sampling_flag</span> <span class="o">=</span> <span class="mi">0</span>
+
+<div class="viewcode-block" id="UKGEPSLSampler.sampling"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGEPSLSampler.sampling">[docs]</a>    <span class="k">def</span> <span class="nf">sampling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Filtering out positive samples and selecting some samples randomly as negative samples.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            data: The triples used to be sampled.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            batch_data: The training data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">batch_data</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">neg_ent_sample</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># negative samples</span>
+        <span class="n">PSL_sample</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># PSL samples</span>
+        <span class="n">subsampling_weight</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cross_sampling_flag</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">cross_sampling_flag</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cross_sampling_flag</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">batch_data</span><span class="p">[</span><span class="s1">&#39;mode&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;head-batch&quot;</span>
+            <span class="k">for</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+                <span class="n">neg_head</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head_batch</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">num_neg</span><span class="p">)</span>
+                <span class="n">neg_ent_sample</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">neg_head</span><span class="p">)</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">use_weight</span><span class="p">:</span>
+                    <span class="n">weight</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">[(</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">)]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">[(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="n">r</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)]</span>
+                    <span class="n">subsampling_weight</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">weight</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">batch_data</span><span class="p">[</span><span class="s1">&#39;mode&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;tail-batch&quot;</span>
+            <span class="k">for</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+                <span class="n">neg_tail</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tail_batch</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">num_neg</span><span class="p">)</span>
+                <span class="n">neg_ent_sample</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">neg_tail</span><span class="p">)</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">use_weight</span><span class="p">:</span>
+                    <span class="n">weight</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">[(</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">)]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">[(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="n">r</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)]</span>
+                    <span class="n">subsampling_weight</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">weight</span><span class="p">)</span>
+
+        <span class="n">PSL_ent_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">RatioOfPSL</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span> <span class="c1"># calculate the number of PSL samples in each batch, storage the PSL samples in batch_data[&#39;PSL_sample&#39;]</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">PSL_triples</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">PSL_ent_num</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">PSL_ent_num</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="n">PSL_sample</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">PSL_triples</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">PSL_triples</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">PSL_triples</span><span class="p">[</span><span class="n">PSL_ent_num</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">PSL_triples</span><span class="p">)):</span>
+                <span class="n">PSL_sample</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">PSL_triples</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">batch_data</span><span class="p">[</span><span class="s2">&quot;positive_sample&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+        <span class="n">batch_data</span><span class="p">[</span><span class="s2">&quot;negative_sample&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">neg_ent_sample</span><span class="p">))</span>
+        <span class="n">batch_data</span><span class="p">[</span><span class="s1">&#39;PSL_sample&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">PSL_sample</span><span class="p">))</span>
+
+        <span class="n">batch_data</span><span class="p">[</span><span class="s1">&#39;true_head&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">h2rt_train</span>
+        <span class="n">batch_data</span><span class="p">[</span><span class="s1">&#39;true_tail&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hr2t_train</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">use_weight</span><span class="p">:</span>
+            <span class="n">batch_data</span><span class="p">[</span><span class="s2">&quot;subsampling_weight&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">subsampling_weight</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">batch_data</span></div>
+
+<div class="viewcode-block" id="UKGEPSLSampler.uni_sampling"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGEPSLSampler.uni_sampling">[docs]</a>    <span class="k">def</span> <span class="nf">uni_sampling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="n">batch_data</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">neg_head_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">neg_tail_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+            <span class="n">neg_head</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head_batch</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">num_neg</span><span class="p">)</span>
+            <span class="n">neg_head_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">neg_head</span><span class="p">)</span>
+            <span class="n">neg_tail</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tail_batch</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">num_neg</span><span class="p">)</span>
+            <span class="n">neg_tail_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">neg_tail</span><span class="p">)</span>
+
+        <span class="n">batch_data</span><span class="p">[</span><span class="s2">&quot;positive_sample&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+        <span class="n">batch_data</span><span class="p">[</span><span class="s1">&#39;negative_head&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arrary</span><span class="p">(</span><span class="n">neg_head_list</span><span class="p">))</span>
+        <span class="n">batch_data</span><span class="p">[</span><span class="s1">&#39;negative_tail&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arrary</span><span class="p">(</span><span class="n">neg_tail_list</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">batch_data</span></div>
+
+<div class="viewcode-block" id="UKGEPSLSampler.get_sampling_keys"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGEPSLSampler.get_sampling_keys">[docs]</a>    <span class="k">def</span> <span class="nf">get_sampling_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;positive_sample&#39;</span><span class="p">,</span> <span class="s1">&#39;negative_sample&#39;</span><span class="p">,</span> <span class="s1">&#39;mode&#39;</span><span class="p">]</span></div></div>
+
+<div class="viewcode-block" id="UKGETestSampler"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGETestSampler">[docs]</a><span class="k">class</span> <span class="nc">UKGETestSampler</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sampling triples and recording positive triples for testing.</span>
+<span class="sd">    We offer two test sample methods: one is to use the same method as neuralkg to process the test set,</span>
+<span class="sd">    and the other is to only use high confidence samples from the test set for testing</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        sampler: The function of training sampler.</span>
+<span class="sd">        hr2t_all: Record the tail corresponding to the same head and relation.</span>
+<span class="sd">        rt2h_all: Record the head corresponding to the same tail and relation.</span>
+<span class="sd">        hr2t_all_high_score: Record the tail corresponding to the same head and relation (only for high score samples in test).</span>
+<span class="sd">        rt2h_all_high_score: Record the head corresponding to the same tail and relation (only for high score samples in test).</span>
+<span class="sd">        num_ent: The count of entities.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sampler</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sampler</span> <span class="o">=</span> <span class="n">sampler</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hr2t_all</span> <span class="o">=</span> <span class="n">ddict</span><span class="p">(</span><span class="nb">set</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rt2h_all</span> <span class="o">=</span> <span class="n">ddict</span><span class="p">(</span><span class="nb">set</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hr2t_all_high_score</span> <span class="o">=</span> <span class="n">ddict</span><span class="p">(</span><span class="nb">set</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rt2h_all_high_score</span> <span class="o">=</span> <span class="n">ddict</span><span class="p">(</span><span class="nb">set</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">get_hr2t_rt2h_from_all</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_ent</span> <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">num_ent</span>
+
+<div class="viewcode-block" id="UKGETestSampler.get_hr2t_rt2h_from_all"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGETestSampler.get_hr2t_rt2h_from_all">[docs]</a>    <span class="k">def</span> <span class="nf">get_hr2t_rt2h_from_all</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the set of hr2t and rt2h from all datasets(train, valid, and test), the data type is tensor.</span>
+<span class="sd">        Update:</span>
+<span class="sd">            self.hr2t_all: The set of hr2t.</span>
+<span class="sd">            self.rt2h_all: The set of rt2h.</span>
+<span class="sd">            self.hr2t_all_high_score: The set of hr2t (only for high score samples in test).</span>
+<span class="sd">            self.rt2h_all_high_score: The set of rt2h (only for high score samples in test).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">all_true_triples</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sampler</span><span class="o">.</span><span class="n">get_all_true_triples</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">all_true_triples</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">hr2t_all</span><span class="p">[(</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">)]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rt2h_all</span><span class="p">[(</span><span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">)]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">s</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sampler</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">confidence_filter</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">hr2t_all_high_score</span><span class="p">[(</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">)]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">rt2h_all_high_score</span><span class="p">[(</span><span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">)]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">hr2t_all</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">hr2t_all</span><span class="p">[(</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">)]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hr2t_all</span><span class="p">[(</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">)]))</span>
+        <span class="k">for</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">hr2t_all_high_score</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">hr2t_all_high_score</span><span class="p">[(</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">)]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hr2t_all_high_score</span><span class="p">[(</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">)]))</span>
+        <span class="k">for</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">rt2h_all</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rt2h_all</span><span class="p">[(</span><span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">)]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rt2h_all</span><span class="p">[(</span><span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">)]))</span>
+        <span class="k">for</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">rt2h_all_high_score</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rt2h_all_high_score</span><span class="p">[(</span><span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">)]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rt2h_all_high_score</span><span class="p">[(</span><span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">)]))</span></div>
+
+<div class="viewcode-block" id="UKGETestSampler.sampling"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGETestSampler.sampling">[docs]</a>    <span class="k">def</span> <span class="nf">sampling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Sampling triples and recording positive triples for testing.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            data: The triples used to be sampled.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            batch_data: The data used to be evaluated.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">batch_data</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">head_label</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_ent</span><span class="p">)</span>
+        <span class="n">tail_label</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_ent</span><span class="p">)</span>
+        <span class="n">head_label_filter</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_ent</span><span class="p">)</span>
+        <span class="n">tail_label_filter</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_ent</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">triple</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+            <span class="n">head</span><span class="p">,</span> <span class="n">rel</span><span class="p">,</span> <span class="n">tail</span><span class="p">,</span> <span class="n">score</span> <span class="o">=</span> <span class="n">triple</span>
+            <span class="n">head_label</span><span class="p">[</span><span class="n">idx</span><span class="p">][</span><span class="bp">self</span><span class="o">.</span><span class="n">rt2h_all</span><span class="p">[(</span><span class="n">rel</span><span class="p">,</span> <span class="n">tail</span><span class="p">)]]</span> <span class="o">=</span> <span class="mf">1.0</span>
+            <span class="n">tail_label</span><span class="p">[</span><span class="n">idx</span><span class="p">][</span><span class="bp">self</span><span class="o">.</span><span class="n">hr2t_all</span><span class="p">[(</span><span class="n">head</span><span class="p">,</span> <span class="n">rel</span><span class="p">)]]</span> <span class="o">=</span> <span class="mf">1.0</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rt2h_all_high_score</span><span class="p">[(</span><span class="n">rel</span><span class="p">,</span> <span class="n">tail</span><span class="p">)]</span> <span class="o">!=</span> <span class="nb">set</span><span class="p">():</span>
+                <span class="n">head_label_filter</span><span class="p">[</span><span class="n">idx</span><span class="p">][</span><span class="bp">self</span><span class="o">.</span><span class="n">rt2h_all_high_score</span><span class="p">[(</span><span class="n">rel</span><span class="p">,</span> <span class="n">tail</span><span class="p">)]]</span> <span class="o">=</span> <span class="mf">1.0</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">hr2t_all_high_score</span><span class="p">[(</span><span class="n">head</span><span class="p">,</span> <span class="n">rel</span><span class="p">)]</span> <span class="o">!=</span> <span class="nb">set</span><span class="p">():</span>
+                <span class="n">tail_label_filter</span><span class="p">[</span><span class="n">idx</span><span class="p">][</span><span class="bp">self</span><span class="o">.</span><span class="n">hr2t_all_high_score</span><span class="p">[(</span><span class="n">head</span><span class="p">,</span> <span class="n">rel</span><span class="p">)]]</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+        <span class="n">batch_data</span><span class="p">[</span><span class="s2">&quot;positive_sample&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">batch_data</span><span class="p">[</span><span class="s2">&quot;head_label&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">head_label</span>
+        <span class="n">batch_data</span><span class="p">[</span><span class="s2">&quot;tail_label&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tail_label</span>
+        <span class="n">batch_data</span><span class="p">[</span><span class="s2">&quot;head_label_filter&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">head_label_filter</span>
+        <span class="n">batch_data</span><span class="p">[</span><span class="s2">&quot;tail_label_filter&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tail_label_filter</span>
+        <span class="k">return</span> <span class="n">batch_data</span></div>
+
+<div class="viewcode-block" id="UKGETestSampler.construct_hr_map"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGETestSampler.construct_hr_map">[docs]</a>    <span class="k">def</span> <span class="nf">construct_hr_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="n">hr_map</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+            <span class="n">w</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">hr_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">h</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">hr_map</span><span class="p">[</span><span class="n">h</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">if</span> <span class="n">hr_map</span><span class="p">[</span><span class="n">h</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">hr_map</span><span class="p">[</span><span class="n">h</span><span class="p">][</span><span class="n">r</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">t</span><span class="p">:</span> <span class="n">w</span><span class="p">}</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">hr_map</span><span class="p">[</span><span class="n">h</span><span class="p">][</span><span class="n">r</span><span class="p">][</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="n">w</span>
+
+        <span class="k">return</span> <span class="n">hr_map</span></div>
+
+<div class="viewcode-block" id="UKGETestSampler.get_sampling_keys"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGETestSampler.get_sampling_keys">[docs]</a>    <span class="k">def</span> <span class="nf">get_sampling_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;positive_sample&quot;</span><span class="p">,</span> <span class="s2">&quot;head_label&quot;</span><span class="p">,</span> <span class="s2">&quot;tail_label&quot;</span><span class="p">]</span></div></div>
+        <span class="c1"># return [&quot;positive_sample&quot;]</span>
+
+
+<div class="viewcode-block" id="GMUCSampler"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.GMUCSampler">[docs]</a><span class="k">class</span> <span class="nc">GMUCSampler</span><span class="p">(</span><span class="n">GMUCBaseSampler</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;GMUC sampling</span>
+<span class="sd">        Process task-based data.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+
+<div class="viewcode-block" id="GMUCSampler.sampling"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.GMUCSampler.sampling">[docs]</a>    <span class="k">def</span> <span class="nf">sampling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Filtering out positive samples and selecting some samples randomly as negative samples.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            data: A task/relation and all its triples.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            batch_data: The training data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">batch_data</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">query</span><span class="p">,</span> <span class="n">train_and_test1</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+        <span class="n">query</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">query</span><span class="p">))</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">&#39;[&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39;]&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="c1">#  降维度</span>
+        <span class="n">train_and_test1</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">train_and_test1</span><span class="p">)</span>
+        <span class="n">task_triples</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">sublist</span> <span class="ow">in</span> <span class="n">train_and_test1</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">sublist</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">type_constrain</span><span class="p">:</span>
+            <span class="n">candidates</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel2candidates</span><span class="p">[</span><span class="n">query</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">candidates</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+            <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">candidates</span><span class="p">)</span>
+            <span class="n">candidates</span> <span class="o">=</span> <span class="n">candidates</span><span class="p">[:</span><span class="mi">1000</span><span class="p">]</span>
+
+        <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">task_triples</span><span class="p">)</span>
+
+        <span class="n">support_triples</span> <span class="o">=</span> <span class="n">task_triples</span><span class="p">[:</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">few</span><span class="p">]</span>
+        <span class="n">support_pairs</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">symbol2id</span><span class="p">[</span><span class="n">triple</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="bp">self</span><span class="o">.</span><span class="n">symbol2id</span><span class="p">[</span><span class="n">triple</span><span class="p">[</span><span class="mi">2</span><span class="p">]],</span> <span class="nb">float</span><span class="p">(</span><span class="n">triple</span><span class="p">[</span><span class="mi">3</span><span class="p">])]</span> <span class="k">for</span> <span class="n">triple</span> <span class="ow">in</span>
+                         <span class="n">support_triples</span><span class="p">]</span>  <span class="c1"># (h, t, s)</span>
+        <span class="n">support_left</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">triple</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="k">for</span> <span class="n">triple</span> <span class="ow">in</span> <span class="n">support_triples</span><span class="p">]</span>
+        <span class="n">support_right</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">triple</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span> <span class="k">for</span> <span class="n">triple</span> <span class="ow">in</span> <span class="n">support_triples</span><span class="p">]</span>
+
+        <span class="n">all_test_triples</span> <span class="o">=</span> <span class="n">task_triples</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">few</span><span class="p">:]</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_test_triples</span><span class="p">)</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">train_bs</span><span class="p">:</span>
+            <span class="n">query_triples</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">all_test_triples</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">train_bs</span><span class="p">)]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">query_triples</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">all_test_triples</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">train_bs</span><span class="p">)</span>
+
+        <span class="n">query_pairs</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">symbol2id</span><span class="p">[</span><span class="n">triple</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="bp">self</span><span class="o">.</span><span class="n">symbol2id</span><span class="p">[</span><span class="n">triple</span><span class="p">[</span><span class="mi">2</span><span class="p">]],</span> <span class="nb">float</span><span class="p">(</span><span class="n">triple</span><span class="p">[</span><span class="mi">3</span><span class="p">])]</span> <span class="k">for</span> <span class="n">triple</span> <span class="ow">in</span>
+                       <span class="n">query_triples</span><span class="p">]</span>  <span class="c1"># (h, t, s)</span>
+        <span class="n">query_left</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">triple</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="k">for</span> <span class="n">triple</span> <span class="ow">in</span> <span class="n">query_triples</span><span class="p">]</span>
+        <span class="n">query_right</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">triple</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span> <span class="k">for</span> <span class="n">triple</span> <span class="ow">in</span> <span class="n">query_triples</span><span class="p">]</span>
+        <span class="n">query_confidence</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">triple</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="k">for</span> <span class="n">triple</span> <span class="ow">in</span> <span class="n">query_triples</span><span class="p">]</span>
+
+        <span class="n">false_pairs</span><span class="p">,</span> <span class="n">false_left</span><span class="p">,</span> <span class="n">false_right</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">generate_false</span><span class="p">(</span><span class="n">query_triples</span><span class="p">,</span> <span class="n">candidates</span><span class="p">)</span>
+
+        <span class="n">support_meta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_meta</span><span class="p">(</span><span class="n">support_left</span><span class="p">,</span> <span class="n">support_right</span><span class="p">)</span>
+        <span class="n">query_meta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_meta</span><span class="p">(</span><span class="n">query_left</span><span class="p">,</span> <span class="n">query_right</span><span class="p">)</span>
+        <span class="n">false_meta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_meta</span><span class="p">(</span><span class="n">false_left</span><span class="p">,</span> <span class="n">false_right</span><span class="p">)</span>
+
+        <span class="c1"># symbolid-ic value pairs for loss</span>
+        <span class="n">symbolid_ic</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">has_ont</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">rel_uc</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">rel2ic</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel_uc1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">rel2ic</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel_uc2</span>
+
+            <span class="n">symbols</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">triple</span> <span class="ow">in</span> <span class="n">task_triples</span><span class="p">:</span>
+                <span class="n">e1</span> <span class="o">=</span> <span class="n">triple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">e2</span> <span class="o">=</span> <span class="n">triple</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">e1</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">symbols</span><span class="p">:</span>
+                    <span class="n">symbolid_ic</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">symbol2id</span><span class="p">[</span><span class="n">e1</span><span class="p">],</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ent2ic</span><span class="p">[</span><span class="n">e1</span><span class="p">])])</span>
+                    <span class="n">symbols</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">e1</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">e2</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">symbols</span><span class="p">:</span>
+                    <span class="n">symbolid_ic</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">symbol2id</span><span class="p">[</span><span class="n">e2</span><span class="p">],</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ent2ic</span><span class="p">[</span><span class="n">e2</span><span class="p">])])</span>
+                    <span class="n">symbols</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">e2</span><span class="p">)</span>
+            <span class="n">symbolid_ic</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">symbol2id</span><span class="p">[</span><span class="n">query</span><span class="p">],</span> <span class="nb">float</span><span class="p">(</span><span class="n">rel2ic</span><span class="p">[</span><span class="n">query</span><span class="p">])])</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">if_GPU</span><span class="p">:</span>
+            <span class="n">support</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="n">support_pairs</span><span class="p">))</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
+            <span class="n">query</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="n">query_pairs</span><span class="p">))</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
+            <span class="n">false</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="n">false_pairs</span><span class="p">))</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
+            <span class="n">symbolid_ic</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="n">symbolid_ic</span><span class="p">))</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">support</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="n">support_pairs</span><span class="p">))</span>
+            <span class="n">query</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">(</span><span class="n">query_pairs</span><span class="p">))</span>
+            <span class="n">false</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">(</span><span class="n">false_pairs</span><span class="p">))</span>
+            <span class="n">symbolid_ic</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="n">symbolid_ic</span><span class="p">))</span>
+
+        <span class="n">batch_data</span><span class="p">[</span><span class="s2">&quot;support&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">support</span>
+        <span class="n">batch_data</span><span class="p">[</span><span class="s2">&quot;query&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">query</span>
+        <span class="n">batch_data</span><span class="p">[</span><span class="s2">&quot;false&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">false</span>
+        <span class="n">batch_data</span><span class="p">[</span><span class="s2">&quot;query_confidence&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">query_confidence</span>
+        <span class="n">batch_data</span><span class="p">[</span><span class="s2">&quot;support_meta&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">support_meta</span>
+        <span class="n">batch_data</span><span class="p">[</span><span class="s2">&quot;query_meta&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">query_meta</span>
+        <span class="n">batch_data</span><span class="p">[</span><span class="s2">&quot;false_meta&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">false_meta</span>
+        <span class="n">batch_data</span><span class="p">[</span><span class="s2">&quot;symbolid_ic&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">symbolid_ic</span>
+
+        <span class="k">return</span> <span class="n">batch_data</span></div>
+
+<div class="viewcode-block" id="GMUCSampler.get_meta"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.GMUCSampler.get_meta">[docs]</a>    <span class="k">def</span> <span class="nf">get_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;get meta data</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">if_GPU</span><span class="p">:</span>
+            <span class="n">left_connections</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span>
+                <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">connections</span><span class="p">[</span><span class="n">_</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">left</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)))</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
+            <span class="n">left_degrees</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">e1_degrees</span><span class="p">[</span><span class="n">_</span><span class="p">]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">left</span><span class="p">]))</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
+            <span class="n">right_connections</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span>
+                <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">connections</span><span class="p">[</span><span class="n">_</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">right</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)))</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
+            <span class="n">right_degrees</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">e1_degrees</span><span class="p">[</span><span class="n">_</span><span class="p">]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">right</span><span class="p">]))</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">left_connections</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">connections</span><span class="p">[</span><span class="n">_</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">left</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)))</span>
+            <span class="n">left_degrees</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">e1_degrees</span><span class="p">[</span><span class="n">_</span><span class="p">]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">left</span><span class="p">]))</span>
+            <span class="n">right_connections</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">connections</span><span class="p">[</span><span class="n">_</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">right</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)))</span>
+            <span class="n">right_degrees</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">e1_degrees</span><span class="p">[</span><span class="n">_</span><span class="p">]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">right</span><span class="p">]))</span>
+
+        <span class="k">return</span> <span class="n">left_connections</span><span class="p">,</span> <span class="n">left_degrees</span><span class="p">,</span> <span class="n">right_connections</span><span class="p">,</span> <span class="n">right_degrees</span></div>
+
+<div class="viewcode-block" id="GMUCSampler.get_sampling_keys"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.GMUCSampler.get_sampling_keys">[docs]</a>    <span class="k">def</span> <span class="nf">get_sampling_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;support&#39;</span><span class="p">,</span> <span class="s1">&#39;query&#39;</span><span class="p">,</span> <span class="s1">&#39;false&#39;</span><span class="p">,</span> <span class="s1">&#39;query_confidence&#39;</span><span class="p">,</span> <span class="s1">&#39;support_meta&#39;</span><span class="p">,</span> <span class="s1">&#39;query_meta&#39;</span><span class="p">,</span> <span class="s1">&#39;false_meta&#39;</span><span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="GMUCTestSampler"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.GMUCTestSampler">[docs]</a><span class="k">class</span> <span class="nc">GMUCTestSampler</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sampling triples and recording positive triples for testing.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        sampler: The function of training sampler.</span>
+<span class="sd">        num_ent: The number of entities.</span>
+<span class="sd">        rel2candidates: Record the entities corresponding to the same relation, type: list.</span>
+<span class="sd">        symbol2id: Encoding the entity and relation in triples, type: dict.</span>
+<span class="sd">        ent2id: Encoding the entity in triples, type: dict.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sampler</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sampler</span> <span class="o">=</span> <span class="n">sampler</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sampler</span><span class="o">.</span><span class="n">args</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_ent</span> <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">num_ent</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rel2candidates</span> <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">rel2candidates</span>
+        <span class="c1"># self.test_with_neg_tasks = sampler.test_with_neg_tasks</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">symbol2id</span> <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">symbol2id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span> <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">ent2id</span>
+
+<div class="viewcode-block" id="GMUCTestSampler.sampling"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.GMUCTestSampler.sampling">[docs]</a>    <span class="k">def</span> <span class="nf">sampling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Sampling triples and recording positive triples for testing.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            data: The triples used to be sampled.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            batch_data: The data used to be evaluated.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">query</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;[&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;]&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="n">triple</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+        <span class="n">triples</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">sublist</span> <span class="ow">in</span> <span class="n">triple</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">sublist</span><span class="p">]</span>
+
+        <span class="n">batch_data</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">batch_data</span><span class="p">[</span><span class="s2">&quot;query&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">query</span>
+        <span class="n">batch_data</span><span class="p">[</span><span class="s2">&quot;triples&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">triples</span>
+
+        <span class="k">return</span> <span class="n">batch_data</span></div>
+
+<div class="viewcode-block" id="GMUCTestSampler.get_sampling_keys"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.GMUCTestSampler.get_sampling_keys">[docs]</a>    <span class="k">def</span> <span class="nf">get_sampling_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;query&quot;</span><span class="p">,</span> <span class="s2">&quot;triples&quot;</span><span class="p">]</span></div></div>
+
+
+<div class="viewcode-block" id="KGDataset"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.KGDataset">[docs]</a><span class="k">class</span> <span class="nc">KGDataset</span><span class="p">(</span><span class="n">Dataset</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">triples</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">triples</span> <span class="o">=</span> <span class="n">triples</span>
+
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">triples</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">triples</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span></div>
+</pre></div>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By SEU
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, SEUKGE.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

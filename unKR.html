@@ -1,0 +1,944 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>unKR &#8212; unKR 0.8 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'unKR';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Data" href="unKR.data.html" />
+    <link rel="prev" title="Description of basic parameters" href="Parameters.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">unKR 0.8 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Experiment Result</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="result.html">Results</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Parameters Description</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Parameters.html">Description of basic parameters</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Package</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">unKR</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="unKR.data.html">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unKR.eval_task.html">Eval_Task</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unKR.lit_model.html">Lit_Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unKR.loss.html">loss</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="unKR.model.html">Model</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="nssmodel.html">NSSModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ssmodel.html">SSModel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/unKR.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>unKR</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="unkr">
+<h1>unKR<a class="headerlink" href="#unkr" title="Permalink to this heading">#</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="unKR.data.html">Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unKR.data.html#module-unKR.data.base_data_module">base_data_module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unKR.data.html#unKR.data.base_data_module.BaseDataModule"><code class="docutils literal notranslate"><span class="pre">BaseDataModule</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.base_data_module.BaseDataModule.add_to_argparse"><code class="docutils literal notranslate"><span class="pre">BaseDataModule.add_to_argparse()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.base_data_module.BaseDataModule.get_config"><code class="docutils literal notranslate"><span class="pre">BaseDataModule.get_config()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.base_data_module.BaseDataModule.prepare_data"><code class="docutils literal notranslate"><span class="pre">BaseDataModule.prepare_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.base_data_module.BaseDataModule.setup"><code class="docutils literal notranslate"><span class="pre">BaseDataModule.setup()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.base_data_module.BaseDataModule.test_dataloader"><code class="docutils literal notranslate"><span class="pre">BaseDataModule.test_dataloader()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.base_data_module.BaseDataModule.train_dataloader"><code class="docutils literal notranslate"><span class="pre">BaseDataModule.train_dataloader()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.base_data_module.BaseDataModule.val_dataloader"><code class="docutils literal notranslate"><span class="pre">BaseDataModule.val_dataloader()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="unKR.data.html#unKR.data.base_data_module.Config"><code class="docutils literal notranslate"><span class="pre">Config</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unKR.data.html#module-unKR.data.DataPreprocess">DataPreprocess</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.GMUCBaseSampler"><code class="docutils literal notranslate"><span class="pre">GMUCBaseSampler</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.GMUCBaseSampler.generate_false"><code class="docutils literal notranslate"><span class="pre">GMUCBaseSampler.generate_false()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.GMUCBaseSampler.get_test"><code class="docutils literal notranslate"><span class="pre">GMUCBaseSampler.get_test()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.GMUCBaseSampler.get_train"><code class="docutils literal notranslate"><span class="pre">GMUCBaseSampler.get_train()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.GMUCBaseSampler.get_valid"><code class="docutils literal notranslate"><span class="pre">GMUCBaseSampler.get_valid()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.GMUCData"><code class="docutils literal notranslate"><span class="pre">GMUCData</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.GMUCData.args"><code class="docutils literal notranslate"><span class="pre">GMUCData.args</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.GMUCData.ent2id"><code class="docutils literal notranslate"><span class="pre">GMUCData.ent2id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.GMUCData.rel2id"><code class="docutils literal notranslate"><span class="pre">GMUCData.rel2id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.GMUCData.symbol2id"><code class="docutils literal notranslate"><span class="pre">GMUCData.symbol2id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.GMUCData.e1rel_e2"><code class="docutils literal notranslate"><span class="pre">GMUCData.e1rel_e2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.GMUCData.rele1_e2"><code class="docutils literal notranslate"><span class="pre">GMUCData.rele1_e2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.GMUCData.train_tasks"><code class="docutils literal notranslate"><span class="pre">GMUCData.train_tasks</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.GMUCData.dev_tasks"><code class="docutils literal notranslate"><span class="pre">GMUCData.dev_tasks</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.GMUCData.test_tasks"><code class="docutils literal notranslate"><span class="pre">GMUCData.test_tasks</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.GMUCData.task_pool"><code class="docutils literal notranslate"><span class="pre">GMUCData.task_pool</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.GMUCData.path_graph"><code class="docutils literal notranslate"><span class="pre">GMUCData.path_graph</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.GMUCData.type2ents"><code class="docutils literal notranslate"><span class="pre">GMUCData.type2ents</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.GMUCData.known_rels"><code class="docutils literal notranslate"><span class="pre">GMUCData.known_rels</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.GMUCData.num_tasks"><code class="docutils literal notranslate"><span class="pre">GMUCData.num_tasks</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.GMUCData.rel2candidates"><code class="docutils literal notranslate"><span class="pre">GMUCData.rel2candidates</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.GMUCData.ent2ic"><code class="docutils literal notranslate"><span class="pre">GMUCData.ent2ic</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.GMUCData.rel_uc1"><code class="docutils literal notranslate"><span class="pre">GMUCData.rel_uc1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.GMUCData.rel_uc2"><code class="docutils literal notranslate"><span class="pre">GMUCData.rel_uc2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.GMUCData.connections"><code class="docutils literal notranslate"><span class="pre">GMUCData.connections</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.GMUCData.e1_rele2"><code class="docutils literal notranslate"><span class="pre">GMUCData.e1_rele2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.GMUCData.e1_degrees"><code class="docutils literal notranslate"><span class="pre">GMUCData.e1_degrees</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.GMUCData.build_graph"><code class="docutils literal notranslate"><span class="pre">GMUCData.build_graph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.GMUCData.get_e1rel_e2"><code class="docutils literal notranslate"><span class="pre">GMUCData.get_e1rel_e2()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.GMUCData.get_ontology"><code class="docutils literal notranslate"><span class="pre">GMUCData.get_ontology()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.GMUCData.get_rel2candidates"><code class="docutils literal notranslate"><span class="pre">GMUCData.get_rel2candidates()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.GMUCData.get_rele1_e2"><code class="docutils literal notranslate"><span class="pre">GMUCData.get_rele1_e2()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.GMUCData.get_tasks"><code class="docutils literal notranslate"><span class="pre">GMUCData.get_tasks()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGData"><code class="docutils literal notranslate"><span class="pre">UKGData</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGData.args"><code class="docutils literal notranslate"><span class="pre">UKGData.args</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGData.ent2id"><code class="docutils literal notranslate"><span class="pre">UKGData.ent2id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGData.rel2id"><code class="docutils literal notranslate"><span class="pre">UKGData.rel2id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGData.id2ent"><code class="docutils literal notranslate"><span class="pre">UKGData.id2ent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGData.id2rel"><code class="docutils literal notranslate"><span class="pre">UKGData.id2rel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGData.train_triples"><code class="docutils literal notranslate"><span class="pre">UKGData.train_triples</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGData.valid_triples"><code class="docutils literal notranslate"><span class="pre">UKGData.valid_triples</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGData.test_triples"><code class="docutils literal notranslate"><span class="pre">UKGData.test_triples</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGData.PSL_triples"><code class="docutils literal notranslate"><span class="pre">UKGData.PSL_triples</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGData.pseudo_triples"><code class="docutils literal notranslate"><span class="pre">UKGData.pseudo_triples</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGData.all_true_triples"><code class="docutils literal notranslate"><span class="pre">UKGData.all_true_triples</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGData.hr2t_train"><code class="docutils literal notranslate"><span class="pre">UKGData.hr2t_train</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGData.rt2h_train"><code class="docutils literal notranslate"><span class="pre">UKGData.rt2h_train</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGData.h2rt_train"><code class="docutils literal notranslate"><span class="pre">UKGData.h2rt_train</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGData.t2rh_train"><code class="docutils literal notranslate"><span class="pre">UKGData.t2rh_train</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGData.hr2t_total"><code class="docutils literal notranslate"><span class="pre">UKGData.hr2t_total</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGData.rt2h_total"><code class="docutils literal notranslate"><span class="pre">UKGData.rt2h_total</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGData.RatioOfPSL"><code class="docutils literal notranslate"><span class="pre">UKGData.RatioOfPSL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGData.pseudo_dataiter"><code class="docutils literal notranslate"><span class="pre">UKGData.pseudo_dataiter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGData.count_frequency"><code class="docutils literal notranslate"><span class="pre">UKGData.count_frequency()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGData.get_h2rt_t2hr_from_train"><code class="docutils literal notranslate"><span class="pre">UKGData.get_h2rt_t2hr_from_train()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGData.get_hr2t_rt2h_from_total"><code class="docutils literal notranslate"><span class="pre">UKGData.get_hr2t_rt2h_from_total()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGData.get_hr2t_rt2h_from_train"><code class="docutils literal notranslate"><span class="pre">UKGData.get_hr2t_rt2h_from_train()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGData.get_hr_train"><code class="docutils literal notranslate"><span class="pre">UKGData.get_hr_train()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGData.get_id"><code class="docutils literal notranslate"><span class="pre">UKGData.get_id()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler"><code class="docutils literal notranslate"><span class="pre">UKGEBaseSampler</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.corrupt_head"><code class="docutils literal notranslate"><span class="pre">UKGEBaseSampler.corrupt_head()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.corrupt_tail"><code class="docutils literal notranslate"><span class="pre">UKGEBaseSampler.corrupt_tail()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.get_PSL"><code class="docutils literal notranslate"><span class="pre">UKGEBaseSampler.get_PSL()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.get_all_true_triples"><code class="docutils literal notranslate"><span class="pre">UKGEBaseSampler.get_all_true_triples()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.get_hr_map"><code class="docutils literal notranslate"><span class="pre">UKGEBaseSampler.get_hr_map()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.get_test"><code class="docutils literal notranslate"><span class="pre">UKGEBaseSampler.get_test()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.get_train"><code class="docutils literal notranslate"><span class="pre">UKGEBaseSampler.get_train()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.get_valid"><code class="docutils literal notranslate"><span class="pre">UKGEBaseSampler.get_valid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.head_batch"><code class="docutils literal notranslate"><span class="pre">UKGEBaseSampler.head_batch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.tail_batch"><code class="docutils literal notranslate"><span class="pre">UKGEBaseSampler.tail_batch()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unKR.data.html#module-unKR.data.Sampler">Sampler</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unKR.data.html#unKR.data.Sampler.GMUCSampler"><code class="docutils literal notranslate"><span class="pre">GMUCSampler</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.Sampler.GMUCSampler.get_meta"><code class="docutils literal notranslate"><span class="pre">GMUCSampler.get_meta()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.Sampler.GMUCSampler.get_sampling_keys"><code class="docutils literal notranslate"><span class="pre">GMUCSampler.get_sampling_keys()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.Sampler.GMUCSampler.sampling"><code class="docutils literal notranslate"><span class="pre">GMUCSampler.sampling()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="unKR.data.html#unKR.data.Sampler.GMUCTestSampler"><code class="docutils literal notranslate"><span class="pre">GMUCTestSampler</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.Sampler.GMUCTestSampler.sampler"><code class="docutils literal notranslate"><span class="pre">GMUCTestSampler.sampler</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.Sampler.GMUCTestSampler.num_ent"><code class="docutils literal notranslate"><span class="pre">GMUCTestSampler.num_ent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.Sampler.GMUCTestSampler.rel2candidates"><code class="docutils literal notranslate"><span class="pre">GMUCTestSampler.rel2candidates</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.Sampler.GMUCTestSampler.symbol2id"><code class="docutils literal notranslate"><span class="pre">GMUCTestSampler.symbol2id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.Sampler.GMUCTestSampler.ent2id"><code class="docutils literal notranslate"><span class="pre">GMUCTestSampler.ent2id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.Sampler.GMUCTestSampler.get_sampling_keys"><code class="docutils literal notranslate"><span class="pre">GMUCTestSampler.get_sampling_keys()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.Sampler.GMUCTestSampler.sampling"><code class="docutils literal notranslate"><span class="pre">GMUCTestSampler.sampling()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="unKR.data.html#unKR.data.Sampler.KGDataset"><code class="docutils literal notranslate"><span class="pre">KGDataset</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="unKR.data.html#unKR.data.Sampler.UKGEPSLSampler"><code class="docutils literal notranslate"><span class="pre">UKGEPSLSampler</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.Sampler.UKGEPSLSampler.cross_sampling_flag"><code class="docutils literal notranslate"><span class="pre">UKGEPSLSampler.cross_sampling_flag</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.Sampler.UKGEPSLSampler.get_sampling_keys"><code class="docutils literal notranslate"><span class="pre">UKGEPSLSampler.get_sampling_keys()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.Sampler.UKGEPSLSampler.sampling"><code class="docutils literal notranslate"><span class="pre">UKGEPSLSampler.sampling()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.Sampler.UKGEPSLSampler.uni_sampling"><code class="docutils literal notranslate"><span class="pre">UKGEPSLSampler.uni_sampling()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="unKR.data.html#unKR.data.Sampler.UKGETestSampler"><code class="docutils literal notranslate"><span class="pre">UKGETestSampler</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.Sampler.UKGETestSampler.sampler"><code class="docutils literal notranslate"><span class="pre">UKGETestSampler.sampler</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.Sampler.UKGETestSampler.hr2t_all"><code class="docutils literal notranslate"><span class="pre">UKGETestSampler.hr2t_all</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.Sampler.UKGETestSampler.rt2h_all"><code class="docutils literal notranslate"><span class="pre">UKGETestSampler.rt2h_all</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.Sampler.UKGETestSampler.hr2t_all_high_score"><code class="docutils literal notranslate"><span class="pre">UKGETestSampler.hr2t_all_high_score</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.Sampler.UKGETestSampler.rt2h_all_high_score"><code class="docutils literal notranslate"><span class="pre">UKGETestSampler.rt2h_all_high_score</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.Sampler.UKGETestSampler.num_ent"><code class="docutils literal notranslate"><span class="pre">UKGETestSampler.num_ent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.Sampler.UKGETestSampler.construct_hr_map"><code class="docutils literal notranslate"><span class="pre">UKGETestSampler.construct_hr_map()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.Sampler.UKGETestSampler.get_hr2t_rt2h_from_all"><code class="docutils literal notranslate"><span class="pre">UKGETestSampler.get_hr2t_rt2h_from_all()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.Sampler.UKGETestSampler.get_sampling_keys"><code class="docutils literal notranslate"><span class="pre">UKGETestSampler.get_sampling_keys()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.Sampler.UKGETestSampler.sampling"><code class="docutils literal notranslate"><span class="pre">UKGETestSampler.sampling()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="unKR.data.html#unKR.data.Sampler.UKGEUniSampler"><code class="docutils literal notranslate"><span class="pre">UKGEUniSampler</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.Sampler.UKGEUniSampler.cross_sampling_flag"><code class="docutils literal notranslate"><span class="pre">UKGEUniSampler.cross_sampling_flag</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.Sampler.UKGEUniSampler.get_sampling_keys"><code class="docutils literal notranslate"><span class="pre">UKGEUniSampler.get_sampling_keys()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.Sampler.UKGEUniSampler.sampling"><code class="docutils literal notranslate"><span class="pre">UKGEUniSampler.sampling()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.Sampler.UKGEUniSampler.uni_sampling"><code class="docutils literal notranslate"><span class="pre">UKGEUniSampler.uni_sampling()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unKR.data.html#module-unKR.data.KGDataModule">KGDataModule</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unKR.data.html#unKR.data.KGDataModule.GMUCDataModule"><code class="docutils literal notranslate"><span class="pre">GMUCDataModule</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.KGDataModule.GMUCDataModule.get_data_config"><code class="docutils literal notranslate"><span class="pre">GMUCDataModule.get_data_config()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.KGDataModule.GMUCDataModule.prepare_data"><code class="docutils literal notranslate"><span class="pre">GMUCDataModule.prepare_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.KGDataModule.GMUCDataModule.setup"><code class="docutils literal notranslate"><span class="pre">GMUCDataModule.setup()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.KGDataModule.GMUCDataModule.test_dataloader"><code class="docutils literal notranslate"><span class="pre">GMUCDataModule.test_dataloader()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.KGDataModule.GMUCDataModule.train_dataloader"><code class="docutils literal notranslate"><span class="pre">GMUCDataModule.train_dataloader()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.KGDataModule.GMUCDataModule.val_dataloader"><code class="docutils literal notranslate"><span class="pre">GMUCDataModule.val_dataloader()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="unKR.data.html#unKR.data.KGDataModule.KGDataModule"><code class="docutils literal notranslate"><span class="pre">KGDataModule</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.KGDataModule.KGDataModule.get_data_config"><code class="docutils literal notranslate"><span class="pre">KGDataModule.get_data_config()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.KGDataModule.KGDataModule.get_train_bs"><code class="docutils literal notranslate"><span class="pre">KGDataModule.get_train_bs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.KGDataModule.KGDataModule.prepare_data"><code class="docutils literal notranslate"><span class="pre">KGDataModule.prepare_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.KGDataModule.KGDataModule.setup"><code class="docutils literal notranslate"><span class="pre">KGDataModule.setup()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.KGDataModule.KGDataModule.test_dataloader"><code class="docutils literal notranslate"><span class="pre">KGDataModule.test_dataloader()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.KGDataModule.KGDataModule.train_dataloader"><code class="docutils literal notranslate"><span class="pre">KGDataModule.train_dataloader()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.data.html#unKR.data.KGDataModule.KGDataModule.val_dataloader"><code class="docutils literal notranslate"><span class="pre">KGDataModule.val_dataloader()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unKR.eval_task.html">Eval_Task</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unKR.eval_task.html#module-unKR.eval_task.confidence_prediction">confidence_prediction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unKR.eval_task.html#unKR.eval_task.confidence_prediction.conf_predict"><code class="docutils literal notranslate"><span class="pre">conf_predict()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unKR.eval_task.html#module-unKR.eval_task.link_prediction">link_predition</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unKR.eval_task.html#unKR.eval_task.link_prediction.calc_ranks"><code class="docutils literal notranslate"><span class="pre">calc_ranks()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="unKR.eval_task.html#unKR.eval_task.link_prediction.calc_ranks_raw"><code class="docutils literal notranslate"><span class="pre">calc_ranks_raw()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="unKR.eval_task.html#unKR.eval_task.link_prediction.head_predict"><code class="docutils literal notranslate"><span class="pre">head_predict()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="unKR.eval_task.html#unKR.eval_task.link_prediction.head_predict_filter"><code class="docutils literal notranslate"><span class="pre">head_predict_filter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="unKR.eval_task.html#unKR.eval_task.link_prediction.head_predict_raw"><code class="docutils literal notranslate"><span class="pre">head_predict_raw()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="unKR.eval_task.html#unKR.eval_task.link_prediction.link_predict"><code class="docutils literal notranslate"><span class="pre">link_predict()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="unKR.eval_task.html#unKR.eval_task.link_prediction.link_predict_filter"><code class="docutils literal notranslate"><span class="pre">link_predict_filter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="unKR.eval_task.html#unKR.eval_task.link_prediction.link_predict_raw"><code class="docutils literal notranslate"><span class="pre">link_predict_raw()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="unKR.eval_task.html#unKR.eval_task.link_prediction.tail_predict"><code class="docutils literal notranslate"><span class="pre">tail_predict()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="unKR.eval_task.html#unKR.eval_task.link_prediction.tail_predict_filter"><code class="docutils literal notranslate"><span class="pre">tail_predict_filter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="unKR.eval_task.html#unKR.eval_task.link_prediction.tail_predict_raw"><code class="docutils literal notranslate"><span class="pre">tail_predict_raw()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unKR.lit_model.html">Lit_Model</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unKR.lit_model.html#module-unKR.lit_model.BaseLitModel">BaseLitModel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel"><code class="docutils literal notranslate"><span class="pre">BaseLitModel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.add_to_argparse"><code class="docutils literal notranslate"><span class="pre">BaseLitModel.add_to_argparse()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.configure_optimizers"><code class="docutils literal notranslate"><span class="pre">BaseLitModel.configure_optimizers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.convert_neg_samples_batch"><code class="docutils literal notranslate"><span class="pre">BaseLitModel.convert_neg_samples_batch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.convert_semi_samples_batch"><code class="docutils literal notranslate"><span class="pre">BaseLitModel.convert_semi_samples_batch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.corrupt_head"><code class="docutils literal notranslate"><span class="pre">BaseLitModel.corrupt_head()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.corrupt_tail"><code class="docutils literal notranslate"><span class="pre">BaseLitModel.corrupt_tail()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.forward"><code class="docutils literal notranslate"><span class="pre">BaseLitModel.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.get_results"><code class="docutils literal notranslate"><span class="pre">BaseLitModel.get_results()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.head_batch"><code class="docutils literal notranslate"><span class="pre">BaseLitModel.head_batch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.select_random_elements"><code class="docutils literal notranslate"><span class="pre">BaseLitModel.select_random_elements()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.tail_batch"><code class="docutils literal notranslate"><span class="pre">BaseLitModel.tail_batch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.test_step"><code class="docutils literal notranslate"><span class="pre">BaseLitModel.test_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.training"><code class="docutils literal notranslate"><span class="pre">BaseLitModel.training</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.training_step"><code class="docutils literal notranslate"><span class="pre">BaseLitModel.training_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.validation_step"><code class="docutils literal notranslate"><span class="pre">BaseLitModel.validation_step()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.BaseLitModel.Config"><code class="docutils literal notranslate"><span class="pre">Config</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unKR.lit_model.html#module-unKR.lit_model.BEUrRELitModel">BEUrRELitModel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.BEUrRELitModel.BEUrRELitModel"><code class="docutils literal notranslate"><span class="pre">BEUrRELitModel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.BEUrRELitModel.BEUrRELitModel.add_to_argparse"><code class="docutils literal notranslate"><span class="pre">BEUrRELitModel.add_to_argparse()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.BEUrRELitModel.BEUrRELitModel.allow_zero_length_dataloader_with_multiple_devices"><code class="docutils literal notranslate"><span class="pre">BEUrRELitModel.allow_zero_length_dataloader_with_multiple_devices</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.BEUrRELitModel.BEUrRELitModel.configure_optimizers"><code class="docutils literal notranslate"><span class="pre">BEUrRELitModel.configure_optimizers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.BEUrRELitModel.BEUrRELitModel.forward"><code class="docutils literal notranslate"><span class="pre">BEUrRELitModel.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.BEUrRELitModel.BEUrRELitModel.precision"><code class="docutils literal notranslate"><span class="pre">BEUrRELitModel.precision</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.BEUrRELitModel.BEUrRELitModel.prepare_data_per_node"><code class="docutils literal notranslate"><span class="pre">BEUrRELitModel.prepare_data_per_node</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.BEUrRELitModel.BEUrRELitModel.test_epoch_end"><code class="docutils literal notranslate"><span class="pre">BEUrRELitModel.test_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.BEUrRELitModel.BEUrRELitModel.test_step"><code class="docutils literal notranslate"><span class="pre">BEUrRELitModel.test_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.BEUrRELitModel.BEUrRELitModel.training"><code class="docutils literal notranslate"><span class="pre">BEUrRELitModel.training</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.BEUrRELitModel.BEUrRELitModel.training_step"><code class="docutils literal notranslate"><span class="pre">BEUrRELitModel.training_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.BEUrRELitModel.BEUrRELitModel.use_amp"><code class="docutils literal notranslate"><span class="pre">BEUrRELitModel.use_amp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.BEUrRELitModel.BEUrRELitModel.validation_epoch_end"><code class="docutils literal notranslate"><span class="pre">BEUrRELitModel.validation_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.BEUrRELitModel.BEUrRELitModel.validation_step"><code class="docutils literal notranslate"><span class="pre">BEUrRELitModel.validation_step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unKR.lit_model.html#module-unKR.lit_model.GMUCLitModel">GMUCLitModel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.GMUCLitModel.GMUCLitModel"><code class="docutils literal notranslate"><span class="pre">GMUCLitModel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.GMUCLitModel.GMUCLitModel.add_to_argparse"><code class="docutils literal notranslate"><span class="pre">GMUCLitModel.add_to_argparse()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.GMUCLitModel.GMUCLitModel.allow_zero_length_dataloader_with_multiple_devices"><code class="docutils literal notranslate"><span class="pre">GMUCLitModel.allow_zero_length_dataloader_with_multiple_devices</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.GMUCLitModel.GMUCLitModel.configure_optimizers"><code class="docutils literal notranslate"><span class="pre">GMUCLitModel.configure_optimizers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.GMUCLitModel.GMUCLitModel.forward"><code class="docutils literal notranslate"><span class="pre">GMUCLitModel.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.GMUCLitModel.GMUCLitModel.get_results"><code class="docutils literal notranslate"><span class="pre">GMUCLitModel.get_results()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.GMUCLitModel.GMUCLitModel.precision"><code class="docutils literal notranslate"><span class="pre">GMUCLitModel.precision</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.GMUCLitModel.GMUCLitModel.prepare_data_per_node"><code class="docutils literal notranslate"><span class="pre">GMUCLitModel.prepare_data_per_node</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.GMUCLitModel.GMUCLitModel.test_epoch_end"><code class="docutils literal notranslate"><span class="pre">GMUCLitModel.test_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.GMUCLitModel.GMUCLitModel.test_step"><code class="docutils literal notranslate"><span class="pre">GMUCLitModel.test_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.GMUCLitModel.GMUCLitModel.training"><code class="docutils literal notranslate"><span class="pre">GMUCLitModel.training</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.GMUCLitModel.GMUCLitModel.training_step"><code class="docutils literal notranslate"><span class="pre">GMUCLitModel.training_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.GMUCLitModel.GMUCLitModel.use_amp"><code class="docutils literal notranslate"><span class="pre">GMUCLitModel.use_amp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.GMUCLitModel.GMUCLitModel.val_test"><code class="docutils literal notranslate"><span class="pre">GMUCLitModel.val_test()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.GMUCLitModel.GMUCLitModel.validation_epoch_end"><code class="docutils literal notranslate"><span class="pre">GMUCLitModel.validation_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.GMUCLitModel.GMUCLitModel.validation_step"><code class="docutils literal notranslate"><span class="pre">GMUCLitModel.validation_step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unKR.lit_model.html#module-unKR.lit_model.GTransELitModel">GTransELitModel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.GTransELitModel.GTransELitModel"><code class="docutils literal notranslate"><span class="pre">GTransELitModel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.GTransELitModel.GTransELitModel.add_to_argparse"><code class="docutils literal notranslate"><span class="pre">GTransELitModel.add_to_argparse()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.GTransELitModel.GTransELitModel.allow_zero_length_dataloader_with_multiple_devices"><code class="docutils literal notranslate"><span class="pre">GTransELitModel.allow_zero_length_dataloader_with_multiple_devices</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.GTransELitModel.GTransELitModel.configure_optimizers"><code class="docutils literal notranslate"><span class="pre">GTransELitModel.configure_optimizers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.GTransELitModel.GTransELitModel.forward"><code class="docutils literal notranslate"><span class="pre">GTransELitModel.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.GTransELitModel.GTransELitModel.precision"><code class="docutils literal notranslate"><span class="pre">GTransELitModel.precision</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.GTransELitModel.GTransELitModel.prepare_data_per_node"><code class="docutils literal notranslate"><span class="pre">GTransELitModel.prepare_data_per_node</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.GTransELitModel.GTransELitModel.test_epoch_end"><code class="docutils literal notranslate"><span class="pre">GTransELitModel.test_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.GTransELitModel.GTransELitModel.test_step"><code class="docutils literal notranslate"><span class="pre">GTransELitModel.test_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.GTransELitModel.GTransELitModel.training"><code class="docutils literal notranslate"><span class="pre">GTransELitModel.training</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.GTransELitModel.GTransELitModel.training_step"><code class="docutils literal notranslate"><span class="pre">GTransELitModel.training_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.GTransELitModel.GTransELitModel.use_amp"><code class="docutils literal notranslate"><span class="pre">GTransELitModel.use_amp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.GTransELitModel.GTransELitModel.validation_epoch_end"><code class="docutils literal notranslate"><span class="pre">GTransELitModel.validation_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.GTransELitModel.GTransELitModel.validation_step"><code class="docutils literal notranslate"><span class="pre">GTransELitModel.validation_step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unKR.lit_model.html#module-unKR.lit_model.PASSLEAFLitModel">PASSLEAFLitModel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.PASSLEAFLitModel.PASSLEAFLitModel"><code class="docutils literal notranslate"><span class="pre">PASSLEAFLitModel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.PASSLEAFLitModel.PASSLEAFLitModel.add_to_argparse"><code class="docutils literal notranslate"><span class="pre">PASSLEAFLitModel.add_to_argparse()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.PASSLEAFLitModel.PASSLEAFLitModel.allow_zero_length_dataloader_with_multiple_devices"><code class="docutils literal notranslate"><span class="pre">PASSLEAFLitModel.allow_zero_length_dataloader_with_multiple_devices</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.PASSLEAFLitModel.PASSLEAFLitModel.configure_optimizers"><code class="docutils literal notranslate"><span class="pre">PASSLEAFLitModel.configure_optimizers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.PASSLEAFLitModel.PASSLEAFLitModel.forward"><code class="docutils literal notranslate"><span class="pre">PASSLEAFLitModel.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.PASSLEAFLitModel.PASSLEAFLitModel.precision"><code class="docutils literal notranslate"><span class="pre">PASSLEAFLitModel.precision</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.PASSLEAFLitModel.PASSLEAFLitModel.prepare_data_per_node"><code class="docutils literal notranslate"><span class="pre">PASSLEAFLitModel.prepare_data_per_node</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.PASSLEAFLitModel.PASSLEAFLitModel.test_epoch_end"><code class="docutils literal notranslate"><span class="pre">PASSLEAFLitModel.test_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.PASSLEAFLitModel.PASSLEAFLitModel.test_step"><code class="docutils literal notranslate"><span class="pre">PASSLEAFLitModel.test_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.PASSLEAFLitModel.PASSLEAFLitModel.training"><code class="docutils literal notranslate"><span class="pre">PASSLEAFLitModel.training</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.PASSLEAFLitModel.PASSLEAFLitModel.training_epoch_end"><code class="docutils literal notranslate"><span class="pre">PASSLEAFLitModel.training_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.PASSLEAFLitModel.PASSLEAFLitModel.training_step"><code class="docutils literal notranslate"><span class="pre">PASSLEAFLitModel.training_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.PASSLEAFLitModel.PASSLEAFLitModel.use_amp"><code class="docutils literal notranslate"><span class="pre">PASSLEAFLitModel.use_amp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.PASSLEAFLitModel.PASSLEAFLitModel.validation_epoch_end"><code class="docutils literal notranslate"><span class="pre">PASSLEAFLitModel.validation_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.PASSLEAFLitModel.PASSLEAFLitModel.validation_step"><code class="docutils literal notranslate"><span class="pre">PASSLEAFLitModel.validation_step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unKR.lit_model.html#module-unKR.lit_model.UKGELitModel">UKGELitModel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGELitModel.UKGELitModel"><code class="docutils literal notranslate"><span class="pre">UKGELitModel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGELitModel.UKGELitModel.add_to_argparse"><code class="docutils literal notranslate"><span class="pre">UKGELitModel.add_to_argparse()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGELitModel.UKGELitModel.allow_zero_length_dataloader_with_multiple_devices"><code class="docutils literal notranslate"><span class="pre">UKGELitModel.allow_zero_length_dataloader_with_multiple_devices</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGELitModel.UKGELitModel.configure_optimizers"><code class="docutils literal notranslate"><span class="pre">UKGELitModel.configure_optimizers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGELitModel.UKGELitModel.forward"><code class="docutils literal notranslate"><span class="pre">UKGELitModel.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGELitModel.UKGELitModel.precision"><code class="docutils literal notranslate"><span class="pre">UKGELitModel.precision</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGELitModel.UKGELitModel.prepare_data_per_node"><code class="docutils literal notranslate"><span class="pre">UKGELitModel.prepare_data_per_node</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGELitModel.UKGELitModel.test_epoch_end"><code class="docutils literal notranslate"><span class="pre">UKGELitModel.test_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGELitModel.UKGELitModel.test_step"><code class="docutils literal notranslate"><span class="pre">UKGELitModel.test_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGELitModel.UKGELitModel.training"><code class="docutils literal notranslate"><span class="pre">UKGELitModel.training</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGELitModel.UKGELitModel.training_step"><code class="docutils literal notranslate"><span class="pre">UKGELitModel.training_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGELitModel.UKGELitModel.use_amp"><code class="docutils literal notranslate"><span class="pre">UKGELitModel.use_amp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGELitModel.UKGELitModel.validation_epoch_end"><code class="docutils literal notranslate"><span class="pre">UKGELitModel.validation_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGELitModel.UKGELitModel.validation_step"><code class="docutils literal notranslate"><span class="pre">UKGELitModel.validation_step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unKR.lit_model.html#module-unKR.lit_model.UKGEPSLLitModel">UKGEPSLLitModel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGEPSLLitModel.UKGEPSLLitModel"><code class="docutils literal notranslate"><span class="pre">UKGEPSLLitModel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGEPSLLitModel.UKGEPSLLitModel.add_to_argparse"><code class="docutils literal notranslate"><span class="pre">UKGEPSLLitModel.add_to_argparse()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGEPSLLitModel.UKGEPSLLitModel.allow_zero_length_dataloader_with_multiple_devices"><code class="docutils literal notranslate"><span class="pre">UKGEPSLLitModel.allow_zero_length_dataloader_with_multiple_devices</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGEPSLLitModel.UKGEPSLLitModel.configure_optimizers"><code class="docutils literal notranslate"><span class="pre">UKGEPSLLitModel.configure_optimizers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGEPSLLitModel.UKGEPSLLitModel.forward"><code class="docutils literal notranslate"><span class="pre">UKGEPSLLitModel.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGEPSLLitModel.UKGEPSLLitModel.precision"><code class="docutils literal notranslate"><span class="pre">UKGEPSLLitModel.precision</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGEPSLLitModel.UKGEPSLLitModel.prepare_data_per_node"><code class="docutils literal notranslate"><span class="pre">UKGEPSLLitModel.prepare_data_per_node</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGEPSLLitModel.UKGEPSLLitModel.test_epoch_end"><code class="docutils literal notranslate"><span class="pre">UKGEPSLLitModel.test_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGEPSLLitModel.UKGEPSLLitModel.test_step"><code class="docutils literal notranslate"><span class="pre">UKGEPSLLitModel.test_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGEPSLLitModel.UKGEPSLLitModel.training"><code class="docutils literal notranslate"><span class="pre">UKGEPSLLitModel.training</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGEPSLLitModel.UKGEPSLLitModel.training_step"><code class="docutils literal notranslate"><span class="pre">UKGEPSLLitModel.training_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGEPSLLitModel.UKGEPSLLitModel.use_amp"><code class="docutils literal notranslate"><span class="pre">UKGEPSLLitModel.use_amp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGEPSLLitModel.UKGEPSLLitModel.validation_epoch_end"><code class="docutils literal notranslate"><span class="pre">UKGEPSLLitModel.validation_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGEPSLLitModel.UKGEPSLLitModel.validation_step"><code class="docutils literal notranslate"><span class="pre">UKGEPSLLitModel.validation_step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unKR.lit_model.html#module-unKR.lit_model.UKGsELitModel">UKGsELitModel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGsELitModel.UKGsELitModel"><code class="docutils literal notranslate"><span class="pre">UKGsELitModel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGsELitModel.UKGsELitModel.add_to_argparse"><code class="docutils literal notranslate"><span class="pre">UKGsELitModel.add_to_argparse()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGsELitModel.UKGsELitModel.allow_zero_length_dataloader_with_multiple_devices"><code class="docutils literal notranslate"><span class="pre">UKGsELitModel.allow_zero_length_dataloader_with_multiple_devices</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGsELitModel.UKGsELitModel.configure_optimizers"><code class="docutils literal notranslate"><span class="pre">UKGsELitModel.configure_optimizers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGsELitModel.UKGsELitModel.forward"><code class="docutils literal notranslate"><span class="pre">UKGsELitModel.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGsELitModel.UKGsELitModel.precision"><code class="docutils literal notranslate"><span class="pre">UKGsELitModel.precision</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGsELitModel.UKGsELitModel.prepare_data_per_node"><code class="docutils literal notranslate"><span class="pre">UKGsELitModel.prepare_data_per_node</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGsELitModel.UKGsELitModel.test_epoch_end"><code class="docutils literal notranslate"><span class="pre">UKGsELitModel.test_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGsELitModel.UKGsELitModel.test_step"><code class="docutils literal notranslate"><span class="pre">UKGsELitModel.test_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGsELitModel.UKGsELitModel.training"><code class="docutils literal notranslate"><span class="pre">UKGsELitModel.training</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGsELitModel.UKGsELitModel.training_step"><code class="docutils literal notranslate"><span class="pre">UKGsELitModel.training_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGsELitModel.UKGsELitModel.use_amp"><code class="docutils literal notranslate"><span class="pre">UKGsELitModel.use_amp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGsELitModel.UKGsELitModel.validation_epoch_end"><code class="docutils literal notranslate"><span class="pre">UKGsELitModel.validation_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UKGsELitModel.UKGsELitModel.validation_step"><code class="docutils literal notranslate"><span class="pre">UKGsELitModel.validation_step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unKR.lit_model.html#module-unKR.lit_model.UPGATLitModel">UPGATLitModel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UPGATLitModel.UPGATLitModel"><code class="docutils literal notranslate"><span class="pre">UPGATLitModel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UPGATLitModel.UPGATLitModel.add_to_argparse"><code class="docutils literal notranslate"><span class="pre">UPGATLitModel.add_to_argparse()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UPGATLitModel.UPGATLitModel.allow_zero_length_dataloader_with_multiple_devices"><code class="docutils literal notranslate"><span class="pre">UPGATLitModel.allow_zero_length_dataloader_with_multiple_devices</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UPGATLitModel.UPGATLitModel.configure_optimizers"><code class="docutils literal notranslate"><span class="pre">UPGATLitModel.configure_optimizers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UPGATLitModel.UPGATLitModel.forward"><code class="docutils literal notranslate"><span class="pre">UPGATLitModel.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UPGATLitModel.UPGATLitModel.precision"><code class="docutils literal notranslate"><span class="pre">UPGATLitModel.precision</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UPGATLitModel.UPGATLitModel.prepare_data_per_node"><code class="docutils literal notranslate"><span class="pre">UPGATLitModel.prepare_data_per_node</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UPGATLitModel.UPGATLitModel.test_epoch_end"><code class="docutils literal notranslate"><span class="pre">UPGATLitModel.test_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UPGATLitModel.UPGATLitModel.test_step"><code class="docutils literal notranslate"><span class="pre">UPGATLitModel.test_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UPGATLitModel.UPGATLitModel.training"><code class="docutils literal notranslate"><span class="pre">UPGATLitModel.training</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UPGATLitModel.UPGATLitModel.training_step"><code class="docutils literal notranslate"><span class="pre">UPGATLitModel.training_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UPGATLitModel.UPGATLitModel.use_amp"><code class="docutils literal notranslate"><span class="pre">UPGATLitModel.use_amp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UPGATLitModel.UPGATLitModel.validation_epoch_end"><code class="docutils literal notranslate"><span class="pre">UPGATLitModel.validation_epoch_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.lit_model.html#unKR.lit_model.UPGATLitModel.UPGATLitModel.validation_step"><code class="docutils literal notranslate"><span class="pre">UPGATLitModel.validation_step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unKR.loss.html">loss</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unKR.loss.html#module-unKR.loss.Adv_Loss">Adv_Loss</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unKR.loss.html#unKR.loss.Adv_Loss.Adv_Loss"><code class="docutils literal notranslate"><span class="pre">Adv_Loss</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.Adv_Loss.Adv_Loss.args"><code class="docutils literal notranslate"><span class="pre">Adv_Loss.args</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.Adv_Loss.Adv_Loss.model"><code class="docutils literal notranslate"><span class="pre">Adv_Loss.model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.Adv_Loss.Adv_Loss.forward"><code class="docutils literal notranslate"><span class="pre">Adv_Loss.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.Adv_Loss.Adv_Loss.normalize"><code class="docutils literal notranslate"><span class="pre">Adv_Loss.normalize()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.Adv_Loss.Adv_Loss.training"><code class="docutils literal notranslate"><span class="pre">Adv_Loss.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unKR.loss.html#module-unKR.loss.BEUrRE_Loss">BEUrRE_Loss</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unKR.loss.html#unKR.loss.BEUrRE_Loss.BEUrRE_Loss"><code class="docutils literal notranslate"><span class="pre">BEUrRE_Loss</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.BEUrRE_Loss.BEUrRE_Loss.args"><code class="docutils literal notranslate"><span class="pre">BEUrRE_Loss.args</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.BEUrRE_Loss.BEUrRE_Loss.model"><code class="docutils literal notranslate"><span class="pre">BEUrRE_Loss.model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.BEUrRE_Loss.BEUrRE_Loss.L2_regularization"><code class="docutils literal notranslate"><span class="pre">BEUrRE_Loss.L2_regularization()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.BEUrRE_Loss.BEUrRE_Loss.forward"><code class="docutils literal notranslate"><span class="pre">BEUrRE_Loss.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.BEUrRE_Loss.BEUrRE_Loss.get_logic_loss"><code class="docutils literal notranslate"><span class="pre">BEUrRE_Loss.get_logic_loss()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.BEUrRE_Loss.BEUrRE_Loss.main_mse_loss"><code class="docutils literal notranslate"><span class="pre">BEUrRE_Loss.main_mse_loss()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.BEUrRE_Loss.BEUrRE_Loss.training"><code class="docutils literal notranslate"><span class="pre">BEUrRE_Loss.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unKR.loss.html#module-unKR.loss.FocusE_Loss">FocusE_Loss</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unKR.loss.html#unKR.loss.FocusE_Loss.FocusE_Loss"><code class="docutils literal notranslate"><span class="pre">FocusE_Loss</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.FocusE_Loss.FocusE_Loss.args"><code class="docutils literal notranslate"><span class="pre">FocusE_Loss.args</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.FocusE_Loss.FocusE_Loss.model"><code class="docutils literal notranslate"><span class="pre">FocusE_Loss.model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.FocusE_Loss.FocusE_Loss.forward"><code class="docutils literal notranslate"><span class="pre">FocusE_Loss.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.FocusE_Loss.FocusE_Loss.training"><code class="docutils literal notranslate"><span class="pre">FocusE_Loss.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unKR.loss.html#module-unKR.loss.GMUC_Loss">GMUC_Loss</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unKR.loss.html#unKR.loss.GMUC_Loss.GMUC_Loss"><code class="docutils literal notranslate"><span class="pre">GMUC_Loss</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.GMUC_Loss.GMUC_Loss.args"><code class="docutils literal notranslate"><span class="pre">GMUC_Loss.args</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.GMUC_Loss.GMUC_Loss.model"><code class="docutils literal notranslate"><span class="pre">GMUC_Loss.model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.GMUC_Loss.GMUC_Loss.forward"><code class="docutils literal notranslate"><span class="pre">GMUC_Loss.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.GMUC_Loss.GMUC_Loss.training"><code class="docutils literal notranslate"><span class="pre">GMUC_Loss.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unKR.loss.html#module-unKR.loss.GMUCp_Loss">GMUCp_Loss</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unKR.loss.html#unKR.loss.GMUCp_Loss.GMUCp_Loss"><code class="docutils literal notranslate"><span class="pre">GMUCp_Loss</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.GMUCp_Loss.GMUCp_Loss.args"><code class="docutils literal notranslate"><span class="pre">GMUCp_Loss.args</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.GMUCp_Loss.GMUCp_Loss.model"><code class="docutils literal notranslate"><span class="pre">GMUCp_Loss.model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.GMUCp_Loss.GMUCp_Loss.forward"><code class="docutils literal notranslate"><span class="pre">GMUCp_Loss.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.GMUCp_Loss.GMUCp_Loss.training"><code class="docutils literal notranslate"><span class="pre">GMUCp_Loss.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unKR.loss.html#module-unKR.loss.GTransE_Loss">GTransE_Loss</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unKR.loss.html#unKR.loss.GTransE_Loss.GTransE_Loss"><code class="docutils literal notranslate"><span class="pre">GTransE_Loss</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.GTransE_Loss.GTransE_Loss.forward"><code class="docutils literal notranslate"><span class="pre">GTransE_Loss.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.GTransE_Loss.GTransE_Loss.training"><code class="docutils literal notranslate"><span class="pre">GTransE_Loss.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unKR.loss.html#module-unKR.loss.PASSLEAF_Loss">PASSLEAF_Loss</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unKR.loss.html#unKR.loss.PASSLEAF_Loss.PASSLEAF_Loss"><code class="docutils literal notranslate"><span class="pre">PASSLEAF_Loss</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.PASSLEAF_Loss.PASSLEAF_Loss.forward"><code class="docutils literal notranslate"><span class="pre">PASSLEAF_Loss.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.PASSLEAF_Loss.PASSLEAF_Loss.training"><code class="docutils literal notranslate"><span class="pre">PASSLEAF_Loss.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unKR.loss.html#module-unKR.loss.UKGE_Loss">UKGE_Loss</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unKR.loss.html#unKR.loss.UKGE_Loss.UKGE_Loss"><code class="docutils literal notranslate"><span class="pre">UKGE_Loss</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.UKGE_Loss.UKGE_Loss.forward"><code class="docutils literal notranslate"><span class="pre">UKGE_Loss.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.UKGE_Loss.UKGE_Loss.training"><code class="docutils literal notranslate"><span class="pre">UKGE_Loss.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unKR.loss.html#module-unKR.loss.UKGE_PSL_Loss">UKGE_PSL_Loss</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unKR.loss.html#unKR.loss.UKGE_PSL_Loss.UKGE_PSL_Loss"><code class="docutils literal notranslate"><span class="pre">UKGE_PSL_Loss</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.UKGE_PSL_Loss.UKGE_PSL_Loss.forward"><code class="docutils literal notranslate"><span class="pre">UKGE_PSL_Loss.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.UKGE_PSL_Loss.UKGE_PSL_Loss.training"><code class="docutils literal notranslate"><span class="pre">UKGE_PSL_Loss.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unKR.loss.html#module-unKR.loss.UKGsE_Loss">UKGsE_Loss</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unKR.loss.html#unKR.loss.UKGsE_Loss.UKGsE_Loss"><code class="docutils literal notranslate"><span class="pre">UKGsE_Loss</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.UKGsE_Loss.UKGsE_Loss.forward"><code class="docutils literal notranslate"><span class="pre">UKGsE_Loss.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.UKGsE_Loss.UKGsE_Loss.training"><code class="docutils literal notranslate"><span class="pre">UKGsE_Loss.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unKR.loss.html#module-unKR.loss.UPGAT_Loss">UPGAT_Loss</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unKR.loss.html#unKR.loss.UPGAT_Loss.UPGAT_Loss"><code class="docutils literal notranslate"><span class="pre">UPGAT_Loss</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.UPGAT_Loss.UPGAT_Loss.forward"><code class="docutils literal notranslate"><span class="pre">UPGAT_Loss.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unKR.loss.html#unKR.loss.UPGAT_Loss.UPGAT_Loss.training"><code class="docutils literal notranslate"><span class="pre">UPGAT_Loss.training</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unKR.model.html">Model</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="nssmodel.html">NSSModel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nssmodel.html#module-unKR.model.NSSModel.model">model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nssmodel.html#unKR.model.NSSModel.model.Model"><code class="docutils literal notranslate"><span class="pre">Model</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nssmodel.html#module-unKR.model.NSSModel.BEUrRE">BEUrRE</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nssmodel.html#unKR.model.NSSModel.BEUrRE.BEUrRE"><code class="docutils literal notranslate"><span class="pre">BEUrRE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nssmodel.html#unKR.model.NSSModel.BEUrRE.Box"><code class="docutils literal notranslate"><span class="pre">Box</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nssmodel.html#module-unKR.model.NSSModel.FocusE">FocusE</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nssmodel.html#unKR.model.NSSModel.FocusE.FocusE"><code class="docutils literal notranslate"><span class="pre">FocusE</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nssmodel.html#module-unKR.model.NSSModel.GTransE">GTransE</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nssmodel.html#unKR.model.NSSModel.GTransE.GTransE"><code class="docutils literal notranslate"><span class="pre">GTransE</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nssmodel.html#module-unKR.model.NSSModel.PASSLEAF">PASSLEAF</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nssmodel.html#unKR.model.NSSModel.PASSLEAF.PASSLEAF"><code class="docutils literal notranslate"><span class="pre">PASSLEAF</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nssmodel.html#module-unKR.model.NSSModel.UKGE">UKGE</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nssmodel.html#unKR.model.NSSModel.UKGE.UKGE"><code class="docutils literal notranslate"><span class="pre">UKGE</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nssmodel.html#module-unKR.model.NSSModel.UKGE_PSL">UKGE_PSL</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nssmodel.html#unKR.model.NSSModel.UKGE_PSL.UKGE_PSL"><code class="docutils literal notranslate"><span class="pre">UKGE_PSL</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nssmodel.html#module-unKR.model.NSSModel.UKGsE">UKGsE</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nssmodel.html#unKR.model.NSSModel.UKGsE.LSTMModel"><code class="docutils literal notranslate"><span class="pre">LSTMModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nssmodel.html#unKR.model.NSSModel.UKGsE.UKGsE"><code class="docutils literal notranslate"><span class="pre">UKGsE</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="nssmodel.html#module-unKR.model.NSSModel.UPGAT">UPGAT</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="nssmodel.html#unKR.model.NSSModel.UPGAT.SpecialSpmmFinal"><code class="docutils literal notranslate"><span class="pre">SpecialSpmmFinal</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nssmodel.html#unKR.model.NSSModel.UPGAT.SpecialSpmmFunctionFinal"><code class="docutils literal notranslate"><span class="pre">SpecialSpmmFunctionFinal</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="nssmodel.html#unKR.model.NSSModel.UPGAT.UPGAT"><code class="docutils literal notranslate"><span class="pre">UPGAT</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ssmodel.html">SSModel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ssmodel.html#module-unKR.model.SSModel.GMUC">GMUC</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ssmodel.html#unKR.model.SSModel.GMUC.GMUC"><code class="docutils literal notranslate"><span class="pre">GMUC</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ssmodel.html#unKR.model.SSModel.GMUC.LayerNormalization"><code class="docutils literal notranslate"><span class="pre">LayerNormalization</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ssmodel.html#unKR.model.SSModel.GMUC.MatchNet"><code class="docutils literal notranslate"><span class="pre">MatchNet</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ssmodel.html#unKR.model.SSModel.GMUC.Matcher"><code class="docutils literal notranslate"><span class="pre">Matcher</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ssmodel.html#unKR.model.SSModel.GMUC.QueryEncoder"><code class="docutils literal notranslate"><span class="pre">QueryEncoder</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ssmodel.html#unKR.model.SSModel.GMUC.SupportEncoder"><code class="docutils literal notranslate"><span class="pre">SupportEncoder</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ssmodel.html#module-unKR.model.SSModel.GMUCp">GMUCp</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ssmodel.html#unKR.model.SSModel.GMUCp.GMUCp"><code class="docutils literal notranslate"><span class="pre">GMUCp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ssmodel.html#unKR.model.SSModel.GMUCp.LayerNormalization"><code class="docutils literal notranslate"><span class="pre">LayerNormalization</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ssmodel.html#unKR.model.SSModel.GMUCp.MatchNet"><code class="docutils literal notranslate"><span class="pre">MatchNet</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ssmodel.html#unKR.model.SSModel.GMUCp.SupportEncoder"><code class="docutils literal notranslate"><span class="pre">SupportEncoder</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Parameters.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Description of basic parameters</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="unKR.data.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Data</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By SEU
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, SEUKGE.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

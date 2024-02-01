@@ -1,0 +1,2306 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Results &#8212; unKR 0.8 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'result';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Description of basic parameters" href="Parameters.html" />
+    <link rel="prev" title="Install" href="install.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">unKR 0.8 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Experiment Result</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Results</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Parameters Description</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Parameters.html">Description of basic parameters</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Package</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="unKR.html">unKR</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="unKR.data.html">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unKR.eval_task.html">Eval_Task</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unKR.lit_model.html">Lit_Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unKR.loss.html">loss</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="unKR.model.html">Model</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="nssmodel.html">NSSModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ssmodel.html">SSModel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/result.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Results</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cn15k">cn15k</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#raw">Raw</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filter">Filter</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nl27k">nl27k</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Raw</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Filter</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ppi5k">ppi5k</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Raw</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Filter</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="results">
+<h1>Results<a class="headerlink" href="#results" title="Permalink to this heading">#</a></h1>
+<p>There are some reproduced model results using unKR</p>
+<section id="cn15k">
+<h2>cn15k<a class="headerlink" href="#cn15k" title="Permalink to this heading">#</a></h2>
+<section id="raw">
+<h3>Raw<a class="headerlink" href="#raw" title="Permalink to this heading">#</a></h3>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;">Model</th>
+<th style="text-align: center;">Confidence Filter(0.7)</th>
+<th style="text-align: center;">MSE</th>
+<th style="text-align: center;">MAE</th>
+<th style="text-align: center;">Hits@1</th>
+<th style="text-align: center;">Hits@3</th>
+<th style="text-align: center;">Hits@10</th>
+<th style="text-align: center;">MRR</th>
+<th style="text-align: center;">MR</th>
+<th style="text-align: center;">WMRR</th>
+<th style="text-align: center;">WMR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">BEUrRE</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.116559997</td>
+<td style="text-align: center;">0.282590985</td>
+<td style="text-align: center;">0.01100</td>
+<td style="text-align: center;">0.13000</td>
+<td style="text-align: center;">0.28000</td>
+<td style="text-align: center;">0.10000</td>
+<td style="text-align: center;">891.06500</td>
+<td style="text-align: center;">0.10200</td>
+<td style="text-align: center;">869.28800</td>
+</tr>
+<tr>
+<td style="text-align: center;">BEUrRE</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.116559997</td>
+<td style="text-align: center;">0.282590985</td>
+<td style="text-align: center;">0.03000</td>
+<td style="text-align: center;">0.12700</td>
+<td style="text-align: center;">0.24800</td>
+<td style="text-align: center;">0.10300</td>
+<td style="text-align: center;">1041.15700</td>
+<td style="text-align: center;">0.11200</td>
+<td style="text-align: center;">916.68900</td>
+</tr>
+<tr>
+<td style="text-align: center;">FocusE</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">83.32640839</td>
+<td style="text-align: center;">6.704373837</td>
+<td style="text-align: center;">0.08100</td>
+<td style="text-align: center;">0.17500</td>
+<td style="text-align: center;">0.31900</td>
+<td style="text-align: center;">0.15700</td>
+<td style="text-align: center;">1691.03800</td>
+<td style="text-align: center;">0.16000</td>
+<td style="text-align: center;">1643.83300</td>
+</tr>
+<tr>
+<td style="text-align: center;">FocusE</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">83.32640839</td>
+<td style="text-align: center;">6.704373837</td>
+<td style="text-align: center;">0.09000</td>
+<td style="text-align: center;">0.16800</td>
+<td style="text-align: center;">0.28800</td>
+<td style="text-align: center;">0.15400</td>
+<td style="text-align: center;">1760.52400</td>
+<td style="text-align: center;">0.16800</td>
+<td style="text-align: center;">1629.57500</td>
+</tr>
+<tr>
+<td style="text-align: center;">GMUC</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.01700</td>
+<td style="text-align: center;">0.10900</td>
+<td style="text-align: center;">0.00200</td>
+<td style="text-align: center;">0.00800</td>
+<td style="text-align: center;">0.05600</td>
+<td style="text-align: center;">0.02800</td>
+<td style="text-align: center;">96.91500</td>
+<td style="text-align: center;">0.02800</td>
+<td style="text-align: center;">96.94200</td>
+</tr>
+<tr>
+<td style="text-align: center;">GMUC</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.01700</td>
+<td style="text-align: center;">0.10400</td>
+<td style="text-align: center;">0.12800</td>
+<td style="text-align: center;">0.16600</td>
+<td style="text-align: center;">0.23200</td>
+<td style="text-align: center;">0.17200</td>
+<td style="text-align: center;">78.76800</td>
+<td style="text-align: center;">0.16800</td>
+<td style="text-align: center;">79.02400</td>
+</tr>
+<tr>
+<td style="text-align: center;">GTransE</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">18.87849</td>
+<td style="text-align: center;">4.12786</td>
+<td style="text-align: center;">0.015953001</td>
+<td style="text-align: center;">0.107601002</td>
+<td style="text-align: center;">0.226449996</td>
+<td style="text-align: center;">0.086833</td>
+<td style="text-align: center;">957.6098633</td>
+<td style="text-align: center;">0.089041002</td>
+<td style="text-align: center;">931.9691162</td>
+</tr>
+<tr>
+<td style="text-align: center;">GTransE</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">18.87849</td>
+<td style="text-align: center;">4.12786</td>
+<td style="text-align: center;">0.042658001</td>
+<td style="text-align: center;">0.112061001</td>
+<td style="text-align: center;">0.207380995</td>
+<td style="text-align: center;">0.098444998</td>
+<td style="text-align: center;">1114.496216</td>
+<td style="text-align: center;">0.104622997</td>
+<td style="text-align: center;">978.835022</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(ComplEx)</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.230945006</td>
+<td style="text-align: center;">0.399697006</td>
+<td style="text-align: center;">0.05800</td>
+<td style="text-align: center;">0.14600</td>
+<td style="text-align: center;">0.30300</td>
+<td style="text-align: center;">0.13400</td>
+<td style="text-align: center;">1146.74900</td>
+<td style="text-align: center;">0.13600</td>
+<td style="text-align: center;">1110.41400</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(ComplEx)</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.230945006</td>
+<td style="text-align: center;">0.399697006</td>
+<td style="text-align: center;">0.05800</td>
+<td style="text-align: center;">0.13100</td>
+<td style="text-align: center;">0.26200</td>
+<td style="text-align: center;">0.12200</td>
+<td style="text-align: center;">1175.95000</td>
+<td style="text-align: center;">0.13600</td>
+<td style="text-align: center;">1099.12600</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(DistMult)</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.21575</td>
+<td style="text-align: center;">0.379233003</td>
+<td style="text-align: center;">0.05700</td>
+<td style="text-align: center;">0.14100</td>
+<td style="text-align: center;">0.28100</td>
+<td style="text-align: center;">0.12800</td>
+<td style="text-align: center;">1111.19100</td>
+<td style="text-align: center;">0.13100</td>
+<td style="text-align: center;">1085.56400</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(DistMult)</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.21575</td>
+<td style="text-align: center;">0.379233003</td>
+<td style="text-align: center;">0.05700</td>
+<td style="text-align: center;">0.12600</td>
+<td style="text-align: center;">0.24400</td>
+<td style="text-align: center;">0.11700</td>
+<td style="text-align: center;">1203.59800</td>
+<td style="text-align: center;">0.13100</td>
+<td style="text-align: center;">1092.16200</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(RotatE)</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.093751997</td>
+<td style="text-align: center;">0.248007998</td>
+<td style="text-align: center;">0.01000</td>
+<td style="text-align: center;">0.13100</td>
+<td style="text-align: center;">0.28900</td>
+<td style="text-align: center;">0.10100</td>
+<td style="text-align: center;">761.38900</td>
+<td style="text-align: center;">0.10400</td>
+<td style="text-align: center;">738.02400</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(RotatE)</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.093751997</td>
+<td style="text-align: center;">0.248007998</td>
+<td style="text-align: center;">0.02900</td>
+<td style="text-align: center;">0.12600</td>
+<td style="text-align: center;">0.25200</td>
+<td style="text-align: center;">0.10300</td>
+<td style="text-align: center;">1020.15400</td>
+<td style="text-align: center;">0.11200</td>
+<td style="text-align: center;">832.61100</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGE</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.246354997</td>
+<td style="text-align: center;">0.408643007</td>
+<td style="text-align: center;">0.05300</td>
+<td style="text-align: center;">0.12700</td>
+<td style="text-align: center;">0.23700</td>
+<td style="text-align: center;">0.11300</td>
+<td style="text-align: center;">1515.95100</td>
+<td style="text-align: center;">0.11500</td>
+<td style="text-align: center;">1479.85700</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGE</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.246354997</td>
+<td style="text-align: center;">0.408643007</td>
+<td style="text-align: center;">0.05600</td>
+<td style="text-align: center;">0.11600</td>
+<td style="text-align: center;">0.20900</td>
+<td style="text-align: center;">0.10600</td>
+<td style="text-align: center;">1616.04100</td>
+<td style="text-align: center;">0.14200</td>
+<td style="text-align: center;">1467.33600</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGE(PSL)</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.246304005</td>
+<td style="text-align: center;">0.408809006</td>
+<td style="text-align: center;">0.04900</td>
+<td style="text-align: center;">0.12400</td>
+<td style="text-align: center;">0.24000</td>
+<td style="text-align: center;">0.11100</td>
+<td style="text-align: center;">1483.42800</td>
+<td style="text-align: center;">0.11300</td>
+<td style="text-align: center;">1447.76300</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGE(PSL)</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.246304005</td>
+<td style="text-align: center;">0.408809006</td>
+<td style="text-align: center;">0.05200</td>
+<td style="text-align: center;">0.11400</td>
+<td style="text-align: center;">0.21000</td>
+<td style="text-align: center;">0.10400</td>
+<td style="text-align: center;">1581.75900</td>
+<td style="text-align: center;">0.11600</td>
+<td style="text-align: center;">1446.81900</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGsE</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.102736004</td>
+<td style="text-align: center;">0.255641013</td>
+<td style="text-align: center;">0.001595</td>
+<td style="text-align: center;">0.00678</td>
+<td style="text-align: center;">0.021217</td>
+<td style="text-align: center;">0.01128</td>
+<td style="text-align: center;">1719.268677</td>
+<td style="text-align: center;">0.011713</td>
+<td style="text-align: center;">1689.56189</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGsE</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.102736004</td>
+<td style="text-align: center;">0.255641013</td>
+<td style="text-align: center;">0.001503</td>
+<td style="text-align: center;">0.00622</td>
+<td style="text-align: center;">0.019695999</td>
+<td style="text-align: center;">0.01021</td>
+<td style="text-align: center;">1949.593506</td>
+<td style="text-align: center;">0.011458</td>
+<td style="text-align: center;">1769.067261</td>
+</tr>
+<tr>
+<td style="text-align: center;">UPGAT</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.14933</td>
+<td style="text-align: center;">0.30796</td>
+<td style="text-align: center;">0.04200</td>
+<td style="text-align: center;">0.12100</td>
+<td style="text-align: center;">0.26200</td>
+<td style="text-align: center;">0.11100</td>
+<td style="text-align: center;">1082.81800</td>
+<td style="text-align: center;">0.11300</td>
+<td style="text-align: center;">1049.43100</td>
+</tr>
+<tr>
+<td style="text-align: center;">UPGAT</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.14933</td>
+<td style="text-align: center;">0.30796</td>
+<td style="text-align: center;">0.03700</td>
+<td style="text-align: center;">0.10800</td>
+<td style="text-align: center;">0.22600</td>
+<td style="text-align: center;">0.09800</td>
+<td style="text-align: center;">1199.50300</td>
+<td style="text-align: center;">0.11000</td>
+<td style="text-align: center;">1060.36600</td>
+</tr>
+</tbody>
+</table></section>
+<section id="filter">
+<h3>Filter<a class="headerlink" href="#filter" title="Permalink to this heading">#</a></h3>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;">Model</th>
+<th style="text-align: center;">Confidence Filter(0.7)</th>
+<th style="text-align: center;">MSE</th>
+<th style="text-align: center;">MAE</th>
+<th style="text-align: center;">Hits@1</th>
+<th style="text-align: center;">Hits@3</th>
+<th style="text-align: center;">Hits@10</th>
+<th style="text-align: center;">MRR</th>
+<th style="text-align: center;">MR</th>
+<th style="text-align: center;">WMRR</th>
+<th style="text-align: center;">WMR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">BEUrRE</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.116559997</td>
+<td style="text-align: center;">0.282590985</td>
+<td style="text-align: center;">0.01700</td>
+<td style="text-align: center;">0.18800</td>
+<td style="text-align: center;">0.31700</td>
+<td style="text-align: center;">0.12500</td>
+<td style="text-align: center;">881.97000</td>
+<td style="text-align: center;">0.12800</td>
+<td style="text-align: center;">860.37000</td>
+</tr>
+<tr>
+<td style="text-align: center;">BEUrRE</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.116559997</td>
+<td style="text-align: center;">0.282590985</td>
+<td style="text-align: center;">0.03900</td>
+<td style="text-align: center;">0.17500</td>
+<td style="text-align: center;">0.28500</td>
+<td style="text-align: center;">0.12800</td>
+<td style="text-align: center;">1026.46500</td>
+<td style="text-align: center;">0.13800</td>
+<td style="text-align: center;">905.26700</td>
+</tr>
+<tr>
+<td style="text-align: center;">FocusE</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">83.32640839</td>
+<td style="text-align: center;">6.704373837</td>
+<td style="text-align: center;">0.16900</td>
+<td style="text-align: center;">0.27400</td>
+<td style="text-align: center;">0.38000</td>
+<td style="text-align: center;">0.24200</td>
+<td style="text-align: center;">1678.48700</td>
+<td style="text-align: center;">0.24700</td>
+<td style="text-align: center;">1631.42600</td>
+</tr>
+<tr>
+<td style="text-align: center;">FocusE</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">83.32640839</td>
+<td style="text-align: center;">6.704373837</td>
+<td style="text-align: center;">0.16400</td>
+<td style="text-align: center;">0.25400</td>
+<td style="text-align: center;">0.34900</td>
+<td style="text-align: center;">0.22800</td>
+<td style="text-align: center;">1740.28800</td>
+<td style="text-align: center;">0.25000</td>
+<td style="text-align: center;">1613.61000</td>
+</tr>
+<tr>
+<td style="text-align: center;">GMUC</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.01700</td>
+<td style="text-align: center;">0.10900</td>
+<td style="text-align: center;">0.00200</td>
+<td style="text-align: center;">0.00800</td>
+<td style="text-align: center;">0.05700</td>
+<td style="text-align: center;">0.02900</td>
+<td style="text-align: center;">95.80600</td>
+<td style="text-align: center;">0.02900</td>
+<td style="text-align: center;">95.80500</td>
+</tr>
+<tr>
+<td style="text-align: center;">GMUC</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.01700</td>
+<td style="text-align: center;">0.10400</td>
+<td style="text-align: center;">0.12800</td>
+<td style="text-align: center;">0.16700</td>
+<td style="text-align: center;">0.23200</td>
+<td style="text-align: center;">0.17300</td>
+<td style="text-align: center;">77.69500</td>
+<td style="text-align: center;">0.17100</td>
+<td style="text-align: center;">77.92600</td>
+</tr>
+<tr>
+<td style="text-align: center;">GTransE</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">18.87849</td>
+<td style="text-align: center;">4.12786</td>
+<td style="text-align: center;">0.025604</td>
+<td style="text-align: center;">0.129297003</td>
+<td style="text-align: center;">0.243200004</td>
+<td style="text-align: center;">0.101469003</td>
+<td style="text-align: center;">949.3557739</td>
+<td style="text-align: center;">0.104203001</td>
+<td style="text-align: center;">923.8496094</td>
+</tr>
+<tr>
+<td style="text-align: center;">GTransE</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">18.87849</td>
+<td style="text-align: center;">4.12786</td>
+<td style="text-align: center;">0.049759001</td>
+<td style="text-align: center;">0.129270002</td>
+<td style="text-align: center;">0.222671002</td>
+<td style="text-align: center;">0.110189997</td>
+<td style="text-align: center;">1101.196411</td>
+<td style="text-align: center;">0.118147001</td>
+<td style="text-align: center;">968.446106</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(ComplEx)</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.230945006</td>
+<td style="text-align: center;">0.399697006</td>
+<td style="text-align: center;">0.09300</td>
+<td style="text-align: center;">0.25500</td>
+<td style="text-align: center;">0.38300</td>
+<td style="text-align: center;">0.19600</td>
+<td style="text-align: center;">1135.03200</td>
+<td style="text-align: center;">0.20000</td>
+<td style="text-align: center;">1110.41400</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(ComplEx)</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.230945006</td>
+<td style="text-align: center;">0.399697006</td>
+<td style="text-align: center;">0.08600</td>
+<td style="text-align: center;">0.22300</td>
+<td style="text-align: center;">0.34000</td>
+<td style="text-align: center;">0.17500</td>
+<td style="text-align: center;">1157.33400</td>
+<td style="text-align: center;">0.19600</td>
+<td style="text-align: center;">1084.49700</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(DistMult)</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.21575</td>
+<td style="text-align: center;">0.379233003</td>
+<td style="text-align: center;">0.08300</td>
+<td style="text-align: center;">0.20400</td>
+<td style="text-align: center;">0.34000</td>
+<td style="text-align: center;">0.16900</td>
+<td style="text-align: center;">1099.70500</td>
+<td style="text-align: center;">0.17200</td>
+<td style="text-align: center;">1074.26300</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(DistMult)</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.21575</td>
+<td style="text-align: center;">0.379233003</td>
+<td style="text-align: center;">0.07800</td>
+<td style="text-align: center;">0.17800</td>
+<td style="text-align: center;">0.29600</td>
+<td style="text-align: center;">0.15100</td>
+<td style="text-align: center;">1185.32900</td>
+<td style="text-align: center;">0.17000</td>
+<td style="text-align: center;">1077.80900</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(RotatE)</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.093751997</td>
+<td style="text-align: center;">0.248007998</td>
+<td style="text-align: center;">0.01800</td>
+<td style="text-align: center;">0.18200</td>
+<td style="text-align: center;">0.32900</td>
+<td style="text-align: center;">0.12700</td>
+<td style="text-align: center;">752.46100</td>
+<td style="text-align: center;">0.13000</td>
+<td style="text-align: center;">729.27000</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(RotatE)</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.093751997</td>
+<td style="text-align: center;">0.248007998</td>
+<td style="text-align: center;">0.03700</td>
+<td style="text-align: center;">0.16700</td>
+<td style="text-align: center;">0.28800</td>
+<td style="text-align: center;">0.12500</td>
+<td style="text-align: center;">1005.76400</td>
+<td style="text-align: center;">0.13700</td>
+<td style="text-align: center;">821.43500</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGE</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.246354997</td>
+<td style="text-align: center;">0.408643007</td>
+<td style="text-align: center;">0.07400</td>
+<td style="text-align: center;">0.16400</td>
+<td style="text-align: center;">0.26600</td>
+<td style="text-align: center;">0.13900</td>
+<td style="text-align: center;">1504.80700</td>
+<td style="text-align: center;">0.14200</td>
+<td style="text-align: center;">1468.89800</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGE</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.246354997</td>
+<td style="text-align: center;">0.408643007</td>
+<td style="text-align: center;">0.07200</td>
+<td style="text-align: center;">0.14600</td>
+<td style="text-align: center;">0.23400</td>
+<td style="text-align: center;">0.12800</td>
+<td style="text-align: center;">1598.38800</td>
+<td style="text-align: center;">0.11800</td>
+<td style="text-align: center;">1481.23300</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGE(PSL)</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.246304005</td>
+<td style="text-align: center;">0.408809006</td>
+<td style="text-align: center;">0.06400</td>
+<td style="text-align: center;">0.16000</td>
+<td style="text-align: center;">0.27100</td>
+<td style="text-align: center;">0.13500</td>
+<td style="text-align: center;">1472.25500</td>
+<td style="text-align: center;">0.13700</td>
+<td style="text-align: center;">1436.77200</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGE(PSL)</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.246304005</td>
+<td style="text-align: center;">0.408809006</td>
+<td style="text-align: center;">0.06500</td>
+<td style="text-align: center;">0.14200</td>
+<td style="text-align: center;">0.23800</td>
+<td style="text-align: center;">0.12400</td>
+<td style="text-align: center;">1564.01900</td>
+<td style="text-align: center;">0.13800</td>
+<td style="text-align: center;">1432.86900</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGsE</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.102736004</td>
+<td style="text-align: center;">0.255641013</td>
+<td style="text-align: center;">0.001595</td>
+<td style="text-align: center;">0.007019</td>
+<td style="text-align: center;">0.021855</td>
+<td style="text-align: center;">0.011495</td>
+<td style="text-align: center;">1711.308228</td>
+<td style="text-align: center;">0.011936</td>
+<td style="text-align: center;">1681.697632</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGsE</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.102736004</td>
+<td style="text-align: center;">0.255641013</td>
+<td style="text-align: center;">0.001503</td>
+<td style="text-align: center;">0.006427</td>
+<td style="text-align: center;">0.020214999</td>
+<td style="text-align: center;">0.0104</td>
+<td style="text-align: center;">1936.439209</td>
+<td style="text-align: center;">0.011666</td>
+<td style="text-align: center;">1758.789795</td>
+</tr>
+<tr>
+<td style="text-align: center;">UPGAT</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.14933</td>
+<td style="text-align: center;">0.30796</td>
+<td style="text-align: center;">0.09400</td>
+<td style="text-align: center;">0.19600</td>
+<td style="text-align: center;">0.32300</td>
+<td style="text-align: center;">0.17000</td>
+<td style="text-align: center;">1067.62100</td>
+<td style="text-align: center;">0.17300</td>
+<td style="text-align: center;">1034.48500</td>
+</tr>
+<tr>
+<td style="text-align: center;">UPGAT</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.14933</td>
+<td style="text-align: center;">0.30796</td>
+<td style="text-align: center;">0.07800</td>
+<td style="text-align: center;">0.16800</td>
+<td style="text-align: center;">0.28100</td>
+<td style="text-align: center;">0.14600</td>
+<td style="text-align: center;">1177.97400</td>
+<td style="text-align: center;">0.16500</td>
+<td style="text-align: center;">1042.69500</td>
+</tr>
+</tbody>
+</table></section>
+</section>
+<section id="nl27k">
+<h2>nl27k<a class="headerlink" href="#nl27k" title="Permalink to this heading">#</a></h2>
+<section id="id1">
+<h3>Raw<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;">Model</th>
+<th style="text-align: center;">Confidence Filter(0.7)</th>
+<th style="text-align: center;">MSE</th>
+<th style="text-align: center;">MAE</th>
+<th style="text-align: center;">Hits@1</th>
+<th style="text-align: center;">Hits@3</th>
+<th style="text-align: center;">Hits@10</th>
+<th style="text-align: center;">MRR</th>
+<th style="text-align: center;">MR</th>
+<th style="text-align: center;">WMRR</th>
+<th style="text-align: center;">WMR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">BEUrRE</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.089538999</td>
+<td style="text-align: center;">0.222130999</td>
+<td style="text-align: center;">0.106187999</td>
+<td style="text-align: center;">0.312415004</td>
+<td style="text-align: center;">0.454908997</td>
+<td style="text-align: center;">0.234743997</td>
+<td style="text-align: center;">516.1815186</td>
+<td style="text-align: center;">0.239789993</td>
+<td style="text-align: center;">500.4590149</td>
+</tr>
+<tr>
+<td style="text-align: center;">BEUrRE</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.089538999</td>
+<td style="text-align: center;">0.222130999</td>
+<td style="text-align: center;">0.080660999</td>
+<td style="text-align: center;">0.252885997</td>
+<td style="text-align: center;">0.377297997</td>
+<td style="text-align: center;">0.190451995</td>
+<td style="text-align: center;">895.388855</td>
+<td style="text-align: center;">0.215119004</td>
+<td style="text-align: center;">708.1762085</td>
+</tr>
+<tr>
+<td style="text-align: center;">FocusE</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">290.7572937</td>
+<td style="text-align: center;">16.19610023</td>
+<td style="text-align: center;">0.387077987</td>
+<td style="text-align: center;">0.530840993</td>
+<td style="text-align: center;">0.657818019</td>
+<td style="text-align: center;">0.482501</td>
+<td style="text-align: center;">137.5967255</td>
+<td style="text-align: center;">0.486396998</td>
+<td style="text-align: center;">136.9906921</td>
+</tr>
+<tr>
+<td style="text-align: center;">FocusE</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">290.7572937</td>
+<td style="text-align: center;">16.19610023</td>
+<td style="text-align: center;">0.368319988</td>
+<td style="text-align: center;">0.512754977</td>
+<td style="text-align: center;">0.643151999</td>
+<td style="text-align: center;">0.464713991</td>
+<td style="text-align: center;">176.1968079</td>
+<td style="text-align: center;">0.47627601</td>
+<td style="text-align: center;">158.1079865</td>
+</tr>
+<tr>
+<td style="text-align: center;">GMUC</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.01200</td>
+<td style="text-align: center;">0.08200</td>
+<td style="text-align: center;">0.28100</td>
+<td style="text-align: center;">0.40000</td>
+<td style="text-align: center;">0.54000</td>
+<td style="text-align: center;">0.36800</td>
+<td style="text-align: center;">62.00500</td>
+<td style="text-align: center;">0.36800</td>
+<td style="text-align: center;">61.84900</td>
+</tr>
+<tr>
+<td style="text-align: center;">GMUC</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.01300</td>
+<td style="text-align: center;">0.08200</td>
+<td style="text-align: center;">0.28700</td>
+<td style="text-align: center;">0.40900</td>
+<td style="text-align: center;">0.53600</td>
+<td style="text-align: center;">0.37500</td>
+<td style="text-align: center;">71.48400</td>
+<td style="text-align: center;">0.37500</td>
+<td style="text-align: center;">71.44700</td>
+</tr>
+<tr>
+<td style="text-align: center;">GMUC+</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.01500</td>
+<td style="text-align: center;">0.10200</td>
+<td style="text-align: center;">0.29000</td>
+<td style="text-align: center;">0.42000</td>
+<td style="text-align: center;">0.57300</td>
+<td style="text-align: center;">0.43800</td>
+<td style="text-align: center;">45.77400</td>
+<td style="text-align: center;">0.38400</td>
+<td style="text-align: center;">49.80800</td>
+</tr>
+<tr>
+<td style="text-align: center;">GMUC+</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.01300</td>
+<td style="text-align: center;">0.08600</td>
+<td style="text-align: center;">0.29900</td>
+<td style="text-align: center;">0.44800</td>
+<td style="text-align: center;">0.58200</td>
+<td style="text-align: center;">0.40100</td>
+<td style="text-align: center;">49.41800</td>
+<td style="text-align: center;">0.40100</td>
+<td style="text-align: center;">49.10700</td>
+</tr>
+<tr>
+<td style="text-align: center;">GTransE</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">39.83544</td>
+<td style="text-align: center;">5.12528</td>
+<td style="text-align: center;">0.16800</td>
+<td style="text-align: center;">0.28700</td>
+<td style="text-align: center;">0.40700</td>
+<td style="text-align: center;">0.25000</td>
+<td style="text-align: center;">1434.63400</td>
+<td style="text-align: center;">0.25300</td>
+<td style="text-align: center;">1435.39700</td>
+</tr>
+<tr>
+<td style="text-align: center;">GTransE</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">39.83544</td>
+<td style="text-align: center;">5.12528</td>
+<td style="text-align: center;">0.13674</td>
+<td style="text-align: center;">0.24476</td>
+<td style="text-align: center;">0.35250</td>
+<td style="text-align: center;">0.21145</td>
+<td style="text-align: center;">2014.54199</td>
+<td style="text-align: center;">0.23173</td>
+<td style="text-align: center;">1749.63757</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(ComplEx)</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.024344999</td>
+<td style="text-align: center;">0.051764</td>
+<td style="text-align: center;">0.40500</td>
+<td style="text-align: center;">0.54400</td>
+<td style="text-align: center;">0.66200</td>
+<td style="text-align: center;">0.49600</td>
+<td style="text-align: center;">184.43000</td>
+<td style="text-align: center;">0.50200</td>
+<td style="text-align: center;">182.85700</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(ComplEx)</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.024344999</td>
+<td style="text-align: center;">0.051764</td>
+<td style="text-align: center;">0.37300</td>
+<td style="text-align: center;">0.50800</td>
+<td style="text-align: center;">0.62600</td>
+<td style="text-align: center;">0.46300</td>
+<td style="text-align: center;">222.98800</td>
+<td style="text-align: center;">0.48300</td>
+<td style="text-align: center;">204.15900</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(DistMult)</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.023157001</td>
+<td style="text-align: center;">0.051120002</td>
+<td style="text-align: center;">0.39900</td>
+<td style="text-align: center;">0.53600</td>
+<td style="text-align: center;">0.65700</td>
+<td style="text-align: center;">0.49000</td>
+<td style="text-align: center;">182.90300</td>
+<td style="text-align: center;">0.49600</td>
+<td style="text-align: center;">180.81300</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(DistMult)</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.023157001</td>
+<td style="text-align: center;">0.051120002</td>
+<td style="text-align: center;">0.36800</td>
+<td style="text-align: center;">0.50000</td>
+<td style="text-align: center;">0.62100</td>
+<td style="text-align: center;">0.45700</td>
+<td style="text-align: center;">213.23500</td>
+<td style="text-align: center;">0.47700</td>
+<td style="text-align: center;">197.71200</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(RotatE)</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.015856</td>
+<td style="text-align: center;">0.063303001</td>
+<td style="text-align: center;">0.39300</td>
+<td style="text-align: center;">0.53100</td>
+<td style="text-align: center;">0.65000</td>
+<td style="text-align: center;">0.48400</td>
+<td style="text-align: center;">102.50300</td>
+<td style="text-align: center;">0.49100</td>
+<td style="text-align: center;">100.45400</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(RotatE)</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.015856</td>
+<td style="text-align: center;">0.063303001</td>
+<td style="text-align: center;">0.33400</td>
+<td style="text-align: center;">0.46900</td>
+<td style="text-align: center;">0.58000</td>
+<td style="text-align: center;">0.42300</td>
+<td style="text-align: center;">143.79900</td>
+<td style="text-align: center;">0.45700</td>
+<td style="text-align: center;">122.61800</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGE</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.029072</td>
+<td style="text-align: center;">0.059388001</td>
+<td style="text-align: center;">0.38900</td>
+<td style="text-align: center;">0.52300</td>
+<td style="text-align: center;">0.64600</td>
+<td style="text-align: center;">0.47900</td>
+<td style="text-align: center;">201.85100</td>
+<td style="text-align: center;">0.48400</td>
+<td style="text-align: center;">199.95100</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGE</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.029072</td>
+<td style="text-align: center;">0.059388001</td>
+<td style="text-align: center;">0.35500</td>
+<td style="text-align: center;">0.48600</td>
+<td style="text-align: center;">0.60300</td>
+<td style="text-align: center;">0.44300</td>
+<td style="text-align: center;">251.68200</td>
+<td style="text-align: center;">0.46400</td>
+<td style="text-align: center;">226.92100</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGE(PSL)</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.028788</td>
+<td style="text-align: center;">0.059144001</td>
+<td style="text-align: center;">0.38700</td>
+<td style="text-align: center;">0.52400</td>
+<td style="text-align: center;">0.64200</td>
+<td style="text-align: center;">0.47700</td>
+<td style="text-align: center;">207.38100</td>
+<td style="text-align: center;">0.48300</td>
+<td style="text-align: center;">203.61700</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGE(PSL)</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.028788</td>
+<td style="text-align: center;">0.059144001</td>
+<td style="text-align: center;">0.35300</td>
+<td style="text-align: center;">0.48500</td>
+<td style="text-align: center;">0.60000</td>
+<td style="text-align: center;">0.44100</td>
+<td style="text-align: center;">252.57700</td>
+<td style="text-align: center;">0.46200</td>
+<td style="text-align: center;">229.01000</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGsE</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.12202</td>
+<td style="text-align: center;">0.27065</td>
+<td style="text-align: center;">0.03543</td>
+<td style="text-align: center;">0.06695</td>
+<td style="text-align: center;">0.12376</td>
+<td style="text-align: center;">0.06560</td>
+<td style="text-align: center;">2378.45581</td>
+<td style="text-align: center;">0.06561</td>
+<td style="text-align: center;">2336.46582</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGsE</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.12202</td>
+<td style="text-align: center;">0.27065</td>
+<td style="text-align: center;">0.03000</td>
+<td style="text-align: center;">0.05800</td>
+<td style="text-align: center;">0.10800</td>
+<td style="text-align: center;">0.05700</td>
+<td style="text-align: center;">3022.76900</td>
+<td style="text-align: center;">0.06100</td>
+<td style="text-align: center;">2690.49600</td>
+</tr>
+<tr>
+<td style="text-align: center;">UPGAT</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.02922</td>
+<td style="text-align: center;">0.10107</td>
+<td style="text-align: center;">0.37900</td>
+<td style="text-align: center;">0.52000</td>
+<td style="text-align: center;">0.64500</td>
+<td style="text-align: center;">0.47300</td>
+<td style="text-align: center;">114.65800</td>
+<td style="text-align: center;">0.47700</td>
+<td style="text-align: center;">113.82700</td>
+</tr>
+<tr>
+<td style="text-align: center;">UPGAT</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.02922</td>
+<td style="text-align: center;">0.10107</td>
+<td style="text-align: center;">0.33900</td>
+<td style="text-align: center;">0.46700</td>
+<td style="text-align: center;">0.58600</td>
+<td style="text-align: center;">0.42600</td>
+<td style="text-align: center;">166.16900</td>
+<td style="text-align: center;">0.45200</td>
+<td style="text-align: center;">141.35800</td>
+</tr>
+</tbody>
+</table></section>
+<section id="id2">
+<h3>Filter<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;">Model</th>
+<th style="text-align: center;">Confidence Filter(0.7)</th>
+<th style="text-align: center;">MSE</th>
+<th style="text-align: center;">MAE</th>
+<th style="text-align: center;">Hits@1</th>
+<th style="text-align: center;">Hits@3</th>
+<th style="text-align: center;">Hits@10</th>
+<th style="text-align: center;">MRR</th>
+<th style="text-align: center;">MR</th>
+<th style="text-align: center;">WMRR</th>
+<th style="text-align: center;">WMR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">BEUrRE</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.089538999</td>
+<td style="text-align: center;">0.222130999</td>
+<td style="text-align: center;">0.140640005</td>
+<td style="text-align: center;">0.407182992</td>
+<td style="text-align: center;">0.564805984</td>
+<td style="text-align: center;">0.301261991</td>
+<td style="text-align: center;">453.1804504</td>
+<td style="text-align: center;">0.307830006</td>
+<td style="text-align: center;">438.0662231</td>
+</tr>
+<tr>
+<td style="text-align: center;">BEUrRE</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.089538999</td>
+<td style="text-align: center;">0.222130999</td>
+<td style="text-align: center;">0.106242001</td>
+<td style="text-align: center;">0.325922996</td>
+<td style="text-align: center;">0.464942008</td>
+<td style="text-align: center;">0.241718993</td>
+<td style="text-align: center;">831.166748</td>
+<td style="text-align: center;">0.274690986</td>
+<td style="text-align: center;">645.0340576</td>
+</tr>
+<tr>
+<td style="text-align: center;">FocusE</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">290.7572937</td>
+<td style="text-align: center;">16.19610023</td>
+<td style="text-align: center;">0.710326016</td>
+<td style="text-align: center;">0.849794984</td>
+<td style="text-align: center;">0.930020988</td>
+<td style="text-align: center;">0.790171027</td>
+<td style="text-align: center;">82.4626236</td>
+<td style="text-align: center;">0.793618023</td>
+<td style="text-align: center;">82.71473694</td>
+</tr>
+<tr>
+<td style="text-align: center;">FocusE</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">290.7572937</td>
+<td style="text-align: center;">16.19610023</td>
+<td style="text-align: center;">0.662890017</td>
+<td style="text-align: center;">0.809248984</td>
+<td style="text-align: center;">0.90209502</td>
+<td style="text-align: center;">0.748854995</td>
+<td style="text-align: center;">117.9376526</td>
+<td style="text-align: center;">0.770852983</td>
+<td style="text-align: center;">102.0087128</td>
+</tr>
+<tr>
+<td style="text-align: center;">GMUC</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.01200</td>
+<td style="text-align: center;">0.08200</td>
+<td style="text-align: center;">0.33500</td>
+<td style="text-align: center;">0.46500</td>
+<td style="text-align: center;">0.59200</td>
+<td style="text-align: center;">0.42500</td>
+<td style="text-align: center;">58.31200</td>
+<td style="text-align: center;">0.42600</td>
+<td style="text-align: center;">58.09700</td>
+</tr>
+<tr>
+<td style="text-align: center;">GMUC</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.01300</td>
+<td style="text-align: center;">0.08200</td>
+<td style="text-align: center;">0.34400</td>
+<td style="text-align: center;">0.46200</td>
+<td style="text-align: center;">0.59200</td>
+<td style="text-align: center;">0.43000</td>
+<td style="text-align: center;">67.92000</td>
+<td style="text-align: center;">0.43200</td>
+<td style="text-align: center;">67.81300</td>
+</tr>
+<tr>
+<td style="text-align: center;">GMUC+</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.01500</td>
+<td style="text-align: center;">0.10200</td>
+<td style="text-align: center;">0.33800</td>
+<td style="text-align: center;">0.48600</td>
+<td style="text-align: center;">0.63600</td>
+<td style="text-align: center;">0.43800</td>
+<td style="text-align: center;">45.77400</td>
+<td style="text-align: center;">0.43800</td>
+<td style="text-align: center;">45.68200</td>
+</tr>
+<tr>
+<td style="text-align: center;">GMUC+</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.01300</td>
+<td style="text-align: center;">0.08600</td>
+<td style="text-align: center;">0.37100</td>
+<td style="text-align: center;">0.50500</td>
+<td style="text-align: center;">0.63800</td>
+<td style="text-align: center;">0.46300</td>
+<td style="text-align: center;">45.87400</td>
+<td style="text-align: center;">0.46500</td>
+<td style="text-align: center;">45.49500</td>
+</tr>
+<tr>
+<td style="text-align: center;">GTransE</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">39.83544</td>
+<td style="text-align: center;">5.12528</td>
+<td style="text-align: center;">0.22200</td>
+<td style="text-align: center;">0.36600</td>
+<td style="text-align: center;">0.49300</td>
+<td style="text-align: center;">0.31600</td>
+<td style="text-align: center;">1377.56400</td>
+<td style="text-align: center;">0.31900</td>
+<td style="text-align: center;">1378.50500</td>
+</tr>
+<tr>
+<td style="text-align: center;">GTransE</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">39.83544</td>
+<td style="text-align: center;">5.12528</td>
+<td style="text-align: center;">0.17914</td>
+<td style="text-align: center;">0.30818</td>
+<td style="text-align: center;">0.42461</td>
+<td style="text-align: center;">0.26475</td>
+<td style="text-align: center;">1957.77161</td>
+<td style="text-align: center;">0.29136</td>
+<td style="text-align: center;">1692.88000</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(ComplEx)</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.024344999</td>
+<td style="text-align: center;">0.051764</td>
+<td style="text-align: center;">0.67000</td>
+<td style="text-align: center;">0.78600</td>
+<td style="text-align: center;">0.87600</td>
+<td style="text-align: center;">0.74100</td>
+<td style="text-align: center;">138.80800</td>
+<td style="text-align: center;">0.75300</td>
+<td style="text-align: center;">138.47700</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(ComplEx)</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.024344999</td>
+<td style="text-align: center;">0.051764</td>
+<td style="text-align: center;">0.58600</td>
+<td style="text-align: center;">0.70300</td>
+<td style="text-align: center;">0.80100</td>
+<td style="text-align: center;">0.66200</td>
+<td style="text-align: center;">172.64500</td>
+<td style="text-align: center;">0.70800</td>
+<td style="text-align: center;">157.04000</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(DistMult)</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.023157001</td>
+<td style="text-align: center;">0.051120002</td>
+<td style="text-align: center;">0.63000</td>
+<td style="text-align: center;">0.75400</td>
+<td style="text-align: center;">0.86700</td>
+<td style="text-align: center;">0.70900</td>
+<td style="text-align: center;">137.31200</td>
+<td style="text-align: center;">0.71900</td>
+<td style="text-align: center;">136.42900</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(DistMult)</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.023157001</td>
+<td style="text-align: center;">0.051120002</td>
+<td style="text-align: center;">0.55500</td>
+<td style="text-align: center;">0.67700</td>
+<td style="text-align: center;">0.78400</td>
+<td style="text-align: center;">0.63500</td>
+<td style="text-align: center;">162.60200</td>
+<td style="text-align: center;">0.67800</td>
+<td style="text-align: center;">150.42000</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(RotatE)</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.015856</td>
+<td style="text-align: center;">0.063303001</td>
+<td style="text-align: center;">0.66400</td>
+<td style="text-align: center;">0.79100</td>
+<td style="text-align: center;">0.86800</td>
+<td style="text-align: center;">0.74000</td>
+<td style="text-align: center;">54.50000</td>
+<td style="text-align: center;">0.75400</td>
+<td style="text-align: center;">53.55100</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(RotatE)</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.015856</td>
+<td style="text-align: center;">0.063303001</td>
+<td style="text-align: center;">0.53700</td>
+<td style="text-align: center;">0.66600</td>
+<td style="text-align: center;">0.74700</td>
+<td style="text-align: center;">0.61600</td>
+<td style="text-align: center;">91.49600</td>
+<td style="text-align: center;">0.68500</td>
+<td style="text-align: center;">73.22600</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGE</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.029072</td>
+<td style="text-align: center;">0.059388001</td>
+<td style="text-align: center;">0.53200</td>
+<td style="text-align: center;">0.68000</td>
+<td style="text-align: center;">0.82100</td>
+<td style="text-align: center;">0.63000</td>
+<td style="text-align: center;">156.86500</td>
+<td style="text-align: center;">0.63800</td>
+<td style="text-align: center;">156.23600</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGE</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.029072</td>
+<td style="text-align: center;">0.059388001</td>
+<td style="text-align: center;">0.47500</td>
+<td style="text-align: center;">0.61000</td>
+<td style="text-align: center;">0.74600</td>
+<td style="text-align: center;">0.56700</td>
+<td style="text-align: center;">201.47700</td>
+<td style="text-align: center;">0.60300</td>
+<td style="text-align: center;">180.19300</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGE(PSL)</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.028788</td>
+<td style="text-align: center;">0.059144001</td>
+<td style="text-align: center;">0.53500</td>
+<td style="text-align: center;">0.67300</td>
+<td style="text-align: center;">0.82100</td>
+<td style="text-align: center;">0.62900</td>
+<td style="text-align: center;">162.37900</td>
+<td style="text-align: center;">0.63700</td>
+<td style="text-align: center;">159.88900</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGE(PSL)</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.028788</td>
+<td style="text-align: center;">0.059144001</td>
+<td style="text-align: center;">0.47600</td>
+<td style="text-align: center;">0.60400</td>
+<td style="text-align: center;">0.74400</td>
+<td style="text-align: center;">0.56600</td>
+<td style="text-align: center;">202.23200</td>
+<td style="text-align: center;">0.60200</td>
+<td style="text-align: center;">182.20000</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGsE</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.12202</td>
+<td style="text-align: center;">0.27065</td>
+<td style="text-align: center;">0.03767</td>
+<td style="text-align: center;">0.07310</td>
+<td style="text-align: center;">0.13000</td>
+<td style="text-align: center;">0.06945</td>
+<td style="text-align: center;">2329.50073</td>
+<td style="text-align: center;">0.06938</td>
+<td style="text-align: center;">2288.22217</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGsE</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.12202</td>
+<td style="text-align: center;">0.27065</td>
+<td style="text-align: center;">0.03100</td>
+<td style="text-align: center;">0.06200</td>
+<td style="text-align: center;">0.11300</td>
+<td style="text-align: center;">0.06000</td>
+<td style="text-align: center;">2973.23600</td>
+<td style="text-align: center;">0.06400</td>
+<td style="text-align: center;">2641.84000</td>
+</tr>
+<tr>
+<td style="text-align: center;">UPGAT</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.02922</td>
+<td style="text-align: center;">0.10107</td>
+<td style="text-align: center;">0.61800</td>
+<td style="text-align: center;">0.75100</td>
+<td style="text-align: center;">0.86200</td>
+<td style="text-align: center;">0.70100</td>
+<td style="text-align: center;">69.12000</td>
+<td style="text-align: center;">0.70800</td>
+<td style="text-align: center;">69.36400</td>
+</tr>
+<tr>
+<td style="text-align: center;">UPGAT</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.02922</td>
+<td style="text-align: center;">0.10107</td>
+<td style="text-align: center;">0.53000</td>
+<td style="text-align: center;">0.65400</td>
+<td style="text-align: center;">0.76500</td>
+<td style="text-align: center;">0.61100</td>
+<td style="text-align: center;">115.00400</td>
+<td style="text-align: center;">0.65800</td>
+<td style="text-align: center;">93.69200</td>
+</tr>
+</tbody>
+</table></section>
+</section>
+<section id="ppi5k">
+<h2>ppi5k<a class="headerlink" href="#ppi5k" title="Permalink to this heading">#</a></h2>
+<section id="id3">
+<h3>Raw<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;">Model</th>
+<th style="text-align: center;">Confidence Filter(0.7)</th>
+<th style="text-align: center;">MSE</th>
+<th style="text-align: center;">MAE</th>
+<th style="text-align: center;">Hits@1</th>
+<th style="text-align: center;">Hits@3</th>
+<th style="text-align: center;">Hits@10</th>
+<th style="text-align: center;">MRR</th>
+<th style="text-align: center;">MR</th>
+<th style="text-align: center;">WMRR</th>
+<th style="text-align: center;">WMR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">BEUrRE</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.036617</td>
+<td style="text-align: center;">0.157995</td>
+<td style="text-align: center;">0.00000</td>
+<td style="text-align: center;">0.04300</td>
+<td style="text-align: center;">0.22300</td>
+<td style="text-align: center;">0.07500</td>
+<td style="text-align: center;">27.47600</td>
+<td style="text-align: center;">0.75600</td>
+<td style="text-align: center;">27.24500</td>
+</tr>
+<tr>
+<td style="text-align: center;">BEUrRE</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.036617</td>
+<td style="text-align: center;">0.157995</td>
+<td style="text-align: center;">0.00005</td>
+<td style="text-align: center;">0.02500</td>
+<td style="text-align: center;">0.13700</td>
+<td style="text-align: center;">0.05300</td>
+<td style="text-align: center;">46.49800</td>
+<td style="text-align: center;">0.05900</td>
+<td style="text-align: center;">41.78300</td>
+</tr>
+<tr>
+<td style="text-align: center;">FocusE</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">176.9603577</td>
+<td style="text-align: center;">13.06495762</td>
+<td style="text-align: center;">0.06000</td>
+<td style="text-align: center;">0.15500</td>
+<td style="text-align: center;">0.40000</td>
+<td style="text-align: center;">0.16600</td>
+<td style="text-align: center;">26.96400</td>
+<td style="text-align: center;">0.16600</td>
+<td style="text-align: center;">26.86300</td>
+</tr>
+<tr>
+<td style="text-align: center;">FocusE</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">176.9603577</td>
+<td style="text-align: center;">13.06495762</td>
+<td style="text-align: center;">0.03200</td>
+<td style="text-align: center;">0.08700</td>
+<td style="text-align: center;">0.23800</td>
+<td style="text-align: center;">0.10500</td>
+<td style="text-align: center;">37.08300</td>
+<td style="text-align: center;">0.11800</td>
+<td style="text-align: center;">34.15700</td>
+</tr>
+<tr>
+<td style="text-align: center;">GTransE</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">4.62883</td>
+<td style="text-align: center;">2.03919</td>
+<td style="text-align: center;">0.007561</td>
+<td style="text-align: center;">0.093762003</td>
+<td style="text-align: center;">0.317580014</td>
+<td style="text-align: center;">0.109085001</td>
+<td style="text-align: center;">41.44915009</td>
+<td style="text-align: center;">0.109688997</td>
+<td style="text-align: center;">39.74547577</td>
+</tr>
+<tr>
+<td style="text-align: center;">GTransE</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">4.62883</td>
+<td style="text-align: center;">2.03919</td>
+<td style="text-align: center;">0.000967</td>
+<td style="text-align: center;">0.026288999</td>
+<td style="text-align: center;">0.106583998</td>
+<td style="text-align: center;">0.043067001</td>
+<td style="text-align: center;">197.1768036</td>
+<td style="text-align: center;">0.058488999</td>
+<td style="text-align: center;">141.1428833</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(ComplEx)</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.003464</td>
+<td style="text-align: center;">0.022728</td>
+<td style="text-align: center;">0.09200</td>
+<td style="text-align: center;">0.21900</td>
+<td style="text-align: center;">0.46700</td>
+<td style="text-align: center;">0.21400</td>
+<td style="text-align: center;">23.29500</td>
+<td style="text-align: center;">0.21500</td>
+<td style="text-align: center;">22.66100</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(ComplEx)</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.003464</td>
+<td style="text-align: center;">0.022728</td>
+<td style="text-align: center;">0.03100</td>
+<td style="text-align: center;">0.08100</td>
+<td style="text-align: center;">0.22800</td>
+<td style="text-align: center;">0.10200</td>
+<td style="text-align: center;">40.75600</td>
+<td style="text-align: center;">0.12700</td>
+<td style="text-align: center;">35.73000</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(DistMult)</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.003358</td>
+<td style="text-align: center;">0.021629</td>
+<td style="text-align: center;">0.09100</td>
+<td style="text-align: center;">0.21700</td>
+<td style="text-align: center;">0.46000</td>
+<td style="text-align: center;">0.21100</td>
+<td style="text-align: center;">23.74300</td>
+<td style="text-align: center;">0.21300</td>
+<td style="text-align: center;">23.10500</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(DistMult)</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.003358</td>
+<td style="text-align: center;">0.021629</td>
+<td style="text-align: center;">0.03100</td>
+<td style="text-align: center;">0.08400</td>
+<td style="text-align: center;">0.22700</td>
+<td style="text-align: center;">0.10200</td>
+<td style="text-align: center;">40.70900</td>
+<td style="text-align: center;">0.12760</td>
+<td style="text-align: center;">35.63900</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(RotatE)</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.003499</td>
+<td style="text-align: center;">0.027734</td>
+<td style="text-align: center;">0.07000</td>
+<td style="text-align: center;">0.18700</td>
+<td style="text-align: center;">0.44000</td>
+<td style="text-align: center;">0.18800</td>
+<td style="text-align: center;">16.42500</td>
+<td style="text-align: center;">0.19000</td>
+<td style="text-align: center;">16.15600</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(RotatE)</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.003499</td>
+<td style="text-align: center;">0.027734</td>
+<td style="text-align: center;">0.02300</td>
+<td style="text-align: center;">0.06900</td>
+<td style="text-align: center;">0.20700</td>
+<td style="text-align: center;">0.09000</td>
+<td style="text-align: center;">42.59500</td>
+<td style="text-align: center;">0.11300</td>
+<td style="text-align: center;">35.45800</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGE</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.003568</td>
+<td style="text-align: center;">0.023003001</td>
+<td style="text-align: center;">0.07800</td>
+<td style="text-align: center;">0.22100</td>
+<td style="text-align: center;">0.47400</td>
+<td style="text-align: center;">0.20500</td>
+<td style="text-align: center;">29.93900</td>
+<td style="text-align: center;">0.20600</td>
+<td style="text-align: center;">29.04200</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGE</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.003568</td>
+<td style="text-align: center;">0.023003001</td>
+<td style="text-align: center;">0.02900</td>
+<td style="text-align: center;">0.08200</td>
+<td style="text-align: center;">0.23400</td>
+<td style="text-align: center;">0.10100</td>
+<td style="text-align: center;">42.22400</td>
+<td style="text-align: center;">0.12500</td>
+<td style="text-align: center;">38.20200</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGE(PSL)</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.003561</td>
+<td style="text-align: center;">0.022954</td>
+<td style="text-align: center;">0.08000</td>
+<td style="text-align: center;">0.21900</td>
+<td style="text-align: center;">0.47300</td>
+<td style="text-align: center;">0.20600</td>
+<td style="text-align: center;">29.96300</td>
+<td style="text-align: center;">0.20800</td>
+<td style="text-align: center;">29.07000</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGE(PSL)</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.003561</td>
+<td style="text-align: center;">0.022954</td>
+<td style="text-align: center;">0.02900</td>
+<td style="text-align: center;">0.08200</td>
+<td style="text-align: center;">0.23300</td>
+<td style="text-align: center;">0.10100</td>
+<td style="text-align: center;">42.04100</td>
+<td style="text-align: center;">0.12500</td>
+<td style="text-align: center;">38.11500</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGsE</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.00769</td>
+<td style="text-align: center;">0.051564999</td>
+<td style="text-align: center;">0.046881001</td>
+<td style="text-align: center;">0.132703006</td>
+<td style="text-align: center;">0.386767</td>
+<td style="text-align: center;">0.150641993</td>
+<td style="text-align: center;">26.82684326</td>
+<td style="text-align: center;">0.152465001</td>
+<td style="text-align: center;">25.87584686</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGsE</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.00769</td>
+<td style="text-align: center;">0.051564999</td>
+<td style="text-align: center;">0.013076</td>
+<td style="text-align: center;">0.037477002</td>
+<td style="text-align: center;">0.126796007</td>
+<td style="text-align: center;">0.060155001</td>
+<td style="text-align: center;">85.70326996</td>
+<td style="text-align: center;">0.082328998</td>
+<td style="text-align: center;">63.27091599</td>
+</tr>
+<tr>
+<td style="text-align: center;">UPGAT</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.00319</td>
+<td style="text-align: center;">0.02704</td>
+<td style="text-align: center;">0.08800</td>
+<td style="text-align: center;">0.22700</td>
+<td style="text-align: center;">0.48800</td>
+<td style="text-align: center;">0.21500</td>
+<td style="text-align: center;">15.17000</td>
+<td style="text-align: center;">0.21700</td>
+<td style="text-align: center;">14.89500</td>
+</tr>
+<tr>
+<td style="text-align: center;">UPGAT</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.00319</td>
+<td style="text-align: center;">0.02704</td>
+<td style="text-align: center;">0.03400</td>
+<td style="text-align: center;">0.08800</td>
+<td style="text-align: center;">0.23600</td>
+<td style="text-align: center;">0.10600</td>
+<td style="text-align: center;">36.82000</td>
+<td style="text-align: center;">0.13200</td>
+<td style="text-align: center;">30.89600</td>
+</tr>
+</tbody>
+</table></section>
+<section id="id4">
+<h3>Filter<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th style="text-align: center;">Model</th>
+<th style="text-align: center;">Confidence Filter(0.7)</th>
+<th style="text-align: center;">MSE</th>
+<th style="text-align: center;">MAE</th>
+<th style="text-align: center;">Hits@1</th>
+<th style="text-align: center;">Hits@3</th>
+<th style="text-align: center;">Hits@10</th>
+<th style="text-align: center;">MRR</th>
+<th style="text-align: center;">MR</th>
+<th style="text-align: center;">WMRR</th>
+<th style="text-align: center;">WMR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">BEUrRE</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.036617</td>
+<td style="text-align: center;">0.157995</td>
+<td style="text-align: center;">0.00100</td>
+<td style="text-align: center;">0.95600</td>
+<td style="text-align: center;">0.99200</td>
+<td style="text-align: center;">0.47900</td>
+<td style="text-align: center;">2.35400</td>
+<td style="text-align: center;">0.47900</td>
+<td style="text-align: center;">2.33500</td>
+</tr>
+<tr>
+<td style="text-align: center;">BEUrRE</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.036617</td>
+<td style="text-align: center;">0.157995</td>
+<td style="text-align: center;">0.00018</td>
+<td style="text-align: center;">0.79000</td>
+<td style="text-align: center;">0.94800</td>
+<td style="text-align: center;">0.40800</td>
+<td style="text-align: center;">7.78000</td>
+<td style="text-align: center;">0.43100</td>
+<td style="text-align: center;">6.08200</td>
+</tr>
+<tr>
+<td style="text-align: center;">FocusE</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">176.9603577</td>
+<td style="text-align: center;">13.06495762</td>
+<td style="text-align: center;">0.95600</td>
+<td style="text-align: center;">0.99100</td>
+<td style="text-align: center;">0.99500</td>
+<td style="text-align: center;">0.97400</td>
+<td style="text-align: center;">7.71000</td>
+<td style="text-align: center;">0.97500</td>
+<td style="text-align: center;">7.79700</td>
+</tr>
+<tr>
+<td style="text-align: center;">FocusE</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">176.9603577</td>
+<td style="text-align: center;">13.06495762</td>
+<td style="text-align: center;">0.93200</td>
+<td style="text-align: center;">0.98500</td>
+<td style="text-align: center;">0.99400</td>
+<td style="text-align: center;">0.95900</td>
+<td style="text-align: center;">4.38900</td>
+<td style="text-align: center;">0.96600</td>
+<td style="text-align: center;">4.73100</td>
+</tr>
+<tr>
+<td style="text-align: center;">GTransE</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">4.62883</td>
+<td style="text-align: center;">2.03919</td>
+<td style="text-align: center;">0.105860002</td>
+<td style="text-align: center;">0.605292976</td>
+<td style="text-align: center;">0.814366996</td>
+<td style="text-align: center;">0.390273988</td>
+<td style="text-align: center;">24.6695652</td>
+<td style="text-align: center;">0.395209998</td>
+<td style="text-align: center;">23.12075806</td>
+</tr>
+<tr>
+<td style="text-align: center;">GTransE</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">4.62883</td>
+<td style="text-align: center;">2.03919</td>
+<td style="text-align: center;">0.01349</td>
+<td style="text-align: center;">0.149678007</td>
+<td style="text-align: center;">0.312983006</td>
+<td style="text-align: center;">0.121468</td>
+<td style="text-align: center;">164.694931</td>
+<td style="text-align: center;">0.178894997</td>
+<td style="text-align: center;">112.0568085</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(ComplEx)</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.003464</td>
+<td style="text-align: center;">0.022728</td>
+<td style="text-align: center;">0.53300</td>
+<td style="text-align: center;">0.98900</td>
+<td style="text-align: center;">0.99600</td>
+<td style="text-align: center;">0.76200</td>
+<td style="text-align: center;">8.93200</td>
+<td style="text-align: center;">0.76600</td>
+<td style="text-align: center;">8.54100</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(ComplEx)</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.003464</td>
+<td style="text-align: center;">0.022728</td>
+<td style="text-align: center;">0.54600</td>
+<td style="text-align: center;">0.82700</td>
+<td style="text-align: center;">0.95700</td>
+<td style="text-align: center;">0.70200</td>
+<td style="text-align: center;">7.86200</td>
+<td style="text-align: center;">0.73300</td>
+<td style="text-align: center;">7.66800</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(DistMult)</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.003358</td>
+<td style="text-align: center;">0.021629</td>
+<td style="text-align: center;">0.53000</td>
+<td style="text-align: center;">0.98900</td>
+<td style="text-align: center;">0.99600</td>
+<td style="text-align: center;">0.76000</td>
+<td style="text-align: center;">9.27200</td>
+<td style="text-align: center;">0.76400</td>
+<td style="text-align: center;">8.87000</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(DistMult)</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.003358</td>
+<td style="text-align: center;">0.021629</td>
+<td style="text-align: center;">0.53300</td>
+<td style="text-align: center;">0.82000</td>
+<td style="text-align: center;">0.95300</td>
+<td style="text-align: center;">0.69300</td>
+<td style="text-align: center;">7.77900</td>
+<td style="text-align: center;">0.72600</td>
+<td style="text-align: center;">7.55200</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(RotatE)</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.003499</td>
+<td style="text-align: center;">0.027734</td>
+<td style="text-align: center;">0.31800</td>
+<td style="text-align: center;">0.94000</td>
+<td style="text-align: center;">0.98900</td>
+<td style="text-align: center;">0.63800</td>
+<td style="text-align: center;">2.03400</td>
+<td style="text-align: center;">0.64300</td>
+<td style="text-align: center;">1.99400</td>
+</tr>
+<tr>
+<td style="text-align: center;">PASSLEAF(RotatE)</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.003499</td>
+<td style="text-align: center;">0.027734</td>
+<td style="text-align: center;">0.26800</td>
+<td style="text-align: center;">0.59700</td>
+<td style="text-align: center;">0.82100</td>
+<td style="text-align: center;">0.47000</td>
+<td style="text-align: center;">9.67100</td>
+<td style="text-align: center;">0.52100</td>
+<td style="text-align: center;">7.33400</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGE</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.003568</td>
+<td style="text-align: center;">0.023003001</td>
+<td style="text-align: center;">0.40200</td>
+<td style="text-align: center;">0.99200</td>
+<td style="text-align: center;">0.99600</td>
+<td style="text-align: center;">0.69600</td>
+<td style="text-align: center;">15.92500</td>
+<td style="text-align: center;">0.69800</td>
+<td style="text-align: center;">15.27600</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGE</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.003568</td>
+<td style="text-align: center;">0.023003001</td>
+<td style="text-align: center;">0.58000</td>
+<td style="text-align: center;">0.90200</td>
+<td style="text-align: center;">0.98400</td>
+<td style="text-align: center;">0.74500</td>
+<td style="text-align: center;">9.35400</td>
+<td style="text-align: center;">0.74400</td>
+<td style="text-align: center;">10.28100</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGE(PSL)</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.003561</td>
+<td style="text-align: center;">0.022954</td>
+<td style="text-align: center;">0.40400</td>
+<td style="text-align: center;">0.99200</td>
+<td style="text-align: center;">0.99600</td>
+<td style="text-align: center;">0.69800</td>
+<td style="text-align: center;">15.96100</td>
+<td style="text-align: center;">0.70000</td>
+<td style="text-align: center;">15.31400</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGE(PSL)</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.003561</td>
+<td style="text-align: center;">0.022954</td>
+<td style="text-align: center;">0.58200</td>
+<td style="text-align: center;">0.90100</td>
+<td style="text-align: center;">0.98400</td>
+<td style="text-align: center;">0.74600</td>
+<td style="text-align: center;">9.17300</td>
+<td style="text-align: center;">0.74500</td>
+<td style="text-align: center;">10.19600</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGsE</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.00769</td>
+<td style="text-align: center;">0.051564999</td>
+<td style="text-align: center;">0.358411998</td>
+<td style="text-align: center;">0.790170014</td>
+<td style="text-align: center;">0.898298979</td>
+<td style="text-align: center;">0.591023982</td>
+<td style="text-align: center;">12.21928215</td>
+<td style="text-align: center;">0.598870993</td>
+<td style="text-align: center;">11.50269794</td>
+</tr>
+<tr>
+<td style="text-align: center;">UKGsE</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.00769</td>
+<td style="text-align: center;">0.051564999</td>
+<td style="text-align: center;">0.231537998</td>
+<td style="text-align: center;">0.398203999</td>
+<td style="text-align: center;">0.624309003</td>
+<td style="text-align: center;">0.35869801</td>
+<td style="text-align: center;">53.1516571</td>
+<td style="text-align: center;">0.418422997</td>
+<td style="text-align: center;">35.53851318</td>
+</tr>
+<tr>
+<td style="text-align: center;">UPGAT</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">0.00319</td>
+<td style="text-align: center;">0.02704</td>
+<td style="text-align: center;">0.95700</td>
+<td style="text-align: center;">0.99700</td>
+<td style="text-align: center;">0.99900</td>
+<td style="text-align: center;">0.97800</td>
+<td style="text-align: center;">1.07400</td>
+<td style="text-align: center;">0.97800</td>
+<td style="text-align: center;">1.07200</td>
+</tr>
+<tr>
+<td style="text-align: center;">UPGAT</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">0.00319</td>
+<td style="text-align: center;">0.02704</td>
+<td style="text-align: center;">0.86200</td>
+<td style="text-align: center;">0.94900</td>
+<td style="text-align: center;">0.98600</td>
+<td style="text-align: center;">0.91000</td>
+<td style="text-align: center;">3.66200</td>
+<td style="text-align: center;">0.93800</td>
+<td style="text-align: center;">2.75900</td>
+</tr>
+</tbody>
+</table></section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="install.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Install</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Parameters.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Description of basic parameters</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cn15k">cn15k</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#raw">Raw</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filter">Filter</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nl27k">nl27k</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Raw</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Filter</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ppi5k">ppi5k</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Raw</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Filter</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By SEU
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, SEUKGE.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
