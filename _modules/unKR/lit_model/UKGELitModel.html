@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>unKR.lit_model.UKGELitModel &#8212; unKR 0.8 documentation</title>
+    <title>unKR.lit_model.UKGELitModel &#8212; unKR 0.9 documentation</title>
   
   
   
@@ -126,7 +126,7 @@
   
   
   
-    <p class="title logo__title">unKR 0.8 documentation</p>
+    <p class="title logo__title">unKR 0.9 documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -373,12 +373,6 @@ document.write(`
 
 <div class="viewcode-block" id="UKGELitModel.validation_epoch_end"><a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.UKGELitModel.UKGELitModel.validation_epoch_end">[docs]</a>    <span class="k">def</span> <span class="nf">validation_epoch_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">results</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">outputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_results</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="s2">&quot;Eval&quot;</span><span class="p">)</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">data_path</span><span class="p">,</span> <span class="s2">&quot;ndcg_test.pickle&quot;</span><span class="p">),</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-            <span class="n">hr_map</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>  <span class="c1"># unpickle</span>
-        <span class="n">ent_num</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">num_ent</span>
-        <span class="n">ndcg</span><span class="p">,</span> <span class="n">exp_ndcg</span> <span class="o">=</span> <span class="n">mean_ndcg</span><span class="p">(</span><span class="n">hr_map</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="n">ent_num</span><span class="p">)</span>
-        <span class="n">outputs</span><span class="p">[</span><span class="s2">&quot;Test_ndcg&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ndcg</span>
-        <span class="n">outputs</span><span class="p">[</span><span class="s2">&quot;Test_exp_ndcg&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">exp_ndcg</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">log_dict</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">prog_bar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">on_epoch</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
 
@@ -434,13 +428,6 @@ document.write(`
 
 <div class="viewcode-block" id="UKGELitModel.test_epoch_end"><a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.UKGELitModel.UKGELitModel.test_epoch_end">[docs]</a>    <span class="k">def</span> <span class="nf">test_epoch_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">results</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">outputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_results</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="s2">&quot;Test&quot;</span><span class="p">)</span>
-
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">data_path</span><span class="p">,</span> <span class="s2">&quot;ndcg_test.pickle&quot;</span><span class="p">),</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-            <span class="n">hr_map</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>  <span class="c1"># unpickle</span>
-        <span class="n">ent_num</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">num_ent</span>
-        <span class="n">ndcg</span><span class="p">,</span> <span class="n">exp_ndcg</span> <span class="o">=</span> <span class="n">mean_ndcg</span><span class="p">(</span><span class="n">hr_map</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="n">ent_num</span><span class="p">)</span>
-        <span class="n">outputs</span><span class="p">[</span><span class="s2">&quot;Test_ndcg&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ndcg</span>
-        <span class="n">outputs</span><span class="p">[</span><span class="s2">&quot;Test_exp_ndcg&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">exp_ndcg</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">log_dict</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">prog_bar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">on_epoch</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
 
