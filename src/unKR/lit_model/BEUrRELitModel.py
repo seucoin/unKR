@@ -49,34 +49,52 @@ class BEUrRELitModel(BaseLitModel):
             results: mae, mse, wmr, wmrr, mr mrr and hits@1,3,5,10.
         """
         results = dict()
-        """以MSE为指标 Early Stop"""
+
         results["count_for_conf"] = batch['positive_sample'].shape[0]
         MAE, MSE = conf_predict(batch, self.model)
         results["MAE"] = MAE.item()
         results["MSE"] = MSE.item()
 
         prediction = "tail"
-        """以MRR为指标 Early Stop"""
+        confidence = self.args.confidence_filter
         ranks = link_predict(batch, self.model, prediction=prediction)
-        results["count_for_link"] = torch.numel(ranks)
-        results["mrr"] = torch.sum(1.0 / ranks).item()
-        results["mr"] = torch.sum(ranks).item()
+        ranks_link_predict = link_predict_filter(batch, self.model, confidence, prediction=prediction) # get the ranks of entities in link prediction
+        ranks_link_predict_raw = link_predict_raw(batch, self.model, confidence, prediction=prediction) # get the raw rank (no filter when calculate the rank)
+        results["count_for_link"] = torch.numel(ranks_link_predict)
+        results["mrr"] = torch.sum(1.0 / ranks_link_predict).item()
+        results["mr"] = torch.sum(ranks_link_predict).item()
+        results["raw_count_for_link"] = torch.numel(ranks_link_predict_raw)
+        results["raw_mrr"] = torch.sum(1.0 / ranks_link_predict_raw).item()
+        results["raw_mr"] = torch.sum(ranks_link_predict_raw).item()
         for k in self.args.calc_hits:
-            results['hits@{}'.format(k)] = torch.numel(ranks[ranks <= k])
+            results['hits@{}'.format(k)] = torch.numel(ranks_link_predict[ranks_link_predict <= k])
+            results['raw_hits@{}'.format(k)] = torch.numel(ranks_link_predict_raw[ranks_link_predict_raw <= k])
 
-        """计算WMR   Weighted-MR """
-        if prediction == "all":  # 头尾实体预测平均
+        """calculate WMR   Weighted-MR """
+        pos_triple = batch["positive_sample"]
+        mask = pos_triple[:, -1] >= confidence
+        if prediction == "all":
             conf = torch.cat([batch['positive_sample'][:, 3]] * 2)
-            results["wmr"] = torch.sum(ranks * conf)
-            ranks_mrr = 1.0 / ranks
-            results["wmrr"] = torch.sum(ranks_mrr * conf)
-            results["sum_for_conf"] = torch.sum(conf)
-        else: # 头尾实体预测
+            conf_high_score = conf[mask]
+            results["wmr"] = torch.sum(ranks_link_predict * conf_high_score)
+            ranks_mrr = 1.0 / ranks_link_predict
+            results["wmrr"] = torch.sum(ranks_mrr * conf_high_score)
+            results["sum_for_conf"] = torch.sum(conf_high_score)
+            results["raw_wmr"] = torch.sum(ranks_link_predict_raw * conf_high_score)
+            ranks_mrr = 1.0 / ranks_link_predict_raw
+            results["raw_wmrr"] = torch.sum(ranks_mrr * conf_high_score)
+
+        else:
             conf = batch['positive_sample'][:, 3]
-            results["wmr"] = torch.sum(ranks * conf)
-            ranks_mrr = 1.0 / ranks
-            results["wmrr"] = torch.sum(ranks_mrr * conf)
-            results["sum_for_conf"] = torch.sum(conf)
+            conf_high_score = conf[mask]
+            results["wmr"] = torch.sum(ranks_link_predict * conf_high_score)
+            ranks_mrr = 1.0 / ranks_link_predict
+            results["wmrr"] = torch.sum(ranks_mrr * conf_high_score)
+            results["sum_for_conf"] = torch.sum(conf_high_score)
+            results["raw_wmr"] = torch.sum(ranks_link_predict_raw * conf_high_score)
+            ranks_mrr = 1.0 / ranks_link_predict_raw
+            results["raw_wmrr"] = torch.sum(ranks_mrr * conf_high_score)
+
         return results
 
     def validation_epoch_end(self, results) -> None:
@@ -103,34 +121,50 @@ class BEUrRELitModel(BaseLitModel):
         """
         results = dict()
 
-        """以MSE为指标 Early Stop"""
         results["count_for_conf"] = batch['positive_sample'].shape[0]
         MAE, MSE = conf_predict(batch, self.model)
         results["MAE"] = MAE.item()
         results["MSE"] = MSE.item()
 
         prediction = "tail"
-        """以MRR为指标 Early Stop"""
+        confidence = self.args.confidence_filter
         ranks = link_predict(batch, self.model, prediction=prediction)
-        results["count_for_link"] = torch.numel(ranks)
-        results["mrr"] = torch.sum(1.0 / ranks).item()
-        results["mr"] = torch.sum(ranks).item()
+        ranks_link_predict = link_predict_filter(batch, self.model, confidence, prediction=prediction) # get the ranks of entities in link prediction
+        ranks_link_predict_raw = link_predict_raw(batch, self.model, confidence, prediction=prediction) # get the raw rank (no filter when calculate the rank)
+        results["count_for_link"] = torch.numel(ranks_link_predict)
+        results["mrr"] = torch.sum(1.0 / ranks_link_predict).item()
+        results["mr"] = torch.sum(ranks_link_predict).item()
+        results["raw_count_for_link"] = torch.numel(ranks_link_predict_raw)
+        results["raw_mrr"] = torch.sum(1.0 / ranks_link_predict_raw).item()
+        results["raw_mr"] = torch.sum(ranks_link_predict_raw).item()
         for k in self.args.calc_hits:
-            results['hits@{}'.format(k)] = torch.numel(ranks[ranks <= k])
+            results['hits@{}'.format(k)] = torch.numel(ranks_link_predict[ranks_link_predict <= k])
+            results['raw_hits@{}'.format(k)] = torch.numel(ranks_link_predict_raw[ranks_link_predict_raw <= k])
 
-        """计算WMR   Weighted-MR """
-        if prediction == "all":  # 头尾实体预测平均
+        """calculate WMR   Weighted-MR """
+        pos_triple = batch["positive_sample"]
+        mask = pos_triple[:, -1] >= confidence
+        if prediction == "all":
             conf = torch.cat([batch['positive_sample'][:, 3]] * 2)
-            results["wmr"] = torch.sum(ranks * conf)
-            ranks_mrr = 1.0 / ranks
-            results["wmrr"] = torch.sum(ranks_mrr * conf)
-            results["sum_for_conf"] = torch.sum(conf)
-        else: # 头尾实体预测
+            conf_high_score = conf[mask]
+            results["wmr"] = torch.sum(ranks_link_predict * conf_high_score)
+            ranks_mrr = 1.0 / ranks_link_predict
+            results["wmrr"] = torch.sum(ranks_mrr * conf_high_score)
+            results["sum_for_conf"] = torch.sum(conf_high_score)
+            results["raw_wmr"] = torch.sum(ranks_link_predict_raw * conf_high_score)
+            ranks_mrr = 1.0 / ranks_link_predict_raw
+            results["raw_wmrr"] = torch.sum(ranks_mrr * conf_high_score)
+
+        else:
             conf = batch['positive_sample'][:, 3]
-            results["wmr"] = torch.sum(ranks * conf)
-            ranks_mrr = 1.0 / ranks
-            results["wmrr"] = torch.sum(ranks_mrr * conf)
-            results["sum_for_conf"] = torch.sum(conf)
+            conf_high_score = conf[mask]
+            results["wmr"] = torch.sum(ranks_link_predict * conf_high_score)
+            ranks_mrr = 1.0 / ranks_link_predict
+            results["wmrr"] = torch.sum(ranks_mrr * conf_high_score)
+            results["sum_for_conf"] = torch.sum(conf_high_score)
+            results["raw_wmr"] = torch.sum(ranks_link_predict_raw * conf_high_score)
+            ranks_mrr = 1.0 / ranks_link_predict_raw
+            results["raw_wmrr"] = torch.sum(ranks_mrr * conf_high_score)
 
         return results
 
