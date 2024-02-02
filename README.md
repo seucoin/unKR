@@ -3,23 +3,23 @@
     <a href="https://pypi.org/project/unKR/">
         <img alt="Pypi" src="https://img.shields.io/pypi/v/unKR">
     </a>
-    <a href="https://github.com/CodeSlogan/unKR/blob/main/LICENSE">
+    <a href="https://github.com/seucoin/unKR/blob/main/LICENSE">
         <img alt="Pypi" src="https://img.shields.io/badge/license-Apache--2.0-yellowgreen">
     </a>
     <!-- <a href="">
         <img alt="LICENSE" src="https://img.shields.io/badge/license-MIT-brightgreen">
     </a> -->
-    <a href="https://codeslogan.github.io/unKR/">
+    <a href="https://seucoin.github.io/unKR/">
         <img alt="Documentation" src="https://img.shields.io/badge/Doc-online-blue">
     </a>
 </p>
 <p align="center">
-    <b> English | <a href="https://github.com/CodeSlogan/unKR/blob/main/README_CN.md">中文</a></b>
+    <b> English | <a href="https://github.com/seucoin/unKR/blob/main/README_CN.md">中文</a></b>
 </p>
 
 unKR is an open source toolkit for Uncertain Knowledge Graph Representation Learning(UKRL). 
 It is based on the [PyTorch Lightning](https://www.pytorchlightning.ai/) framework to decouple the workflow of the UKRL models in order to implement multiple Uncertain Knowledge Graph Embedding(UKGE) methods, which in turn assist knowledge graph complementation, inference and other tasks.
-The tool provides code implementations and results of various existing UKGE models, and provides users with detailed [technical documentation](https://codeslogan.github.io/unKR/index.html).
+The tool provides code implementations and results of various existing UKGE models, and provides users with detailed [technical documentation](https://seucoin.github.io/unKR/index.html).
 <br>
 
 
@@ -43,7 +43,7 @@ unKR has validated the tool on three datasets with seven different evaluation me
 
 unKR core development team will provide long-term technical support for the toolkit, and developers are welcome to discuss the work and initiate questions using `issue`.
 
-Detailed documentation of the unKR technology and results is available at [📋](https://codeslogan.github.io/unKR/).
+Detailed documentation of the unKR technology and results is available at [📋](https://seucoin.github.io/unKR/).
 
 <br>
 
@@ -98,7 +98,7 @@ In [GMUC](https://link.springer.com/chapter/10.1007/978-3-030-73194-6_18), [GMUC
 unKR uses confidence prediction and link prediction tasks for model evaluation in seven different metrics, MSE, MAE, Hits@k(k=1,3,10), MRR, MR, WMRR, and WMR, with raw and filter settings. 
 In addition, unKR adopts a high-confidence filter(set the filter value to 0.7) method for the evaluation.
 
-Here are the reproduced model results on NL27K dataset using unKR as below. See more results in [here](https://codeslogan.github.io/unKR/result.html).
+Here are the reproduced model results on NL27K dataset using unKR as below. See more results in [here](https://seucoin.github.io/unKR/result.html).
 
 ### Raw
 |   Model   | Confidence Filter(0.7) | MSE         | MAE         | Hits@1      | Hits@3      | Hits@10     | MRR         | MR          | WMRR        | WMR          |
@@ -163,7 +163,7 @@ pip install -r requirements.txt
 **Step2**  Install package.
 + Install from source
 ```bash
-git clone https://github.com/CodeSlogan/unKR.git
+git clone https://github.com/seucoin/unKR.git
 cd unKR
 python setup.py install
 ```
@@ -178,7 +178,7 @@ python main.py
 ```
 
 ## Parameter Adjustment
-In the [config](https://github.com/CodeSlogan/unKR/tree/main/config) file, we provide parameter profiles of the reproduced results, and the following parameters can be adjusted for specific use.
+In the [config](https://github.com/seucoin/unKR/tree/main/config) file, we provide parameter profiles of the reproduced results, and the following parameters can be adjusted for specific use.
 
 ```
 parameters:
