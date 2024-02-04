@@ -97,7 +97,7 @@ unKR提供了三种不同来源的不确定性知识图谱数据集，包括CN15
 ## 结果
 unKR使用了置信度预测和链接预测任务，在MSE、MAE（置信度预测）、Hits@k（k=1,3,10）、MRR、MR、WMRR以及WMR（链接预测）七种不同的指标进行模型评估，并且进行了raw和filter的设置。此外，unKR还采取了高置信度过滤（设置过滤值为0.7）的评估方法。
 
-下面展示了使用unKR的不同模型在nl27k上的结果，更多结果请访问[此处](https://codeslogan.github.io/unKR/result.html)。
+下面展示了使用unKR的不同模型在NL27K上的结果，更多结果请访问[此处](https://codeslogan.github.io/unKR/result.html)。
 
 ### 置信度预测结果
 <table>
