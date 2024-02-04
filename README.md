@@ -38,7 +38,7 @@ unKR toolkit is an efficient implementation for Uncertain Knowledge Graph Repres
 It provides a refinement module process that can implement a variety of Uncertain Knowledge Graph Embedding(UKGE) models, including UKG data preprocessing(Sampler for negative sampling), model implementation base module, and model training, validation, and testing modules. 
 These modules are widely used in different UKGE models, facilitating users to quickly construct their own models.
 
-There are nine different models available, divided according to whether they are small-sample models or not. 
+There are nine different models available, divided according to whether they are few-shot models or not. 
 unKR has validated the tool on three datasets with seven different evaluation metrics, and the details of the models will be discussed in the following sections.
 
 unKR core development team will provide long-term technical support for the toolkit, and developers are welcome to discuss the work and initiate questions using `issue`.
@@ -49,12 +49,12 @@ Detailed documentation of the unKR technology and results is available at [📋]
 
 
 # 📝 Models
-unKR implements nine UKGE methods that partition the model based on whether it is a small-sample model or not. The available models are as below.
+unKR implements nine UKGE methods that partition the model based on whether it is a few-shot model or not. The available models are as below.
 
-|          Category           |                                                                                                                                                                                                                                                     Model                                                                                                                                                                                                                                                     |
-|:---------------------------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-|   Non-small-sample model    | [BEURrE](https://aclanthology.org/2021.naacl-main.68), [FocusE](https://www.ijcai.org/proceedings/2021/395), [GTransE](https://link.springer.com/chapter/10.1007/978-3-030-39878-1_16), [PASSLEAF]( http://papers.nips.cc/paper/5071-translating-embeddings-for-modeling-multi-rela), [UKGE](https://ojs.aaai.org/index.php/AAAI/article/view/4210), [UKGsE](https://www.sciencedirect.com/science/article/abs/pii/S0020025522007885), [UPGAT](https://link.springer.com/chapter/10.1007/978-3-031-33377-4_5) |
-|     Small-sample model      |                                                                                                                                                                                [GMUC](https://link.springer.com/chapter/10.1007/978-3-030-73194-6_18), [GMUC+](https://link.springer.com/chapter/10.1007/978-981-19-7596-7_2)                                                                                                                                                                                 |
+|    Category    |                                                                                                                                                                                                                                                     Model                                                                                                                                                                                                                                                     |
+|:--------------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|  Normal model  | [BEURrE](https://aclanthology.org/2021.naacl-main.68), [FocusE](https://www.ijcai.org/proceedings/2021/395), [GTransE](https://link.springer.com/chapter/10.1007/978-3-030-39878-1_16), [PASSLEAF]( http://papers.nips.cc/paper/5071-translating-embeddings-for-modeling-multi-rela), [UKGE](https://ojs.aaai.org/index.php/AAAI/article/view/4210), [UKGsE](https://www.sciencedirect.com/science/article/abs/pii/S0020025522007885), [UPGAT](https://link.springer.com/chapter/10.1007/978-3-031-33377-4_5) |
+| Few-shot model |                                                                                                                                                                                [GMUC](https://link.springer.com/chapter/10.1007/978-3-030-73194-6_18), [GMUC+](https://link.springer.com/chapter/10.1007/978-981-19-7596-7_2)                                                                                                                                                                                 |
 
 
 
@@ -82,7 +82,7 @@ In [UKGE](https://ojs.aaai.org/index.php/AAAI/article/view/4210), the`softlogic.
 
 In [GMUC](https://link.springer.com/chapter/10.1007/978-3-030-73194-6_18), [GMUC+](https://link.springer.com/chapter/10.1007/978-981-19-7596-7_2), the following five data files are also needed.
 
-`train/dev/test_tasks.json`: Small sample dataset with one task per relation in the format`{rel:[[ent1, rel, ent2, score], ...]}`. The key of the dictionary is the task name and the values are all the quaternions under the task.
+`train/dev/test_tasks.json`: Few-shot dataset with one task per relation in the format`{rel:[[ent1, rel, ent2, score], ...]}`. The key of the dictionary is the task name and the values are all the quaternions under the task.
 
 `path_graph`: All data except training, validation and testing tasks, i.e. background knowledge, in the format`(ent1, rel, ent2, score)`. Each line represents a quaternion.
 
@@ -95,58 +95,220 @@ In [GMUC](https://link.springer.com/chapter/10.1007/978-3-030-73194-6_18), [GMUC
 
 
 ## Reproduced Results
-unKR uses confidence prediction and link prediction tasks for model evaluation in seven different metrics, MSE, MAE, Hits@k(k=1,3,10), MRR, MR, WMRR, and WMR, with raw and filter settings. 
+unKR uses confidence prediction and link prediction tasks for model evaluation in seven different metrics, MSE, MAE(confidence prediction), Hits@k(k=1,3,10), MRR, MR, WMRR, and WMR(link prediction), with raw and filter settings. 
 In addition, unKR adopts a high-confidence filter(set the filter value to 0.7) method for the evaluation.
 
 Here are the reproduced model results on NL27K dataset using unKR as below. See more results in [here](https://seucoin.github.io/unKR/result.html).
 
-### Raw
-|   Model   | Confidence Filter(0.7) | MSE         | MAE         | Hits@1      | Hits@3      | Hits@10     | MRR         | MR          | WMRR        | WMR          |
-|:---------:|:----------------------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:------------:|
-|  BEUrRE   | yes                    | 0.089199997 | 0.221935004 | 0.114580996 | 0.294553995 | 0.436170012 | 0.231920004 | 549.5641479 | 0.237371996 | 532.7346802  |
-|  BEUrRE   | no                     | 0.089199997 | 0.221935004 | 0.086361997 | 0.236710995 | 0.357560009 | 0.186324 | 937.3199463  | 0.211959004 | 745.0280762  |
-|  FocusE   | yes                    | 1704.796143 | 32.64796448 | 0.393422008 | 0.53679502 | 0.659085989 | 0.48723501    | 436.3726196 | 0.490559012 | 430.8166809  |
-|  FocusE   | no                     | 1704.796143 | 32.64796448 | 0.372880012 | 0.517742991 | 0.646003008 | 0.468558997 | 515.3634033 | 0.480058998  | 473.3652649  |
-|   GMUC    | yes                    | 0.01200     | 0.08200     | 0.28100     | 0.40000     | 0.54000     | 0.36800     | 62.00500    | 0.36800     | 61.84900     |
-|   GMUC    | no                     | 0.01300     | 0.08200     | 0.28700     | 0.40900     | 0.53600     | 0.37500     | 71.48400    | 0.37500     | 71.44700     |
-|   GMUC+   | yes                    | 0.01500     | 0.10200     | 0.29000     | 0.42000     | 0.57300     | 0.43800     | 45.77400    | 0.38400     | 49.80800     |
-|   GMUC+   | no                     | 0.01300     | 0.08600     | 0.29900     | 0.44800     | 0.58200     | 0.40100     | 49.41800    | 0.40100     | 49.10700     |
-|  GTransE  | yes                    | 39.83544    | 5.12528     | 0.16800     | 0.28700     | 0.40700     | 0.25000     | 1434.63400  | 0.25300     | 1435.39700   |
-|  GTransE  | no                     | 39.83544    | 5.12528     | 0.13674     | 0.24476     | 0.35250     | 0.21145     | 2014.54199  | 0.23173     | 1749.63757   |
-| PASSLEAF  | yes                    | 0.023089999 | 0.051066 | 0.399278015     | 0.53747803     | 0.658012986     | 0.490554988     | 184.2464447   | 0.496309012     | 182.1270447    |
-| PASSLEAF  | no                     | 0.023089999 | 0.051066 | 0.368676007     | 0.501568019     | 0.621562004     | 0.45787999     | 214.0929108   | 0.477825999     | 198.7584991    |
-| UKGE(PSL) | yes                    | 0.028677    | 0.059657998 | 0.384539992     | 0.520008028     | 0.644250989     | 0.47556299     | 212.7815704   | 0.48159799     | 210.7985077    |
-| UKGE(PSL) | no                     | 0.028677    | 0.059657998 | 0.346516013     | 0.477055997     | 0.598973989     | 0.435442001     | 265.9153442   | 0.459026992     | 240.2348633    |
-|   UKGsE   | yes                    | 0.12202     | 0.27065     | 0.03543     | 0.06695     | 0.12376     | 0.06560     | 2378.45581  | 0.06561     | 2336.46582   |
-|   UKGsE   | no                     | 0.12202     | 0.27065     | 0.03000     | 0.05800     | 0.10800     | 0.05700     | 3022.76900  | 0.06100     | 2690.49600   |
-|   UPGAT   | yes                    | 0.02922     | 0.10107     | 0.37900     | 0.52000     | 0.64500     | 0.47300     | 114.65800   | 0.47700     | 113.82700    |
-|   UPGAT   | no                     | 0.02922     | 0.10107     | 0.33900     | 0.46700     | 0.58600     | 0.42600     | 166.16900   | 0.45200     | 141.35800    |
 
-### Filter
+### Confidence prediction
+<table>
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Model</th>
+            <th>MSE</th>
+            <th>MAE </th>
+        </tr>
+    </thead>
+    <tbody align="center" valign="center">
+        <tr>
+            <td rowspan="8">Normal model</td>
+            <td>BEUrRE</td>
+            <td>0.08920 </td>
+            <td>0.22194  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_ComplEx</td>
+            <td>0.02434 </td>
+            <td>0.05176  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_DistMult</td>
+            <td>0.02309 </td>
+            <td>0.05107  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_RotatE</td>
+            <td>0.01949 </td>
+            <td>0.06253  </td>
+        </tr>
+        <tr>
+            <td>UKGE</td>
+            <td>0.02861 </td>
+            <td>0.05967  </td>
+        </tr>
+        <tr>
+            <td>UKGEPSL</td>
+            <td>0.02868 </td>
+            <td>0.05966  </td>
+        </tr>
+        <tr>
+            <td>UKGsE</td>
+            <td>0.12202 </td>
+            <td>0.27065  </td>
+        </tr>
+        <tr>
+            <td>UPGAT</td>
+            <td>0.02922 </td>
+            <td>0.10107  </td>
+        </tr>
+        <tr>
+            <td rowspan="2">Few-shot model</td>
+            <td>GMUC</td>
+            <td>0.01300 </td>
+            <td>0.08200  </td>
+        </tr>
+        <tr>
+            <td>GMUC+</td>
+            <td>0.01300 </td>
+            <td>0.08600  </td>
+        </tr>
+    </tbody>
+</table>
 
-|       Model        | Confidence Filter(0.7) | MSE         | MAE         | Hits@1      | Hits@3      | Hits@10     | MRR         | MR          | WMRR        | WMR          |
-|:------------------:|:----------------------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:------------:|
-|       BEUrRE       | yes                    | 0.089199997 | 0.221935004 | 0.156060994 | 0.385224015 | 0.543040991 | 0.299324006 | 488.0508423 | 0.306418985 | 471.7837219  |
-|       BEUrRE       | no                     | 0.089199997 | 0.221935004 | 0.11693 | 0.306755006 | 0.441855013 | 0.237922996 | 874.3798218  | 0.272213995 | 683.2228394  |
-|       FocusE       | yes                    | 1704.796143 | 32.64796448 | 0.813781023 | 0.91791898 | 0.956959009 | 0.869915009 | 384.4714966  | 0.870938003 | 379.7612305  |
-|       FocusE       | no                     | 1704.796143 | 32.64796448 | 0.760794997| 0.88371098 | 0.945631981  | 0.829499006 | 459.7191162 | 0.849004984 | 420.1532288  |
-|        GMUC        | yes                    | 0.01200     | 0.08200     | 0.33500     | 0.46500     | 0.59200     | 0.42500     | 58.31200    | 0.42600     | 58.09700     |
-|        GMUC        | no                     | 0.01300     | 0.08200     | 0.34400     | 0.46200     | 0.59200     | 0.43000     | 67.92000    | 0.43200     | 67.81300     |
-|       GMUC+        | yes                    | 0.01500     | 0.10200     | 0.33800     | 0.48600     | 0.63600     | 0.43800     | 45.77400    | 0.43800     | 45.68200     |
-|       GMUC+        | no                     | 0.01300     | 0.08600     | 0.37100     | 0.50500     | 0.63800     | 0.46300     | 45.87400    | 0.46500     | 45.49500     |
-|      GTransE       | yes                    | 39.83544    | 5.12528     | 0.22200     | 0.36600     | 0.49300     | 0.31600     | 1377.56400  | 0.31900     | 1378.50500   |
-|      GTransE       | no                     | 39.83544    | 5.12528     | 0.17914     | 0.30818     | 0.42461     | 0.26475     | 1957.77161  | 0.29136     | 1692.88000   |
-| PASSLEAF(DistMult) | yes                    | 0.023089999 | 0.051066 | 0.627074003     | 0.754245996     | 0.855943978     | 0.706506014     | 138.7805939   | 0.717220008     | 137.8641663    |
-| PASSLEAF(DistMult) | no                     | 0.023089999 | 0.051066 | 0.552658021     | 0.676356971     | 0.782598972     | 0.633262992     | 163.501358   | 0.67601198     | 151.5425568    |
-|     UKGE(PSL)      | yes                    | 0.028677    | 0.059657998 | 0.525472999     | 0.672945976     | 0.812121987     | 0.622503996     | 168.028595   | 0.631505013     | 167.3438416    |
-|     UKGE(PSL)      | no                     | 0.028677    | 0.059657998 | 0.461093992     | 0.600184977     | 0.733717978     | 0.555122972     | 216.390625   | 0.59375298     | 194.0056    |
-|       UKGsE        | yes                    | 0.12202     | 0.27065     | 0.03767     | 0.07310     | 0.13000     | 0.06945     | 2329.50073  | 0.06938     | 2288.22217   |
-|       UKGsE        | no                     | 0.12202     | 0.27065     | 0.03100     | 0.06200     | 0.11300     | 0.06000     | 2973.23600  | 0.06400     | 2641.84000   |
-|       UPGAT        | yes                    | 0.02922     | 0.10107     | 0.61800     | 0.75100     | 0.86200     | 0.70100     | 69.12000    | 0.70800     | 69.36400     |
-|       UPGAT        | no                     | 0.02922     | 0.10107     | 0.53000     | 0.65400     | 0.76500     | 0.61100     | 115.00400   | 0.65800     | 93.69200     |
+### Link prediction (filter on high-confidence test data)
+<table>
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Model</th>
+            <th>Hits@1</th>
+            <th>Hits@3</th>
+            <th>Hits@10</th>
+            <th>MRR</th>
+            <th>MR</th>
+            <th>WMRR</th>
+            <th>WMR </th>
+        </tr>
+    </thead>
+    <tbody align="center" valign="center">
+        <tr>
+            <td rowspan="10">Normal model</td>
+            <td>BEUrRE</td>
+            <td>0.156 </td>
+            <td>0.385 </td>
+            <td>0.543 </td>
+            <td>0.299 </td>
+            <td>488.051 </td>
+            <td>0.306 </td>
+            <td>471.784  </td>
+        </tr>
+        <tr>
+            <td>FocusE</td>
+            <td>0.814 </td>
+            <td>0.918 </td>
+            <td>0.957 </td>
+            <td>0.870 </td>
+            <td>384.471 </td>
+            <td>0.871 </td>
+            <td>379.761  </td>
+        </tr>
+        <tr>
+            <td>GTransE</td>
+            <td>0.222 </td>
+            <td>0.366 </td>
+            <td>0.493 </td>
+            <td>0.316 </td>
+            <td>1377.564 </td>
+            <td>0.319 </td>
+            <td>1378.505  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_ComplEx</td>
+            <td>0.669 </td>
+            <td>0.786 </td>
+            <td>0.876 </td>
+            <td>0.741 </td>
+            <td>138.808 </td>
+            <td>0.753 </td>
+            <td>138.477  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_DistMult</td>
+            <td>0.627 </td>
+            <td>0.754 </td>
+            <td>0.856 </td>
+            <td>0.707 </td>
+            <td>138.781 </td>
+            <td>0.717 </td>
+            <td>137.864  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_RotatE</td>
+            <td>0.687 </td>
+            <td>0.816 </td>
+            <td>0.884 </td>
+            <td>0.762 </td>
+            <td>50.776 </td>
+            <td>0.774 </td>
+            <td>50.194  </td>
+        </tr>
+        <tr>
+            <td>UKGE</td>
+            <td>0.526 </td>
+            <td>0.670 </td>
+            <td>0.805 </td>
+            <td>0.622 </td>
+            <td>153.632 </td>
+            <td>0.630 </td>
+            <td>152.314  </td>
+        </tr>
+        <tr>
+            <td>UKGEPSL</td>
+            <td>0.525 </td>
+            <td>0.673 </td>
+            <td>0.812 </td>
+            <td>0.623 </td>
+            <td>168.029 </td>
+            <td>0.632 </td>
+            <td>167.344  </td>
+        </tr>
+        <tr>
+            <td>UKGsE</td>
+            <td>0.038 </td>
+            <td>0.073 </td>
+            <td>0.130 </td>
+            <td>0.069 </td>
+            <td>2329.501 </td>
+            <td>0.069 </td>
+            <td>2288.222  </td>
+        </tr>
+        <tr>
+            <td>UPGAT</td>
+            <td>0.618 </td>
+            <td>0.751 </td>
+            <td>0.862 </td>
+            <td>0.701 </td>
+            <td>69.120 </td>
+            <td>0.708 </td>
+            <td>69.364  </td>
+        </tr>
+        <tr>
+            <td rowspan="2">Few-shot model</td>
+            <td>GMUC</td>
+            <td>0.335 </td>
+            <td>0.465 </td>
+            <td>0.592 </td>
+            <td>0.425 </td>
+            <td>58.312 </td>
+            <td>0.426 </td>
+            <td>58.097  </td>
+        </tr>
+        <tr>
+            <td>GMUC+</td>
+            <td>0.338 </td>
+            <td>0.486 </td>
+            <td>0.636 </td>
+            <td>0.438 </td>
+            <td>45.774 </td>
+            <td>0.438 </td>
+            <td>45.682  </td>
+        </tr>
+    </tbody>
+</table>
 
 <br>
-
 
 # 🛠️ Deployment
 
