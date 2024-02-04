@@ -1,397 +1,117 @@
-
-
 <!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-
-<html lang="en" data-content_root="" >
-
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
-    <title>SSModel &#8212; unKR 0.9 documentation</title>
-  
-  
-  
-  <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
-  </script>
-  
-  <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SSModel &mdash; unKR 0.9 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=4bb55277" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
-
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ssmodel';</script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=c3a2daa6"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="NSSModel" href="nssmodel.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
-  </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+    <link rel="prev" title="NSSModel" href="nssmodel.html" /> 
+</head>
 
-  
-  
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <div id="pst-scroll-pixel-helper"></div>
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
 
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
-
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
-<form class="bd-search d-flex align-items-center"
-      action="search.html"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search..."
-         aria-label="Search..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
-  
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
-  
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
-      
-      <div class="bd-sidebar-primary bd-sidebar">
-        
-
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-
-  
-
-<a class="navbar-brand logo" href="index.html">
-  
-  
-  
-  
-  
-  
-    <p class="title logo__title">unKR 0.9 documentation</p>
-  
-</a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
-<ul class="nav bd-sidenav">
+          
+          
+          <a href="index.html" class="icon icon-home">
+            unKR
+          </a>
+              <div class="version">
+                0.9.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Experiment Result</span></p>
-<ul class="nav bd-sidenav">
+<p class="caption" role="heading"><span class="caption-text">Experiment Result</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="result.html">Results</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Parameters Description</span></p>
-<ul class="nav bd-sidenav">
+<p class="caption" role="heading"><span class="caption-text">Basic Parameters Description</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="Parameters.html">Description of basic parameters</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Package</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="unKR.html">unKR</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<p class="caption" role="heading"><span class="caption-text">Package</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="unKR.html">unKR</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="unKR.data.html">Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unKR.eval_task.html">Eval_Task</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unKR.lit_model.html">Lit_Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unKR.loss.html">loss</a></li>
-<li class="toctree-l2 current active has-children"><a class="reference internal" href="unKR.model.html">Model</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="unKR.model.html">Model</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="nssmodel.html">NSSModel</a></li>
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">SSModel</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">SSModel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#module-unKR.model.SSModel.GMUC">GMUC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-unKR.model.SSModel.GMUCp">GMUCp</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-
-    </div>
-</nav></div>
-    </div>
-  
-  
-  <div class="sidebar-primary-items__end sidebar-primary__section">
-  </div>
-  
-  <div id="rtd-footer-container"></div>
-
-
-      </div>
-      
-      <main id="main-content" class="bd-main">
-        
-        
-
-<div class="sbt-scroll-pixel-helper"></div>
-
-          <div class="bd-content">
-            <div class="bd-article-container">
-              
-              <div class="bd-header-article">
-<div class="header-article-items header-article__inner">
-  
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</label></div>
-      
-    </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
-<div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="_sources/ssmodel.rst" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.rst</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-<button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
-
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
-</div></div>
-      
-    </div>
-  
-</div>
-</div>
-              
-              
-
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>SSModel</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
-            
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-unKR.model.SSModel.GMUC">GMUC</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.GMUC"><code class="docutils literal notranslate"><span class="pre">GMUC</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.GMUC.args"><code class="docutils literal notranslate"><span class="pre">GMUC.args</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.GMUC.num_symbols"><code class="docutils literal notranslate"><span class="pre">GMUC.num_symbols</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.GMUC.embed"><code class="docutils literal notranslate"><span class="pre">GMUC.embed</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.GMUC.forward"><code class="docutils literal notranslate"><span class="pre">GMUC.forward()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.GMUC.score_func"><code class="docutils literal notranslate"><span class="pre">GMUC.score_func()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.GMUC.training"><code class="docutils literal notranslate"><span class="pre">GMUC.training</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.LayerNormalization"><code class="docutils literal notranslate"><span class="pre">LayerNormalization</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.LayerNormalization.forward"><code class="docutils literal notranslate"><span class="pre">LayerNormalization.forward()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.LayerNormalization.training"><code class="docutils literal notranslate"><span class="pre">LayerNormalization.training</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.MatchNet"><code class="docutils literal notranslate"><span class="pre">MatchNet</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.MatchNet.forward"><code class="docutils literal notranslate"><span class="pre">MatchNet.forward()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.MatchNet.training"><code class="docutils literal notranslate"><span class="pre">MatchNet.training</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.Matcher"><code class="docutils literal notranslate"><span class="pre">Matcher</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.Matcher.forward"><code class="docutils literal notranslate"><span class="pre">Matcher.forward()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.Matcher.neighbor_encoder"><code class="docutils literal notranslate"><span class="pre">Matcher.neighbor_encoder()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.Matcher.score_func"><code class="docutils literal notranslate"><span class="pre">Matcher.score_func()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.Matcher.training"><code class="docutils literal notranslate"><span class="pre">Matcher.training</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.QueryEncoder"><code class="docutils literal notranslate"><span class="pre">QueryEncoder</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.QueryEncoder.forward"><code class="docutils literal notranslate"><span class="pre">QueryEncoder.forward()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.QueryEncoder.training"><code class="docutils literal notranslate"><span class="pre">QueryEncoder.training</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.SupportEncoder"><code class="docutils literal notranslate"><span class="pre">SupportEncoder</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.SupportEncoder.forward"><code class="docutils literal notranslate"><span class="pre">SupportEncoder.forward()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.SupportEncoder.training"><code class="docutils literal notranslate"><span class="pre">SupportEncoder.training</span></code></a></li>
-</ul>
 </li>
 </ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-unKR.model.SSModel.GMUCp">GMUCp</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUCp.GMUCp"><code class="docutils literal notranslate"><span class="pre">GMUCp</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUCp.GMUCp.args"><code class="docutils literal notranslate"><span class="pre">GMUCp.args</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUCp.GMUCp.num_symbols"><code class="docutils literal notranslate"><span class="pre">GMUCp.num_symbols</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUCp.GMUCp.embed"><code class="docutils literal notranslate"><span class="pre">GMUCp.embed</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUCp.GMUCp.forward"><code class="docutils literal notranslate"><span class="pre">GMUCp.forward()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUCp.GMUCp.neighbor_encoder"><code class="docutils literal notranslate"><span class="pre">GMUCp.neighbor_encoder()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUCp.GMUCp.score_func"><code class="docutils literal notranslate"><span class="pre">GMUCp.score_func()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUCp.GMUCp.training"><code class="docutils literal notranslate"><span class="pre">GMUCp.training</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUCp.LayerNormalization"><code class="docutils literal notranslate"><span class="pre">LayerNormalization</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUCp.LayerNormalization.forward"><code class="docutils literal notranslate"><span class="pre">LayerNormalization.forward()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUCp.LayerNormalization.training"><code class="docutils literal notranslate"><span class="pre">LayerNormalization.training</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUCp.MatchNet"><code class="docutils literal notranslate"><span class="pre">MatchNet</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUCp.MatchNet.forward"><code class="docutils literal notranslate"><span class="pre">MatchNet.forward()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUCp.MatchNet.training"><code class="docutils literal notranslate"><span class="pre">MatchNet.training</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUCp.SupportEncoder"><code class="docutils literal notranslate"><span class="pre">SupportEncoder</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUCp.SupportEncoder.forward"><code class="docutils literal notranslate"><span class="pre">SupportEncoder.forward()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUCp.SupportEncoder.training"><code class="docutils literal notranslate"><span class="pre">SupportEncoder.training</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-            </nav>
+
         </div>
-    </div>
-</div>
+      </div>
+    </nav>
 
-              
-                
-<div id="searchbox"></div>
-                <article class="bd-article" role="main">
-                  
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">unKR</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="unKR.html">unKR</a></li>
+          <li class="breadcrumb-item"><a href="unKR.model.html">Model</a></li>
+      <li class="breadcrumb-item active">SSModel</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/seu2024/test_doc/blob/main/docs/source/ssmodel.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
   <section id="ssmodel">
-<h1>SSModel<a class="headerlink" href="#ssmodel" title="Permalink to this heading">#</a></h1>
+<h1>SSModel<a class="headerlink" href="#ssmodel" title="Permalink to this heading"></a></h1>
 <section id="module-unKR.model.SSModel.GMUC">
-<span id="gmuc"></span><h2>GMUC<a class="headerlink" href="#module-unKR.model.SSModel.GMUC" title="Permalink to this heading">#</a></h2>
+<span id="gmuc"></span><h2>GMUC<a class="headerlink" href="#module-unKR.model.SSModel.GMUC" title="Permalink to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUC.GMUC">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unKR.model.SSModel.GMUC.</span></span><span class="sig-name descname"><span class="pre">GMUC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_symbols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">embed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUC.html#GMUC"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUC.GMUC" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unKR.model.SSModel.GMUC.</span></span><span class="sig-name descname"><span class="pre">GMUC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_symbols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">embed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUC.html#GMUC"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUC.GMUC" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#unKR.model.SSModel.GMUC.Matcher" title="unKR.model.SSModel.GMUC.Matcher"><code class="xref py py-class docutils literal notranslate"><span class="pre">Matcher</span></code></a></p>
 <dl class="simple">
 <dt><a class="reference external" href="https://link.springer.com/chapter/10.1007/978-3-030-73194-6_18">Gaussian Metric Learning for Few-Shot Uncertain Knowledge Graph Completion</a> (GMUC),</dt><dd><p>which proposes a novel method to complete few-shot UKGs based on Gaussian metric learning.</p>
@@ -399,25 +119,25 @@ document.write(`
 </dl>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUC.GMUC.args">
-<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#unKR.model.SSModel.GMUC.GMUC.args" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#unKR.model.SSModel.GMUC.GMUC.args" title="Permalink to this definition"></a></dt>
 <dd><p>Model configuration parameters.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUC.GMUC.num_symbols">
-<span class="sig-name descname"><span class="pre">num_symbols</span></span><a class="headerlink" href="#unKR.model.SSModel.GMUC.GMUC.num_symbols" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">num_symbols</span></span><a class="headerlink" href="#unKR.model.SSModel.GMUC.GMUC.num_symbols" title="Permalink to this definition"></a></dt>
 <dd><p>The sum of the number of entities and relationships.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUC.GMUC.embed">
-<span class="sig-name descname"><span class="pre">embed</span></span><a class="headerlink" href="#unKR.model.SSModel.GMUC.GMUC.embed" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">embed</span></span><a class="headerlink" href="#unKR.model.SSModel.GMUC.GMUC.embed" title="Permalink to this definition"></a></dt>
 <dd><p>Pretrained embedding.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUC.GMUC.forward">
-<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">support</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_meta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_meta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">false</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">false_meta</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUC.html#GMUC.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUC.GMUC.forward" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">support</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_meta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_meta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">false</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">false_meta</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUC.html#GMUC.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUC.GMUC.forward" title="Permalink to this definition"></a></dt>
 <dd><p>The functions used in the training phase.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -447,7 +167,7 @@ query_confidence: The confidence for query set.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUC.GMUC.score_func">
-<span class="sig-name descname"><span class="pre">score_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">support</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_meta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_meta</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUC.html#GMUC.score_func"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUC.GMUC.score_func" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">score_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">support</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_meta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_meta</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUC.html#GMUC.score_func"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUC.GMUC.score_func" title="Permalink to this definition"></a></dt>
 <dd><p>Calculating the score of query triples with support set.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -471,19 +191,19 @@ ae_loss: The loss of encoder input and decoder output.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUC.GMUC.training">
-<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><a class="headerlink" href="#unKR.model.SSModel.GMUC.GMUC.training" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><a class="headerlink" href="#unKR.model.SSModel.GMUC.GMUC.training" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUC.LayerNormalization">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unKR.model.SSModel.GMUC.</span></span><span class="sig-name descname"><span class="pre">LayerNormalization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d_hid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUC.html#LayerNormalization"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUC.LayerNormalization" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unKR.model.SSModel.GMUC.</span></span><span class="sig-name descname"><span class="pre">LayerNormalization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d_hid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUC.html#LayerNormalization"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUC.LayerNormalization" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
 <p>Layer normalization module.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUC.LayerNormalization.forward">
-<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUC.html#LayerNormalization.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUC.LayerNormalization.forward" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUC.html#LayerNormalization.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUC.LayerNormalization.forward" title="Permalink to this definition"></a></dt>
 <dd><p>Defines the computation performed at every call.</p>
 <p>Should be overridden by all subclasses.</p>
 <div class="admonition note">
@@ -497,20 +217,20 @@ registered hooks while the latter silently ignores them.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUC.LayerNormalization.training">
-<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><a class="headerlink" href="#unKR.model.SSModel.GMUC.LayerNormalization.training" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><a class="headerlink" href="#unKR.model.SSModel.GMUC.LayerNormalization.training" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUC.MatchNet">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unKR.model.SSModel.GMUC.</span></span><span class="sig-name descname"><span class="pre">MatchNet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">process_step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUC.html#MatchNet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUC.MatchNet" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unKR.model.SSModel.GMUC.</span></span><span class="sig-name descname"><span class="pre">MatchNet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">process_step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUC.html#MatchNet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUC.MatchNet" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
 <p>RNN Match networks for support set and query set, similar to
 <a class="reference external" href="https://proceedings.neurips.cc/paper_files/paper/2016/file/90e1357833654983612fb05e3ec9148c-Paper.pdf">https://proceedings.neurips.cc/paper_files/paper/2016/file/90e1357833654983612fb05e3ec9148c-Paper.pdf</a>.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUC.MatchNet.forward">
-<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">support_mean</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_var</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_mean</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_var</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUC.html#MatchNet.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUC.MatchNet.forward" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">support_mean</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_var</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_mean</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_var</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUC.html#MatchNet.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUC.MatchNet.forward" title="Permalink to this definition"></a></dt>
 <dd><p>Defines the computation performed at every call.</p>
 <p>Should be overridden by all subclasses.</p>
 <div class="admonition note">
@@ -524,19 +244,19 @@ registered hooks while the latter silently ignores them.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUC.MatchNet.training">
-<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><a class="headerlink" href="#unKR.model.SSModel.GMUC.MatchNet.training" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><a class="headerlink" href="#unKR.model.SSModel.GMUC.MatchNet.training" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUC.Matcher">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unKR.model.SSModel.GMUC.</span></span><span class="sig-name descname"><span class="pre">Matcher</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_symbols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">embed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUC.html#Matcher"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUC.Matcher" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unKR.model.SSModel.GMUC.</span></span><span class="sig-name descname"><span class="pre">Matcher</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_symbols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">embed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUC.html#Matcher"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUC.Matcher" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
 <p>Gaussian Matching Networks.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUC.Matcher.forward">
-<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">support</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_meta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_meta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">false</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">false_meta</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUC.html#Matcher.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUC.Matcher.forward" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">support</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_meta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_meta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">false</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">false_meta</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUC.html#Matcher.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUC.Matcher.forward" title="Permalink to this definition"></a></dt>
 <dd><p>Defines the computation performed at every call.</p>
 <p>Should be overridden by all subclasses.</p>
 <div class="admonition note">
@@ -550,30 +270,30 @@ registered hooks while the latter silently ignores them.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUC.Matcher.neighbor_encoder">
-<span class="sig-name descname"><span class="pre">neighbor_encoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connections</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_neighbors</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUC.html#Matcher.neighbor_encoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUC.Matcher.neighbor_encoder" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">neighbor_encoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connections</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_neighbors</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUC.html#Matcher.neighbor_encoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUC.Matcher.neighbor_encoder" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUC.Matcher.score_func">
-<span class="sig-name descname"><span class="pre">score_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">support</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_meta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_meta</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUC.html#Matcher.score_func"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUC.Matcher.score_func" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">score_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">support</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_meta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_meta</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUC.html#Matcher.score_func"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUC.Matcher.score_func" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUC.Matcher.training">
-<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><a class="headerlink" href="#unKR.model.SSModel.GMUC.Matcher.training" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><a class="headerlink" href="#unKR.model.SSModel.GMUC.Matcher.training" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUC.QueryEncoder">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unKR.model.SSModel.GMUC.</span></span><span class="sig-name descname"><span class="pre">QueryEncoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">process_step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUC.html#QueryEncoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUC.QueryEncoder" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unKR.model.SSModel.GMUC.</span></span><span class="sig-name descname"><span class="pre">QueryEncoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">process_step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUC.html#QueryEncoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUC.QueryEncoder" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
 <p>The encoder for query set, similar to
 <a class="reference external" href="https://proceedings.neurips.cc/paper_files/paper/2016/file/90e1357833654983612fb05e3ec9148c-Paper.pdf">https://proceedings.neurips.cc/paper_files/paper/2016/file/90e1357833654983612fb05e3ec9148c-Paper.pdf</a>.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUC.QueryEncoder.forward">
-<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">support</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUC.html#QueryEncoder.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUC.QueryEncoder.forward" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">support</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUC.html#QueryEncoder.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUC.QueryEncoder.forward" title="Permalink to this definition"></a></dt>
 <dd><p>Defines the computation performed at every call.</p>
 <p>Should be overridden by all subclasses.</p>
 <div class="admonition note">
@@ -587,19 +307,19 @@ registered hooks while the latter silently ignores them.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUC.QueryEncoder.training">
-<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><a class="headerlink" href="#unKR.model.SSModel.GMUC.QueryEncoder.training" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><a class="headerlink" href="#unKR.model.SSModel.GMUC.QueryEncoder.training" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUC.SupportEncoder">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unKR.model.SSModel.GMUC.</span></span><span class="sig-name descname"><span class="pre">SupportEncoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d_inner</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUC.html#SupportEncoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUC.SupportEncoder" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unKR.model.SSModel.GMUC.</span></span><span class="sig-name descname"><span class="pre">SupportEncoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d_inner</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUC.html#SupportEncoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUC.SupportEncoder" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
 <p>The encoder for support set.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUC.SupportEncoder.forward">
-<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUC.html#SupportEncoder.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUC.SupportEncoder.forward" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUC.html#SupportEncoder.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUC.SupportEncoder.forward" title="Permalink to this definition"></a></dt>
 <dd><p>Defines the computation performed at every call.</p>
 <p>Should be overridden by all subclasses.</p>
 <div class="admonition note">
@@ -613,17 +333,17 @@ registered hooks while the latter silently ignores them.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUC.SupportEncoder.training">
-<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><a class="headerlink" href="#unKR.model.SSModel.GMUC.SupportEncoder.training" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><a class="headerlink" href="#unKR.model.SSModel.GMUC.SupportEncoder.training" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 </section>
 <section id="module-unKR.model.SSModel.GMUCp">
-<span id="gmucp"></span><h2>GMUCp<a class="headerlink" href="#module-unKR.model.SSModel.GMUCp" title="Permalink to this heading">#</a></h2>
+<span id="gmucp"></span><h2>GMUCp<a class="headerlink" href="#module-unKR.model.SSModel.GMUCp" title="Permalink to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUCp.GMUCp">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unKR.model.SSModel.GMUCp.</span></span><span class="sig-name descname"><span class="pre">GMUCp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_symbols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">embed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUCp.html#GMUCp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUCp.GMUCp" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unKR.model.SSModel.GMUCp.</span></span><span class="sig-name descname"><span class="pre">GMUCp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_symbols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">embed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUCp.html#GMUCp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUCp.GMUCp" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
 <dl class="simple">
 <dt><a class="reference external" href="https://link.springer.com/chapter/10.1007/978-981-19-7596-7_2">Incorporating Uncertainty of Entities and Relations into Few-Shot Uncertain Knowledge Graph Embedding</a> (GMUC+),</dt><dd><p>which incorporates the inherent uncertainty of entities and relations into uncertain knowledge graph embedding.</p>
@@ -631,25 +351,25 @@ registered hooks while the latter silently ignores them.</p>
 </dl>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUCp.GMUCp.args">
-<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#unKR.model.SSModel.GMUCp.GMUCp.args" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#unKR.model.SSModel.GMUCp.GMUCp.args" title="Permalink to this definition"></a></dt>
 <dd><p>Model configuration parameters.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUCp.GMUCp.num_symbols">
-<span class="sig-name descname"><span class="pre">num_symbols</span></span><a class="headerlink" href="#unKR.model.SSModel.GMUCp.GMUCp.num_symbols" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">num_symbols</span></span><a class="headerlink" href="#unKR.model.SSModel.GMUCp.GMUCp.num_symbols" title="Permalink to this definition"></a></dt>
 <dd><p>The sum of the number of entities and relationships.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUCp.GMUCp.embed">
-<span class="sig-name descname"><span class="pre">embed</span></span><a class="headerlink" href="#unKR.model.SSModel.GMUCp.GMUCp.embed" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">embed</span></span><a class="headerlink" href="#unKR.model.SSModel.GMUCp.GMUCp.embed" title="Permalink to this definition"></a></dt>
 <dd><p>Pretrained embedding.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUCp.GMUCp.forward">
-<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">support</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_meta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_meta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">false</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">false_meta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">if_ne</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUCp.html#GMUCp.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUCp.GMUCp.forward" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">support</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_meta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_meta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">false</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">false_meta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">if_ne</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUCp.html#GMUCp.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUCp.GMUCp.forward" title="Permalink to this definition"></a></dt>
 <dd><p>The functions used in the training phase.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -677,7 +397,7 @@ query_confidence: The confidence for query set.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUCp.GMUCp.neighbor_encoder">
-<span class="sig-name descname"><span class="pre">neighbor_encoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connections</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_neighbors</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUCp.html#GMUCp.neighbor_encoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUCp.GMUCp.neighbor_encoder" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">neighbor_encoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connections</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_neighbors</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUCp.html#GMUCp.neighbor_encoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUCp.GMUCp.neighbor_encoder" title="Permalink to this definition"></a></dt>
 <dd><p>Mean and variance encoding using node neighbors.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -698,7 +418,7 @@ out_var: Variance embeddings.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUCp.GMUCp.score_func">
-<span class="sig-name descname"><span class="pre">score_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">support</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_meta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_meta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">if_ne</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUCp.html#GMUCp.score_func"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUCp.GMUCp.score_func" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">score_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">support</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">support_meta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_meta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">if_ne</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUCp.html#GMUCp.score_func"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUCp.GMUCp.score_func" title="Permalink to this definition"></a></dt>
 <dd><p>Calculating the score of query triples with support set.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -722,19 +442,19 @@ conf_score: The confidence prediction value.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUCp.GMUCp.training">
-<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><a class="headerlink" href="#unKR.model.SSModel.GMUCp.GMUCp.training" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><a class="headerlink" href="#unKR.model.SSModel.GMUCp.GMUCp.training" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUCp.LayerNormalization">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unKR.model.SSModel.GMUCp.</span></span><span class="sig-name descname"><span class="pre">LayerNormalization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d_hid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUCp.html#LayerNormalization"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUCp.LayerNormalization" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unKR.model.SSModel.GMUCp.</span></span><span class="sig-name descname"><span class="pre">LayerNormalization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d_hid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUCp.html#LayerNormalization"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUCp.LayerNormalization" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
 <p>Layer normalization module.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUCp.LayerNormalization.forward">
-<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUCp.html#LayerNormalization.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUCp.LayerNormalization.forward" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUCp.html#LayerNormalization.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUCp.LayerNormalization.forward" title="Permalink to this definition"></a></dt>
 <dd><p>Defines the computation performed at every call.</p>
 <p>Should be overridden by all subclasses.</p>
 <div class="admonition note">
@@ -748,19 +468,19 @@ registered hooks while the latter silently ignores them.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUCp.LayerNormalization.training">
-<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><a class="headerlink" href="#unKR.model.SSModel.GMUCp.LayerNormalization.training" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><a class="headerlink" href="#unKR.model.SSModel.GMUCp.LayerNormalization.training" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUCp.MatchNet">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unKR.model.SSModel.GMUCp.</span></span><span class="sig-name descname"><span class="pre">MatchNet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">process_steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUCp.html#MatchNet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUCp.MatchNet" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unKR.model.SSModel.GMUCp.</span></span><span class="sig-name descname"><span class="pre">MatchNet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">process_steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUCp.html#MatchNet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUCp.MatchNet" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
 <p>LSTM-based matching network.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUCp.MatchNet.forward">
-<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">support</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUCp.html#MatchNet.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUCp.MatchNet.forward" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">support</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUCp.html#MatchNet.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUCp.MatchNet.forward" title="Permalink to this definition"></a></dt>
 <dd><p>Defines the computation performed at every call.</p>
 <p>Should be overridden by all subclasses.</p>
 <div class="admonition note">
@@ -774,19 +494,19 @@ registered hooks while the latter silently ignores them.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUCp.MatchNet.training">
-<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><a class="headerlink" href="#unKR.model.SSModel.GMUCp.MatchNet.training" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><a class="headerlink" href="#unKR.model.SSModel.GMUCp.MatchNet.training" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUCp.SupportEncoder">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unKR.model.SSModel.GMUCp.</span></span><span class="sig-name descname"><span class="pre">SupportEncoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d_inner</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUCp.html#SupportEncoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUCp.SupportEncoder" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unKR.model.SSModel.GMUCp.</span></span><span class="sig-name descname"><span class="pre">SupportEncoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d_inner</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUCp.html#SupportEncoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUCp.SupportEncoder" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
 <p>Docstring for SupportEncoder</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUCp.SupportEncoder.forward">
-<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUCp.html#SupportEncoder.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUCp.SupportEncoder.forward" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/SSModel/GMUCp.html#SupportEncoder.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.SSModel.GMUCp.SupportEncoder.forward" title="Permalink to this definition"></a></dt>
 <dd><p>Defines the computation performed at every call.</p>
 <p>Should be overridden by all subclasses.</p>
 <div class="admonition note">
@@ -800,7 +520,7 @@ registered hooks while the latter silently ignores them.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="unKR.model.SSModel.GMUCp.SupportEncoder.training">
-<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><a class="headerlink" href="#unKR.model.SSModel.GMUCp.SupportEncoder.training" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></em><a class="headerlink" href="#unKR.model.SSModel.GMUCp.SupportEncoder.training" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -809,159 +529,33 @@ registered hooks while the latter silently ignores them.</p>
 </section>
 
 
-                </article>
-              
-
-              
-              
-              
-              
-                <footer class="prev-next-footer">
-                  
-<div class="prev-next-area">
-    <a class="left-prev"
-       href="nssmodel.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">NSSModel</p>
-      </div>
-    </a>
-</div>
-                </footer>
-              
-            </div>
-            
-            
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-unKR.model.SSModel.GMUC">GMUC</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.GMUC"><code class="docutils literal notranslate"><span class="pre">GMUC</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.GMUC.args"><code class="docutils literal notranslate"><span class="pre">GMUC.args</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.GMUC.num_symbols"><code class="docutils literal notranslate"><span class="pre">GMUC.num_symbols</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.GMUC.embed"><code class="docutils literal notranslate"><span class="pre">GMUC.embed</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.GMUC.forward"><code class="docutils literal notranslate"><span class="pre">GMUC.forward()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.GMUC.score_func"><code class="docutils literal notranslate"><span class="pre">GMUC.score_func()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.GMUC.training"><code class="docutils literal notranslate"><span class="pre">GMUC.training</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.LayerNormalization"><code class="docutils literal notranslate"><span class="pre">LayerNormalization</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.LayerNormalization.forward"><code class="docutils literal notranslate"><span class="pre">LayerNormalization.forward()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.LayerNormalization.training"><code class="docutils literal notranslate"><span class="pre">LayerNormalization.training</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.MatchNet"><code class="docutils literal notranslate"><span class="pre">MatchNet</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.MatchNet.forward"><code class="docutils literal notranslate"><span class="pre">MatchNet.forward()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.MatchNet.training"><code class="docutils literal notranslate"><span class="pre">MatchNet.training</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.Matcher"><code class="docutils literal notranslate"><span class="pre">Matcher</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.Matcher.forward"><code class="docutils literal notranslate"><span class="pre">Matcher.forward()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.Matcher.neighbor_encoder"><code class="docutils literal notranslate"><span class="pre">Matcher.neighbor_encoder()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.Matcher.score_func"><code class="docutils literal notranslate"><span class="pre">Matcher.score_func()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.Matcher.training"><code class="docutils literal notranslate"><span class="pre">Matcher.training</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.QueryEncoder"><code class="docutils literal notranslate"><span class="pre">QueryEncoder</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.QueryEncoder.forward"><code class="docutils literal notranslate"><span class="pre">QueryEncoder.forward()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.QueryEncoder.training"><code class="docutils literal notranslate"><span class="pre">QueryEncoder.training</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.SupportEncoder"><code class="docutils literal notranslate"><span class="pre">SupportEncoder</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.SupportEncoder.forward"><code class="docutils literal notranslate"><span class="pre">SupportEncoder.forward()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUC.SupportEncoder.training"><code class="docutils literal notranslate"><span class="pre">SupportEncoder.training</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-unKR.model.SSModel.GMUCp">GMUCp</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUCp.GMUCp"><code class="docutils literal notranslate"><span class="pre">GMUCp</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUCp.GMUCp.args"><code class="docutils literal notranslate"><span class="pre">GMUCp.args</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUCp.GMUCp.num_symbols"><code class="docutils literal notranslate"><span class="pre">GMUCp.num_symbols</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUCp.GMUCp.embed"><code class="docutils literal notranslate"><span class="pre">GMUCp.embed</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUCp.GMUCp.forward"><code class="docutils literal notranslate"><span class="pre">GMUCp.forward()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUCp.GMUCp.neighbor_encoder"><code class="docutils literal notranslate"><span class="pre">GMUCp.neighbor_encoder()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUCp.GMUCp.score_func"><code class="docutils literal notranslate"><span class="pre">GMUCp.score_func()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUCp.GMUCp.training"><code class="docutils literal notranslate"><span class="pre">GMUCp.training</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUCp.LayerNormalization"><code class="docutils literal notranslate"><span class="pre">LayerNormalization</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUCp.LayerNormalization.forward"><code class="docutils literal notranslate"><span class="pre">LayerNormalization.forward()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUCp.LayerNormalization.training"><code class="docutils literal notranslate"><span class="pre">LayerNormalization.training</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUCp.MatchNet"><code class="docutils literal notranslate"><span class="pre">MatchNet</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUCp.MatchNet.forward"><code class="docutils literal notranslate"><span class="pre">MatchNet.forward()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUCp.MatchNet.training"><code class="docutils literal notranslate"><span class="pre">MatchNet.training</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUCp.SupportEncoder"><code class="docutils literal notranslate"><span class="pre">SupportEncoder</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUCp.SupportEncoder.forward"><code class="docutils literal notranslate"><span class="pre">SupportEncoder.forward()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#unKR.model.SSModel.GMUCp.SupportEncoder.training"><code class="docutils literal notranslate"><span class="pre">SupportEncoder.training</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
-              
-            
+           </div>
           </div>
-          <footer class="bd-footer-content">
-            
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By SEU
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-
-  <p class="copyright">
-    
-      © Copyright 2024, SEUKGE.
-      <br/>
-    
-  </p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-</div>
-          </footer>
-        
-
-      </main>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="nssmodel.html" class="btn btn-neutral float-left" title="NSSModel" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  </div>
-  
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
-  <footer class="bd-footer">
-  </footer>
-  </body>
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, SEUKGE.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
 </html>
