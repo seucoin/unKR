@@ -1,177 +1,1780 @@
 # Results
-There are some reproduced model results using unKR
+There are some reproduced model results using unKR.
+
+## CN15K
+
+### Confidence prediction
+<table>
+    <thead>
+    <tr>
+        <th>Category</th>
+        <th>Model</th>
+        <th>MSE</th>
+        <th>MAE</th>
+    </tr>
+    </thead>
+    <tbody align="center" valign="center">
+    <tr>
+        <td rowspan="8">Normal model</td>
+        <td>BEUrRE</td>
+        <td>0.11656 </td>
+        <td>0.28259 </td>
+    </tr>
+    <tr>
+        <td>PASSLEAF_ComplEx</td>
+        <td>0.23095 </td>
+        <td>0.39970 </td>
+    </tr>
+    <tr>
+        <td>PASSLEAF_DistMult</td>
+        <td>0.21575 </td>
+        <td>0.37923 </td>
+    </tr>
+    <tr>
+        <td>PASSLEAF_RotatE</td>
+        <td>0.09375 </td>
+        <td>0.24801 </td>
+    </tr>
+    <tr>
+        <td>UKGE</td>
+        <td>0.24635 </td>
+        <td>0.40864 </td>
+    </tr>
+    <tr>
+        <td>UKGEPSL</td>
+        <td>0.24630 </td>
+        <td>0.40881 </td>
+    </tr>
+    <tr>
+        <td>UKGsE</td>
+        <td>0.10274 </td>
+        <td>0.25564 </td>
+    </tr>
+    <tr>
+        <td>UPGAT</td>
+        <td>0.14933 </td>
+        <td>0.30796 </td>
+    </tr>
+    <tr>
+        <td>Few-shot model</td>
+        <td>GMUC</td>
+        <td>0.01700 </td>
+        <td>0.10400</td>
+    </tr>
+    </tbody>
+</table>
+
+### Link prediction
+
+#### All test data
+
+##### Raw
+<table>
+    <thead>
+    <tr>
+        <th>Category</th>
+        <th>Model</th>
+        <th>Hits@1</th>
+        <th>Hits@3</th>
+        <th>Hits@10</th>
+        <th>MRR</th>
+        <th>MR</th>
+        <th>WMRR</th>
+        <th>WMR </th>
+    </tr>
+    </thead>
+    <tbody align="center" valign="center">
+    <tr>
+        <td rowspan="10">Normal model</td>
+        <td>BEUrRE</td>
+        <td>0.030 </td>
+        <td>0.127 </td>
+        <td>0.248 </td>
+        <td>0.103 </td>
+        <td>1041.157 </td>
+        <td>0.112 </td>
+        <td>916.689  </td>
+    </tr>
+    <tr>
+        <td>FocusE</td>
+        <td>0.090 </td>
+        <td>0.168 </td>
+        <td>0.288 </td>
+        <td>0.154 </td>
+        <td>1760.524 </td>
+        <td>0.168 </td>
+        <td>1629.575  </td>
+    </tr>
+    <tr>
+        <td>GTransE</td>
+        <td>0.043 </td>
+        <td>0.112 </td>
+        <td>0.207 </td>
+        <td>0.098 </td>
+        <td>1114.496 </td>
+        <td>0.105 </td>
+        <td>978.835  </td>
+    </tr>
+    <tr>
+        <td>PASSLEAF_ComplEx</td>
+        <td>0.058 </td>
+        <td>0.131 </td>
+        <td>0.262 </td>
+        <td>0.122 </td>
+        <td>1175.950 </td>
+        <td>0.136 </td>
+        <td>1099.126  </td>
+    </tr>
+    <tr>
+        <td>PASSLEAF_DistMult</td>
+        <td>0.057 </td>
+        <td>0.126 </td>
+        <td>0.244 </td>
+        <td>0.117 </td>
+        <td>1203.598 </td>
+        <td>0.131 </td>
+        <td>1092.162  </td>
+    </tr>
+    <tr>
+        <td>PASSLEAF_RotatE</td>
+        <td>0.029 </td>
+        <td>0.126 </td>
+        <td>0.252 </td>
+        <td>0.103 </td>
+        <td>1020.154 </td>
+        <td>0.112 </td>
+        <td>832.611  </td>
+    </tr>
+    <tr>
+        <td>UKGE</td>
+        <td>0.056 </td>
+        <td>0.116 </td>
+        <td>0.209 </td>
+        <td>0.106 </td>
+        <td>1616.041 </td>
+        <td>0.142 </td>
+        <td>1467.336  </td>
+    </tr>
+    <tr>
+        <td>UKGEPSL</td>
+        <td>0.052 </td>
+        <td>0.114 </td>
+        <td>0.210 </td>
+        <td>0.104 </td>
+        <td>1581.759 </td>
+        <td>0.116 </td>
+        <td>1446.819  </td>
+    </tr>
+    <tr>
+        <td>UKGsE</td>
+        <td>0.002 </td>
+        <td>0.006 </td>
+        <td>0.020 </td>
+        <td>0.010 </td>
+        <td>1949.594 </td>
+        <td>0.011 </td>
+        <td>1769.067  </td>
+    </tr>
+    <tr>
+        <td>UPGAT</td>
+        <td>0.037 </td>
+        <td>0.108 </td>
+        <td>0.226 </td>
+        <td>0.098 </td>
+        <td>1199.503 </td>
+        <td>0.110 </td>
+        <td>1060.366  </td>
+    </tr>
+    <tr>
+        <td>Few-shot model</td>
+        <td>GMUC</td>
+        <td>0.128 </td>
+        <td>0.166 </td>
+        <td>0.232 </td>
+        <td>0.172 </td>
+        <td>78.768 </td>
+        <td>0.168 </td>
+        <td>79.024  </td>
+    </tr>
+    </tbody>
+</table>
+
+##### Filter
+<table>
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Model</th>
+            <th>Hits@1</th>
+            <th>Hits@3</th>
+            <th>Hits@10</th>
+            <th>MRR</th>
+            <th>MR</th>
+            <th>WMRR</th>
+            <th>WMR </th>
+        </tr>
+    </thead>
+    <tbody align="center" valign="center">
+        <tr>
+            <td rowspan="10">Normal model</td>
+            <td>BEUrRE</td>
+            <td>0.039 </td>
+            <td>0.175 </td>
+            <td>0.285 </td>
+            <td>0.128 </td>
+            <td>1026.465 </td>
+            <td>0.138 </td>
+            <td>905.267  </td>
+        </tr>
+        <tr>
+            <td>FocusE</td>
+            <td>0.164 </td>
+            <td>0.254 </td>
+            <td>0.349 </td>
+            <td>0.228 </td>
+            <td>1740.288 </td>
+            <td>0.250 </td>
+            <td>1613.610  </td>
+        </tr>
+        <tr>
+            <td>GTransE</td>
+            <td>0.050 </td>
+            <td>0.129 </td>
+            <td>0.223 </td>
+            <td>0.110 </td>
+            <td>1101.196 </td>
+            <td>0.118 </td>
+            <td>968.446  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_ComplEx</td>
+            <td>0.086 </td>
+            <td>0.223 </td>
+            <td>0.340 </td>
+            <td>0.175 </td>
+            <td>1157.334 </td>
+            <td>0.196 </td>
+            <td>1084.497  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_DistMult</td>
+            <td>0.078 </td>
+            <td>0.178 </td>
+            <td>0.296 </td>
+            <td>0.151 </td>
+            <td>1185.329 </td>
+            <td>0.170 </td>
+            <td>1077.809  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_RotatE</td>
+            <td>0.037 </td>
+            <td>0.167 </td>
+            <td>0.288 </td>
+            <td>0.125 </td>
+            <td>1005.764 </td>
+            <td>0.137 </td>
+            <td>821.435  </td>
+        </tr>
+        <tr>
+            <td>UKGE</td>
+            <td>0.072 </td>
+            <td>0.146 </td>
+            <td>0.234 </td>
+            <td>0.128 </td>
+            <td>1598.388 </td>
+            <td>0.118 </td>
+            <td>1481.233  </td>
+        </tr>
+        <tr>
+            <td>UKGEPSL</td>
+            <td>0.065 </td>
+            <td>0.142 </td>
+            <td>0.238 </td>
+            <td>0.124 </td>
+            <td>1564.019 </td>
+            <td>0.138 </td>
+            <td>1432.869  </td>
+        </tr>
+        <tr>
+            <td>UKGsE</td>
+            <td>0.002 </td>
+            <td>0.006 </td>
+            <td>0.020 </td>
+            <td>0.010 </td>
+            <td>1936.439 </td>
+            <td>0.012 </td>
+            <td>1758.790  </td>
+        </tr>
+        <tr>
+            <td>UPGAT</td>
+            <td>0.078 </td>
+            <td>0.168 </td>
+            <td>0.281 </td>
+            <td>0.146 </td>
+            <td>1177.974 </td>
+            <td>0.165 </td>
+            <td>1042.695  </td>
+        </tr>
+        <tr>
+            <td>Few-shot model</td>
+            <td>GMUC</td>
+            <td>0.128 </td>
+            <td>0.167 </td>
+            <td>0.232 </td>
+            <td>0.173 </td>
+            <td>77.695 </td>
+            <td>0.171 </td>
+            <td>77.926  </td>
+        </tr>
+    </tbody>
+</table>
 
 
+#### Only high-confidence test data
 
-## cn15k
+##### Raw
+<table>
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Model</th>
+            <th>Hits@1</th>
+            <th>Hits@3</th>
+            <th>Hits@10</th>
+            <th>MRR</th>
+            <th>MR</th>
+            <th>WMRR</th>
+            <th>WMR </th>
+        </tr>
+    </thead>
+    <tbody align="center" valign="center">
+        <tr>
+            <td rowspan="10">Normal model</td>
+            <td>BEUrRE</td>
+            <td>0.011 </td>
+            <td>0.130 </td>
+            <td>0.280 </td>
+            <td>0.100 </td>
+            <td>891.065 </td>
+            <td>0.102 </td>
+            <td>869.288  </td>
+        </tr>
+        <tr>
+            <td>FocusE</td>
+            <td>0.081 </td>
+            <td>0.175 </td>
+            <td>0.319 </td>
+            <td>0.157 </td>
+            <td>1691.038 </td>
+            <td>0.160 </td>
+            <td>1643.833  </td>
+        </tr>
+        <tr>
+            <td>GTransE</td>
+            <td>0.016 </td>
+            <td>0.108 </td>
+            <td>0.226 </td>
+            <td>0.087 </td>
+            <td>957.610 </td>
+            <td>0.089 </td>
+            <td>931.969  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_ComplEx</td>
+            <td>0.058 </td>
+            <td>0.146 </td>
+            <td>0.303 </td>
+            <td>0.134 </td>
+            <td>1146.749 </td>
+            <td>0.136 </td>
+            <td>1110.414  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_DistMult</td>
+            <td>0.057 </td>
+            <td>0.141 </td>
+            <td>0.281 </td>
+            <td>0.128 </td>
+            <td>1111.191 </td>
+            <td>0.131 </td>
+            <td>1085.564  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_RotatE</td>
+            <td>0.010 </td>
+            <td>0.131 </td>
+            <td>0.289 </td>
+            <td>0.101 </td>
+            <td>761.389 </td>
+            <td>0.104 </td>
+            <td>738.024  </td>
+        </tr>
+        <tr>
+            <td>UKGE</td>
+            <td>0.053 </td>
+            <td>0.127 </td>
+            <td>0.237 </td>
+            <td>0.113 </td>
+            <td>1515.951 </td>
+            <td>0.115 </td>
+            <td>1479.857  </td>
+        </tr>
+        <tr>
+            <td>UKGEPSL</td>
+            <td>0.049 </td>
+            <td>0.124 </td>
+            <td>0.240 </td>
+            <td>0.111 </td>
+            <td>1483.428 </td>
+            <td>0.113 </td>
+            <td>1447.763  </td>
+        </tr>
+        <tr>
+            <td>UKGsE</td>
+            <td>0.002 </td>
+            <td>0.007 </td>
+            <td>0.021 </td>
+            <td>0.011 </td>
+            <td>1719.269 </td>
+            <td>0.012 </td>
+            <td>1689.562  </td>
+        </tr>
+        <tr>
+            <td>UPGAT</td>
+            <td>0.042 </td>
+            <td>0.121 </td>
+            <td>0.262 </td>
+            <td>0.111 </td>
+            <td>1082.818 </td>
+            <td>0.113 </td>
+            <td>1049.431  </td>
+        </tr>
+        <tr>
+            <td>Few-shot model</td>
+            <td>GMUC</td>
+            <td>0.002 </td>
+            <td>0.008 </td>
+            <td>0.056 </td>
+            <td>0.028 </td>
+            <td>96.915 </td>
+            <td>0.028 </td>
+            <td>96.942  </td>
+        </tr>
+    </tbody>
+</table>
 
-### Raw
+##### Filter
+<table>
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Model</th>
+            <th>Hits@1</th>
+            <th>Hits@3</th>
+            <th>Hits@10</th>
+            <th>MRR</th>
+            <th>MR</th>
+            <th>WMRR</th>
+            <th>WMR </th>
+        </tr>
+    </thead>
+    <tbody align="center" valign="center">
+        <tr>
+            <td rowspan="10">Normal model</td>
+            <td>BEUrRE</td>
+            <td>0.017 </td>
+            <td>0.188 </td>
+            <td>0.317 </td>
+            <td>0.125 </td>
+            <td>881.970 </td>
+            <td>0.128 </td>
+            <td>860.370  </td>
+        </tr>
+        <tr>
+            <td>FocusE</td>
+            <td>0.169 </td>
+            <td>0.274 </td>
+            <td>0.380 </td>
+            <td>0.242 </td>
+            <td>1678.487 </td>
+            <td>0.247 </td>
+            <td>1631.426  </td>
+        </tr>
+        <tr>
+            <td>GTransE</td>
+            <td>0.026 </td>
+            <td>0.129 </td>
+            <td>0.243 </td>
+            <td>0.101 </td>
+            <td>949.356 </td>
+            <td>0.104 </td>
+            <td>923.850  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_ComplEx</td>
+            <td>0.093 </td>
+            <td>0.255 </td>
+            <td>0.383 </td>
+            <td>0.196 </td>
+            <td>1135.032 </td>
+            <td>0.200 </td>
+            <td>1110.414  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_DistMult</td>
+            <td>0.083 </td>
+            <td>0.204 </td>
+            <td>0.340 </td>
+            <td>0.169 </td>
+            <td>1099.705 </td>
+            <td>0.172 </td>
+            <td>1074.263  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_RotatE</td>
+            <td>0.018 </td>
+            <td>0.182 </td>
+            <td>0.329 </td>
+            <td>0.127 </td>
+            <td>752.461 </td>
+            <td>0.130 </td>
+            <td>729.270  </td>
+        </tr>
+        <tr>
+            <td>UKGE</td>
+            <td>0.074 </td>
+            <td>0.164 </td>
+            <td>0.266 </td>
+            <td>0.139 </td>
+            <td>1504.807 </td>
+            <td>0.142 </td>
+            <td>1468.898  </td>
+        </tr>
+        <tr>
+            <td>UKGEPSL</td>
+            <td>0.064 </td>
+            <td>0.160 </td>
+            <td>0.271 </td>
+            <td>0.135 </td>
+            <td>1472.255 </td>
+            <td>0.137 </td>
+            <td>1436.772  </td>
+        </tr>
+        <tr>
+            <td>UKGsE</td>
+            <td>0.002 </td>
+            <td>0.007 </td>
+            <td>0.022 </td>
+            <td>0.011 </td>
+            <td>1711.308 </td>
+            <td>0.012 </td>
+            <td>1681.698  </td>
+        </tr>
+        <tr>
+            <td>UPGAT</td>
+            <td>0.094 </td>
+            <td>0.196 </td>
+            <td>0.323 </td>
+            <td>0.170 </td>
+            <td>1067.621 </td>
+            <td>0.173 </td>
+            <td>1034.485  </td>
+        </tr>
+        <tr>
+            <td>Few-shot model</td>
+            <td>GMUC</td>
+            <td>0.002 </td>
+            <td>0.008 </td>
+            <td>0.057 </td>
+            <td>0.029 </td>
+            <td>95.806 </td>
+            <td>0.029 </td>
+            <td>95.805  </td>
+        </tr>
+    </tbody>
+</table>
 
-|       Model        | Confidence Filter(0.7) | MSE         | MAE         | Hits@1      | Hits@3      | Hits@10     | MRR         | MR          | WMRR        | WMR          |
-|:------------------:|:----------------------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:------------:|
-|       BEUrRE       |          yes           | 0.116559997 | 0.282590985 | 0.01100     | 0.13000     | 0.28000     | 0.10000     | 891.06500   | 0.10200     | 869.28800    |
-|       BEUrRE       |           no           | 0.116559997 | 0.282590985 | 0.03000     | 0.12700     | 0.24800     | 0.10300     | 1041.15700  | 0.11200     | 916.68900    |
-|       FocusE       |          yes           | 83.32640839 | 6.704373837 | 0.08100     | 0.17500     | 0.31900     | 0.15700     | 1691.03800  | 0.16000     | 1643.83300   |
-|       FocusE       |           no           | 83.32640839 | 6.704373837 | 0.09000     | 0.16800     | 0.28800     | 0.15400     | 1760.52400  | 0.16800     | 1629.57500   |
-|        GMUC        |          yes           | 0.01700     | 0.10900     | 0.00200     | 0.00800     | 0.05600     | 0.02800     | 96.91500    | 0.02800     | 96.94200     |
-|        GMUC        |           no           | 0.01700     | 0.10400     | 0.12800     | 0.16600     | 0.23200     | 0.17200     | 78.76800    | 0.16800     | 79.02400     |
-|      GTransE       |          yes           | 18.87849    | 4.12786     | 0.015953001 | 0.107601002 | 0.226449996 | 0.086833    | 957.6098633 | 0.089041002 | 931.9691162  |
-|      GTransE       |           no           | 18.87849    | 4.12786     | 0.042658001 | 0.112061001 | 0.207380995 | 0.098444998 | 1114.496216 | 0.104622997 | 978.835022   |
-| PASSLEAF(ComplEx)  |          yes           | 0.230945006 | 0.399697006 | 0.05800     | 0.14600     | 0.30300     | 0.13400     | 1146.74900  | 0.13600     | 1110.41400   |
-| PASSLEAF(ComplEx)  |           no           | 0.230945006 | 0.399697006 | 0.05800     | 0.13100     | 0.26200     | 0.12200     | 1175.95000  | 0.13600     | 1099.12600   |
-| PASSLEAF(DistMult) |          yes           | 0.21575     | 0.379233003 | 0.05700     | 0.14100     | 0.28100     | 0.12800     | 1111.19100  | 0.13100     | 1085.56400   |
-| PASSLEAF(DistMult) |           no           | 0.21575     | 0.379233003 | 0.05700     | 0.12600     | 0.24400     | 0.11700     | 1203.59800  | 0.13100     | 1092.16200   |
-|  PASSLEAF(RotatE)  |          yes           | 0.093751997 | 0.248007998 | 0.01000     | 0.13100     | 0.28900     | 0.10100     | 761.38900   | 0.10400     | 738.02400    |
-|  PASSLEAF(RotatE)  |           no           | 0.093751997 | 0.248007998 | 0.02900     | 0.12600     | 0.25200     | 0.10300     | 1020.15400  | 0.11200     | 832.61100    |
-|        UKGE        |          yes           | 0.246354997 | 0.408643007 | 0.05300     | 0.12700     | 0.23700     | 0.11300     | 1515.95100  | 0.11500     | 1479.85700   |
-|        UKGE        |           no           | 0.246354997 | 0.408643007 | 0.05600     | 0.11600     | 0.20900     | 0.10600     | 1616.04100  | 0.14200     | 1467.33600   |
-|     UKGE(PSL)      |          yes           | 0.246304005 | 0.408809006 | 0.04900     | 0.12400     | 0.24000     | 0.11100     | 1483.42800  | 0.11300     | 1447.76300   |
-|     UKGE(PSL)      |           no           | 0.246304005 | 0.408809006 | 0.05200     | 0.11400     | 0.21000     | 0.10400     | 1581.75900  | 0.11600     | 1446.81900   |
-|       UKGsE        |          yes           | 0.102736004 | 0.255641013 | 0.001595    | 0.00678     | 0.021217    | 0.01128     | 1719.268677 | 0.011713    | 1689.56189   |
-|       UKGsE        |           no           | 0.102736004 | 0.255641013 | 0.001503 | 0.00622  | 0.019695999 | 0.01021  | 1949.593506 | 0.011458 | 1769.067261  |
-|       UPGAT        |          yes           | 0.14933     | 0.30796     | 0.04200  | 0.12100  | 0.26200     | 0.11100  | 1082.81800  | 0.11300  | 1049.43100   |
-|       UPGAT        |           no           | 0.14933     | 0.30796     | 0.03700  | 0.10800  | 0.22600     | 0.09800  | 1199.50300  | 0.11000  | 1060.36600   |
+
+## NL27K
+
+### Confidence prediction
+<table>
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Model</th>
+            <th>MSE</th>
+            <th>MAE </th>
+        </tr>
+    </thead>
+    <tbody align="center" valign="center">
+        <tr>
+            <td rowspan="8">Normal model</td>
+            <td>BEUrRE</td>
+            <td>0.08920 </td>
+            <td>0.22194  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_ComplEx</td>
+            <td>0.02434 </td>
+            <td>0.05176  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_DistMult</td>
+            <td>0.02309 </td>
+            <td>0.05107  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_RotatE</td>
+            <td>0.01949 </td>
+            <td>0.06253  </td>
+        </tr>
+        <tr>
+            <td>UKGE</td>
+            <td>0.02861 </td>
+            <td>0.05967  </td>
+        </tr>
+        <tr>
+            <td>UKGEPSL</td>
+            <td>0.02868 </td>
+            <td>0.05966  </td>
+        </tr>
+        <tr>
+            <td>UKGsE</td>
+            <td>0.12202 </td>
+            <td>0.27065  </td>
+        </tr>
+        <tr>
+            <td>UPGAT</td>
+            <td>0.02922 </td>
+            <td>0.10107  </td>
+        </tr>
+        <tr>
+            <td rowspan="2">Few-shot model</td>
+            <td>GMUC</td>
+            <td>0.01300 </td>
+            <td>0.08200  </td>
+        </tr>
+        <tr>
+            <td>GMUC+</td>
+            <td>0.01300 </td>
+            <td>0.08600  </td>
+        </tr>
+    </tbody>
+</table>
 
 
-### Filter
+### Link prediction
 
-|       Model        | Confidence Filter(0.7) | MSE         | MAE         | Hits@1      | Hits@3      | Hits@10     | MRR         | MR          | WMRR        | WMR          |
-|:------------------:|:----------------------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:------------:|
-|       BEUrRE       |          yes           | 0.116559997 | 0.282590985 | 0.01700     | 0.18800     | 0.31700     | 0.12500     | 881.97000   | 0.12800     | 860.37000    |
-|       BEUrRE       |           no           | 0.116559997 | 0.282590985 | 0.03900     | 0.17500     | 0.28500     | 0.12800     | 1026.46500  | 0.13800     | 905.26700    |
-|       FocusE       |          yes           | 83.32640839 | 6.704373837 | 0.16900     | 0.27400     | 0.38000     | 0.24200     | 1678.48700  | 0.24700     | 1631.42600   |
-|       FocusE       |           no           | 83.32640839 | 6.704373837 | 0.16400     | 0.25400     | 0.34900     | 0.22800     | 1740.28800  | 0.25000     | 1613.61000   |
-|        GMUC        |          yes           | 0.01700     | 0.10900     | 0.00200     | 0.00800     | 0.05700     | 0.02900     | 95.80600    | 0.02900     | 95.80500     |
-|        GMUC        |           no           | 0.01700     | 0.10400     | 0.12800     | 0.16700     | 0.23200     | 0.17300     | 77.69500    | 0.17100     | 77.92600     |
-|      GTransE       |          yes           | 18.87849    | 4.12786     | 0.025604    | 0.129297003 | 0.243200004 | 0.101469003 | 949.3557739 | 0.104203001 | 923.8496094  |
-|      GTransE       |           no           | 18.87849    | 4.12786     | 0.049759001 | 0.129270002 | 0.222671002 | 0.110189997 | 1101.196411 | 0.118147001 | 968.446106   |
-| PASSLEAF(ComplEx)  |          yes           | 0.230945006 | 0.399697006 | 0.09300     | 0.25500     | 0.38300     | 0.19600     | 1135.03200  | 0.20000     | 1110.41400   |
-| PASSLEAF(ComplEx)  |           no           | 0.230945006 | 0.399697006 | 0.08600     | 0.22300     | 0.34000     | 0.17500     | 1157.33400  | 0.19600     | 1084.49700   |
-| PASSLEAF(DistMult) |          yes           | 0.21575     | 0.379233003 | 0.08300     | 0.20400     | 0.34000     | 0.16900     | 1099.70500  | 0.17200     | 1074.26300   |
-| PASSLEAF(DistMult) |           no           | 0.21575     | 0.379233003 | 0.07800     | 0.17800     | 0.29600     | 0.15100     | 1185.32900  | 0.17000     | 1077.80900   |
-|  PASSLEAF(RotatE)  |          yes           | 0.093751997 | 0.248007998 | 0.01800     | 0.18200     | 0.32900     | 0.12700     | 752.46100   | 0.13000     | 729.27000    |
-|  PASSLEAF(RotatE)  |           no           | 0.093751997 | 0.248007998 | 0.03700     | 0.16700     | 0.28800     | 0.12500     | 1005.76400  | 0.13700     | 821.43500    |
-|        UKGE        |          yes           | 0.246354997 | 0.408643007 | 0.07400     | 0.16400     | 0.26600     | 0.13900     | 1504.80700  | 0.14200     | 1468.89800   |
-|        UKGE        |           no           | 0.246354997 | 0.408643007 | 0.07200     | 0.14600     | 0.23400     | 0.12800     | 1598.38800  | 0.11800     | 1481.23300   |
-|     UKGE(PSL)      |          yes           | 0.246304005 | 0.408809006 | 0.06400     | 0.16000     | 0.27100     | 0.13500     | 1472.25500  | 0.13700     | 1436.77200   |
-|     UKGE(PSL)      |           no           | 0.246304005 | 0.408809006 | 0.06500     | 0.14200     | 0.23800     | 0.12400     | 1564.01900  | 0.13800     | 1432.86900   |
-|       UKGsE        |          yes           | 0.102736004 | 0.255641013 | 0.001595    | 0.007019    | 0.021855    | 0.011495    | 1711.308228 | 0.011936    | 1681.697632  |
-|       UKGsE        |           no           | 0.102736004 | 0.255641013 | 0.001503 | 0.006427 | 0.020214999 | 0.0104   | 1936.439209 | 0.011666 | 1758.789795  |
-|       UPGAT        |          yes           | 0.14933     | 0.30796     | 0.09400  | 0.19600  | 0.32300     | 0.17000  | 1067.62100  | 0.17300  | 1034.48500   |
-|       UPGAT        |           no           | 0.14933     | 0.30796     | 0.07800  | 0.16800  | 0.28100     | 0.14600  | 1177.97400  | 0.16500  | 1042.69500   |
+#### All test data
+
+##### Raw
+<table>
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Model</th>
+            <th>Hits@1</th>
+            <th>Hits@3</th>
+            <th>Hits@10</th>
+            <th>MRR</th>
+            <th>MR</th>
+            <th>WMRR</th>
+            <th>WMR </th>
+        </tr>
+    </thead>
+    <tbody align="center" valign="center">
+        <tr>
+            <td rowspan="10">Normal model</td>
+            <td>BEUrRE</td>
+            <td>0.086 </td>
+            <td>0.237 </td>
+            <td>0.358 </td>
+            <td>0.186 </td>
+            <td>937.320 </td>
+            <td>0.212 </td>
+            <td>745.028  </td>
+        </tr>
+        <tr>
+            <td>FocusE</td>
+            <td>0.373 </td>
+            <td>0.518 </td>
+            <td>0.646 </td>
+            <td>0.469 </td>
+            <td>515.363 </td>
+            <td>0.480 </td>
+            <td>473.365  </td>
+        </tr>
+        <tr>
+            <td>GTransE</td>
+            <td>0.137 </td>
+            <td>0.245 </td>
+            <td>0.353 </td>
+            <td>0.211 </td>
+            <td>2014.542 </td>
+            <td>0.232 </td>
+            <td>1749.638  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_ComplEx</td>
+            <td>0.373 </td>
+            <td>0.508 </td>
+            <td>0.626 </td>
+            <td>0.463 </td>
+            <td>222.988 </td>
+            <td>0.483 </td>
+            <td>204.159  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_DistMult</td>
+            <td>0.369 </td>
+            <td>0.502 </td>
+            <td>0.622 </td>
+            <td>0.458 </td>
+            <td>214.093 </td>
+            <td>0.478 </td>
+            <td>198.758  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_RotatE</td>
+            <td>0.365 </td>
+            <td>0.499 </td>
+            <td>0.610 </td>
+            <td>0.453 </td>
+            <td>122.398 </td>
+            <td>0.478 </td>
+            <td>109.474  </td>
+        </tr>
+        <tr>
+            <td>UKGE</td>
+            <td>0.343 </td>
+            <td>0.479 </td>
+            <td>0.599 </td>
+            <td>0.434 </td>
+            <td>253.241 </td>
+            <td>0.458 </td>
+            <td>226.282  </td>
+        </tr>
+        <tr>
+            <td>UKGEPSL</td>
+            <td>0.347 </td>
+            <td>0.477 </td>
+            <td>0.599 </td>
+            <td>0.435 </td>
+            <td>265.915 </td>
+            <td>0.459 </td>
+            <td>240.235  </td>
+        </tr>
+        <tr>
+            <td>UKGsE</td>
+            <td>0.030 </td>
+            <td>0.058 </td>
+            <td>0.108 </td>
+            <td>0.057 </td>
+            <td>3022.769 </td>
+            <td>0.061 </td>
+            <td>2690.496  </td>
+        </tr>
+        <tr>
+            <td>UPGAT</td>
+            <td>0.339 </td>
+            <td>0.467 </td>
+            <td>0.586 </td>
+            <td>0.426 </td>
+            <td>166.169 </td>
+            <td>0.452 </td>
+            <td>141.358  </td>
+        </tr>
+        <tr>
+            <td rowspan="2">Few-shot model</td>
+            <td>GMUC</td>
+            <td>0.287 </td>
+            <td>0.409 </td>
+            <td>0.536 </td>
+            <td>0.375 </td>
+            <td>71.484 </td>
+            <td>0.375 </td>
+            <td>71.447  </td>
+        </tr>
+        <tr>
+            <td>GMUC+</td>
+            <td>0.299 </td>
+            <td>0.448 </td>
+            <td>0.582 </td>
+            <td>0.401 </td>
+            <td>49.418 </td>
+            <td>0.401 </td>
+            <td>49.107  </td>
+        </tr>
+    </tbody>
+</table>
+
+##### Filter
+<table>
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Model</th>
+            <th>Hits@1</th>
+            <th>Hits@3</th>
+            <th>Hits@10</th>
+            <th>MRR</th>
+            <th>MR</th>
+            <th>WMRR</th>
+            <th>WMR </th>
+        </tr>
+    </thead>
+    <tbody align="center" valign="center">
+        <tr>
+            <td rowspan="10">Normal model</td>
+            <td>BEUrRE</td>
+            <td>0.117 </td>
+            <td>0.307 </td>
+            <td>0.442 </td>
+            <td>0.238 </td>
+            <td>874.380 </td>
+            <td>0.272 </td>
+            <td>683.223  </td>
+        </tr>
+        <tr>
+            <td>FocusE</td>
+            <td>0.761 </td>
+            <td>0.884 </td>
+            <td>0.946 </td>
+            <td>0.829 </td>
+            <td>459.719 </td>
+            <td>0.849 </td>
+            <td>420.153  </td>
+        </tr>
+        <tr>
+            <td>GTransE</td>
+            <td>0.179 </td>
+            <td>0.308 </td>
+            <td>0.425 </td>
+            <td>0.265 </td>
+            <td>1957.772 </td>
+            <td>0.291 </td>
+            <td>1692.880  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_ComplEx</td>
+            <td>0.586 </td>
+            <td>0.703 </td>
+            <td>0.801 </td>
+            <td>0.662 </td>
+            <td>172.645 </td>
+            <td>0.708 </td>
+            <td>157.040  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_DistMult</td>
+            <td>0.553 </td>
+            <td>0.676 </td>
+            <td>0.783 </td>
+            <td>0.633 </td>
+            <td>163.501 </td>
+            <td>0.676 </td>
+            <td>151.543  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_RotatE</td>
+            <td>0.580 </td>
+            <td>0.706 </td>
+            <td>0.782 </td>
+            <td>0.656 </td>
+            <td>71.203 </td>
+            <td>0.715 </td>
+            <td>61.337  </td>
+        </tr>
+        <tr>
+            <td>UKGE</td>
+            <td>0.462 </td>
+            <td>0.597 </td>
+            <td>0.730 </td>
+            <td>0.555 </td>
+            <td>203.508 </td>
+            <td>0.593 </td>
+            <td>179.867  </td>
+        </tr>
+        <tr>
+            <td>UKGEPSL</td>
+            <td>0.461 </td>
+            <td>0.600 </td>
+            <td>0.734 </td>
+            <td>0.555 </td>
+            <td>216.391 </td>
+            <td>0.594 </td>
+            <td>194.006  </td>
+        </tr>
+        <tr>
+            <td>UKGsE</td>
+            <td>0.031 </td>
+            <td>0.062 </td>
+            <td>0.113 </td>
+            <td>0.060 </td>
+            <td>2973.236 </td>
+            <td>0.064 </td>
+            <td>2641.840  </td>
+        </tr>
+        <tr>
+            <td>UPGAT</td>
+            <td>0.530 </td>
+            <td>0.654 </td>
+            <td>0.765 </td>
+            <td>0.611 </td>
+            <td>115.004 </td>
+            <td>0.658 </td>
+            <td>93.692  </td>
+        </tr>
+        <tr>
+            <td rowspan="2">Few-shot model</td>
+            <td>GMUC</td>
+            <td>0.344 </td>
+            <td>0.462 </td>
+            <td>0.592 </td>
+            <td>0.430 </td>
+            <td>67.920 </td>
+            <td>0.432 </td>
+            <td>67.813  </td>
+        </tr>
+        <tr>
+            <td>GMUC+</td>
+            <td>0.371 </td>
+            <td>0.505 </td>
+            <td>0.638 </td>
+            <td>0.463 </td>
+            <td>45.874 </td>
+            <td>0.465 </td>
+            <td>45.495  </td>
+        </tr>
+    </tbody>
+</table>
+
+#### Only high-confidence test data
+
+##### Raw
+<table>
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Model</th>
+            <th>Hits@1</th>
+            <th>Hits@3</th>
+            <th>Hits@10</th>
+            <th>MRR</th>
+            <th>MR</th>
+            <th>WMRR</th>
+            <th>WMR </th>
+        </tr>
+    </thead>
+    <tbody align="center" valign="center">
+        <tr>
+            <td rowspan="10">Normal model</td>
+            <td>BEUrRE</td>
+            <td>0.115 </td>
+            <td>0.295 </td>
+            <td>0.436 </td>
+            <td>0.232 </td>
+            <td>549.564 </td>
+            <td>0.237 </td>
+            <td>532.735  </td>
+        </tr>
+        <tr>
+            <td>FocusE</td>
+            <td>0.393 </td>
+            <td>0.537 </td>
+            <td>0.659 </td>
+            <td>0.487 </td>
+            <td>436.373 </td>
+            <td>0.491 </td>
+            <td>430.817  </td>
+        </tr>
+        <tr>
+            <td>GTransE</td>
+            <td>0.168 </td>
+            <td>0.287 </td>
+            <td>0.407 </td>
+            <td>0.250 </td>
+            <td>1434.634 </td>
+            <td>0.253 </td>
+            <td>1435.397  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_ComplEx</td>
+            <td>0.405 </td>
+            <td>0.544 </td>
+            <td>0.662 </td>
+            <td>0.496 </td>
+            <td>184.430 </td>
+            <td>0.502 </td>
+            <td>182.857  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_DistMult</td>
+            <td>0.399 </td>
+            <td>0.537 </td>
+            <td>0.658 </td>
+            <td>0.491 </td>
+            <td>184.246 </td>
+            <td>0.496 </td>
+            <td>182.127  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_RotatE</td>
+            <td>0.407 </td>
+            <td>0.545 </td>
+            <td>0.664 </td>
+            <td>0.498 </td>
+            <td>97.364 </td>
+            <td>0.504 </td>
+            <td>95.674  </td>
+        </tr>
+        <tr>
+            <td>UKGE</td>
+            <td>0.382 </td>
+            <td>0.522 </td>
+            <td>0.645 </td>
+            <td>0.475 </td>
+            <td>198.500 </td>
+            <td>0.481 </td>
+            <td>195.908  </td>
+        </tr>
+        <tr>
+            <td>UKGEPSL</td>
+            <td>0.385 </td>
+            <td>0.520 </td>
+            <td>0.644 </td>
+            <td>0.476 </td>
+            <td>212.782 </td>
+            <td>0.482 </td>
+            <td>210.799  </td>
+        </tr>
+        <tr>
+            <td>UKGsE</td>
+            <td>0.035 </td>
+            <td>0.067 </td>
+            <td>0.124 </td>
+            <td>0.066 </td>
+            <td>2378.456 </td>
+            <td>0.066 </td>
+            <td>2336.466  </td>
+        </tr>
+        <tr>
+            <td>UPGAT</td>
+            <td>0.379 </td>
+            <td>0.520 </td>
+            <td>0.645 </td>
+            <td>0.473 </td>
+            <td>114.658 </td>
+            <td>0.477 </td>
+            <td>113.827  </td>
+        </tr>
+        <tr>
+            <td rowspan="2">Few-shot model</td>
+            <td>GMUC</td>
+            <td>0.281 </td>
+            <td>0.400 </td>
+            <td>0.540 </td>
+            <td>0.368 </td>
+            <td>62.005 </td>
+            <td>0.368 </td>
+            <td>61.849  </td>
+        </tr>
+        <tr>
+            <td>GMUC+</td>
+            <td>0.290 </td>
+            <td>0.420 </td>
+            <td>0.573 </td>
+            <td>0.438 </td>
+            <td>45.774 </td>
+            <td>0.384 </td>
+            <td>49.808  </td>
+        </tr>
+    </tbody>
+</table>
+
+##### Filter
+<table>
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Model</th>
+            <th>Hits@1</th>
+            <th>Hits@3</th>
+            <th>Hits@10</th>
+            <th>MRR</th>
+            <th>MR</th>
+            <th>WMRR</th>
+            <th>WMR </th>
+        </tr>
+    </thead>
+    <tbody align="center" valign="center">
+        <tr>
+            <td rowspan="10">Normal model</td>
+            <td>BEUrRE</td>
+            <td>0.156 </td>
+            <td>0.385 </td>
+            <td>0.543 </td>
+            <td>0.299 </td>
+            <td>488.051 </td>
+            <td>0.306 </td>
+            <td>471.784  </td>
+        </tr>
+        <tr>
+            <td>FocusE</td>
+            <td>0.814 </td>
+            <td>0.918 </td>
+            <td>0.957 </td>
+            <td>0.870 </td>
+            <td>384.471 </td>
+            <td>0.871 </td>
+            <td>379.761  </td>
+        </tr>
+        <tr>
+            <td>GTransE</td>
+            <td>0.222 </td>
+            <td>0.366 </td>
+            <td>0.493 </td>
+            <td>0.316 </td>
+            <td>1377.564 </td>
+            <td>0.319 </td>
+            <td>1378.505  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_ComplEx</td>
+            <td>0.669 </td>
+            <td>0.786 </td>
+            <td>0.876 </td>
+            <td>0.741 </td>
+            <td>138.808 </td>
+            <td>0.753 </td>
+            <td>138.477  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_DistMult</td>
+            <td>0.627 </td>
+            <td>0.754 </td>
+            <td>0.856 </td>
+            <td>0.707 </td>
+            <td>138.781 </td>
+            <td>0.717 </td>
+            <td>137.864  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_RotatE</td>
+            <td>0.687 </td>
+            <td>0.816 </td>
+            <td>0.884 </td>
+            <td>0.762 </td>
+            <td>50.776 </td>
+            <td>0.774 </td>
+            <td>50.194  </td>
+        </tr>
+        <tr>
+            <td>UKGE</td>
+            <td>0.526 </td>
+            <td>0.670 </td>
+            <td>0.805 </td>
+            <td>0.622 </td>
+            <td>153.632 </td>
+            <td>0.630 </td>
+            <td>152.314  </td>
+        </tr>
+        <tr>
+            <td>UKGEPSL</td>
+            <td>0.525 </td>
+            <td>0.673 </td>
+            <td>0.812 </td>
+            <td>0.623 </td>
+            <td>168.029 </td>
+            <td>0.632 </td>
+            <td>167.344  </td>
+        </tr>
+        <tr>
+            <td>UKGsE</td>
+            <td>0.038 </td>
+            <td>0.073 </td>
+            <td>0.130 </td>
+            <td>0.069 </td>
+            <td>2329.501 </td>
+            <td>0.069 </td>
+            <td>2288.222  </td>
+        </tr>
+        <tr>
+            <td>UPGAT</td>
+            <td>0.618 </td>
+            <td>0.751 </td>
+            <td>0.862 </td>
+            <td>0.701 </td>
+            <td>69.120 </td>
+            <td>0.708 </td>
+            <td>69.364  </td>
+        </tr>
+        <tr>
+            <td rowspan="2">Few-shot model</td>
+            <td>GMUC</td>
+            <td>0.335 </td>
+            <td>0.465 </td>
+            <td>0.592 </td>
+            <td>0.425 </td>
+            <td>58.312 </td>
+            <td>0.426 </td>
+            <td>58.097  </td>
+        </tr>
+        <tr>
+            <td>GMUC+</td>
+            <td>0.338 </td>
+            <td>0.486 </td>
+            <td>0.636 </td>
+            <td>0.438 </td>
+            <td>45.774 </td>
+            <td>0.438 </td>
+            <td>45.682  </td>
+        </tr>
+    </tbody>
+</table>
+
+## PPI5K
+
+### Confidence prediction
+<table>
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Model</th>
+            <th>MSE</th>
+            <th>MAE </th>
+        </tr>
+    </thead>
+    <tbody align="center" valign="center">
+        <tr>
+            <td rowspan="8">Normal model</td>
+            <td>BEUrRE</td>
+            <td>0.03662 </td>
+            <td>0.15800  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_ComplEx</td>
+            <td>0.00346 </td>
+            <td>0.02273  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_DistMult</td>
+            <td>0.00336 </td>
+            <td>0.02163  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_RotatE</td>
+            <td>0.00350 </td>
+            <td>0.02773  </td>
+        </tr>
+        <tr>
+            <td>UKGE</td>
+            <td>0.00357 </td>
+            <td>0.02300  </td>
+        </tr>
+        <tr>
+            <td>UKGEPSL</td>
+            <td>0.00356 </td>
+            <td>0.02295  </td>
+        </tr>
+        <tr>
+            <td>UKGsE</td>
+            <td>0.00769 </td>
+            <td>0.05156  </td>
+        </tr>
+        <tr>
+            <td>UPGAT</td>
+            <td>0.00319 </td>
+            <td>0.02704  </td>
+        </tr>
+    </tbody>
+</table>
+
+### Link prediction
+
+#### All test data
+
+##### Raw
+<table>
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Model</th>
+            <th>Hits@1</th>
+            <th>Hits@3</th>
+            <th>Hits@10</th>
+            <th>MRR</th>
+            <th>MR</th>
+            <th>WMRR</th>
+            <th>WMR </th>
+        </tr>
+    </thead>
+    <tbody align="center" valign="center">
+        <tr>
+            <td rowspan="10">Normal model</td>
+            <td>BEUrRE</td>
+            <td>0.000 </td>
+            <td>0.025 </td>
+            <td>0.137 </td>
+            <td>0.053 </td>
+            <td>46.498 </td>
+            <td>0.059 </td>
+            <td>41.783  </td>
+        </tr>
+        <tr>
+            <td>FocusE</td>
+            <td>0.032 </td>
+            <td>0.087 </td>
+            <td>0.238 </td>
+            <td>0.105 </td>
+            <td>37.083 </td>
+            <td>0.118 </td>
+            <td>34.157  </td>
+        </tr>
+        <tr>
+            <td>GTransE</td>
+            <td>0.001 </td>
+            <td>0.026 </td>
+            <td>0.107 </td>
+            <td>0.043 </td>
+            <td>197.177 </td>
+            <td>0.058 </td>
+            <td>141.143  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_ComplEx</td>
+            <td>0.031 </td>
+            <td>0.081 </td>
+            <td>0.228 </td>
+            <td>0.102 </td>
+            <td>40.756 </td>
+            <td>0.127 </td>
+            <td>35.730  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_DistMult</td>
+            <td>0.031 </td>
+            <td>0.084 </td>
+            <td>0.227 </td>
+            <td>0.102 </td>
+            <td>40.709 </td>
+            <td>0.128 </td>
+            <td>35.639  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_RotatE</td>
+            <td>0.023 </td>
+            <td>0.069 </td>
+            <td>0.207 </td>
+            <td>0.090 </td>
+            <td>42.595 </td>
+            <td>0.113 </td>
+            <td>35.458  </td>
+        </tr>
+        <tr>
+            <td>UKGE</td>
+            <td>0.029 </td>
+            <td>0.082 </td>
+            <td>0.234 </td>
+            <td>0.101 </td>
+            <td>42.224 </td>
+            <td>0.125 </td>
+            <td>38.202  </td>
+        </tr>
+        <tr>
+            <td>UKGEPSL</td>
+            <td>0.029 </td>
+            <td>0.082 </td>
+            <td>0.233 </td>
+            <td>0.101 </td>
+            <td>42.041 </td>
+            <td>0.125 </td>
+            <td>38.115  </td>
+        </tr>
+        <tr>
+            <td>UKGsE</td>
+            <td>0.013 </td>
+            <td>0.037 </td>
+            <td>0.127 </td>
+            <td>0.060 </td>
+            <td>85.703 </td>
+            <td>0.082 </td>
+            <td>63.271  </td>
+        </tr>
+        <tr>
+            <td>UPGAT</td>
+            <td>0.034 </td>
+            <td>0.088 </td>
+            <td>0.236 </td>
+            <td>0.106 </td>
+            <td>36.820 </td>
+            <td>0.132 </td>
+            <td>30.896  </td>
+        </tr>
+    </tbody>
+</table>
 
 
-## nl27k
+##### Filter
+<table>
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Model</th>
+            <th>Hits@1</th>
+            <th>Hits@3</th>
+            <th>Hits@10</th>
+            <th>MRR</th>
+            <th>MR</th>
+            <th>WMRR</th>
+            <th>WMR </th>
+        </tr>
+    </thead>
+    <tbody align="center" valign="center">
+        <tr>
+            <td rowspan="10">Normal model</td>
+            <td>BEUrRE</td>
+            <td>0.000 </td>
+            <td>0.790 </td>
+            <td>0.948 </td>
+            <td>0.408 </td>
+            <td>7.780 </td>
+            <td>0.431 </td>
+            <td>6.082  </td>
+        </tr>
+        <tr>
+            <td>FocusE</td>
+            <td>0.932 </td>
+            <td>0.985 </td>
+            <td>0.994 </td>
+            <td>0.959 </td>
+            <td>4.389 </td>
+            <td>0.966 </td>
+            <td>4.731  </td>
+        </tr>
+        <tr>
+            <td>GTransE</td>
+            <td>0.013 </td>
+            <td>0.150 </td>
+            <td>0.313 </td>
+            <td>0.121 </td>
+            <td>164.695 </td>
+            <td>0.179 </td>
+            <td>112.057  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_ComplEx</td>
+            <td>0.546 </td>
+            <td>0.827 </td>
+            <td>0.957 </td>
+            <td>0.702 </td>
+            <td>7.862 </td>
+            <td>0.733 </td>
+            <td>7.668  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_DistMult</td>
+            <td>0.533 </td>
+            <td>0.820 </td>
+            <td>0.953 </td>
+            <td>0.693 </td>
+            <td>7.779 </td>
+            <td>0.726 </td>
+            <td>7.552  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_RotatE</td>
+            <td>0.268 </td>
+            <td>0.597 </td>
+            <td>0.821 </td>
+            <td>0.470 </td>
+            <td>9.671 </td>
+            <td>0.521 </td>
+            <td>7.334  </td>
+        </tr>
+        <tr>
+            <td>UKGE</td>
+            <td>0.580 </td>
+            <td>0.902 </td>
+            <td>0.984 </td>
+            <td>0.745 </td>
+            <td>9.354 </td>
+            <td>0.744 </td>
+            <td>10.281  </td>
+        </tr>
+        <tr>
+            <td>UKGEPSL</td>
+            <td>0.582 </td>
+            <td>0.901 </td>
+            <td>0.984 </td>
+            <td>0.746 </td>
+            <td>9.173 </td>
+            <td>0.745 </td>
+            <td>10.196  </td>
+        </tr>
+        <tr>
+            <td>UKGsE</td>
+            <td>0.232 </td>
+            <td>0.398 </td>
+            <td>0.624 </td>
+            <td>0.359 </td>
+            <td>53.152 </td>
+            <td>0.418 </td>
+            <td>35.539  </td>
+        </tr>
+        <tr>
+            <td>UPGAT</td>
+            <td>0.862 </td>
+            <td>0.949 </td>
+            <td>0.986 </td>
+            <td>0.910 </td>
+            <td>3.662 </td>
+            <td>0.938 </td>
+            <td>2.759  </td>
+        </tr>
+    </tbody>
+</table>
 
-### Raw
+#### Only high-confidence test data
 
-|            Model            | Confidence Filter(0.7) | MSE         | MAE         | Hits@1      | Hits@3      | Hits@10     | MRR         | MR          | WMRR        | WMR          |
-|:---------------------------:|:----------------------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:------------:|
-|           BEUrRE            | yes                    | 0.089199997 | 0.221935004 | 0.114580996 | 0.294553995 | 0.436170012 | 0.231920004 | 549.5641479 | 0.237371996 | 532.7346802  |
-|           BEUrRE            | no                     | 0.089199997 | 0.221935004 | 0.086361997 | 0.236710995 | 0.357560009 | 0.186324 | 937.3199463  | 0.211959004 | 745.0280762  |
-|           FocusE            | yes                    | 1704.796143 | 32.64796448 | 0.393422008 | 0.53679502 | 0.659085989 | 0.48723501    | 436.3726196 | 0.490559012 | 430.8166809  |
-|           FocusE            | no                     | 1704.796143 | 32.64796448 | 0.372880012 | 0.517742991 | 0.646003008 | 0.468558997 | 515.3634033 | 0.480058998  | 473.3652649  |
-|            GMUC             |          yes           | 0.01200     | 0.08200     | 0.28100     | 0.40000     | 0.54000     | 0.36800     | 62.00500    | 0.36800     | 61.84900     |
-|            GMUC             |           no           | 0.01300     | 0.08200     | 0.28700     | 0.40900     | 0.53600     | 0.37500     | 71.48400    | 0.37500     | 71.44700     |
-|            GMUC+            |          yes           | 0.01500     | 0.10200     | 0.29000     | 0.42000     | 0.57300     | 0.43800     | 45.77400    | 0.38400     | 49.80800     |
-|            GMUC+            |           no           | 0.01300     | 0.08600     | 0.29900     | 0.44800     | 0.58200     | 0.40100     | 49.41800    | 0.40100     | 49.10700     |
-|           GTransE           |          yes           | 39.83544    | 5.12528     | 0.16800     | 0.28700     | 0.40700     | 0.25000     | 1434.63400  | 0.25300     | 1435.39700   |
-|           GTransE           |           no           | 39.83544    | 5.12528     | 0.13674     | 0.24476     | 0.35250     | 0.21145     | 2014.54199  | 0.23173     | 1749.63757   |
-|      PASSLEAF(ComplEx)      |          yes           | 0.024344999 | 0.051764    | 0.405427009     | 0.543724     | 0.661916971     | 0.49624601     | 184.4302216   | 0.501959026     | 182.8567352    |
-|      PASSLEAF(ComplEx)      |           no           | 0.024344999 | 0.051764    | 0.372880012     | 0.507838011     | 0.62598002     |  0.462505996    | 222.9876709   | 0.482890993     | 204.1585846    |
-|     PASSLEAF(DistMult)      | yes                    | 0.023089999 | 0.051066 | 0.399278015     | 0.53747803     | 0.658012986     | 0.490554988     | 184.2464447   | 0.496309012     | 182.1270447    |
-|     PASSLEAF(DistMult)      | no                     | 0.023089999 | 0.051066 | 0.368676007     | 0.501568019     | 0.621562004     | 0.45787999     | 214.0929108   | 0.477825999     | 198.7584991    |
-|      PASSLEAF(RotatE)       |          yes           | 0.019489    | 0.062533997 | 0.407476008     |0.54518801     | 0.66406399     | 0.497781008     | 97.36394501   | 0.503509998     | 95.67383575    |
-|      PASSLEAF(RotatE)       |           no           | 0.019489    | 0.062533997 | 0.36511299     | 0.498860002     | 0.609733999     | 0.452515006     | 122.3975372   | 0.478188008     | 109.4736633    |
-|            UKGE             |          yes           | 0.028612999    | 0.059672002 | 0.381808013     | 0.521764994     | 0.644837022     | 0.474837005     | 198.4995117   | 0.480791986     | 195.9078522    |
-|            UKGE             |           no           | 0.028612999    | 0.059672002 | 0.343237996     | 0.479050994     | 0.59918803     |0.434240013     | 253.240921   | 0.457966     | 226.2820587    |
-| UKGE(PSL) | yes                    | 0.028677    | 0.059657998 | 0.384539992     | 0.520008028     | 0.644250989     | 0.47556299     | 212.7815704   | 0.48159799     | 210.7985077    |
-| UKGE(PSL) | no                     | 0.028677    | 0.059657998 | 0.346516013     | 0.477055997     | 0.598973989     | 0.435442001     | 265.9153442   | 0.459026992     | 240.2348633    |
-|            UKGsE            |          yes           | 0.12202     | 0.27065     | 0.03543     | 0.06695     | 0.12376     | 0.06560     | 2378.45581  | 0.06561     | 2336.46582   |
-|            UKGsE            |           no           | 0.12202     | 0.27065     | 0.03000     | 0.05800     | 0.10800     | 0.05700     | 3022.76900  | 0.06100     | 2690.49600   |
-|            UPGAT            |          yes           | 0.02922     | 0.10107     | 0.37900     | 0.52000     | 0.64500     | 0.47300     | 114.65800   | 0.47700     | 113.82700    |
-|            UPGAT            |           no           | 0.02922     | 0.10107     | 0.33900     | 0.46700     | 0.58600     | 0.42600     | 166.16900   | 0.45200     | 141.35800    |
+##### Raw
+<table>
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Model</th>
+            <th>Hits@1</th>
+            <th>Hits@3</th>
+            <th>Hits@10</th>
+            <th>MRR</th>
+            <th>MR</th>
+            <th>WMRR</th>
+            <th>WMR </th>
+        </tr>
+    </thead>
+    <tbody align="center" valign="center">
+        <tr>
+            <td rowspan="10">Normal model</td>
+            <td>BEUrRE</td>
+            <td>0.000 </td>
+            <td>0.043 </td>
+            <td>0.223 </td>
+            <td>0.075 </td>
+            <td>27.476 </td>
+            <td>0.756 </td>
+            <td>27.245  </td>
+        </tr>
+        <tr>
+            <td>FocusE</td>
+            <td>0.060 </td>
+            <td>0.155 </td>
+            <td>0.400 </td>
+            <td>0.166 </td>
+            <td>26.964 </td>
+            <td>0.166 </td>
+            <td>26.863  </td>
+        </tr>
+        <tr>
+            <td>GTransE</td>
+            <td>0.008 </td>
+            <td>0.094 </td>
+            <td>0.318 </td>
+            <td>0.109 </td>
+            <td>41.449 </td>
+            <td>0.110 </td>
+            <td>39.745  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_ComplEx</td>
+            <td>0.092 </td>
+            <td>0.219 </td>
+            <td>0.467 </td>
+            <td>0.214 </td>
+            <td>23.295 </td>
+            <td>0.215 </td>
+            <td>22.661  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_DistMult</td>
+            <td>0.091 </td>
+            <td>0.217 </td>
+            <td>0.460 </td>
+            <td>0.211 </td>
+            <td>23.743 </td>
+            <td>0.213 </td>
+            <td>23.105  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_RotatE</td>
+            <td>0.070 </td>
+            <td>0.187 </td>
+            <td>0.440 </td>
+            <td>0.188 </td>
+            <td>16.425 </td>
+            <td>0.190 </td>
+            <td>16.156  </td>
+        </tr>
+        <tr>
+            <td>UKGE</td>
+            <td>0.078 </td>
+            <td>0.221 </td>
+            <td>0.474 </td>
+            <td>0.205 </td>
+            <td>29.939 </td>
+            <td>0.206 </td>
+            <td>29.042  </td>
+        </tr>
+        <tr>
+            <td>UKGEPSL</td>
+            <td>0.080 </td>
+            <td>0.219 </td>
+            <td>0.473 </td>
+            <td>0.206 </td>
+            <td>29.963 </td>
+            <td>0.208 </td>
+            <td>29.070  </td>
+        </tr>
+        <tr>
+            <td>UKGsE</td>
+            <td>0.047 </td>
+            <td>0.133 </td>
+            <td>0.387 </td>
+            <td>0.151 </td>
+            <td>26.827 </td>
+            <td>0.152 </td>
+            <td>25.876  </td>
+        </tr>
+        <tr>
+            <td>UPGAT</td>
+            <td>0.088 </td>
+            <td>0.227 </td>
+            <td>0.488 </td>
+            <td>0.215 </td>
+            <td>15.170 </td>
+            <td>0.217 </td>
+            <td>14.895  </td>
+        </tr>
+    </tbody>
+</table>
 
-### Filter
-
-|       Model        | Confidence Filter(0.7) | MSE         | MAE         | Hits@1      | Hits@3      | Hits@10     | MRR         | MR          | WMRR        | WMR          |
-|:------------------:|:----------------------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:------------:|
-|       BEUrRE       | yes                    | 0.089199997 | 0.221935004 | 0.156060994 | 0.385224015 | 0.543040991 | 0.299324006 | 488.0508423 | 0.306418985 | 471.7837219  |
-|       BEUrRE       | no                     | 0.089199997 | 0.221935004 | 0.11693 | 0.306755006 | 0.441855013 | 0.237922996 | 874.3798218  | 0.272213995 | 683.2228394  |
-|       FocusE       | yes                    | 1704.796143 | 32.64796448 | 0.813781023 | 0.91791898 | 0.956959009 | 0.869915009 | 384.4714966  | 0.870938003 | 379.7612305  |
-|       FocusE       | no                     | 1704.796143 | 32.64796448 | 0.760794997| 0.88371098 | 0.945631981  | 0.829499006 | 459.7191162 | 0.849004984 | 420.1532288  |
-|        GMUC        |          yes           | 0.01200     | 0.08200     | 0.33500     | 0.46500     | 0.59200     | 0.42500     | 58.31200    | 0.42600     | 58.09700     |
-|        GMUC        |           no           | 0.01300     | 0.08200     | 0.34400     | 0.46200     | 0.59200     | 0.43000     | 67.92000    | 0.43200     | 67.81300     |
-|       GMUC+        |          yes           | 0.01500     | 0.10200     | 0.33800     | 0.48600     | 0.63600     | 0.43800     | 45.77400    | 0.43800     | 45.68200     |
-|       GMUC+        |           no           | 0.01300     | 0.08600     | 0.37100     | 0.50500     | 0.63800     | 0.46300     | 45.87400    | 0.46500     | 45.49500     |
-|      GTransE       |          yes           | 39.83544    | 5.12528     | 0.22200     | 0.36600     | 0.49300     | 0.31600     | 1377.56400  | 0.31900     | 1378.50500   |
-|      GTransE       |           no           | 39.83544    | 5.12528     | 0.17914     | 0.30818     | 0.42461     | 0.26475     | 1957.77161  | 0.29136     | 1692.88000   |
-| PASSLEAF(ComplEx)  |          yes           | 0.024344999 | 0.051764    | 0.669041991     | 0.786159992     | 0.875560999     | 0.741258979     | 138.8079224   |0.75275898     | 138.476593    |
-| PASSLEAF(ComplEx)  |           no           | 0.024344999 | 0.051764    | 0.586290002     | 0.702579021     | 0.801267982     | 0.661861002     | 172.644928   | 0.708103001     | 157.0397034    |
-| PASSLEAF(DistMult) | yes                    | 0.023089999 | 0.051066 | 0.627074003     | 0.754245996     | 0.855943978     | 0.706506014     | 138.7805939   | 0.717220008     | 137.8641663    |
-| PASSLEAF(DistMult) | no                     | 0.023089999 | 0.051066 | 0.552658021     | 0.676356971     | 0.782598972     | 0.633262992     | 163.501358   | 0.67601198     | 151.5425568    |
-|  PASSLEAF(RotatE)  |          yes           | 0.019489    | 0.062533997 | 0.68670702     |0.815927982     | 0.883955002     | 0.761847019     | 50.77600861    | 0.774339974     | 50.19378281     |
-|  PASSLEAF(RotatE)  |           no           | 0.019489    | 0.062533997 | 0.579877019     | 0.706142008     |0.781530976     | 0.656297028     | 71.20301056    | 0.715319991     | 61.33691788     |
-|        UKGE        |          yes           | 0.028612999    | 0.059672002 | 0.525864005     | 0.669920027     | 0.805289984     | 0.621698022     | 153.6316681   |0.630442023     | 152.3144836    |
-|        UKGE        |           no           | 0.028612999    | 0.059672002 | 0.462020993     | 0.597263992     | 0.729798973     | 0.554524004     | 203.5079803   | 0.592814982     | 179.8668518    |
-|     UKGE(PSL)      | yes                    | 0.028677    | 0.059657998 | 0.525472999     | 0.672945976     | 0.812121987     | 0.622503996     | 168.028595   | 0.631505013     | 167.3438416    |
-|     UKGE(PSL)      | no                     | 0.028677    | 0.059657998 | 0.461093992     | 0.600184977     | 0.733717978     | 0.555122972     | 216.390625   | 0.59375298     | 194.0056    |
-|       UKGsE        |          yes           | 0.12202     | 0.27065     | 0.03767     | 0.07310     | 0.13000     | 0.06945     | 2329.50073  | 0.06938     | 2288.22217   |
-|       UKGsE        |           no           | 0.12202     | 0.27065     | 0.03100     | 0.06200     | 0.11300     | 0.06000     | 2973.23600  | 0.06400     | 2641.84000   |
-|       UPGAT        |          yes           | 0.02922     | 0.10107     | 0.61800     | 0.75100     | 0.86200     | 0.70100     | 69.12000    | 0.70800     | 69.36400     |
-|       UPGAT        |           no           | 0.02922     | 0.10107     | 0.53000     | 0.65400     | 0.76500     | 0.61100     | 115.00400   | 0.65800     | 93.69200     |
-
-
-
-
-## ppi5k
-
-### Raw
-
-|       Model        | Confidence Filter(0.7) | MSE         | MAE         | Hits@1      | Hits@3      | Hits@10     | MRR         | MR          | WMRR        | WMR          |
-|:------------------:|:----------------------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:------------:|
-| BEUrRE             | yes | 0.036617    | 0.157995    | 0.00000     | 0.04300     | 0.22300     | 0.07500     | 27.47600    | 0.75600     | 27.24500     |
-| BEUrRE             | no  | 0.036617    | 0.157995    | 0.00005     | 0.02500     | 0.13700     | 0.05300     | 46.49800    | 0.05900     | 41.78300     |
-| FocusE             | yes | 176.9603577 | 13.06495762 | 0.06000     | 0.15500     | 0.40000     | 0.16600     | 26.96400    | 0.16600     | 26.86300     |
-| FocusE             | no  | 176.9603577 | 13.06495762 | 0.03200     | 0.08700     | 0.23800     | 0.10500     | 37.08300    | 0.11800     | 34.15700     |
-| GTransE            | yes | 4.62883     | 2.03919     | 0.007561    | 0.093762003 | 0.317580014 | 0.109085001 | 41.44915009 | 0.109688997 | 39.74547577  |
-| GTransE            | no  | 4.62883     | 2.03919     | 0.000967    | 0.026288999 | 0.106583998 | 0.043067001 | 197.1768036 | 0.058488999 | 141.1428833  |
-| PASSLEAF(ComplEx)  | yes | 0.003464    | 0.022728    | 0.09200     | 0.21900     | 0.46700     | 0.21400     | 23.29500    | 0.21500     | 22.66100     |
-| PASSLEAF(ComplEx)  | no  | 0.003464    | 0.022728    | 0.03100     | 0.08100     | 0.22800     | 0.10200     | 40.75600    | 0.12700     | 35.73000     |
-| PASSLEAF(DistMult) | yes | 0.003358    | 0.021629    | 0.09100     | 0.21700     | 0.46000     | 0.21100     | 23.74300    | 0.21300     | 23.10500     |
-| PASSLEAF(DistMult) | no  | 0.003358    | 0.021629    | 0.03100     | 0.08400     | 0.22700     | 0.10200     | 40.70900    | 0.12760     | 35.63900     |
-| PASSLEAF(RotatE)   | yes | 0.003499    | 0.027734    | 0.07000     | 0.18700     | 0.44000     | 0.18800     | 16.42500    | 0.19000     | 16.15600     |
-| PASSLEAF(RotatE)   | no  | 0.003499    | 0.027734    | 0.02300     | 0.06900     | 0.20700     | 0.09000     | 42.59500    | 0.11300     | 35.45800     |
-| UKGE               | yes | 0.003568    | 0.023003001 | 0.07800     | 0.22100     | 0.47400     | 0.20500     | 29.93900    | 0.20600     | 29.04200     |
-| UKGE               | no  | 0.003568    | 0.023003001 | 0.02900     | 0.08200     | 0.23400     | 0.10100     | 42.22400    | 0.12500     | 38.20200     |
-| UKGE(PSL)          | yes | 0.003561    | 0.022954    | 0.08000     | 0.21900     | 0.47300     | 0.20600     | 29.96300    | 0.20800     | 29.07000     |
-| UKGE(PSL)          | no  | 0.003561    | 0.022954    | 0.02900     | 0.08200     | 0.23300     | 0.10100     | 42.04100    | 0.12500     | 38.11500     |
-| UKGsE              | yes | 0.00769     | 0.051564999 | 0.046881001 | 0.132703006 | 0.386767    | 0.150641993 | 26.82684326 | 0.152465001 | 25.87584686  |
-| UKGsE              | no  | 0.00769     | 0.051564999 | 0.013076    | 0.037477002 | 0.126796007 | 0.060155001 | 85.70326996 | 0.082328998 | 63.27091599  |
-| UPGAT              | yes | 0.00319     | 0.02704     | 0.08800     | 0.22700     | 0.48800     | 0.21500     | 15.17000    | 0.21700     | 14.89500     |
-| UPGAT              | no  | 0.00319     | 0.02704     | 0.03400     | 0.08800     | 0.23600     | 0.10600     | 36.82000    | 0.13200     | 30.89600     |
-
-### Filter
-
-|       Model        | Confidence Filter(0.7) | MSE         | MAE         | Hits@1      | Hits@3      | Hits@10     | MRR         | MR          | WMRR        | WMR          |
-|:------------------:|:----------------------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:------------:|
-| BEUrRE             | yes | 0.036617    | 0.157995    | 0.00100     | 0.95600     | 0.99200     | 0.47900     | 2.35400     | 0.47900     | 2.33500      |
-| BEUrRE             | no  | 0.036617    | 0.157995    | 0.00018     | 0.79000     | 0.94800     | 0.40800     | 7.78000     | 0.43100     | 6.08200      |
-| FocusE             | yes | 176.9603577 | 13.06495762 | 0.95600     | 0.99100     | 0.99500     | 0.97400     | 7.71000     | 0.97500     | 7.79700      |
-| FocusE             | no  | 176.9603577 | 13.06495762 | 0.93200     | 0.98500     | 0.99400     | 0.95900     | 4.38900     | 0.96600     | 4.73100      |
-| GTransE            | yes | 4.62883     | 2.03919     | 0.105860002 | 0.605292976 | 0.814366996 | 0.390273988 | 24.6695652  | 0.395209998 | 23.12075806  |
-| GTransE            | no  | 4.62883     | 2.03919     | 0.01349     | 0.149678007 | 0.312983006 | 0.121468    | 164.694931  | 0.178894997 | 112.0568085  |
-| PASSLEAF(ComplEx)  | yes | 0.003464    | 0.022728    | 0.53300     | 0.98900     | 0.99600     | 0.76200     | 8.93200     | 0.76600     | 8.54100      |
-| PASSLEAF(ComplEx)  | no  | 0.003464    | 0.022728    | 0.54600     | 0.82700     | 0.95700     | 0.70200     | 7.86200     | 0.73300     | 7.66800      |
-| PASSLEAF(DistMult) | yes | 0.003358    | 0.021629    | 0.53000     | 0.98900     | 0.99600     | 0.76000     | 9.27200     | 0.76400     | 8.87000      |
-| PASSLEAF(DistMult) | no  | 0.003358    | 0.021629    | 0.53300     | 0.82000     | 0.95300     | 0.69300     | 7.77900     | 0.72600     | 7.55200      |
-| PASSLEAF(RotatE)   | yes | 0.003499    | 0.027734    | 0.31800     | 0.94000     | 0.98900     | 0.63800     | 2.03400     | 0.64300     | 1.99400      |
-| PASSLEAF(RotatE)   | no  | 0.003499    | 0.027734    | 0.26800     | 0.59700     | 0.82100     | 0.47000     | 9.67100     | 0.52100     | 7.33400      |
-| UKGE               | yes | 0.003568    | 0.023003001 | 0.40200     | 0.99200     | 0.99600     | 0.69600     | 15.92500    | 0.69800     | 15.27600     |
-| UKGE               | no  | 0.003568    | 0.023003001 | 0.58000     | 0.90200     | 0.98400     | 0.74500     | 9.35400     | 0.74400     | 10.28100     |
-| UKGE(PSL)          | yes | 0.003561    | 0.022954    | 0.40400     | 0.99200     | 0.99600     | 0.69800     | 15.96100    | 0.70000     | 15.31400     |
-| UKGE(PSL)          | no  | 0.003561    | 0.022954    | 0.58200     | 0.90100     | 0.98400     | 0.74600     | 9.17300     | 0.74500     | 10.19600     |
-| UKGsE              | yes | 0.00769     | 0.051564999 | 0.358411998 | 0.790170014 | 0.898298979 | 0.591023982 | 12.21928215 | 0.598870993 | 11.50269794  |
-| UKGsE              | no  | 0.00769     | 0.051564999 | 0.231537998 | 0.398203999 | 0.624309003 | 0.35869801  | 53.1516571  | 0.418422997 | 35.53851318  |
-| UPGAT              | yes | 0.00319     | 0.02704     | 0.95700     | 0.99700     | 0.99900     | 0.97800     | 1.07400     | 0.97800     | 1.07200      |
-| UPGAT              | no  | 0.00319     | 0.02704     | 0.86200     | 0.94900     | 0.98600     | 0.91000     | 3.66200     | 0.93800     | 2.75900      |
+##### Filter
+<table>
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Model</th>
+            <th>Hits@1</th>
+            <th>Hits@3</th>
+            <th>Hits@10</th>
+            <th>MRR</th>
+            <th>MR</th>
+            <th>WMRR</th>
+            <th>WMR </th>
+        </tr>
+    </thead>
+    <tbody align="center" valign="center">
+        <tr>
+            <td rowspan="10">Normal model</td>
+            <td>BEUrRE</td>
+            <td>0.001 </td>
+            <td>0.956 </td>
+            <td>0.992 </td>
+            <td>0.479 </td>
+            <td>2.354 </td>
+            <td>0.479 </td>
+            <td>2.335  </td>
+        </tr>
+        <tr>
+            <td>FocusE</td>
+            <td>0.956 </td>
+            <td>0.991 </td>
+            <td>0.995 </td>
+            <td>0.974 </td>
+            <td>7.710 </td>
+            <td>0.975 </td>
+            <td>7.797  </td>
+        </tr>
+        <tr>
+            <td>GTransE</td>
+            <td>0.106 </td>
+            <td>0.605 </td>
+            <td>0.814 </td>
+            <td>0.390 </td>
+            <td>24.670 </td>
+            <td>0.395 </td>
+            <td>23.121  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_ComplEx</td>
+            <td>0.533 </td>
+            <td>0.989 </td>
+            <td>0.996 </td>
+            <td>0.762 </td>
+            <td>8.932 </td>
+            <td>0.766 </td>
+            <td>8.541  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_DistMult</td>
+            <td>0.530 </td>
+            <td>0.989 </td>
+            <td>0.996 </td>
+            <td>0.760 </td>
+            <td>9.272 </td>
+            <td>0.764 </td>
+            <td>8.870  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_RotatE</td>
+            <td>0.318 </td>
+            <td>0.940 </td>
+            <td>0.989 </td>
+            <td>0.638 </td>
+            <td>2.034 </td>
+            <td>0.643 </td>
+            <td>1.994  </td>
+        </tr>
+        <tr>
+            <td>UKGE</td>
+            <td>0.402 </td>
+            <td>0.992 </td>
+            <td>0.996 </td>
+            <td>0.696 </td>
+            <td>15.925 </td>
+            <td>0.698 </td>
+            <td>15.276  </td>
+        </tr>
+        <tr>
+            <td>UKGEPSL</td>
+            <td>0.404 </td>
+            <td>0.992 </td>
+            <td>0.996 </td>
+            <td>0.698 </td>
+            <td>15.961 </td>
+            <td>0.700 </td>
+            <td>15.314  </td>
+        </tr>
+        <tr>
+            <td>UKGsE</td>
+            <td>0.358 </td>
+            <td>0.790 </td>
+            <td>0.898 </td>
+            <td>0.591 </td>
+            <td>12.219 </td>
+            <td>0.599 </td>
+            <td>11.503  </td>
+        </tr>
+        <tr>
+            <td>UPGAT</td>
+            <td>0.957 </td>
+            <td>0.997 </td>
+            <td>0.999 </td>
+            <td>0.978 </td>
+            <td>1.074 </td>
+            <td>0.978 </td>
+            <td>1.072  </td>
+        </tr>
+    </tbody>
+</table>
