@@ -6,7 +6,7 @@ import os
 import sys
 
 sys.path.insert(0, os.path.abspath('../../'))
-import sphinx_book_theme
+import sphinx_rtd_theme
 import doctest
 import unKR
 
@@ -45,7 +45,7 @@ templates_path = ['_templates']
 
 # -- Options for HTML output
 
-html_theme = 'sphinx_book_theme'
+html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 html_css_files = ['css/custom.css']
 
