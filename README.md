@@ -113,7 +113,7 @@ Here are the reproduced model results on NL27K dataset using unKR as below. See 
     </thead>
     <tbody align="center" valign="center">
         <tr>
-            <td rowspan="8">Normal model</td>
+            <td rowspan="10">Normal model</td>
             <td>BEUrRE</td>
             <td>0.08920 </td>
             <td>0.22194  </td>
@@ -134,14 +134,24 @@ Here are the reproduced model results on NL27K dataset using unKR as below. See 
             <td>0.06253  </td>
         </tr>
         <tr>
-            <td>UKGE</td>
+            <td>UKGElogi</td>
             <td>0.02861 </td>
             <td>0.05967  </td>
         </tr>
         <tr>
-            <td>UKGEPSL</td>
+            <td>UKGElogiPSL</td>
             <td>0.02868 </td>
             <td>0.05966  </td>
+        </tr>
+        <tr>
+            <td>UKGErect</td>
+            <td>0.03344 </td>
+            <td>0.07052  </td>
+        </tr>
+        <tr>
+            <td>UKGErectPSL</td>
+            <td>0.03326 </td>
+            <td>0.07015 </td>
         </tr>
         <tr>
             <td>UKGsE</td>
@@ -184,7 +194,7 @@ Here are the reproduced model results on NL27K dataset using unKR as below. See 
     </thead>
     <tbody align="center" valign="center">
         <tr>
-            <td rowspan="10">Normal model</td>
+            <td rowspan="12">Normal model</td>
             <td>BEUrRE</td>
             <td>0.156 </td>
             <td>0.385 </td>
@@ -245,7 +255,7 @@ Here are the reproduced model results on NL27K dataset using unKR as below. See 
             <td>50.194  </td>
         </tr>
         <tr>
-            <td>UKGE</td>
+            <td>UKGElogi</td>
             <td>0.526 </td>
             <td>0.670 </td>
             <td>0.805 </td>
@@ -255,7 +265,7 @@ Here are the reproduced model results on NL27K dataset using unKR as below. See 
             <td>152.314  </td>
         </tr>
         <tr>
-            <td>UKGEPSL</td>
+            <td>UKGElogiPSL</td>
             <td>0.525 </td>
             <td>0.673 </td>
             <td>0.812 </td>
@@ -263,6 +273,26 @@ Here are the reproduced model results on NL27K dataset using unKR as below. See 
             <td>168.029 </td>
             <td>0.632 </td>
             <td>167.344  </td>
+        </tr>
+        <tr>
+            <td>UKGErect</td>
+            <td>0.509 </td>
+            <td>0.662 </td>
+            <td>0.807 </td>
+            <td>0.609 </td>
+            <td>126.011 </td>
+            <td>0.614 </td>
+            <td>124.424  </td>
+        </tr>
+        <tr>
+            <td>UKGErectPSL</td>
+            <td>0.500 </td>
+            <td>0.647 </td>
+            <td>0.800 </td>
+            <td>0.599 </td>
+            <td>125.233 </td>
+            <td>0.604 </td>
+            <td>124.189  </td>
         </tr>
         <tr>
             <td>UKGsE</td>
