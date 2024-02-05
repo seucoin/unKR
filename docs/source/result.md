@@ -15,7 +15,7 @@ There are some reproduced model results using unKR.
     </thead>
     <tbody align="center" valign="center">
     <tr>
-        <td rowspan="8">Normal model</td>
+        <td rowspan="10">Normal model</td>
         <td>BEUrRE</td>
         <td>0.11656 </td>
         <td>0.28259 </td>
@@ -36,14 +36,24 @@ There are some reproduced model results using unKR.
         <td>0.24801 </td>
     </tr>
     <tr>
-        <td>UKGE</td>
+        <td>UKGElogi</td>
         <td>0.24635 </td>
-        <td>0.40864 </td>
+        <td>0.40864  </td>
     </tr>
     <tr>
-        <td>UKGEPSL</td>
+        <td>UKGElogiPSL</td>
         <td>0.24630 </td>
-        <td>0.40881 </td>
+        <td>0.40881  </td>
+    </tr>
+    <tr>
+        <td>UKGErect</td>
+        <td>0.20166 </td>
+        <td>0.36380  </td>
+    </tr>
+    <tr>
+        <td>UKGErectPSL</td>
+        <td>0.19988 </td>
+        <td>0.36206 </td>
     </tr>
     <tr>
         <td>UKGsE</td>
@@ -85,7 +95,7 @@ There are some reproduced model results using unKR.
     </thead>
     <tbody align="center" valign="center">
     <tr>
-        <td rowspan="10">Normal model</td>
+        <td rowspan="12">Normal model</td>
         <td>BEUrRE</td>
         <td>0.030 </td>
         <td>0.127 </td>
@@ -146,7 +156,7 @@ There are some reproduced model results using unKR.
         <td>832.611  </td>
     </tr>
     <tr>
-        <td>UKGE</td>
+        <td>UKGElogi</td>
         <td>0.056 </td>
         <td>0.116 </td>
         <td>0.209 </td>
@@ -156,7 +166,7 @@ There are some reproduced model results using unKR.
         <td>1467.336  </td>
     </tr>
     <tr>
-        <td>UKGEPSL</td>
+        <td>UKGElogiPSL</td>
         <td>0.052 </td>
         <td>0.114 </td>
         <td>0.210 </td>
@@ -164,6 +174,26 @@ There are some reproduced model results using unKR.
         <td>1581.759 </td>
         <td>0.116 </td>
         <td>1446.819  </td>
+    </tr>
+    <tr>
+        <td>UKGErect</td>
+        <td>0.048 </td>
+        <td>0.105 </td>
+        <td>0.196 </td>
+        <td>0.097 </td>
+        <td>1919.389 </td>
+        <td>0.106 </td>
+        <td>1765.940  </td>
+    </tr>
+    <tr>
+        <td>UKGErectPSL</td>
+        <td>0.044 </td>
+        <td>0.104 </td>
+        <td>0.203 </td>
+        <td>0.095 </td>
+        <td>1840.382 </td>
+        <td>0.105 </td>
+        <td>1690.639 </td>
     </tr>
     <tr>
         <td>UKGsE</td>
@@ -216,7 +246,7 @@ There are some reproduced model results using unKR.
     </thead>
     <tbody align="center" valign="center">
         <tr>
-            <td rowspan="10">Normal model</td>
+            <td rowspan="12">Normal model</td>
             <td>BEUrRE</td>
             <td>0.039 </td>
             <td>0.175 </td>
@@ -277,25 +307,45 @@ There are some reproduced model results using unKR.
             <td>821.435  </td>
         </tr>
         <tr>
-            <td>UKGE</td>
-            <td>0.072 </td>
-            <td>0.146 </td>
-            <td>0.234 </td>
-            <td>0.128 </td>
-            <td>1598.388 </td>
-            <td>0.118 </td>
-            <td>1481.233  </td>
-        </tr>
-        <tr>
-            <td>UKGEPSL</td>
-            <td>0.065 </td>
-            <td>0.142 </td>
-            <td>0.238 </td>
-            <td>0.124 </td>
-            <td>1564.019 </td>
-            <td>0.138 </td>
-            <td>1432.869  </td>
-        </tr>
+        <td>UKGElogi</td>
+        <td>0.072 </td>
+        <td>0.146 </td>
+        <td>0.234 </td>
+        <td>0.128 </td>
+        <td>1598.388 </td>
+        <td>0.118 </td>
+        <td>1481.233  </td>
+    </tr>
+    <tr>
+        <td>UKGElogiPSL</td>
+        <td>0.065 </td>
+        <td>0.142 </td>
+        <td>0.238 </td>
+        <td>0.124 </td>
+        <td>1564.019 </td>
+        <td>0.138 </td>
+        <td>1432.869  </td>
+    </tr>
+    <tr>
+        <td>UKGErect</td>
+        <td>0.060 </td>
+        <td>0.132 </td>
+        <td>0.221 </td>
+        <td>0.115 </td>
+        <td>1902.673 </td>
+        <td>0.127 </td>
+        <td>1752.800  </td>
+    </tr>
+    <tr>
+        <td>UKGErectPSL</td>
+        <td>0.053 </td>
+        <td>0.133 </td>
+        <td>0.229 </td>
+        <td>0.113 </td>
+        <td>1823.650 </td>
+        <td>0.124 </td>
+        <td>1677.477 </td>
+    </tr>
         <tr>
             <td>UKGsE</td>
             <td>0.002 </td>
@@ -350,7 +400,7 @@ There are some reproduced model results using unKR.
     </thead>
     <tbody align="center" valign="center">
         <tr>
-            <td rowspan="10">Normal model</td>
+            <td rowspan="12">Normal model</td>
             <td>BEUrRE</td>
             <td>0.011 </td>
             <td>0.130 </td>
@@ -411,7 +461,7 @@ There are some reproduced model results using unKR.
             <td>738.024  </td>
         </tr>
         <tr>
-            <td>UKGE</td>
+            <td>UKGElogi</td>
             <td>0.053 </td>
             <td>0.127 </td>
             <td>0.237 </td>
@@ -421,7 +471,7 @@ There are some reproduced model results using unKR.
             <td>1479.857  </td>
         </tr>
         <tr>
-            <td>UKGEPSL</td>
+            <td>UKGElogiPSL</td>
             <td>0.049 </td>
             <td>0.124 </td>
             <td>0.240 </td>
@@ -429,6 +479,26 @@ There are some reproduced model results using unKR.
             <td>1483.428 </td>
             <td>0.113 </td>
             <td>1447.763  </td>
+        </tr>
+        <tr>
+            <td>UKGErect</td>
+            <td>0.045 </td>
+            <td>0.112 </td>
+            <td>0.223 </td>
+            <td>0.102 </td>
+            <td>1773.141 </td>
+            <td>0.103 </td>
+            <td>1745.994  </td>
+        </tr>
+        <tr>
+            <td>UKGErectPSL</td>
+            <td>0.039 </td>
+            <td>0.109 </td>
+            <td>0.231 </td>
+            <td>0.099 </td>
+            <td>1702.366 </td>
+            <td>0.100 </td>
+            <td>1676.685 </td>
         </tr>
         <tr>
             <td>UKGsE</td>
@@ -481,7 +551,7 @@ There are some reproduced model results using unKR.
     </thead>
     <tbody align="center" valign="center">
         <tr>
-            <td rowspan="10">Normal model</td>
+            <td rowspan="12">Normal model</td>
             <td>BEUrRE</td>
             <td>0.017 </td>
             <td>0.188 </td>
@@ -542,7 +612,7 @@ There are some reproduced model results using unKR.
             <td>729.270  </td>
         </tr>
         <tr>
-            <td>UKGE</td>
+            <td>UKGElogi</td>
             <td>0.074 </td>
             <td>0.164 </td>
             <td>0.266 </td>
@@ -552,7 +622,7 @@ There are some reproduced model results using unKR.
             <td>1468.898  </td>
         </tr>
         <tr>
-            <td>UKGEPSL</td>
+            <td>UKGElogiPSL</td>
             <td>0.064 </td>
             <td>0.160 </td>
             <td>0.271 </td>
@@ -560,6 +630,26 @@ There are some reproduced model results using unKR.
             <td>1472.255 </td>
             <td>0.137 </td>
             <td>1436.772  </td>
+        </tr>
+        <tr>
+            <td>UKGErect</td>
+            <td>0.059 </td>
+            <td>0.146 </td>
+            <td>0.250 </td>
+            <td>0.124 </td>
+            <td>1762.605 </td>
+            <td>0.125 </td>
+            <td>1735.653  </td>
+        </tr>
+        <tr>
+            <td>UKGErectPSL</td>
+            <td>0.049 </td>
+            <td>0.144 </td>
+            <td>0.260 </td>
+            <td>0.119 </td>
+            <td>1691.795 </td>
+            <td>0.100 </td>
+            <td>1676.685 </td>
         </tr>
         <tr>
             <td>UKGsE</td>
@@ -610,7 +700,7 @@ There are some reproduced model results using unKR.
     </thead>
     <tbody align="center" valign="center">
         <tr>
-            <td rowspan="8">Normal model</td>
+            <td rowspan="10">Normal model</td>
             <td>BEUrRE</td>
             <td>0.08920 </td>
             <td>0.22194  </td>
@@ -631,14 +721,24 @@ There are some reproduced model results using unKR.
             <td>0.06253  </td>
         </tr>
         <tr>
-            <td>UKGE</td>
+            <td>UKGElogi</td>
             <td>0.02861 </td>
             <td>0.05967  </td>
         </tr>
         <tr>
-            <td>UKGEPSL</td>
+            <td>UKGElogiPSL</td>
             <td>0.02868 </td>
             <td>0.05966  </td>
+        </tr>
+        <tr>
+            <td>UKGErect</td>
+            <td>0.03344 </td>
+            <td>0.07052  </td>
+        </tr>
+        <tr>
+            <td>UKGErectPSL</td>
+            <td>0.03326 </td>
+            <td>0.07015 </td>
         </tr>
         <tr>
             <td>UKGsE</td>
@@ -686,7 +786,7 @@ There are some reproduced model results using unKR.
     </thead>
     <tbody align="center" valign="center">
         <tr>
-            <td rowspan="10">Normal model</td>
+            <td rowspan="12">Normal model</td>
             <td>BEUrRE</td>
             <td>0.086 </td>
             <td>0.237 </td>
@@ -747,7 +847,7 @@ There are some reproduced model results using unKR.
             <td>109.474  </td>
         </tr>
         <tr>
-            <td>UKGE</td>
+            <td>UKGElogi</td>
             <td>0.343 </td>
             <td>0.479 </td>
             <td>0.599 </td>
@@ -757,7 +857,7 @@ There are some reproduced model results using unKR.
             <td>226.282  </td>
         </tr>
         <tr>
-            <td>UKGEPSL</td>
+            <td>UKGElogiPSL</td>
             <td>0.347 </td>
             <td>0.477 </td>
             <td>0.599 </td>
@@ -765,6 +865,26 @@ There are some reproduced model results using unKR.
             <td>265.915 </td>
             <td>0.459 </td>
             <td>240.235  </td>
+        </tr>
+        <tr>
+            <td>UKGErect</td>
+            <td>0.349 </td>
+            <td>0.484 </td>
+            <td>0.607 </td>
+            <td>0.440 </td>
+            <td>220.598 </td>
+            <td>0.463 </td>
+            <td>192.629  </td>
+        </tr>
+        <tr>
+            <td>UKGErectPSL</td>
+            <td>0.348 </td>
+            <td>0.480 </td>
+            <td>0.602 </td>
+            <td>0.438 </td>
+            <td>217.576 </td>
+            <td>0.460 </td>
+            <td>191.070 </td>
         </tr>
         <tr>
             <td>UKGsE</td>
@@ -827,7 +947,7 @@ There are some reproduced model results using unKR.
     </thead>
     <tbody align="center" valign="center">
         <tr>
-            <td rowspan="10">Normal model</td>
+            <td rowspan="12">Normal model</td>
             <td>BEUrRE</td>
             <td>0.117 </td>
             <td>0.307 </td>
@@ -888,7 +1008,7 @@ There are some reproduced model results using unKR.
             <td>61.337  </td>
         </tr>
         <tr>
-            <td>UKGE</td>
+            <td>UKGElogi</td>
             <td>0.462 </td>
             <td>0.597 </td>
             <td>0.730 </td>
@@ -898,7 +1018,7 @@ There are some reproduced model results using unKR.
             <td>179.867  </td>
         </tr>
         <tr>
-            <td>UKGEPSL</td>
+            <td>UKGElogiPSL</td>
             <td>0.461 </td>
             <td>0.600 </td>
             <td>0.734 </td>
@@ -906,6 +1026,26 @@ There are some reproduced model results using unKR.
             <td>216.391 </td>
             <td>0.594 </td>
             <td>194.006  </td>
+        </tr>
+        <tr>
+            <td>UKGErect</td>
+            <td>0.452 </td>
+            <td>0.595 </td>
+            <td>0.733 </td>
+            <td>0.548 </td>
+            <td>173.215 </td>
+            <td>0.580 </td>
+            <td>148.744  </td>
+        </tr>
+        <tr>
+            <td>UKGErectPSL</td>
+            <td>0.444 </td>
+            <td>0.583 </td>
+            <td>0.726 </td>
+            <td>0.540 </td>
+            <td>170.104 </td>
+            <td>0.571 </td>
+            <td>147.006 </td>
         </tr>
         <tr>
             <td>UKGsE</td>
@@ -970,7 +1110,7 @@ There are some reproduced model results using unKR.
     </thead>
     <tbody align="center" valign="center">
         <tr>
-            <td rowspan="10">Normal model</td>
+            <td rowspan="12">Normal model</td>
             <td>BEUrRE</td>
             <td>0.115 </td>
             <td>0.295 </td>
@@ -1031,25 +1171,45 @@ There are some reproduced model results using unKR.
             <td>95.674  </td>
         </tr>
         <tr>
-            <td>UKGE</td>
-            <td>0.382 </td>
-            <td>0.522 </td>
-            <td>0.645 </td>
-            <td>0.475 </td>
-            <td>198.500 </td>
-            <td>0.481 </td>
-            <td>195.908  </td>
-        </tr>
-        <tr>
-            <td>UKGEPSL</td>
-            <td>0.385 </td>
-            <td>0.520 </td>
-            <td>0.644 </td>
-            <td>0.476 </td>
-            <td>212.782 </td>
-            <td>0.482 </td>
-            <td>210.799  </td>
-        </tr>
+        <td>UKGElogi</td>
+        <td>0.382 </td>
+        <td>0.522 </td>
+        <td>0.645 </td>
+        <td>0.475 </td>
+        <td>198.500 </td>
+        <td>0.481 </td>
+        <td>195.908  </td>
+    </tr>
+    <tr>
+        <td>UKGElogiPSL</td>
+        <td>0.385 </td>
+        <td>0.520 </td>
+        <td>0.644 </td>
+        <td>0.476 </td>
+        <td>212.782 </td>
+        <td>0.482 </td>
+        <td>210.799  </td>
+    </tr>
+    <tr>
+        <td>UKGErect</td>
+        <td>0.388 </td>
+        <td>0.527 </td>
+        <td>0.650 </td>
+        <td>0.480 </td>
+        <td>167.922 </td>
+        <td>0.485 </td>
+        <td>165.175  </td>
+    </tr>
+    <tr>
+        <td>UKGErectPSL</td>
+        <td>0.386 </td>
+        <td>0.523 </td>
+        <td>0.647 </td>
+        <td>0.477 </td>
+        <td>167.543 </td>
+        <td>0.482 </td>
+        <td>165.280 </td>
+    </tr>
         <tr>
             <td>UKGsE</td>
             <td>0.035 </td>
@@ -1111,7 +1271,7 @@ There are some reproduced model results using unKR.
     </thead>
     <tbody align="center" valign="center">
         <tr>
-            <td rowspan="10">Normal model</td>
+            <td rowspan="12">Normal model</td>
             <td>BEUrRE</td>
             <td>0.156 </td>
             <td>0.385 </td>
@@ -1172,7 +1332,7 @@ There are some reproduced model results using unKR.
             <td>50.194  </td>
         </tr>
         <tr>
-            <td>UKGE</td>
+            <td>UKGElogi</td>
             <td>0.526 </td>
             <td>0.670 </td>
             <td>0.805 </td>
@@ -1182,7 +1342,7 @@ There are some reproduced model results using unKR.
             <td>152.314  </td>
         </tr>
         <tr>
-            <td>UKGEPSL</td>
+            <td>UKGElogiPSL</td>
             <td>0.525 </td>
             <td>0.673 </td>
             <td>0.812 </td>
@@ -1190,6 +1350,26 @@ There are some reproduced model results using unKR.
             <td>168.029 </td>
             <td>0.632 </td>
             <td>167.344  </td>
+        </tr>
+        <tr>
+            <td>UKGErect</td>
+            <td>0.509 </td>
+            <td>0.662 </td>
+            <td>0.807 </td>
+            <td>0.609 </td>
+            <td>126.011 </td>
+            <td>0.614 </td>
+            <td>124.424  </td>
+        </tr>
+        <tr>
+            <td>UKGErectPSL</td>
+            <td>0.500 </td>
+            <td>0.647 </td>
+            <td>0.800 </td>
+            <td>0.599 </td>
+            <td>125.233 </td>
+            <td>0.604 </td>
+            <td>124.189  </td>
         </tr>
         <tr>
             <td>UKGsE</td>
@@ -1249,7 +1429,7 @@ There are some reproduced model results using unKR.
     </thead>
     <tbody align="center" valign="center">
         <tr>
-            <td rowspan="8">Normal model</td>
+            <td rowspan="10">Normal model</td>
             <td>BEUrRE</td>
             <td>0.03662 </td>
             <td>0.15800  </td>
@@ -1270,14 +1450,24 @@ There are some reproduced model results using unKR.
             <td>0.02773  </td>
         </tr>
         <tr>
-            <td>UKGE</td>
+            <td>UKGElogi</td>
             <td>0.00357 </td>
             <td>0.02300  </td>
         </tr>
         <tr>
-            <td>UKGEPSL</td>
+            <td>UKGElogiPSL</td>
             <td>0.00356 </td>
             <td>0.02295  </td>
+        </tr>
+        <tr>
+            <td>UKGErect</td>
+            <td>0.00366 </td>
+            <td>0.02218  </td>
+        </tr>
+        <tr>
+            <td>UKGErectPSL</td>
+            <td>0.00366 </td>
+            <td>0.02220 </td>
         </tr>
         <tr>
             <td>UKGsE</td>
@@ -1313,7 +1503,7 @@ There are some reproduced model results using unKR.
     </thead>
     <tbody align="center" valign="center">
         <tr>
-            <td rowspan="10">Normal model</td>
+            <td rowspan="12">Normal model</td>
             <td>BEUrRE</td>
             <td>0.000 </td>
             <td>0.025 </td>
@@ -1374,7 +1564,7 @@ There are some reproduced model results using unKR.
             <td>35.458  </td>
         </tr>
         <tr>
-            <td>UKGE</td>
+            <td>UKGElogi</td>
             <td>0.029 </td>
             <td>0.082 </td>
             <td>0.234 </td>
@@ -1384,7 +1574,7 @@ There are some reproduced model results using unKR.
             <td>38.202  </td>
         </tr>
         <tr>
-            <td>UKGEPSL</td>
+            <td>UKGElogiPSL</td>
             <td>0.029 </td>
             <td>0.082 </td>
             <td>0.233 </td>
@@ -1392,6 +1582,26 @@ There are some reproduced model results using unKR.
             <td>42.041 </td>
             <td>0.125 </td>
             <td>38.115  </td>
+        </tr>
+        <tr>
+            <td>UKGErect</td>
+            <td>0.034 </td>
+            <td>0.088 </td>
+            <td>0.239 </td>
+            <td>0.106 </td>
+            <td>53.766 </td>
+            <td>0.135 </td>
+            <td>44.890  </td>
+        </tr>
+        <tr>
+            <td>UKGErectPSL</td>
+            <td>0.033 </td>
+            <td>0.089 </td>
+            <td>0.238 </td>
+            <td>0.106 </td>
+            <td>54.403 </td>
+            <td>0.135 </td>
+            <td>45.163 </td>
         </tr>
         <tr>
             <td>UKGsE</td>
@@ -1434,7 +1644,7 @@ There are some reproduced model results using unKR.
     </thead>
     <tbody align="center" valign="center">
         <tr>
-            <td rowspan="10">Normal model</td>
+            <td rowspan="12">Normal model</td>
             <td>BEUrRE</td>
             <td>0.000 </td>
             <td>0.790 </td>
@@ -1495,7 +1705,7 @@ There are some reproduced model results using unKR.
             <td>7.334  </td>
         </tr>
         <tr>
-            <td>UKGE</td>
+            <td>UKGElogi</td>
             <td>0.580 </td>
             <td>0.902 </td>
             <td>0.984 </td>
@@ -1505,7 +1715,7 @@ There are some reproduced model results using unKR.
             <td>10.281  </td>
         </tr>
         <tr>
-            <td>UKGEPSL</td>
+            <td>UKGElogiPSL</td>
             <td>0.582 </td>
             <td>0.901 </td>
             <td>0.984 </td>
@@ -1513,6 +1723,26 @@ There are some reproduced model results using unKR.
             <td>9.173 </td>
             <td>0.745 </td>
             <td>10.196  </td>
+        </tr>
+        <tr>
+            <td>UKGErect</td>
+            <td>0.685 </td>
+            <td>0.913 </td>
+            <td>0.982 </td>
+            <td>0.805 </td>
+            <td>21.005 </td>
+            <td>0.820 </td>
+            <td>17.076  </td>
+        </tr>
+        <tr>
+            <td>UKGErectPSL</td>
+            <td>0.685 </td>
+            <td>0.913 </td>
+            <td>0.982 </td>
+            <td>0.805 </td>
+            <td>21.615 </td>
+            <td>0.821 </td>
+            <td>17.315 </td>
         </tr>
         <tr>
             <td>UKGsE</td>
@@ -1556,7 +1786,7 @@ There are some reproduced model results using unKR.
     </thead>
     <tbody align="center" valign="center">
         <tr>
-            <td rowspan="10">Normal model</td>
+            <td rowspan="12">Normal model</td>
             <td>BEUrRE</td>
             <td>0.000 </td>
             <td>0.043 </td>
@@ -1617,7 +1847,7 @@ There are some reproduced model results using unKR.
             <td>16.156  </td>
         </tr>
         <tr>
-            <td>UKGE</td>
+            <td>UKGElogi</td>
             <td>0.078 </td>
             <td>0.221 </td>
             <td>0.474 </td>
@@ -1627,7 +1857,7 @@ There are some reproduced model results using unKR.
             <td>29.042  </td>
         </tr>
         <tr>
-            <td>UKGEPSL</td>
+            <td>UKGElogiPSL</td>
             <td>0.080 </td>
             <td>0.219 </td>
             <td>0.473 </td>
@@ -1635,6 +1865,26 @@ There are some reproduced model results using unKR.
             <td>29.963 </td>
             <td>0.208 </td>
             <td>29.070  </td>
+        </tr>
+        <tr>
+            <td>UKGErect</td>
+            <td>0.112 </td>
+            <td>0.242 </td>
+            <td>0.495 </td>
+            <td>0.234 </td>
+            <td>31.370 </td>
+            <td>0.236 </td>
+            <td>30.298  </td>
+        </tr>
+        <tr>
+            <td>UKGErectPSL</td>
+            <td>0.109 </td>
+            <td>0.246 </td>
+            <td>0.486 </td>
+            <td>0.232 </td>
+            <td>31.390 </td>
+            <td>0.234 </td>
+            <td>30.324 </td>
         </tr>
         <tr>
             <td>UKGsE</td>
@@ -1676,7 +1926,7 @@ There are some reproduced model results using unKR.
     </thead>
     <tbody align="center" valign="center">
         <tr>
-            <td rowspan="10">Normal model</td>
+            <td rowspan="12">Normal model</td>
             <td>BEUrRE</td>
             <td>0.001 </td>
             <td>0.956 </td>
@@ -1737,7 +1987,7 @@ There are some reproduced model results using unKR.
             <td>1.994  </td>
         </tr>
         <tr>
-            <td>UKGE</td>
+            <td>UKGElogi</td>
             <td>0.402 </td>
             <td>0.992 </td>
             <td>0.996 </td>
@@ -1747,7 +1997,7 @@ There are some reproduced model results using unKR.
             <td>15.276  </td>
         </tr>
         <tr>
-            <td>UKGEPSL</td>
+            <td>UKGElogiPSL</td>
             <td>0.404 </td>
             <td>0.992 </td>
             <td>0.996 </td>
@@ -1755,6 +2005,26 @@ There are some reproduced model results using unKR.
             <td>15.961 </td>
             <td>0.700 </td>
             <td>15.314  </td>
+        </tr>
+        <tr>
+            <td>UKGErect</td>
+            <td>0.671 </td>
+            <td>0.991 </td>
+            <td>0.994 </td>
+            <td>0.832 </td>
+            <td>17.512 </td>
+            <td>0.835 </td>
+            <td>16.705  </td>
+        </tr>
+        <tr>
+            <td>UKGErectPSL</td>
+            <td>0.675 </td>
+            <td>0.992 </td>
+            <td>0.995 </td>
+            <td>0.834 </td>
+            <td>17.482 </td>
+            <td>0.837 </td>
+            <td>16.677 </td>
         </tr>
         <tr>
             <td>UKGsE</td>
