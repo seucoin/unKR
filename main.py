@@ -17,17 +17,17 @@ def main(arg_path):
         model_checkpoint_mode = "max"
 
     """set up sampler to datapreprocess"""  # Set up the sampling process for data processing
-    train_sampler_class = import_class(f"src.unKR.data.{args.train_sampler_class}")
+    train_sampler_class = import_class(f"unKR.data.{args.train_sampler_class}")
     train_sampler = train_sampler_class(args)
-    test_sampler_class = import_class(f"src.unKR.data.{args.test_sampler_class}")
+    test_sampler_class = import_class(f"unKR.data.{args.test_sampler_class}")
     test_sampler = test_sampler_class(train_sampler)
 
     """set up datamodule"""
-    data_class = import_class(f"src.unKR.data.{args.data_class}")
+    data_class = import_class(f"unKR.data.{args.data_class}")
     kgdata = data_class(args, train_sampler, test_sampler)
 
     """set up model"""
-    model_class = import_class(f"src.unKR.model.{args.model_name}")
+    model_class = import_class(f"unKR.model.{args.model_name}")
 
     if args.model_name == "GMUC" or args.model_name == "GMUCp":
         model = model_class(args, args.num_symbols, None)
@@ -35,7 +35,7 @@ def main(arg_path):
         model = model_class(args)
 
     """set up lit_model"""
-    litmodel_class = import_class(f"src.unKR.lit_model.{args.litmodel_name}")
+    litmodel_class = import_class(f"unKR.lit_model.{args.litmodel_name}")
     lit_model = litmodel_class(model, train_sampler, args)
 
     """set up logger"""

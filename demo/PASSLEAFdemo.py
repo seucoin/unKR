@@ -13,22 +13,22 @@ def main(arg_path):
     print(args.dataset_name)
 
     """set up sampler to datapreprocess"""
-    train_sampler_class = import_class(f"src.unKR.data.{args.train_sampler_class}")
+    train_sampler_class = import_class(f"unKR.data.{args.train_sampler_class}")
     train_sampler = train_sampler_class(args)  # 这个sampler是可选择的
 
-    test_sampler_class = import_class(f"src.unKR.data.{args.test_sampler_class}")
+    test_sampler_class = import_class(f"unKR.data.{args.test_sampler_class}")
     test_sampler = test_sampler_class(train_sampler)
 
     """set up datamodule"""
-    data_class = import_class(f"src.unKR.data.{args.data_class}")
+    data_class = import_class(f"unKR.data.{args.data_class}")
     kgdata = data_class(args, train_sampler, test_sampler)
 
     """set up model"""
-    model_class = import_class(f"src.unKR.model.{args.model_name}")
+    model_class = import_class(f"unKR.model.{args.model_name}")
     model = model_class(args)
 
     """set up lit_model"""
-    litmodel_class = import_class(f"src.unKR.lit_model.{args.litmodel_name}")
+    litmodel_class = import_class(f"unKR.lit_model.{args.litmodel_name}")
     lit_model = litmodel_class(model, args)
 
     """set up logger"""

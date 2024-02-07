@@ -13,22 +13,22 @@ def main(arg_path):
     print(args.model_name)
 
     """set up sampler to datapreprocess"""  # 设置数据处理的采样过程
-    train_sampler_class = import_class(f"src.unKR.data.{args.train_sampler_class}")
+    train_sampler_class = import_class(f"unKR.data.{args.train_sampler_class}")
     train_sampler = train_sampler_class(args)  # 这个sampler是可选择的
     # print(train_sampler)
-    test_sampler_class = import_class(f"src.unKR.data.{args.test_sampler_class}")
+    test_sampler_class = import_class(f"unKR.data.{args.test_sampler_class}")
     test_sampler = test_sampler_class(train_sampler)  # test_sampler是一定要的
 
     """set up datamodule"""  # 设置数据模块
-    data_class = import_class(f"src.unKR.data.{args.data_class}")  # 定义数据类 DataClass
+    data_class = import_class(f"unKR.data.{args.data_class}")  # 定义数据类 DataClass
     kgdata = data_class(args, train_sampler, test_sampler)
 
     """set up model"""
-    model_class = import_class(f"src.unKR.model.{args.model_name}")
+    model_class = import_class(f"unKR.model.{args.model_name}")
     model = model_class(args, args.num_symbols, None)
 
     """set up lit_model"""
-    litmodel_class = import_class(f"src.unKR.lit_model.{args.litmodel_name}")
+    litmodel_class = import_class(f"unKR.lit_model.{args.litmodel_name}")
     lit_model = litmodel_class(model, train_sampler, args)
 
     """set up logger"""
