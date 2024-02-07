@@ -65,9 +65,9 @@ class PASSLEAF(Model):
     def score_func(self, head_emb, relation_emb, tail_emb, mode):
         """Calculating the score of triples.
 
-        The formula for calculating the score of DistMult is :math:`h' \operatorname{diag}(r) t`.
+        The formula for calculating the score of DistMult is :math:`h^{T} \operatorname{diag}(r) t`.
 
-        The formula for calculating the score of ComplEx is :math:`\Re(h' \operatorname{diag}(r) \overline{t})`.
+        The formula for calculating the score of ComplEx is :math:`Re(h^{T} \operatorname{diag}(r) \overline{t})`.
 
         The formula for calculating the score of RotatE is :math:`\gamma - \|h \circ r - t\|`
 
