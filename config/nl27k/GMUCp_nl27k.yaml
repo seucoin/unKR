@@ -28,7 +28,7 @@ confidence_filter: 0.0
 cognitive: false
 config_path: ''
 data_class: GMUCDataModule
-data_path: ../dataset/nl27k
+data_path: dataset/nl27k
 dataset_name: nl27k
 decoder_model: null
 default_root_dir: null
@@ -133,7 +133,7 @@ stochastic_weight_avg: false
 strategy: null
 sync_batchnorm: false
 terminate_on_nan: null
-test_only: true
+test_only: false
 test_sampler_class: GMUCTestSampler
 tpu_cores: null
 track_grad_norm: -1

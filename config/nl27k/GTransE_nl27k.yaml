@@ -118,7 +118,7 @@ stochastic_weight_avg: false
 strategy: null
 sync_batchnorm: false
 terminate_on_nan: null
-test_only: true
+test_only: false
 test_sampler_class: UKGETestSampler
 tpu_cores: null
 track_grad_norm: -1
