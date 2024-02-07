@@ -394,8 +394,6 @@ There are some reproduced model results using unKR.
             <th>Hits@10</th>
             <th>MRR</th>
             <th>MR</th>
-            <th>WMRR</th>
-            <th>WMR </th>
         </tr>
     </thead>
     <tbody align="center" valign="center">
@@ -407,8 +405,6 @@ There are some reproduced model results using unKR.
             <td>0.280 </td>
             <td>0.100 </td>
             <td>891.065 </td>
-            <td>0.102 </td>
-            <td>869.288  </td>
         </tr>
         <tr>
             <td>FocusE</td>
@@ -417,8 +413,6 @@ There are some reproduced model results using unKR.
             <td>0.319 </td>
             <td>0.157 </td>
             <td>1691.038 </td>
-            <td>0.160 </td>
-            <td>1643.833  </td>
         </tr>
         <tr>
             <td>GTransE</td>
@@ -427,8 +421,6 @@ There are some reproduced model results using unKR.
             <td>0.226 </td>
             <td>0.087 </td>
             <td>957.610 </td>
-            <td>0.089 </td>
-            <td>931.969  </td>
         </tr>
         <tr>
             <td>PASSLEAF_ComplEx</td>
@@ -437,8 +429,6 @@ There are some reproduced model results using unKR.
             <td>0.303 </td>
             <td>0.134 </td>
             <td>1146.749 </td>
-            <td>0.136 </td>
-            <td>1110.414  </td>
         </tr>
         <tr>
             <td>PASSLEAF_DistMult</td>
@@ -447,8 +437,6 @@ There are some reproduced model results using unKR.
             <td>0.281 </td>
             <td>0.128 </td>
             <td>1111.191 </td>
-            <td>0.131 </td>
-            <td>1085.564  </td>
         </tr>
         <tr>
             <td>PASSLEAF_RotatE</td>
@@ -457,8 +445,6 @@ There are some reproduced model results using unKR.
             <td>0.289 </td>
             <td>0.101 </td>
             <td>761.389 </td>
-            <td>0.104 </td>
-            <td>738.024  </td>
         </tr>
         <tr>
             <td>UKGElogi</td>
@@ -467,8 +453,6 @@ There are some reproduced model results using unKR.
             <td>0.237 </td>
             <td>0.113 </td>
             <td>1515.951 </td>
-            <td>0.115 </td>
-            <td>1479.857  </td>
         </tr>
         <tr>
             <td>UKGElogiPSL</td>
@@ -477,8 +461,6 @@ There are some reproduced model results using unKR.
             <td>0.240 </td>
             <td>0.111 </td>
             <td>1483.428 </td>
-            <td>0.113 </td>
-            <td>1447.763  </td>
         </tr>
         <tr>
             <td>UKGErect</td>
@@ -487,8 +469,6 @@ There are some reproduced model results using unKR.
             <td>0.223 </td>
             <td>0.102 </td>
             <td>1773.141 </td>
-            <td>0.103 </td>
-            <td>1745.994  </td>
         </tr>
         <tr>
             <td>UKGErectPSL</td>
@@ -497,8 +477,6 @@ There are some reproduced model results using unKR.
             <td>0.231 </td>
             <td>0.099 </td>
             <td>1702.366 </td>
-            <td>0.100 </td>
-            <td>1676.685 </td>
         </tr>
         <tr>
             <td>UKGsE</td>
@@ -507,8 +485,6 @@ There are some reproduced model results using unKR.
             <td>0.021 </td>
             <td>0.011 </td>
             <td>1719.269 </td>
-            <td>0.012 </td>
-            <td>1689.562  </td>
         </tr>
         <tr>
             <td>UPGAT</td>
@@ -517,8 +493,6 @@ There are some reproduced model results using unKR.
             <td>0.262 </td>
             <td>0.111 </td>
             <td>1082.818 </td>
-            <td>0.113 </td>
-            <td>1049.431  </td>
         </tr>
         <tr>
             <td>Few-shot model</td>
@@ -528,8 +502,6 @@ There are some reproduced model results using unKR.
             <td>0.056 </td>
             <td>0.028 </td>
             <td>96.915 </td>
-            <td>0.028 </td>
-            <td>96.942  </td>
         </tr>
     </tbody>
 </table>
@@ -545,8 +517,6 @@ There are some reproduced model results using unKR.
             <th>Hits@10</th>
             <th>MRR</th>
             <th>MR</th>
-            <th>WMRR</th>
-            <th>WMR </th>
         </tr>
     </thead>
     <tbody align="center" valign="center">
@@ -558,8 +528,6 @@ There are some reproduced model results using unKR.
             <td>0.317 </td>
             <td>0.125 </td>
             <td>881.970 </td>
-            <td>0.128 </td>
-            <td>860.370  </td>
         </tr>
         <tr>
             <td>FocusE</td>
@@ -568,8 +536,6 @@ There are some reproduced model results using unKR.
             <td>0.380 </td>
             <td>0.242 </td>
             <td>1678.487 </td>
-            <td>0.247 </td>
-            <td>1631.426  </td>
         </tr>
         <tr>
             <td>GTransE</td>
@@ -578,8 +544,6 @@ There are some reproduced model results using unKR.
             <td>0.243 </td>
             <td>0.101 </td>
             <td>949.356 </td>
-            <td>0.104 </td>
-            <td>923.850  </td>
         </tr>
         <tr>
             <td>PASSLEAF_ComplEx</td>
@@ -588,8 +552,6 @@ There are some reproduced model results using unKR.
             <td>0.383 </td>
             <td>0.196 </td>
             <td>1135.032 </td>
-            <td>0.200 </td>
-            <td>1110.414  </td>
         </tr>
         <tr>
             <td>PASSLEAF_DistMult</td>
@@ -598,8 +560,6 @@ There are some reproduced model results using unKR.
             <td>0.340 </td>
             <td>0.169 </td>
             <td>1099.705 </td>
-            <td>0.172 </td>
-            <td>1074.263  </td>
         </tr>
         <tr>
             <td>PASSLEAF_RotatE</td>
@@ -608,8 +568,6 @@ There are some reproduced model results using unKR.
             <td>0.329 </td>
             <td>0.127 </td>
             <td>752.461 </td>
-            <td>0.130 </td>
-            <td>729.270  </td>
         </tr>
         <tr>
             <td>UKGElogi</td>
@@ -618,8 +576,6 @@ There are some reproduced model results using unKR.
             <td>0.266 </td>
             <td>0.139 </td>
             <td>1504.807 </td>
-            <td>0.142 </td>
-            <td>1468.898  </td>
         </tr>
         <tr>
             <td>UKGElogiPSL</td>
@@ -628,8 +584,6 @@ There are some reproduced model results using unKR.
             <td>0.271 </td>
             <td>0.135 </td>
             <td>1472.255 </td>
-            <td>0.137 </td>
-            <td>1436.772  </td>
         </tr>
         <tr>
             <td>UKGErect</td>
@@ -638,8 +592,6 @@ There are some reproduced model results using unKR.
             <td>0.250 </td>
             <td>0.124 </td>
             <td>1762.605 </td>
-            <td>0.125 </td>
-            <td>1735.653  </td>
         </tr>
         <tr>
             <td>UKGErectPSL</td>
@@ -648,8 +600,6 @@ There are some reproduced model results using unKR.
             <td>0.260 </td>
             <td>0.119 </td>
             <td>1691.795 </td>
-            <td>0.100 </td>
-            <td>1676.685 </td>
         </tr>
         <tr>
             <td>UKGsE</td>
@@ -658,8 +608,6 @@ There are some reproduced model results using unKR.
             <td>0.022 </td>
             <td>0.011 </td>
             <td>1711.308 </td>
-            <td>0.012 </td>
-            <td>1681.698  </td>
         </tr>
         <tr>
             <td>UPGAT</td>
@@ -668,8 +616,6 @@ There are some reproduced model results using unKR.
             <td>0.323 </td>
             <td>0.170 </td>
             <td>1067.621 </td>
-            <td>0.173 </td>
-            <td>1034.485  </td>
         </tr>
         <tr>
             <td>Few-shot model</td>
@@ -679,8 +625,6 @@ There are some reproduced model results using unKR.
             <td>0.057 </td>
             <td>0.029 </td>
             <td>95.806 </td>
-            <td>0.029 </td>
-            <td>95.805  </td>
         </tr>
     </tbody>
 </table>
@@ -1104,8 +1048,6 @@ There are some reproduced model results using unKR.
             <th>Hits@10</th>
             <th>MRR</th>
             <th>MR</th>
-            <th>WMRR</th>
-            <th>WMR </th>
         </tr>
     </thead>
     <tbody align="center" valign="center">
@@ -1117,8 +1059,6 @@ There are some reproduced model results using unKR.
             <td>0.436 </td>
             <td>0.232 </td>
             <td>549.564 </td>
-            <td>0.237 </td>
-            <td>532.735  </td>
         </tr>
         <tr>
             <td>FocusE</td>
@@ -1127,8 +1067,6 @@ There are some reproduced model results using unKR.
             <td>0.659 </td>
             <td>0.487 </td>
             <td>436.373 </td>
-            <td>0.491 </td>
-            <td>430.817  </td>
         </tr>
         <tr>
             <td>GTransE</td>
@@ -1137,8 +1075,6 @@ There are some reproduced model results using unKR.
             <td>0.407 </td>
             <td>0.250 </td>
             <td>1434.634 </td>
-            <td>0.253 </td>
-            <td>1435.397  </td>
         </tr>
         <tr>
             <td>PASSLEAF_ComplEx</td>
@@ -1147,8 +1083,6 @@ There are some reproduced model results using unKR.
             <td>0.662 </td>
             <td>0.496 </td>
             <td>184.430 </td>
-            <td>0.502 </td>
-            <td>182.857  </td>
         </tr>
         <tr>
             <td>PASSLEAF_DistMult</td>
@@ -1157,8 +1091,6 @@ There are some reproduced model results using unKR.
             <td>0.658 </td>
             <td>0.491 </td>
             <td>184.246 </td>
-            <td>0.496 </td>
-            <td>182.127  </td>
         </tr>
         <tr>
             <td>PASSLEAF_RotatE</td>
@@ -1167,49 +1099,39 @@ There are some reproduced model results using unKR.
             <td>0.664 </td>
             <td>0.498 </td>
             <td>97.364 </td>
-            <td>0.504 </td>
-            <td>95.674  </td>
         </tr>
         <tr>
-        <td>UKGElogi</td>
-        <td>0.382 </td>
-        <td>0.522 </td>
-        <td>0.645 </td>
-        <td>0.475 </td>
-        <td>198.500 </td>
-        <td>0.481 </td>
-        <td>195.908  </td>
-    </tr>
-    <tr>
-        <td>UKGElogiPSL</td>
-        <td>0.385 </td>
-        <td>0.520 </td>
-        <td>0.644 </td>
-        <td>0.476 </td>
-        <td>212.782 </td>
-        <td>0.482 </td>
-        <td>210.799  </td>
-    </tr>
-    <tr>
-        <td>UKGErect</td>
-        <td>0.388 </td>
-        <td>0.527 </td>
-        <td>0.650 </td>
-        <td>0.480 </td>
-        <td>167.922 </td>
-        <td>0.485 </td>
-        <td>165.175  </td>
-    </tr>
-    <tr>
-        <td>UKGErectPSL</td>
-        <td>0.386 </td>
-        <td>0.523 </td>
-        <td>0.647 </td>
-        <td>0.477 </td>
-        <td>167.543 </td>
-        <td>0.482 </td>
-        <td>165.280 </td>
-    </tr>
+            <td>UKGElogi</td>
+            <td>0.382 </td>
+            <td>0.522 </td>
+            <td>0.645 </td>
+            <td>0.475 </td>
+            <td>198.500 </td>
+        </tr>
+        <tr>
+            <td>UKGElogiPSL</td>
+            <td>0.385 </td>
+            <td>0.520 </td>
+            <td>0.644 </td>
+            <td>0.476 </td>
+            <td>212.782 </td>
+        </tr>
+        <tr>
+            <td>UKGErect</td>
+            <td>0.388 </td>
+            <td>0.527 </td>
+            <td>0.650 </td>
+            <td>0.480 </td>
+            <td>167.922 </td>
+        </tr>
+        <tr>
+            <td>UKGErectPSL</td>
+            <td>0.386 </td>
+            <td>0.523 </td>
+            <td>0.647 </td>
+            <td>0.477 </td>
+            <td>167.543 </td>
+        </tr>
         <tr>
             <td>UKGsE</td>
             <td>0.035 </td>
@@ -1217,8 +1139,6 @@ There are some reproduced model results using unKR.
             <td>0.124 </td>
             <td>0.066 </td>
             <td>2378.456 </td>
-            <td>0.066 </td>
-            <td>2336.466  </td>
         </tr>
         <tr>
             <td>UPGAT</td>
@@ -1227,8 +1147,6 @@ There are some reproduced model results using unKR.
             <td>0.645 </td>
             <td>0.473 </td>
             <td>114.658 </td>
-            <td>0.477 </td>
-            <td>113.827  </td>
         </tr>
         <tr>
             <td rowspan="2">Few-shot model</td>
@@ -1238,8 +1156,6 @@ There are some reproduced model results using unKR.
             <td>0.540 </td>
             <td>0.368 </td>
             <td>62.005 </td>
-            <td>0.368 </td>
-            <td>61.849  </td>
         </tr>
         <tr>
             <td>GMUC+</td>
@@ -1248,8 +1164,6 @@ There are some reproduced model results using unKR.
             <td>0.573 </td>
             <td>0.438 </td>
             <td>45.774 </td>
-            <td>0.384 </td>
-            <td>49.808  </td>
         </tr>
     </tbody>
 </table>
@@ -1265,8 +1179,6 @@ There are some reproduced model results using unKR.
             <th>Hits@10</th>
             <th>MRR</th>
             <th>MR</th>
-            <th>WMRR</th>
-            <th>WMR </th>
         </tr>
     </thead>
     <tbody align="center" valign="center">
@@ -1278,8 +1190,6 @@ There are some reproduced model results using unKR.
             <td>0.543 </td>
             <td>0.299 </td>
             <td>488.051 </td>
-            <td>0.306 </td>
-            <td>471.784  </td>
         </tr>
         <tr>
             <td>FocusE</td>
@@ -1288,8 +1198,6 @@ There are some reproduced model results using unKR.
             <td>0.957 </td>
             <td>0.870 </td>
             <td>384.471 </td>
-            <td>0.871 </td>
-            <td>379.761  </td>
         </tr>
         <tr>
             <td>GTransE</td>
@@ -1298,8 +1206,6 @@ There are some reproduced model results using unKR.
             <td>0.493 </td>
             <td>0.316 </td>
             <td>1377.564 </td>
-            <td>0.319 </td>
-            <td>1378.505  </td>
         </tr>
         <tr>
             <td>PASSLEAF_ComplEx</td>
@@ -1308,8 +1214,6 @@ There are some reproduced model results using unKR.
             <td>0.876 </td>
             <td>0.741 </td>
             <td>138.808 </td>
-            <td>0.753 </td>
-            <td>138.477  </td>
         </tr>
         <tr>
             <td>PASSLEAF_DistMult</td>
@@ -1318,8 +1222,6 @@ There are some reproduced model results using unKR.
             <td>0.856 </td>
             <td>0.707 </td>
             <td>138.781 </td>
-            <td>0.717 </td>
-            <td>137.864  </td>
         </tr>
         <tr>
             <td>PASSLEAF_RotatE</td>
@@ -1328,8 +1230,6 @@ There are some reproduced model results using unKR.
             <td>0.884 </td>
             <td>0.762 </td>
             <td>50.776 </td>
-            <td>0.774 </td>
-            <td>50.194  </td>
         </tr>
         <tr>
             <td>UKGElogi</td>
@@ -1338,8 +1238,6 @@ There are some reproduced model results using unKR.
             <td>0.805 </td>
             <td>0.622 </td>
             <td>153.632 </td>
-            <td>0.630 </td>
-            <td>152.314  </td>
         </tr>
         <tr>
             <td>UKGElogiPSL</td>
@@ -1348,8 +1246,6 @@ There are some reproduced model results using unKR.
             <td>0.812 </td>
             <td>0.623 </td>
             <td>168.029 </td>
-            <td>0.632 </td>
-            <td>167.344  </td>
         </tr>
         <tr>
             <td>UKGErect</td>
@@ -1358,8 +1254,6 @@ There are some reproduced model results using unKR.
             <td>0.807 </td>
             <td>0.609 </td>
             <td>126.011 </td>
-            <td>0.614 </td>
-            <td>124.424  </td>
         </tr>
         <tr>
             <td>UKGErectPSL</td>
@@ -1368,8 +1262,6 @@ There are some reproduced model results using unKR.
             <td>0.800 </td>
             <td>0.599 </td>
             <td>125.233 </td>
-            <td>0.604 </td>
-            <td>124.189  </td>
         </tr>
         <tr>
             <td>UKGsE</td>
@@ -1378,8 +1270,6 @@ There are some reproduced model results using unKR.
             <td>0.130 </td>
             <td>0.069 </td>
             <td>2329.501 </td>
-            <td>0.069 </td>
-            <td>2288.222  </td>
         </tr>
         <tr>
             <td>UPGAT</td>
@@ -1388,8 +1278,6 @@ There are some reproduced model results using unKR.
             <td>0.862 </td>
             <td>0.701 </td>
             <td>69.120 </td>
-            <td>0.708 </td>
-            <td>69.364  </td>
         </tr>
         <tr>
             <td rowspan="2">Few-shot model</td>
@@ -1399,8 +1287,6 @@ There are some reproduced model results using unKR.
             <td>0.592 </td>
             <td>0.425 </td>
             <td>58.312 </td>
-            <td>0.426 </td>
-            <td>58.097  </td>
         </tr>
         <tr>
             <td>GMUC+</td>
@@ -1409,8 +1295,6 @@ There are some reproduced model results using unKR.
             <td>0.636 </td>
             <td>0.438 </td>
             <td>45.774 </td>
-            <td>0.438 </td>
-            <td>45.682  </td>
         </tr>
     </tbody>
 </table>
@@ -1780,8 +1664,6 @@ There are some reproduced model results using unKR.
             <th>Hits@10</th>
             <th>MRR</th>
             <th>MR</th>
-            <th>WMRR</th>
-            <th>WMR </th>
         </tr>
     </thead>
     <tbody align="center" valign="center">
@@ -1793,8 +1675,6 @@ There are some reproduced model results using unKR.
             <td>0.223 </td>
             <td>0.075 </td>
             <td>27.476 </td>
-            <td>0.756 </td>
-            <td>27.245  </td>
         </tr>
         <tr>
             <td>FocusE</td>
@@ -1803,8 +1683,6 @@ There are some reproduced model results using unKR.
             <td>0.400 </td>
             <td>0.166 </td>
             <td>26.964 </td>
-            <td>0.166 </td>
-            <td>26.863  </td>
         </tr>
         <tr>
             <td>GTransE</td>
@@ -1813,8 +1691,6 @@ There are some reproduced model results using unKR.
             <td>0.318 </td>
             <td>0.109 </td>
             <td>41.449 </td>
-            <td>0.110 </td>
-            <td>39.745  </td>
         </tr>
         <tr>
             <td>PASSLEAF_ComplEx</td>
@@ -1823,8 +1699,6 @@ There are some reproduced model results using unKR.
             <td>0.467 </td>
             <td>0.214 </td>
             <td>23.295 </td>
-            <td>0.215 </td>
-            <td>22.661  </td>
         </tr>
         <tr>
             <td>PASSLEAF_DistMult</td>
@@ -1833,8 +1707,6 @@ There are some reproduced model results using unKR.
             <td>0.460 </td>
             <td>0.211 </td>
             <td>23.743 </td>
-            <td>0.213 </td>
-            <td>23.105  </td>
         </tr>
         <tr>
             <td>PASSLEAF_RotatE</td>
@@ -1843,8 +1715,6 @@ There are some reproduced model results using unKR.
             <td>0.440 </td>
             <td>0.188 </td>
             <td>16.425 </td>
-            <td>0.190 </td>
-            <td>16.156  </td>
         </tr>
         <tr>
             <td>UKGElogi</td>
@@ -1853,8 +1723,6 @@ There are some reproduced model results using unKR.
             <td>0.474 </td>
             <td>0.205 </td>
             <td>29.939 </td>
-            <td>0.206 </td>
-            <td>29.042  </td>
         </tr>
         <tr>
             <td>UKGElogiPSL</td>
@@ -1863,8 +1731,6 @@ There are some reproduced model results using unKR.
             <td>0.473 </td>
             <td>0.206 </td>
             <td>29.963 </td>
-            <td>0.208 </td>
-            <td>29.070  </td>
         </tr>
         <tr>
             <td>UKGErect</td>
@@ -1873,8 +1739,6 @@ There are some reproduced model results using unKR.
             <td>0.495 </td>
             <td>0.234 </td>
             <td>31.370 </td>
-            <td>0.236 </td>
-            <td>30.298  </td>
         </tr>
         <tr>
             <td>UKGErectPSL</td>
@@ -1883,8 +1747,6 @@ There are some reproduced model results using unKR.
             <td>0.486 </td>
             <td>0.232 </td>
             <td>31.390 </td>
-            <td>0.234 </td>
-            <td>30.324 </td>
         </tr>
         <tr>
             <td>UKGsE</td>
@@ -1893,8 +1755,6 @@ There are some reproduced model results using unKR.
             <td>0.387 </td>
             <td>0.151 </td>
             <td>26.827 </td>
-            <td>0.152 </td>
-            <td>25.876  </td>
         </tr>
         <tr>
             <td>UPGAT</td>
@@ -1903,8 +1763,6 @@ There are some reproduced model results using unKR.
             <td>0.488 </td>
             <td>0.215 </td>
             <td>15.170 </td>
-            <td>0.217 </td>
-            <td>14.895  </td>
         </tr>
     </tbody>
 </table>
@@ -1920,8 +1778,6 @@ There are some reproduced model results using unKR.
             <th>Hits@10</th>
             <th>MRR</th>
             <th>MR</th>
-            <th>WMRR</th>
-            <th>WMR </th>
         </tr>
     </thead>
     <tbody align="center" valign="center">
@@ -1933,8 +1789,6 @@ There are some reproduced model results using unKR.
             <td>0.992 </td>
             <td>0.479 </td>
             <td>2.354 </td>
-            <td>0.479 </td>
-            <td>2.335  </td>
         </tr>
         <tr>
             <td>FocusE</td>
@@ -1943,8 +1797,6 @@ There are some reproduced model results using unKR.
             <td>0.995 </td>
             <td>0.974 </td>
             <td>7.710 </td>
-            <td>0.975 </td>
-            <td>7.797  </td>
         </tr>
         <tr>
             <td>GTransE</td>
@@ -1953,8 +1805,6 @@ There are some reproduced model results using unKR.
             <td>0.814 </td>
             <td>0.390 </td>
             <td>24.670 </td>
-            <td>0.395 </td>
-            <td>23.121  </td>
         </tr>
         <tr>
             <td>PASSLEAF_ComplEx</td>
@@ -1963,8 +1813,6 @@ There are some reproduced model results using unKR.
             <td>0.996 </td>
             <td>0.762 </td>
             <td>8.932 </td>
-            <td>0.766 </td>
-            <td>8.541  </td>
         </tr>
         <tr>
             <td>PASSLEAF_DistMult</td>
@@ -1973,8 +1821,6 @@ There are some reproduced model results using unKR.
             <td>0.996 </td>
             <td>0.760 </td>
             <td>9.272 </td>
-            <td>0.764 </td>
-            <td>8.870  </td>
         </tr>
         <tr>
             <td>PASSLEAF_RotatE</td>
@@ -1983,8 +1829,6 @@ There are some reproduced model results using unKR.
             <td>0.989 </td>
             <td>0.638 </td>
             <td>2.034 </td>
-            <td>0.643 </td>
-            <td>1.994  </td>
         </tr>
         <tr>
             <td>UKGElogi</td>
@@ -1993,8 +1837,6 @@ There are some reproduced model results using unKR.
             <td>0.996 </td>
             <td>0.696 </td>
             <td>15.925 </td>
-            <td>0.698 </td>
-            <td>15.276  </td>
         </tr>
         <tr>
             <td>UKGElogiPSL</td>
@@ -2003,8 +1845,6 @@ There are some reproduced model results using unKR.
             <td>0.996 </td>
             <td>0.698 </td>
             <td>15.961 </td>
-            <td>0.700 </td>
-            <td>15.314  </td>
         </tr>
         <tr>
             <td>UKGErect</td>
@@ -2013,8 +1853,6 @@ There are some reproduced model results using unKR.
             <td>0.994 </td>
             <td>0.832 </td>
             <td>17.512 </td>
-            <td>0.835 </td>
-            <td>16.705  </td>
         </tr>
         <tr>
             <td>UKGErectPSL</td>
@@ -2023,8 +1861,6 @@ There are some reproduced model results using unKR.
             <td>0.995 </td>
             <td>0.834 </td>
             <td>17.482 </td>
-            <td>0.837 </td>
-            <td>16.677 </td>
         </tr>
         <tr>
             <td>UKGsE</td>
@@ -2033,8 +1869,6 @@ There are some reproduced model results using unKR.
             <td>0.898 </td>
             <td>0.591 </td>
             <td>12.219 </td>
-            <td>0.599 </td>
-            <td>11.503  </td>
         </tr>
         <tr>
             <td>UPGAT</td>
@@ -2043,8 +1877,6 @@ There are some reproduced model results using unKR.
             <td>0.999 </td>
             <td>0.978 </td>
             <td>1.074 </td>
-            <td>0.978 </td>
-            <td>1.072  </td>
         </tr>
     </tbody>
 </table>
