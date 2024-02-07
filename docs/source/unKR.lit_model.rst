@@ -16,6 +16,13 @@ BEUrRELitModel
    :undoc-members:
    :show-inheritance:
 
+FocusELitModel
+-----------------------------------------------------------------
+.. automodule:: unKR.lit_model.FocusELitModel
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 GMUCLitModel 
 -----------------------------------------------------------------
 .. automodule:: unKR.lit_model.GMUCLitModel

@@ -89,4 +89,4 @@ def main(arg_path):
 
 
 if __name__ == "__main__":
-    main(arg_path='../config/nl27k/GMUC_nl27k.yaml')
+    main(arg_path='config/nl27k/GMUC_nl27k.yaml')

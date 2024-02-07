@@ -169,4 +169,4 @@ def main(arg_path):
 
 
 if __name__ == "__main__":
-    main(arg_path='../config/ppi5k/UPGAT_ppi5k.yaml')  # adaptation to different datasets
+    main(arg_path='config/ppi5k/UPGAT_ppi5k.yaml')  # adaptation to different datasets

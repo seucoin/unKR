@@ -92,4 +92,4 @@ def main(arg_path):
 
 
 if __name__ == "__main__":
-    main(arg_path='../config/ppi5k/BEUrRE_ppi5k.yaml')
+    main(arg_path='config/ppi5k/BEUrRE_ppi5k.yaml')

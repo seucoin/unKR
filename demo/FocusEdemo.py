@@ -103,4 +103,4 @@ def main(arg_path):
     trainer.test(lit_model, datamodule=kgdata)
 
 if __name__ == "__main__":
-    main(arg_path='../config/cn15k/FocusE_cn15k.yaml')
+    main(arg_path='config/cn15k/FocusE_cn15k.yaml')
