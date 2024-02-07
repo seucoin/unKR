@@ -311,13 +311,14 @@ unKR使用了置信度预测和链接预测任务，在MSE、MAE（置信度预�
 
 # 🛠️ 部署
 
-## 环境配置
+## 安装
 
 **Step1** 使用 ```Anaconda``` 创建虚拟环境，并进入虚拟环境。
 
 ```bash
 conda create -n unKR python=3.8
 conda activate unKR
+pip install -r requirements.txt
 ```
 
 **Step2** 安装unKR。
@@ -331,10 +332,16 @@ python setup.py install
 ```bash
 pip install unKR
 ```
-
-**Step3** 模型训练。
-```bash
-python main.py
+## 数据格式
+```
+All models:
+    train/val/test.tsv: (ent1, rel, ent2, score)
+UKGE model:
+    softloic.tsv: (ent1, rel, ent2, score)
+GMUC, GMUC+ models:
+    train/dev/test_tasks.json: {rel:[[ent1, rel, ent2, score], ...]}
+    path_graph: (ent1, rel, ent2, score)
+    ontology.csv: (number, h, rel, t)
 ```
 
 ## 参数调整
@@ -352,6 +359,56 @@ parameters:
     values: [1, 10, 20...]
   train_bs:
     values: [64, 128, 256...]
+```
+
+## 模型训练
+```bash
+python main.py --load_config --config_path <your-config>
+```
+
+## 模型测试
+```bash
+python main.py --test_only --checkpoint_dir <your-model-path>
+```
+
+## 模型定制
+如果您需要使用unKR个性化实现自己的模型，需要定义以下的函数/类。
+
+`data`：实现数据处理函数，包括`DataPreprocess`、`Sampler`和`KGDataModule`。
+```
+DataPreprocess.py: 
+    class unKR.data.DataPreprocess.<your-model-name>BaseSampler
+    class unKR.data.DataPreprocess.<your-model-name>Data
+Sampler:
+    class unKR.data.Sampler.<your-model-name>Sampler
+    class unKR.data.Sampler.<your-model-name>TestSampler
+KGDataModule.py: 
+    class unKR.data.KGDataModule.<your-model-name>DataModule
+```
+
+`lit_model`：实现模型训练、验证以及测试函数。
+```
+<your-model-name>LitModel.py:
+    class unKR.lit_model.<your-model-name>LitModel.<your-model-name>LitModel
+```
+`loss`：实现损失函数。
+```
+<your-model-name>_Loss.py:
+    class unKR.loss.<your-model-name>_Loss.<your-model-name>_Loss
+```
+`model`：实现模型框架函数，根据是否为小样本模型分为`NModel`和`FSModel`。
+```
+<your-model-name>.py:
+    class unKR.model.NModel/FSModel.<your-model-name>.<your-model-name>
+```
+`config`：实现参数设置。
+```
+<your-model-name>_<dataset-name>.yaml:
+    data_class, litmodel_name, loss_name, model_name, test_sampler_class, train_sampler_class
+```
+`demo`：实现模型运行文件。
+```
+<your-model-name>demo.py
 ```
 <br>
 

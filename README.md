@@ -319,6 +319,7 @@ Here are the reproduced model results on NL27K dataset using unKR as below. See 
 ```bash
 conda create -n unKR python=3.8
 conda activate unKR
+pip install -r requirements.txt
 ```
 
 **Step2**  Install package.
@@ -333,9 +334,16 @@ python setup.py install
 pip install unKR
 ```
 
-**Step3** Model training.
-```bash
-python main.py
+## Data Format
+```
+All models:
+    train/val/test.tsv: (ent1, rel, ent2, score)
+UKGE model:
+    softloic.tsv: (ent1, rel, ent2, score)
+GMUC, GMUC+ models:
+    train/dev/test_tasks.json: {rel:[[ent1, rel, ent2, score], ...]}
+    path_graph: (ent1, rel, ent2, score)
+    ontology.csv: (number, h, rel, t)
 ```
 
 ## Parameter Adjustment
@@ -354,6 +362,58 @@ parameters:
   train_bs:
     values: [64, 128, 256...]
 ```
+
+
+## Model Training
+```bash
+python main.py --load_config --config_path <your-config>
+```
+
+## Model Testing
+```bash
+python main.py --test_only --checkpoint_dir <your-model-path>
+```
+
+## Model Customization
+If you want to personalise your own model using unKR, you need to define the following Functions/Classes.
+
+`data`: Implement data processing functions, including `DataPreprocess`, `Sampler` and `KGDataModule`.
+```
+DataPreprocess.py: 
+    class unKR.data.DataPreprocess.<your-model-name>BaseSampler
+    class unKR.data.DataPreprocess.<your-model-name>Data
+Sampler:
+    class unKR.data.Sampler.<your-model-name>Sampler
+    class unKR.data.Sampler.<your-model-name>TestSampler
+KGDataModule.py: 
+    class unKR.data.KGDataModule.<your-model-name>DataModule
+```
+
+`lit_model`: Implement model training, validation, and testing functions.
+```
+<your-model-name>LitModel.py:
+    class unKR.lit_model.<your-model-name>LitModel.<your-model-name>LitModel
+```
+`loss`: Implement loss functions.
+```
+<your-model-name>_Loss.py:
+    class unKR.loss.<your-model-name>_Loss.<your-model-name>_Loss
+```
+`model`: Implement model framework functions, classified as `NModel` and `FSModel` based on whether it is a few-shot model.
+```
+<your-model-name>.py:
+    class unKR.model.NModel/FSModel.<your-model-name>.<your-model-name>
+```
+`config`: Implement parameter settings.
+```
+<your-model-name>_<dataset-name>.yaml:
+    data_class, litmodel_name, loss_name, model_name, test_sampler_class, train_sampler_class
+```
+`demo`: Implement the model run file.
+```
+<your-model-name>demo.py
+```
+
 <br>
 
 
