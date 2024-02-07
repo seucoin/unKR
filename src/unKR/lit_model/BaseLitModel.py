@@ -2,7 +2,7 @@ import argparse
 import pytorch_lightning as pl
 import torch
 from collections import defaultdict as ddict
-from src.unKR.utils.tools import import_class
+from unKR import loss
 import numpy as np
 
 
@@ -36,15 +36,12 @@ class BaseLitModel(pl.LightningModule):
         self.h2rt_train = ddict(set)
         self.t2rh_train = ddict(set)
         self.args = args
-        self.neg_per_positive = args.num_neg  # 负采样数量
+        self.neg_per_positive = args.num_neg
         optim_name = args.optim_name
         self.optimizer_class = getattr(torch.optim, optim_name)
         loss_name = args.loss_name
-        # self.loss_class = getattr(loss, loss_name)
-        self.loss_class = import_class(f"src.unKR.loss.{loss_name}")
+        self.loss_class = getattr(loss, loss_name)
         self.loss = self.loss_class(args, model)
-        if self.args.model_name == 'SEGNN':
-            self.automatic_optimization = False
 
     @staticmethod
     def add_to_argparse(parser):
@@ -113,11 +110,11 @@ class BaseLitModel(pl.LightningModule):
         return outputs
 
     def convert_semi_samples_batch(self, neg_samples, neg_scores, pos_samples, mode, device):
-        # 计算负样本的总数量
+        # Calculate the total number of negative samples
         num_neg_samples = len(pos_samples) * len(neg_samples[0])
-        # 复制正样本，以便修改
+        # Duplicate the positive sample so that it can be modified
         semi_samples_formatted = pos_samples.repeat(1, len(neg_samples[0])).view(-1, 4).to(device)
-        # 根据mode选择是替换头实体还是尾实体
+        # Select whether to replace the head or tail entities based on the mode
         if mode == "head-batch":
             neg_samples_formatted = neg_samples.view(-1).long().cpu().numpy()
             semi_samples_formatted[:, 0] = torch.tensor(neg_samples_formatted, dtype=torch.double)
@@ -126,20 +123,20 @@ class BaseLitModel(pl.LightningModule):
             semi_samples_formatted[:, 2] = torch.tensor(neg_samples_formatted, dtype=torch.double)
         else:
             raise ValueError("Invalid mode. Use 'head-batch' or 'tail-batch'.")
-        # 将得分扩展成与负样本数量相同的形状
+        # Expands the score to the same shape as the negative sample size
         neg_scores_expanded = neg_scores.view(-1).to(device)
-        # 添加得分作为新的第四个元素
+        # Add the score as a new fourth element
         semi_samples_formatted = torch.cat([semi_samples_formatted[:, 0:3], neg_scores_expanded.unsqueeze(1)], dim=1)
         return semi_samples_formatted
 
     def convert_neg_samples_batch(self, pos_samples, neg_samples, mode):
-        # 获取正样本数量和负样本数量
+        # Obtain the number of positive and negative samples
         num_pos_samples = len(pos_samples)
         num_neg_samples_per_pos = len(neg_samples[0])
         num_neg_samples = num_pos_samples * num_neg_samples_per_pos
-        # 一次性复制正样本
+        # Replicate positive samples at one time
         pos_samples_formatted = pos_samples.repeat(1, num_neg_samples_per_pos).view(-1, 4)
-        # 根据 mode 选择是替换头实体还是尾实体
+        # Choose whether to replace the head or tail entity based on the mode
         if mode == "head-batch" or mode == "head_predict":
             neg_samples_formatted = neg_samples.view(-1).long()
             pos_samples_formatted[:, 0] = neg_samples_formatted.float()
@@ -148,17 +145,16 @@ class BaseLitModel(pl.LightningModule):
             pos_samples_formatted[:, 2] = neg_samples_formatted.float()
         else:
             raise ValueError("Invalid mode. Use 'head-batch', 'tail-batch', 'head_predict', or 'tail_predict'.")
-        # 得分设置为0
+        # The score is set to 0
         pos_samples_formatted[:, 3] = 0.0
         return pos_samples_formatted
 
     def select_random_elements(self, tensor, n):
-        # 获取 tensor 的长度
+        # Gets the length of the tensor
         num_elements = len(tensor)
-        # 生成随机索引
+        # Generate random indexes
         random_indices = torch.randperm(num_elements)[:n]
-
-        # 根据随机索引选择元素
+        # Elements are selected based on a random index
         selected_elements = tensor[random_indices]
 
         return selected_elements
