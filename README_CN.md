@@ -372,7 +372,7 @@ python main.py --test_only --checkpoint_dir <your-model-path>
 ```
 
 ## 模型定制
-如果您需要使用unKR个性化实现自己的模型，需要定义以下的函数/类。
+如果您想使用unKR个性化实现自己的模型，需要定义以下的函数/类。
 
 `data`：实现数据处理函数，包括`DataPreprocess`、`Sampler`和`KGDataModule`。
 ```
