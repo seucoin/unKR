@@ -188,8 +188,6 @@ Here are the reproduced model results on NL27K dataset using unKR as below. See 
             <th>Hits@10</th>
             <th>MRR</th>
             <th>MR</th>
-            <th>WMRR</th>
-            <th>WMR </th>
         </tr>
     </thead>
     <tbody align="center" valign="center">
@@ -201,8 +199,6 @@ Here are the reproduced model results on NL27K dataset using unKR as below. See 
             <td>0.543 </td>
             <td>0.299 </td>
             <td>488.051 </td>
-            <td>0.306 </td>
-            <td>471.784  </td>
         </tr>
         <tr>
             <td>FocusE</td>
@@ -211,8 +207,6 @@ Here are the reproduced model results on NL27K dataset using unKR as below. See 
             <td>0.957 </td>
             <td>0.870 </td>
             <td>384.471 </td>
-            <td>0.871 </td>
-            <td>379.761  </td>
         </tr>
         <tr>
             <td>GTransE</td>
@@ -221,8 +215,6 @@ Here are the reproduced model results on NL27K dataset using unKR as below. See 
             <td>0.493 </td>
             <td>0.316 </td>
             <td>1377.564 </td>
-            <td>0.319 </td>
-            <td>1378.505  </td>
         </tr>
         <tr>
             <td>PASSLEAF_ComplEx</td>
@@ -231,8 +223,6 @@ Here are the reproduced model results on NL27K dataset using unKR as below. See 
             <td>0.876 </td>
             <td>0.741 </td>
             <td>138.808 </td>
-            <td>0.753 </td>
-            <td>138.477  </td>
         </tr>
         <tr>
             <td>PASSLEAF_DistMult</td>
@@ -241,8 +231,6 @@ Here are the reproduced model results on NL27K dataset using unKR as below. See 
             <td>0.856 </td>
             <td>0.707 </td>
             <td>138.781 </td>
-            <td>0.717 </td>
-            <td>137.864  </td>
         </tr>
         <tr>
             <td>PASSLEAF_RotatE</td>
@@ -251,8 +239,6 @@ Here are the reproduced model results on NL27K dataset using unKR as below. See 
             <td>0.884 </td>
             <td>0.762 </td>
             <td>50.776 </td>
-            <td>0.774 </td>
-            <td>50.194  </td>
         </tr>
         <tr>
             <td>UKGElogi</td>
@@ -261,8 +247,6 @@ Here are the reproduced model results on NL27K dataset using unKR as below. See 
             <td>0.805 </td>
             <td>0.622 </td>
             <td>153.632 </td>
-            <td>0.630 </td>
-            <td>152.314  </td>
         </tr>
         <tr>
             <td>UKGElogiPSL</td>
@@ -271,8 +255,6 @@ Here are the reproduced model results on NL27K dataset using unKR as below. See 
             <td>0.812 </td>
             <td>0.623 </td>
             <td>168.029 </td>
-            <td>0.632 </td>
-            <td>167.344  </td>
         </tr>
         <tr>
             <td>UKGErect</td>
@@ -281,8 +263,6 @@ Here are the reproduced model results on NL27K dataset using unKR as below. See 
             <td>0.807 </td>
             <td>0.609 </td>
             <td>126.011 </td>
-            <td>0.614 </td>
-            <td>124.424  </td>
         </tr>
         <tr>
             <td>UKGErectPSL</td>
@@ -291,8 +271,6 @@ Here are the reproduced model results on NL27K dataset using unKR as below. See 
             <td>0.800 </td>
             <td>0.599 </td>
             <td>125.233 </td>
-            <td>0.604 </td>
-            <td>124.189  </td>
         </tr>
         <tr>
             <td>UKGsE</td>
@@ -301,8 +279,6 @@ Here are the reproduced model results on NL27K dataset using unKR as below. See 
             <td>0.130 </td>
             <td>0.069 </td>
             <td>2329.501 </td>
-            <td>0.069 </td>
-            <td>2288.222  </td>
         </tr>
         <tr>
             <td>UPGAT</td>
@@ -311,8 +287,6 @@ Here are the reproduced model results on NL27K dataset using unKR as below. See 
             <td>0.862 </td>
             <td>0.701 </td>
             <td>69.120 </td>
-            <td>0.708 </td>
-            <td>69.364  </td>
         </tr>
         <tr>
             <td rowspan="2">Few-shot model</td>
@@ -322,8 +296,6 @@ Here are the reproduced model results on NL27K dataset using unKR as below. See 
             <td>0.592 </td>
             <td>0.425 </td>
             <td>58.312 </td>
-            <td>0.426 </td>
-            <td>58.097  </td>
         </tr>
         <tr>
             <td>GMUC+</td>
@@ -332,8 +304,6 @@ Here are the reproduced model results on NL27K dataset using unKR as below. See 
             <td>0.636 </td>
             <td>0.438 </td>
             <td>45.774 </td>
-            <td>0.438 </td>
-            <td>45.682  </td>
         </tr>
     </tbody>
 </table>
@@ -349,7 +319,6 @@ Here are the reproduced model results on NL27K dataset using unKR as below. See 
 ```bash
 conda create -n unKR python=3.8
 conda activate unKR
-pip install -r requirements.txt
 ```
 
 **Step2**  Install package.
@@ -365,7 +334,7 @@ pip install unKR
 ```
 
 **Step3** Model training.
-```
+```bash
 python main.py
 ```
 
