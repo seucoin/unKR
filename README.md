@@ -47,7 +47,7 @@ Detailed documentation of the unKR technology and results is available at [📋]
 <br>
 
 # 💻 Demo
-Here shows the installation process of unKR and how to train and test it, using [PASSLEAF](http://papers.nips.cc/paper/5071-translating-embeddings-for-modeling-multi-rela) as an example.
+Here shows the installation process of unKR and how to train and test it, using [PASSLEAF](https://ojs.aaai.org/index.php/AAAI/article/view/16522) as an example.
 
 <!-- ![demo](./pics/demo.gif) -->
 
@@ -62,7 +62,7 @@ unKR implements nine UKGE methods that partition the model based on whether it i
 
 |   Type   |                                                                                                                                                                                                                                                    Model                                                                                                                                                                                                                                                     |
 |:--------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-|  Normal  | [BEURrE](https://aclanthology.org/2021.naacl-main.68), [FocusE](https://www.ijcai.org/proceedings/2021/395), [GTransE](https://link.springer.com/chapter/10.1007/978-3-030-39878-1_16), [PASSLEAF](http://papers.nips.cc/paper/5071-translating-embeddings-for-modeling-multi-rela), [UKGE](https://ojs.aaai.org/index.php/AAAI/article/view/4210), [UKGsE](https://www.sciencedirect.com/science/article/abs/pii/S0020025522007885), [UPGAT](https://link.springer.com/chapter/10.1007/978-3-031-33377-4_5) |
+|  Normal  | [BEURrE](https://aclanthology.org/2021.naacl-main.68), [FocusE](https://www.ijcai.org/proceedings/2021/395), [GTransE](https://link.springer.com/chapter/10.1007/978-3-030-39878-1_16), [PASSLEAF](https://ojs.aaai.org/index.php/AAAI/article/view/16522), [UKGE](https://ojs.aaai.org/index.php/AAAI/article/view/4210), [UKGsE](https://www.sciencedirect.com/science/article/abs/pii/S0020025522007885), [UPGAT](https://link.springer.com/chapter/10.1007/978-3-031-33377-4_5) |
 | Few-shot |                                                                                                                                                                                [GMUC](https://link.springer.com/chapter/10.1007/978-3-030-73194-6_18), [GMUC+](https://link.springer.com/chapter/10.1007/978-981-19-7596-7_2)                                                                                                                                                                                |
 
 
