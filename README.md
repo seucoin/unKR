@@ -1,4 +1,4 @@
-# unKR: An Open Source Toolkit for Uncertain Knowledge Graph Representation Learning
+# unKR: A Python Library for Uncertain Knowledge Graph Reasoning by Representation Learning
 <p align="center">
     <a href="https://pypi.org/project/unKR/">
         <img alt="Pypi" src="https://img.shields.io/pypi/v/unKR">
@@ -17,7 +17,7 @@
     <b> English | <a href="https://github.com/seucoin/unKR/blob/main/README_CN.md">中文</a></b>
 </p>
 
-unKR is an open source toolkit for Uncertain Knowledge Graph Representation Learning(UKRL). 
+unKR is a python library for Uncertain Knowledge Graph Reasoning by Representation Learning(UKRL). 
 It is based on the [PyTorch Lightning](https://www.pytorchlightning.ai/) framework to decouple the workflow of the UKRL models in order to implement multiple Uncertain Knowledge Graph Embedding(UKGE) methods, which in turn assist knowledge graph complementation, inference and other tasks.
 The tool provides code implementations and results of various existing UKGE models, and provides users with detailed [technical documentation](https://seucoin.github.io/unKR/index.html).
 <br>
@@ -27,12 +27,11 @@ The tool provides code implementations and results of various existing UKGE mode
 # 🔖 Overview
 
 <h3 align="center">
-    <img src="pics/overview.png", width="600">
+    <img src="pics/unKR.svg", width="600">
 </h3>
 <!-- <p align="center">
-    <a href=""> <img src="pics/overview.png" width="400"/></a>
+    <a href=""> <img src="pics/unKR.svg" width="400"/></a>
 <p> -->
-（图片待修改）
 
 unKR toolkit is an efficient implementation for Uncertain Knowledge Graph Representation Learning(URKL) based on the [PyTorch Lightning](https://www.pytorchlightning.ai/) framework. 
 It provides a refinement module process that can implement a variety of Uncertain Knowledge Graph Embedding(UKGE) models, including UKG data preprocessing(Sampler for negative sampling), model implementation base module, and model training, validation, and testing modules. 
@@ -47,14 +46,24 @@ Detailed documentation of the unKR technology and results is available at [📋]
 
 <br>
 
+# 💻 Demo
+Here shows the installation process of unKR and how to train and test it, using [PASSLEAF](http://papers.nips.cc/paper/5071-translating-embeddings-for-modeling-multi-rela) as an example.
+
+[//]: # (<!-- ![框架]&#40;./pics/demo.gif&#41; -->)
+
+[//]: # (<img src="pics/demo.gif">)
+
+[//]: # (<!-- <img src="pics/demo.gif" width="900" height="476" align=center> -->)
+
+
 
 # 📝 Models
 unKR implements nine UKGE methods that partition the model based on whether it is a few-shot model or not. The available models are as below.
 
-|    Category    |                                                                                                                                                                                                                                                     Model                                                                                                                                                                                                                                                     |
-|:--------------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-|  Normal model  | [BEURrE](https://aclanthology.org/2021.naacl-main.68), [FocusE](https://www.ijcai.org/proceedings/2021/395), [GTransE](https://link.springer.com/chapter/10.1007/978-3-030-39878-1_16), [PASSLEAF]( http://papers.nips.cc/paper/5071-translating-embeddings-for-modeling-multi-rela), [UKGE](https://ojs.aaai.org/index.php/AAAI/article/view/4210), [UKGsE](https://www.sciencedirect.com/science/article/abs/pii/S0020025522007885), [UPGAT](https://link.springer.com/chapter/10.1007/978-3-031-33377-4_5) |
-| Few-shot model |                                                                                                                                                                                [GMUC](https://link.springer.com/chapter/10.1007/978-3-030-73194-6_18), [GMUC+](https://link.springer.com/chapter/10.1007/978-981-19-7596-7_2)                                                                                                                                                                                 |
+|   Type   |                                                                                                                                                                                                                                                    Model                                                                                                                                                                                                                                                     |
+|:--------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|  Normal  | [BEURrE](https://aclanthology.org/2021.naacl-main.68), [FocusE](https://www.ijcai.org/proceedings/2021/395), [GTransE](https://link.springer.com/chapter/10.1007/978-3-030-39878-1_16), [PASSLEAF](http://papers.nips.cc/paper/5071-translating-embeddings-for-modeling-multi-rela), [UKGE](https://ojs.aaai.org/index.php/AAAI/article/view/4210), [UKGsE](https://www.sciencedirect.com/science/article/abs/pii/S0020025522007885), [UPGAT](https://link.springer.com/chapter/10.1007/978-3-031-33377-4_5) |
+| Few-shot |                                                                                                                                                                                [GMUC](https://link.springer.com/chapter/10.1007/978-3-030-73194-6_18), [GMUC+](https://link.springer.com/chapter/10.1007/978-981-19-7596-7_2)                                                                                                                                                                                |
 
 
 
@@ -105,7 +114,7 @@ Here are the reproduced model results on NL27K dataset using unKR as below. See 
 <table>
     <thead>
         <tr>
-            <th>Category</th>
+            <th>Type</th>
             <th>Model</th>
             <th>MSE</th>
             <th>MAE </th>
@@ -113,7 +122,7 @@ Here are the reproduced model results on NL27K dataset using unKR as below. See 
     </thead>
     <tbody align="center" valign="center">
         <tr>
-            <td rowspan="10">Normal model</td>
+            <td rowspan="10">Normal</td>
             <td>BEUrRE</td>
             <td>0.08920 </td>
             <td>0.22194  </td>
@@ -164,7 +173,7 @@ Here are the reproduced model results on NL27K dataset using unKR as below. See 
             <td>0.10107  </td>
         </tr>
         <tr>
-            <td rowspan="2">Few-shot model</td>
+            <td rowspan="2">Few-shot</td>
             <td>GMUC</td>
             <td>0.01300 </td>
             <td>0.08200  </td>
@@ -181,7 +190,7 @@ Here are the reproduced model results on NL27K dataset using unKR as below. See 
 <table>
     <thead>
         <tr>
-            <th>Category</th>
+            <th>Type</th>
             <th>Model</th>
             <th>Hits@1</th>
             <th>Hits@3</th>
@@ -192,7 +201,7 @@ Here are the reproduced model results on NL27K dataset using unKR as below. See 
     </thead>
     <tbody align="center" valign="center">
         <tr>
-            <td rowspan="12">Normal model</td>
+            <td rowspan="12">Normal</td>
             <td>BEUrRE</td>
             <td>0.156 </td>
             <td>0.385 </td>
@@ -289,7 +298,7 @@ Here are the reproduced model results on NL27K dataset using unKR as below. See 
             <td>69.120 </td>
         </tr>
         <tr>
-            <td rowspan="2">Few-shot model</td>
+            <td rowspan="2">Few-shot</td>
             <td>GMUC</td>
             <td>0.335 </td>
             <td>0.465 </td>
@@ -399,10 +408,10 @@ KGDataModule.py:
 <your-model-name>_Loss.py:
     class unKR.loss.<your-model-name>_Loss.<your-model-name>_Loss
 ```
-`model`: Implement model framework functions, classified as `NModel` and `FSModel` based on whether it is a few-shot model.
+`model`: Implement model framework functions, classified as `UKGModel` and `FSUKGModel` based on whether it is a few-shot model.
 ```
 <your-model-name>.py:
-    class unKR.model.NModel/FSModel.<your-model-name>.<your-model-name>
+    class unKR.model.UKGModel/FSUKGModel.<your-model-name>.<your-model-name>
 ```
 `config`: Implement parameter settings.
 ```
@@ -417,25 +426,9 @@ KGDataModule.py:
 <br>
 
 
-# ✉️ Citation
-
-If you find unKR is useful for your research, please consider citing the following paper:
-
-```bibtex
-@article{
-}
-
-```
-<br>
 
 # 😊 unKR Core Team
 
 **Southeast University**: Jingting Wang, Tianxing Wu, Shilin Chen, Yunchang Liu, Shutong Zhu, Wei Li, Jingyi Xu, Guilin Qi.
 
-# 🔎 Reference
-- NeuralKG: An Open Source Library for Diverse Representation
-Learning of Knowledge Graphs. SIGIR 2022 Demo. https://arxiv.org/pdf/2202.12571.pdf
-- NeuralKG-ind: A Python Library for Inductive Knowledge
-Graph Representation Learning. SIGIR 2023 Demo. https://arxiv.org/pdf/2304.14678.pdf
-- GitHub：https://github.com/zjukg/NeuralKG
 

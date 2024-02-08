@@ -28,17 +28,16 @@ unKR是一个面向不确定性知识图谱表示学习（UKRL）的开源工具
 # 🔖 概览
 
 <h3 align="center">
-    <img src="pics/overview.png", width="600">
+    <img src="pics/unKR.svg", width="600">
 </h3>
 <!-- <p align="center">
-    <a href=""> <img src="pics/overview.png" width="400"/></a>
+    <a href=""> <img src="pics/unKR.svg" width="400"/></a>
 <p> -->
-（图片待修改）
 
 unKR工具包是基于[PyTorch Lightning](https://www.pytorchlightning.ai/)框架，用于不确定性知识图谱表示学习的一种高效实现。
 它提供了一个可实现多种不确定性知识图谱嵌入模型的模块化流程，包括不确定性知识图谱数据处理模块（负采样模块），模型实现基础模块以及模型训练、验证、测试模块。这些模块被广泛应用于多种UKGE模型中，便于使用者快速构建自己的模型。
 
-已有模型根据是否为小样本模型进行划分，共包含九种不同模型。unKR分别在三种数据集及七种不同的评估指标上完成了工具包有效性验证，模型具体内容在后续部分展开。
+已有模型根据是否为小样本场景进行划分，共包含九种不同模型。unKR分别在三种数据集及七种不同的评估指标上完成了工具包有效性验证，模型具体内容在后续部分展开。
 
 unKR的核心开发团队将对该工具包提供长期的技术支持，同时也欢迎开发者们进行探讨研究，可使用 `issue` 发起问题。
 
@@ -47,14 +46,24 @@ unKR的核心开发团队将对该工具包提供长期的技术支持，同时�
 
 <br>
 
+# 💻 运行示例
+下面展示了unKR的安装过程，并以[PASSLEAF](http://papers.nips.cc/paper/5071-translating-embeddings-for-modeling-multi-rela)模型为例，给出如何进行模型训练以及测试的示例。
+
+[//]: # (<!-- ![框架]&#40;./pics/demo.gif&#41; -->)
+
+[//]: # (<img src="pics/demo.gif">)
+
+[//]: # (<!-- <img src="pics/demo.gif" width="900" height="476" align=center> -->)
+
+<br>
 
 # 📝 模型
-unKR实现了九种不确定性知识图谱嵌入方法，根据是否为小样本模型进行模型划分。已有模型如下所示。
+unKR实现了九种不确定性知识图谱嵌入方法，根据模型是否为小样本场景进行划分。已有模型如下所示。
 
-|        类别         |                                                                                                                                                                                                                                                   模型                                                                                                                                                                                                                                                    |
-|:-----------------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-|      非小样本模型       | [BEURrE](https://aclanthology.org/2021.naacl-main.68)，[FocusE](https://www.ijcai.org/proceedings/2021/395)，[GTransE](https://link.springer.com/chapter/10.1007/978-3-030-39878-1_16)，[PASSLEAF]( http://papers.nips.cc/paper/5071-translating-embeddings-for-modeling-multi-rela)，[UKGE](https://ojs.aaai.org/index.php/AAAI/article/view/4210)，[UKGsE](https://www.sciencedirect.com/science/article/abs/pii/S0020025522007885)，[UPGAT](https://link.springer.com/chapter/10.1007/978-3-031-33377-4_5) |
-|       小样本模型       |                                                                                                                                                                              [GMUC](https://link.springer.com/chapter/10.1007/978-3-030-73194-6_18)，[GMUC+](https://link.springer.com/chapter/10.1007/978-981-19-7596-7_2)                                                                                                                                                                              |
+|   类型   |                                                                                                                                                                                                                                                   模型                                                                                                                                                                                                                                                   |
+|:------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|  一般场景  | [BEURrE](https://aclanthology.org/2021.naacl-main.68)，[FocusE](https://www.ijcai.org/proceedings/2021/395)，[GTransE](https://link.springer.com/chapter/10.1007/978-3-030-39878-1_16)，[PASSLEAF](http://papers.nips.cc/paper/5071-translating-embeddings-for-modeling-multi-rela)，[UKGE](https://ojs.aaai.org/index.php/AAAI/article/view/4210)，[UKGsE](https://www.sciencedirect.com/science/article/abs/pii/S0020025522007885)，[UPGAT](https://link.springer.com/chapter/10.1007/978-3-031-33377-4_5) |
+| 小样本场景  |                                                                                                                                                                             [GMUC](https://link.springer.com/chapter/10.1007/978-3-030-73194-6_18)，[GMUC+](https://link.springer.com/chapter/10.1007/978-981-19-7596-7_2)                                                                                                                                                                              |
 
 
 
@@ -103,7 +112,7 @@ unKR使用了置信度预测和链接预测任务，在MSE、MAE（置信度预�
 <table>
     <thead>
         <tr>
-            <th>类别</th>
+            <th>类型</th>
             <th>模型</th>
             <th>MSE</th>
             <th>MAE </th>
@@ -111,7 +120,7 @@ unKR使用了置信度预测和链接预测任务，在MSE、MAE（置信度预�
     </thead>
     <tbody align="center" valign="center">
         <tr>
-            <td rowspan="10">非小样本模型</td>
+            <td rowspan="10">一般场景</td>
             <td>BEUrRE</td>
             <td>0.08920 </td>
             <td>0.22194  </td>
@@ -162,7 +171,7 @@ unKR使用了置信度预测和链接预测任务，在MSE、MAE（置信度预�
             <td>0.10107  </td>
         </tr>
         <tr>
-            <td rowspan="2">小样本模型</td>
+            <td rowspan="2">小样本场景</td>
             <td>GMUC</td>
             <td>0.01300 </td>
             <td>0.08200  </td>
@@ -179,7 +188,7 @@ unKR使用了置信度预测和链接预测任务，在MSE、MAE（置信度预�
 <table>
     <thead>
         <tr>
-            <th>类别</th>
+            <th>类型</th>
             <th>模型</th>
             <th>Hits@1</th>
             <th>Hits@3</th>
@@ -190,7 +199,7 @@ unKR使用了置信度预测和链接预测任务，在MSE、MAE（置信度预�
     </thead>
     <tbody align="center" valign="center">
         <tr>
-            <td rowspan="12">非小样本模型</td>
+            <td rowspan="12">一般场景</td>
             <td>BEUrRE</td>
             <td>0.156 </td>
             <td>0.385 </td>
@@ -287,7 +296,7 @@ unKR使用了置信度预测和链接预测任务，在MSE、MAE（置信度预�
             <td>69.120 </td>
         </tr>
         <tr>
-            <td rowspan="2">小样本模型</td>
+            <td rowspan="2">小样本场景</td>
             <td>GMUC</td>
             <td>0.335 </td>
             <td>0.465 </td>
@@ -396,10 +405,10 @@ KGDataModule.py:
 <your-model-name>_Loss.py:
     class unKR.loss.<your-model-name>_Loss.<your-model-name>_Loss
 ```
-`model`：实现模型框架函数，根据是否为小样本模型分为`NModel`和`FSModel`。
+`model`：实现模型框架函数，根据模型是否为小样本场景分为`UKGModel`和`FSUKGModel`。
 ```
 <your-model-name>.py:
-    class unKR.model.NModel/FSModel.<your-model-name>.<your-model-name>
+    class unKR.model.UKGModel/FSUKGModel.<your-model-name>.<your-model-name>
 ```
 `config`：实现参数设置。
 ```
@@ -412,25 +421,9 @@ KGDataModule.py:
 ```
 <br>
 
-# ✉️ 引用
 
-如果您发现unKR对您的研究有用，请考虑引用以下论文：
-
-```bibtex
-@article{
-}
-
-```
-<br>
 
 # 😊 unKR核心团队
 
 **东南大学**: 王靖婷，吴天星，陈仕林，刘云畅，朱曙曈，李伟，许婧怡，漆桂林。
-
-# 🔎 参考
-- NeuralKG: An Open Source Library for Diverse Representation
-Learning of Knowledge Graphs. SIGIR 2022 Demo. https://arxiv.org/pdf/2202.12571.pdf
-- NeuralKG-ind: A Python Library for Inductive Knowledge
-Graph Representation Learning. SIGIR 2023 Demo. https://arxiv.org/pdf/2304.14678.pdf
-- GitHub：https://github.com/zjukg/NeuralKG
 
