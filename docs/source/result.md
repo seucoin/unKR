@@ -7,7 +7,7 @@ There are some reproduced model results using unKR.
 <table>
     <thead>
     <tr>
-        <th>Category</th>
+        <th>Type</th>
         <th>Model</th>
         <th>MSE</th>
         <th>MAE</th>
@@ -15,7 +15,7 @@ There are some reproduced model results using unKR.
     </thead>
     <tbody align="center" valign="center">
     <tr>
-        <td rowspan="10">Normal model</td>
+        <td rowspan="10">Normal</td>
         <td>BEUrRE</td>
         <td>0.11656 </td>
         <td>0.28259 </td>
@@ -66,7 +66,7 @@ There are some reproduced model results using unKR.
         <td>0.30796 </td>
     </tr>
     <tr>
-        <td>Few-shot model</td>
+        <td>Few-shot</td>
         <td>GMUC</td>
         <td>0.01700 </td>
         <td>0.10400</td>
@@ -82,7 +82,7 @@ There are some reproduced model results using unKR.
 <table>
     <thead>
     <tr>
-        <th>Category</th>
+        <th>Type</th>
         <th>Model</th>
         <th>Hits@1</th>
         <th>Hits@3</th>
@@ -95,7 +95,7 @@ There are some reproduced model results using unKR.
     </thead>
     <tbody align="center" valign="center">
     <tr>
-        <td rowspan="12">Normal model</td>
+        <td rowspan="12">Normal</td>
         <td>BEUrRE</td>
         <td>0.030 </td>
         <td>0.127 </td>
@@ -216,7 +216,7 @@ There are some reproduced model results using unKR.
         <td>1060.366  </td>
     </tr>
     <tr>
-        <td>Few-shot model</td>
+        <td>Few-shot</td>
         <td>GMUC</td>
         <td>0.128 </td>
         <td>0.166 </td>
@@ -233,7 +233,7 @@ There are some reproduced model results using unKR.
 <table>
     <thead>
         <tr>
-            <th>Category</th>
+            <th>Type</th>
             <th>Model</th>
             <th>Hits@1</th>
             <th>Hits@3</th>
@@ -246,7 +246,7 @@ There are some reproduced model results using unKR.
     </thead>
     <tbody align="center" valign="center">
         <tr>
-            <td rowspan="12">Normal model</td>
+            <td rowspan="12">Normal</td>
             <td>BEUrRE</td>
             <td>0.039 </td>
             <td>0.175 </td>
@@ -367,7 +367,7 @@ There are some reproduced model results using unKR.
             <td>1042.695  </td>
         </tr>
         <tr>
-            <td>Few-shot model</td>
+            <td>Few-shot</td>
             <td>GMUC</td>
             <td>0.128 </td>
             <td>0.167 </td>
@@ -387,7 +387,7 @@ There are some reproduced model results using unKR.
 <table>
     <thead>
         <tr>
-            <th>Category</th>
+            <th>Type</th>
             <th>Model</th>
             <th>Hits@1</th>
             <th>Hits@3</th>
@@ -398,7 +398,7 @@ There are some reproduced model results using unKR.
     </thead>
     <tbody align="center" valign="center">
         <tr>
-            <td rowspan="12">Normal model</td>
+            <td rowspan="12">Normal</td>
             <td>BEUrRE</td>
             <td>0.011 </td>
             <td>0.130 </td>
@@ -495,7 +495,7 @@ There are some reproduced model results using unKR.
             <td>1082.818 </td>
         </tr>
         <tr>
-            <td>Few-shot model</td>
+            <td>Few-shot</td>
             <td>GMUC</td>
             <td>0.002 </td>
             <td>0.008 </td>
@@ -510,7 +510,7 @@ There are some reproduced model results using unKR.
 <table>
     <thead>
         <tr>
-            <th>Category</th>
+            <th>Type</th>
             <th>Model</th>
             <th>Hits@1</th>
             <th>Hits@3</th>
@@ -521,7 +521,7 @@ There are some reproduced model results using unKR.
     </thead>
     <tbody align="center" valign="center">
         <tr>
-            <td rowspan="12">Normal model</td>
+            <td rowspan="12">Normal</td>
             <td>BEUrRE</td>
             <td>0.017 </td>
             <td>0.188 </td>
@@ -618,7 +618,7 @@ There are some reproduced model results using unKR.
             <td>1067.621 </td>
         </tr>
         <tr>
-            <td>Few-shot model</td>
+            <td>Few-shot</td>
             <td>GMUC</td>
             <td>0.002 </td>
             <td>0.008 </td>
@@ -636,7 +636,7 @@ There are some reproduced model results using unKR.
 <table>
     <thead>
         <tr>
-            <th>Category</th>
+            <th>Type</th>
             <th>Model</th>
             <th>MSE</th>
             <th>MAE </th>
@@ -644,7 +644,7 @@ There are some reproduced model results using unKR.
     </thead>
     <tbody align="center" valign="center">
         <tr>
-            <td rowspan="10">Normal model</td>
+            <td rowspan="10">Normal</td>
             <td>BEUrRE</td>
             <td>0.08920 </td>
             <td>0.22194  </td>
@@ -695,7 +695,7 @@ There are some reproduced model results using unKR.
             <td>0.10107  </td>
         </tr>
         <tr>
-            <td rowspan="2">Few-shot model</td>
+            <td rowspan="2">Few-shot</td>
             <td>GMUC</td>
             <td>0.01300 </td>
             <td>0.08200  </td>
@@ -717,7 +717,7 @@ There are some reproduced model results using unKR.
 <table>
     <thead>
         <tr>
-            <th>Category</th>
+            <th>Type</th>
             <th>Model</th>
             <th>Hits@1</th>
             <th>Hits@3</th>
@@ -730,7 +730,7 @@ There are some reproduced model results using unKR.
     </thead>
     <tbody align="center" valign="center">
         <tr>
-            <td rowspan="12">Normal model</td>
+            <td rowspan="12">Normal</td>
             <td>BEUrRE</td>
             <td>0.086 </td>
             <td>0.237 </td>
@@ -851,7 +851,7 @@ There are some reproduced model results using unKR.
             <td>141.358  </td>
         </tr>
         <tr>
-            <td rowspan="2">Few-shot model</td>
+            <td rowspan="2">Few-shot</td>
             <td>GMUC</td>
             <td>0.287 </td>
             <td>0.409 </td>
@@ -878,7 +878,7 @@ There are some reproduced model results using unKR.
 <table>
     <thead>
         <tr>
-            <th>Category</th>
+            <th>Type</th>
             <th>Model</th>
             <th>Hits@1</th>
             <th>Hits@3</th>
@@ -891,7 +891,7 @@ There are some reproduced model results using unKR.
     </thead>
     <tbody align="center" valign="center">
         <tr>
-            <td rowspan="12">Normal model</td>
+            <td rowspan="12">Normal</td>
             <td>BEUrRE</td>
             <td>0.117 </td>
             <td>0.307 </td>
@@ -1012,7 +1012,7 @@ There are some reproduced model results using unKR.
             <td>93.692  </td>
         </tr>
         <tr>
-            <td rowspan="2">Few-shot model</td>
+            <td rowspan="2">Few-shot</td>
             <td>GMUC</td>
             <td>0.344 </td>
             <td>0.462 </td>
@@ -1041,7 +1041,7 @@ There are some reproduced model results using unKR.
 <table>
     <thead>
         <tr>
-            <th>Category</th>
+            <th>Type</th>
             <th>Model</th>
             <th>Hits@1</th>
             <th>Hits@3</th>
@@ -1052,7 +1052,7 @@ There are some reproduced model results using unKR.
     </thead>
     <tbody align="center" valign="center">
         <tr>
-            <td rowspan="12">Normal model</td>
+            <td rowspan="12">Normal</td>
             <td>BEUrRE</td>
             <td>0.115 </td>
             <td>0.295 </td>
@@ -1149,7 +1149,7 @@ There are some reproduced model results using unKR.
             <td>114.658 </td>
         </tr>
         <tr>
-            <td rowspan="2">Few-shot model</td>
+            <td rowspan="2">Few-shot</td>
             <td>GMUC</td>
             <td>0.281 </td>
             <td>0.400 </td>
@@ -1172,7 +1172,7 @@ There are some reproduced model results using unKR.
 <table>
     <thead>
         <tr>
-            <th>Category</th>
+            <th>Type</th>
             <th>Model</th>
             <th>Hits@1</th>
             <th>Hits@3</th>
@@ -1183,7 +1183,7 @@ There are some reproduced model results using unKR.
     </thead>
     <tbody align="center" valign="center">
         <tr>
-            <td rowspan="12">Normal model</td>
+            <td rowspan="12">Normal</td>
             <td>BEUrRE</td>
             <td>0.156 </td>
             <td>0.385 </td>
@@ -1280,7 +1280,7 @@ There are some reproduced model results using unKR.
             <td>69.120 </td>
         </tr>
         <tr>
-            <td rowspan="2">Few-shot model</td>
+            <td rowspan="2">Few-shot</td>
             <td>GMUC</td>
             <td>0.335 </td>
             <td>0.465 </td>
@@ -1305,7 +1305,7 @@ There are some reproduced model results using unKR.
 <table>
     <thead>
         <tr>
-            <th>Category</th>
+            <th>Type</th>
             <th>Model</th>
             <th>MSE</th>
             <th>MAE </th>
@@ -1313,7 +1313,7 @@ There are some reproduced model results using unKR.
     </thead>
     <tbody align="center" valign="center">
         <tr>
-            <td rowspan="10">Normal model</td>
+            <td rowspan="10">Normal</td>
             <td>BEUrRE</td>
             <td>0.03662 </td>
             <td>0.15800  </td>
@@ -1374,7 +1374,7 @@ There are some reproduced model results using unKR.
 <table>
     <thead>
         <tr>
-            <th>Category</th>
+            <th>Type</th>
             <th>Model</th>
             <th>Hits@1</th>
             <th>Hits@3</th>
@@ -1387,7 +1387,7 @@ There are some reproduced model results using unKR.
     </thead>
     <tbody align="center" valign="center">
         <tr>
-            <td rowspan="12">Normal model</td>
+            <td rowspan="12">Normal</td>
             <td>BEUrRE</td>
             <td>0.000 </td>
             <td>0.025 </td>
@@ -1515,7 +1515,7 @@ There are some reproduced model results using unKR.
 <table>
     <thead>
         <tr>
-            <th>Category</th>
+            <th>Type</th>
             <th>Model</th>
             <th>Hits@1</th>
             <th>Hits@3</th>
@@ -1528,7 +1528,7 @@ There are some reproduced model results using unKR.
     </thead>
     <tbody align="center" valign="center">
         <tr>
-            <td rowspan="12">Normal model</td>
+            <td rowspan="12">Normal</td>
             <td>BEUrRE</td>
             <td>0.000 </td>
             <td>0.790 </td>
@@ -1657,7 +1657,7 @@ There are some reproduced model results using unKR.
 <table>
     <thead>
         <tr>
-            <th>Category</th>
+            <th>Type</th>
             <th>Model</th>
             <th>Hits@1</th>
             <th>Hits@3</th>
@@ -1668,7 +1668,7 @@ There are some reproduced model results using unKR.
     </thead>
     <tbody align="center" valign="center">
         <tr>
-            <td rowspan="12">Normal model</td>
+            <td rowspan="12">Normal</td>
             <td>BEUrRE</td>
             <td>0.000 </td>
             <td>0.043 </td>
@@ -1771,7 +1771,7 @@ There are some reproduced model results using unKR.
 <table>
     <thead>
         <tr>
-            <th>Category</th>
+            <th>Type</th>
             <th>Model</th>
             <th>Hits@1</th>
             <th>Hits@3</th>
@@ -1782,7 +1782,7 @@ There are some reproduced model results using unKR.
     </thead>
     <tbody align="center" valign="center">
         <tr>
-            <td rowspan="12">Normal model</td>
+            <td rowspan="12">Normal</td>
             <td>BEUrRE</td>
             <td>0.001 </td>
             <td>0.956 </td>
