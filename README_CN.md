@@ -49,11 +49,11 @@ unKR的核心开发团队将对该工具包提供长期的技术支持，同时�
 # 💻 运行示例
 下面展示了unKR的安装过程，并以[PASSLEAF](http://papers.nips.cc/paper/5071-translating-embeddings-for-modeling-multi-rela)模型为例，给出如何进行模型训练以及测试的示例。
 
-[//]: # (<!-- ![框架]&#40;./pics/demo.gif&#41; -->)
+<!-- ![demo](./pics/demo.gif) -->
 
-[//]: # (<img src="pics/demo.gif">)
+<img src="pics/demo.gif">
 
-[//]: # (<!-- <img src="pics/demo.gif" width="900" height="476" align=center> -->)
+<!-- <img src="pics/demo.gif" width="900" height="500" align=center> -->
 
 <br>
 

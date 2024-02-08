@@ -49,11 +49,11 @@ Detailed documentation of the unKR technology and results is available at [📋]
 # 💻 Demo
 Here shows the installation process of unKR and how to train and test it, using [PASSLEAF](http://papers.nips.cc/paper/5071-translating-embeddings-for-modeling-multi-rela) as an example.
 
-[//]: # (<!-- ![框架]&#40;./pics/demo.gif&#41; -->)
+<!-- ![demo](./pics/demo.gif) -->
 
-[//]: # (<img src="pics/demo.gif">)
+<img src="pics/demo.gif">
 
-[//]: # (<!-- <img src="pics/demo.gif" width="900" height="476" align=center> -->)
+<!-- <img src="pics/demo.gif" width="900" height="500" align=center> -->
 
 
 
