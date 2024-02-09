@@ -247,7 +247,7 @@ Here are the reproduce results of nine models on NL27K dataset with unKR. See mo
 
 <br>
 
-## 🛠️ Usage
+## Usage
 
 ### Installation
 
