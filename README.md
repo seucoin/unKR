@@ -17,32 +17,20 @@
     <b> English | <a href="https://github.com/seucoin/unKR/blob/main/README_CN.md">中文</a></b>
 </p>
 
-unKR is a python library for Uncertain Knowledge Graph Reasoning by Representation Learning(UKRL). 
-It is based on the [PyTorch Lightning](https://www.pytorchlightning.ai/) framework to decouple the workflow of the UKRL models in order to implement multiple Uncertain Knowledge Graph Embedding(UKGE) methods, which in turn assist knowledge graph complementation, inference and other tasks.
-The tool provides code implementations and results of various existing UKGE models, and provides users with detailed [technical documentation](https://seucoin.github.io/unKR/index.html).
-<br>
+unKR is an python library for **un**certain **K**nowledge graph (UKG) **R**easoning based on the [PyTorch Lightning](https://www.pytorchlightning.ai/). It provides a unifying workflow to implement a variety of uncertain knowledge graph representation learning models to complete UKG reasoning. unKR consists of five modules: 1) Data Processor handles low-level dataset parsing and negative sampling, then generates mini-batches of data; 2) Model Hub implements the model algorithms, containing the scoring function and loss function; 3) Trainer conducts iterative training and validation; 4) Evaluator provides confidence prediction and link prediction tasks to evaluate models' performance; 5) Controller controls the training worklow, allowing for early stopping and model saving. These modules are decoupled and independent, making unKR highly modularized and extensible. Detailed documentation of the unKR is available at [here](https://seucoin.github.io/unKR/).
+
+unKR core development team will provide long-term technical support, and developers are welcome to discuss the work and initiate questions using `issue`.
 
 
-
-# 🔖 Overview
 
 <h3 align="center">
-    <img src="pics/unKR.svg", width="600">
+    <img src="pics/unKR.svg", width=1000">
 </h3>
 <!-- <p align="center">
-    <a href=""> <img src="pics/unKR.svg" width="400"/></a>
+    <a href=""> <img src="pics/unKR.svg" width="1000"/></a>
 <p> -->
 
-unKR is an open-source library for **un**certain **K**nowledge graph **R**easoning by representation learning based on the [PyTorch Lightning](https://www.pytorchlightning.ai/) framework. It provides a unifying workflow to implement a variety of uncertain knowledge graph representation learning models. As shown in the figure, unKR consists of five modules: 1) Data Processor handles low-level dataset parsing and negative sampling, then generates mini-batches of data; 2) Model Hub implements the model algorithms, containing the scoring function and loss function; 3) Trainer conduct iterative training and validation; 4) Evaluator provides confidence prediction and link prediction tasks to evaluate models' performance; 5) Controller control the training worklow, allowing for early stopping and model saving. These modules are decoupled and independent, making unKR highly modularized and extensible. 
 
-
-Now, there are nine uncertain knowledge graph representation learning models available. unKR has evaluated these models on three datasets with seven different evaluation metrics, and the details of the models will be discussed in the following sections.
-
-unKR core development team will provide long-term technical support for the toolkit, and developers are welcome to discuss the work and initiate questions using `issue`.
-
-Detailed documentation of the unKR technology and results is available at [📋](https://seucoin.github.io/unKR/).
-
-<br>
 
 # 💻 Demo
 Here shows the installation process of unKR and how to train and test it, using [PASSLEAF](https://ojs.aaai.org/index.php/AAAI/article/view/16522) as an example.
@@ -56,6 +44,8 @@ Here shows the installation process of unKR and how to train and test it, using 
 
 
 # 📝 Models
+Now, there are nine uncertain knowledge graph representation learning models available. unKR has evaluated these models on three datasets with seven different evaluation metrics.
+
 unKR implements nine UKGE methods that partition the model based on whether it is a few-shot model or not. The available models are as below.
 
 |   Type   |                                                                                                                                                                                                                                                    Model                                                                                                                                                                                                                                                     |
