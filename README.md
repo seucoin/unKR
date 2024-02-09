@@ -59,7 +59,7 @@ Now, nine uncertain knowledge graph representation learning models are available
 | Few-shot |                                                                                                                                                                                [GMUC](https://link.springer.com/chapter/10.1007/978-3-030-73194-6_18), [GMUC+](https://link.springer.com/chapter/10.1007/978-981-19-7596-7_2)                                                                                                                                                                                |
 
 
-## Reproduce Results
+## Reproduced Results
 unKR determines two tasks, confidence prediction and link prediction, to evaluate models' ability of UKG reasoning. For confidence prediction task, MSE (Mean Squared Error) and MAE (Mean Absolute Error) are reported. For link prediction task, Hits@k(k=1,3,10), MRR (Mean Reciprocal Rank), MR (Mean Rank) under both raw and filterd settings are reported. In addition, we choose high-confidence (>0.7) triples as the test data for link prediction.
 
 Here are the reproduce results of nine models on NL27K dataset with unKR. See more results at [here](https://seucoin.github.io/unKR/result.html).
