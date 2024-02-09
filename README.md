@@ -270,7 +270,7 @@ pip install -r requirements.txt
 pip install unKR
 ```
 
-## Data Format
+### Data Format
 For normal models, `train.tsv`, `val.tsv`, and `test.tsv` are required. 
 
 - `train.tsv`: All facts used for training in the format `(h, r, t, s)`, one fact per line.
@@ -290,25 +290,25 @@ For few-shot models, `train_tasks.json`, `dev_tasks.json`, `test_tasks.json` and
 
 For [UKGE](https://ojs.aaai.org/index.php/AAAI/article/view/4210), the`softlogic.tsv`file is also required.
 
-`softlogic.tsv`: All facts inferred by PSL in the format`(h, r, t, s)`, one fact per line.
+- `softlogic.tsv`: All facts inferred by PSL in the format`(h, r, t, s)`, one fact per line.
 
 
 
-## Parameter Setting
+### Parameter Setting
 You can set up parameters by [config](https://github.com/seucoin/unKR/tree/main/config) file. The desciption of each paramter is at [here](https://seucoin.github.io/unKR/Parameters.html).
 
 
-## Model Training
+### Model Training
 ```bash
 python main.py --load_config --config_path <your-config>
 ```
 
-## Model Testing
+### Model Testing
 ```bash
 python main.py --test_only --checkpoint_dir <your-model-path>
 ```
 
-## Model Customization
+### Model Customization
 If you want to customize your own model using unKR, you need to create the following classes/functions.
 
 `data`: Implement data processing functions, including `DataPreprocess`, `Sampler` and `KGDataModule`.
@@ -352,7 +352,7 @@ KGDataModule.py:
 
 
 
-# 😊 unKR Core Team
+# unKR Core Team
 
 **Southeast University**: Jingting Wang, Tianxing Wu, Shilin Chen, Yunchang Liu, Shutong Zhu, Wei Li, Jingyi Xu, Guilin Qi.
 
