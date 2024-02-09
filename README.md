@@ -33,12 +33,10 @@ The tool provides code implementations and results of various existing UKGE mode
     <a href=""> <img src="pics/unKR.svg" width="400"/></a>
 <p> -->
 
-unKR toolkit is an efficient implementation for Uncertain Knowledge Graph Representation Learning(URKL) based on the [PyTorch Lightning](https://www.pytorchlightning.ai/) framework. 
-It provides a refinement module process that can implement a variety of Uncertain Knowledge Graph Embedding(UKGE) models, including UKG data preprocessing(Sampler for negative sampling), model implementation base module, and model training, validation, and testing modules. 
-These modules are widely used in different UKGE models, facilitating users to quickly construct their own models.
+unKR is an open-source library for **un**certain **K**nowledge graph **R**easoning by representation learning based on the [PyTorch Lightning](https://www.pytorchlightning.ai/) framework. It provides a unifying workflow to implement a variety of uncertain knowledge graph representation learning models. As shown in the figure, unKR consists of five modules: 1) Data Processor handles low-level dataset parsing and negative sampling, then generates mini-batches of data; 2) Model Hub implements the model algorithms, containing the scoring function and loss function; 3) Trainer conduct iterative training and validation; 4) Evaluator provides confidence prediction and link prediction tasks to evaluate models' performance; 5) Controller control the training worklow, allowing for early stopping and model saving. These modules are decoupled and independent, making unKR highly modularized and extensible. 
 
-There are nine different models available, divided according to whether they are few-shot models or not. 
-unKR has validated the tool on three datasets with seven different evaluation metrics, and the details of the models will be discussed in the following sections.
+
+Now, there are nine uncertain knowledge graph representation learning models available. unKR has evaluated these models on three datasets with seven different evaluation metrics, and the details of the models will be discussed in the following sections.
 
 unKR core development team will provide long-term technical support for the toolkit, and developers are welcome to discuss the work and initiate questions using `issue`.
 
