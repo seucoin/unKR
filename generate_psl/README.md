@@ -51,5 +51,8 @@ A rule example is
 
 Finally, pass your yaml file into the main function of [infer_psl.py](./infer_psl.py) and execute the program to obtain the generated softlogic file. The path to generate the file depends on out_softlogic_filename in yaml.
 
+# References
+[1] https://github.com/linqs/psl
 
+[2] Bach S H, Broecheler M, Huang B, et al. Hinge-loss markov random fields and probabilistic soft logic[J]. Journal of Machine Learning Research, 2017.
 
