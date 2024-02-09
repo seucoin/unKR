@@ -264,7 +264,6 @@ conda activate unKR
 git clone https://github.com/seucoin/unKR.git
 cd unKR
 pip install -r requirements.txt
-python setup.py install
 ```
 + Install by pypi
 ```bash
