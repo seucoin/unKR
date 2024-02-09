@@ -17,14 +17,14 @@
     <b> English | <a href="https://github.com/seucoin/unKR/blob/main/README_CN.md">中文</a></b>
 </p>
 
-unKR is an python library for **un**certain **K**nowledge graph (UKG) **R**easoning based on the [PyTorch Lightning](https://www.pytorchlightning.ai/). It provides a unifying workflow to implement a variety of uncertain knowledge graph representation learning models to complete UKG reasoning. unKR consists of five modules: 1) Data Processor handles low-level dataset parsing and negative sampling, then generates mini-batches of data; 2) Model Hub implements the model algorithms, containing the scoring function and loss function; 3) Trainer conducts iterative training and validation; 4) Evaluator provides confidence prediction and link prediction tasks to evaluate models' performance; 5) Controller controls the training worklow, allowing for early stopping and model saving. These modules are decoupled and independent, making unKR highly modularized and extensible. Detailed documentation of the unKR is available at [here](https://seucoin.github.io/unKR/).
+unKR is an python library for **un**certain **K**nowledge graph (UKG) **R**easoning based on the [PyTorch Lightning](https://www.pytorchlightning.ai/). It provides a unifying workflow to implement a variety of uncertain knowledge graph representation learning models to complete UKG reasoning. unKR consists of five modules: 1) Data Processor handles low-level dataset parsing and negative sampling, then generates mini-batches of data; 2) Model Hub implements the model algorithms, containing the scoring function and loss function; 3) Trainer conducts iterative training and validation; 4) **Evaluator** provides confidence prediction and link prediction tasks to evaluate models' performance; 5) Controller controls the training worklow, allowing for early stopping and model saving. These modules are decoupled and independent, making unKR highly modularized and extensible. Detailed documentation of the unKR is available at [here](https://seucoin.github.io/unKR/).
 
 unKR core development team will provide long-term technical support, and developers are welcome to discuss the work and initiate questions using `issue`.
 
 
 
 <h3 align="center">
-    <img src="pics/unKR.svg", width=1000">
+    <img src="pics/unKR.svg", width="1000">
 </h3>
 <!-- <p align="center">
     <a href=""> <img src="pics/unKR.svg" width="1000"/></a>
@@ -32,9 +32,8 @@ unKR core development team will provide long-term technical support, and develop
 
 
 
-# 💻 Demo
-Here shows the installation process of unKR and how to train and test it, using [PASSLEAF](https://ojs.aaai.org/index.php/AAAI/article/view/16522) as an example.
-
+## 💻 Demo
+This is a demo shows the training and testing process of [PASSLEAF](https://ojs.aaai.org/index.php/AAAI/article/view/16522) model with unKR.
 <!-- ![demo](./pics/demo.gif) -->
 
 <img src="pics/demo.gif">
@@ -42,11 +41,19 @@ Here shows the installation process of unKR and how to train and test it, using 
 <!-- <img src="pics/demo.gif" width="900" height="500" align=center> -->
 
 
+## Datasets
+unKR provides three public UKG datasets including CN15K, NL27K, and PPI5K. The following table shows the source, the number of entities, relations, and facts of each dataset.
 
-# 📝 Models
-Now, there are nine uncertain knowledge graph representation learning models available. unKR has evaluated these models on three datasets with seven different evaluation metrics.
+| Dataset |   Source   | #Entity  | #Relation | #Fact |
+|:-------:|:----------:|:---------:|:---------:|:-----------:|
+|  CN15K  | ConceptNet |   15000   |    36     |   241158    |
+|  NL27K  |    NELL    |   27221   |    404    |   175412    |
+|  PPI5K  |   STRING   |   4999    |     7     |   271666    |
 
-unKR implements nine UKGE methods that partition the model based on whether it is a few-shot model or not. The available models are as below.
+
+## 📝 Models
+Now, nine uncertain knowledge graph representation learning models are available and they can be divided to two types: normal and few-shot models.
+
 
 |   Type   |                                                                                                                                                                                                                                                    Model                                                                                                                                                                                                                                                     |
 |:--------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
@@ -54,49 +61,10 @@ unKR implements nine UKGE methods that partition the model based on whether it i
 | Few-shot |                                                                                                                                                                                [GMUC](https://link.springer.com/chapter/10.1007/978-3-030-73194-6_18), [GMUC+](https://link.springer.com/chapter/10.1007/978-981-19-7596-7_2)                                                                                                                                                                                |
 
 
+## Reproduce Results
+unKR determines two tasks, confidence prediction and link prediction, to evaluate models' ability of UKG reasoning. For confidence prediction task, MSE (Mean Squared Error) and MAE (Mean Absolute Error) are reported. For link prediction task, Hits@k(k=1,3,10), MRR (Mean Reciprocal Rank), MR (Mean Rank) under both raw and filterd settings are reported.
 
-
-## Datasets
-unKR provides three different sources of UKG datasets including CN15K, NL27K, and PPI5K. The following table respectively shows the source of the datasets and the number of entities, relationships, and quaternions they contain.
-
-| Dataset |   Source   | Entities  | Relations | Quaternions |
-|:-------:|:----------:|:---------:|:---------:|:-----------:|
-|  CN15K  | ConceptNet |   15000   |    36     |   241158    |
-|  NL27K  |    NELL    |   27221   |    404    |   175412    |
-|  PPI5K  |   STRING   |   4999    |     7     |   271666    |
-
-Organize the three datasets, here are the three data files common to all models.
-
-`train.tsv`: All triples used for training and corresponding confidence scores in the format`(ent1, rel, ent2, score)`, one quaternion per line.
-
-`val.tsv`: All triples used for validation and corresponding confidence scores in the format`(ent1, rel, ent2, score)`, one quaternion per line.
-
-`test.tsv`: All triples used for testing and corresponding confidence scores in the format`(ent1, rel, ent2, score)`, one quaternion per line.
-
-In [UKGE](https://ojs.aaai.org/index.php/AAAI/article/view/4210), the`softlogic.tsv`file is also required.
-
-`softlogic.tsv`: All triples inferred by PSL rule and corresponding inferred confidence scores in the format`(ent1, rel, ent2, score)`, one quaternion per line.
-
-In [GMUC](https://link.springer.com/chapter/10.1007/978-3-030-73194-6_18), [GMUC+](https://link.springer.com/chapter/10.1007/978-981-19-7596-7_2), the following five data files are also needed.
-
-`train/dev/test_tasks.json`: Few-shot dataset with one task per relation in the format`{rel:[[ent1, rel, ent2, score], ...]}`. The key of the dictionary is the task name and the values are all the quaternions under the task.
-
-`path_graph`: All data except training, validation and testing tasks, i.e. background knowledge, in the format`(ent1, rel, ent2, score)`. Each line represents a quaternion.
-
-`ontology.csv`: Ontology knowledge data required for the GMUC+ model, in the format`(number, h, rel, t)`, one ontology knowledge per line. There are four types of **rel**, which includes **is_A**, **domain**, **range**, and **type**.
-
-- c1 **is_A** c2: c1 is a **subclass** of c2;
-- c1 **domain** c2: the **definition domain** of c1 is c2;
-- c1 **range** c2: the **value domain** of c1 is c2;
-- c1 **type** c2: the **type** of c1 is c2.
-
-
-## Reproduced Results
-unKR uses confidence prediction and link prediction tasks for model evaluation in seven different metrics, MSE, MAE(confidence prediction), Hits@k(k=1,3,10), MRR, MR, WMRR, and WMR(link prediction), with raw and filter settings. 
-In addition, unKR adopts a high-confidence filter(set the filter value to 0.7) method for the evaluation.
-
-Here are the reproduced model results on NL27K dataset using unKR as below. See more results in [here](https://seucoin.github.io/unKR/result.html).
-
+Here are the reproduce results of nine models on NL27K dataset with unKR. See more results at [here](https://seucoin.github.io/unKR/result.html).
 
 ### Confidence prediction
 <table>
@@ -307,7 +275,7 @@ Here are the reproduced model results on NL27K dataset using unKR as below. See 
 
 <br>
 
-# 🛠️ Deployment
+# 🛠️ Usage
 
 ## Installation
 
@@ -332,9 +300,13 @@ pip install unKR
 ```
 
 ## Data Format
+For normal models, `train.tsv`, `val.tsv`, and `test.tsv` are required. 
+
+
+
+For few-shot models, `train_tasks.json`, `dev_tasks.json`, `test_tasks.json` and `path_graph` are required.
+
 ```
-All models:
-    train/val/test.tsv: (ent1, rel, ent2, score)
 UKGE model:
     softloic.tsv: (ent1, rel, ent2, score)
 GMUC, GMUC+ models:
@@ -342,6 +314,31 @@ GMUC, GMUC+ models:
     path_graph: (ent1, rel, ent2, score)
     ontology.csv: (number, h, rel, t)
 ```
+
+`train.tsv`: All triples used for training and corresponding confidence scores in the format`(ent1, rel, ent2, score)`, one quaternion per line.
+
+`val.tsv`: All triples used for validation and corresponding confidence scores in the format`(ent1, rel, ent2, score)`, one quaternion per line.
+
+`test.tsv`: All triples used for testing and corresponding confidence scores in the format`(ent1, rel, ent2, score)`, one quaternion per line.
+
+In [UKGE](https://ojs.aaai.org/index.php/AAAI/article/view/4210), the`softlogic.tsv`file is also required.
+
+`softlogic.tsv`: All triples inferred by PSL rule and corresponding inferred confidence scores in the format`(ent1, rel, ent2, score)`, one quaternion per line.
+
+In [GMUC](https://link.springer.com/chapter/10.1007/978-3-030-73194-6_18), [GMUC+](https://link.springer.com/chapter/10.1007/978-981-19-7596-7_2), the following five data files are also needed.
+
+`train/dev/test_tasks.json`: Few-shot dataset with one task per relation in the format`{rel:[[ent1, rel, ent2, score], ...]}`. The key of the dictionary is the task name and the values are all the quaternions under the task.
+
+`path_graph`: All data except training, validation and testing tasks, i.e. background knowledge, in the format`(ent1, rel, ent2, score)`. Each line represents a quaternion.
+
+`ontology.csv`: Ontology knowledge data required for the GMUC+ model, in the format`(number, h, rel, t)`, one ontology knowledge per line. There are four types of **rel**, which includes **is_A**, **domain**, **range**, and **type**.
+
+- c1 **is_A** c2: c1 is a **subclass** of c2;
+- c1 **domain** c2: the **definition domain** of c1 is c2;
+- c1 **range** c2: the **value domain** of c1 is c2;
+- c1 **type** c2: the **type** of c1 is c2.
+
+
 
 ## Parameter Adjustment
 In the [config](https://github.com/seucoin/unKR/tree/main/config) file, we provide parameter profiles of the reproduced results, and the following parameters can be adjusted for specific use.
