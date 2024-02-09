@@ -982,8 +982,8 @@ numeric edge attributes into the scoring layer of a traditional knowledge graph 
 <dt class="sig sig-object py" id="unKR.model.NSSModel.PASSLEAF.PASSLEAF.score_func">
 <span class="sig-name descname"><span class="pre">score_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">head_emb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relation_emb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tail_emb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unKR/model/NSSModel/PASSLEAF.html#PASSLEAF.score_func"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unKR.model.NSSModel.PASSLEAF.PASSLEAF.score_func" title="Permalink to this definition"></a></dt>
 <dd><p>Calculating the score of triples.</p>
-<p>The formula for calculating the score of DistMult is <span class="math notranslate nohighlight">\(h' \operatorname{diag}(r) t\)</span>.</p>
-<p>The formula for calculating the score of ComplEx is <span class="math notranslate nohighlight">\(\Re(h' \operatorname{diag}(r) \overline{t})\)</span>.</p>
+<p>The formula for calculating the score of DistMult is <span class="math notranslate nohighlight">\(h^{T} \operatorname{diag}(r) t\)</span>.</p>
+<p>The formula for calculating the score of ComplEx is <span class="math notranslate nohighlight">\(Re(h^{T} \operatorname{diag}(r) \overline{t})\)</span>.</p>
 <p>The formula for calculating the score of RotatE is <span class="math notranslate nohighlight">\(\gamma - \|h \circ r - t\|\)</span></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>

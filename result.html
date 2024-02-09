@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Results &mdash; unKR 0.9 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=4bb55277" />
+  <title>Results &mdash; unKR 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
 
   
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="_static/jquery.js?v=5d32c60e"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=c3a2daa6"></script>
-        <script src="_static/doctools.js?v=888ff710"></script>
-        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -38,7 +38,7 @@
             unKR
           </a>
               <div class="version">
-                0.9.1
+                1.0.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -55,19 +55,31 @@
 <p class="caption" role="heading"><span class="caption-text">Experiment Result</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Results</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#cn15k">cn15k</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#raw">Raw</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#filter">Filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cn15k">CN15K</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#confidence-prediction">Confidence prediction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#link-prediction">Link prediction</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#all-test-data">All test data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#only-high-confidence-test-data">Only high-confidence test data</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#nl27k">nl27k</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">Raw</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">Filter</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#ppi5k">ppi5k</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id3">Raw</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">Filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nl27k">NL27K</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Confidence prediction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Link prediction</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">All test data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">Only high-confidence test data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ppi5k">PPI5K</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id11">Confidence prediction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">Link prediction</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id13">All test data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id16">Only high-confidence test data</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -108,1857 +120,1894 @@
              
   <section id="results">
 <h1>Results<a class="headerlink" href="#results" title="Permalink to this heading"></a></h1>
-<p>There are some reproduced model results using unKR</p>
+<p>There are some reproduced model results using unKR.</p>
 <section id="cn15k">
-<h2>cn15k<a class="headerlink" href="#cn15k" title="Permalink to this heading"></a></h2>
+<h2>CN15K<a class="headerlink" href="#cn15k" title="Permalink to this heading"></a></h2>
+<section id="confidence-prediction">
+<h3>Confidence prediction<a class="headerlink" href="#confidence-prediction" title="Permalink to this heading"></a></h3>
+<table>
+    <thead>
+    <tr>
+        <th>Type</th>
+        <th>Model</th>
+        <th>MSE</th>
+        <th>MAE</th>
+    </tr>
+    </thead>
+    <tbody align="center" valign="center">
+    <tr>
+        <td rowspan="10">Normal</td>
+        <td>BEUrRE</td>
+        <td>0.11656 </td>
+        <td>0.28259 </td>
+    </tr>
+    <tr>
+        <td>PASSLEAF_ComplEx</td>
+        <td>0.23095 </td>
+        <td>0.39970 </td>
+    </tr>
+    <tr>
+        <td>PASSLEAF_DistMult</td>
+        <td>0.21575 </td>
+        <td>0.37923 </td>
+    </tr>
+    <tr>
+        <td>PASSLEAF_RotatE</td>
+        <td>0.09375 </td>
+        <td>0.24801 </td>
+    </tr>
+    <tr>
+        <td>UKGElogi</td>
+        <td>0.24635 </td>
+        <td>0.40864  </td>
+    </tr>
+    <tr>
+        <td>UKGElogiPSL</td>
+        <td>0.24630 </td>
+        <td>0.40881  </td>
+    </tr>
+    <tr>
+        <td>UKGErect</td>
+        <td>0.20166 </td>
+        <td>0.36380  </td>
+    </tr>
+    <tr>
+        <td>UKGErectPSL</td>
+        <td>0.19988 </td>
+        <td>0.36206 </td>
+    </tr>
+    <tr>
+        <td>UKGsE</td>
+        <td>0.10274 </td>
+        <td>0.25564 </td>
+    </tr>
+    <tr>
+        <td>UPGAT</td>
+        <td>0.14933 </td>
+        <td>0.30796 </td>
+    </tr>
+    <tr>
+        <td>Few-shot</td>
+        <td>GMUC</td>
+        <td>0.01700 </td>
+        <td>0.10400</td>
+    </tr>
+    </tbody>
+</table></section>
+<section id="link-prediction">
+<h3>Link prediction<a class="headerlink" href="#link-prediction" title="Permalink to this heading"></a></h3>
+<section id="all-test-data">
+<h4>All test data<a class="headerlink" href="#all-test-data" title="Permalink to this heading"></a></h4>
 <section id="raw">
-<h3>Raw<a class="headerlink" href="#raw" title="Permalink to this heading"></a></h3>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th style="text-align: center;">Model</th>
-<th style="text-align: center;">Confidence Filter(0.7)</th>
-<th style="text-align: center;">MSE</th>
-<th style="text-align: center;">MAE</th>
-<th style="text-align: center;">Hits@1</th>
-<th style="text-align: center;">Hits@3</th>
-<th style="text-align: center;">Hits@10</th>
-<th style="text-align: center;">MRR</th>
-<th style="text-align: center;">MR</th>
-<th style="text-align: center;">WMRR</th>
-<th style="text-align: center;">WMR</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">BEUrRE</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.116559997</td>
-<td style="text-align: center;">0.282590985</td>
-<td style="text-align: center;">0.01100</td>
-<td style="text-align: center;">0.13000</td>
-<td style="text-align: center;">0.28000</td>
-<td style="text-align: center;">0.10000</td>
-<td style="text-align: center;">891.06500</td>
-<td style="text-align: center;">0.10200</td>
-<td style="text-align: center;">869.28800</td>
-</tr>
-<tr>
-<td style="text-align: center;">BEUrRE</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.116559997</td>
-<td style="text-align: center;">0.282590985</td>
-<td style="text-align: center;">0.03000</td>
-<td style="text-align: center;">0.12700</td>
-<td style="text-align: center;">0.24800</td>
-<td style="text-align: center;">0.10300</td>
-<td style="text-align: center;">1041.15700</td>
-<td style="text-align: center;">0.11200</td>
-<td style="text-align: center;">916.68900</td>
-</tr>
-<tr>
-<td style="text-align: center;">FocusE</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">83.32640839</td>
-<td style="text-align: center;">6.704373837</td>
-<td style="text-align: center;">0.08100</td>
-<td style="text-align: center;">0.17500</td>
-<td style="text-align: center;">0.31900</td>
-<td style="text-align: center;">0.15700</td>
-<td style="text-align: center;">1691.03800</td>
-<td style="text-align: center;">0.16000</td>
-<td style="text-align: center;">1643.83300</td>
-</tr>
-<tr>
-<td style="text-align: center;">FocusE</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">83.32640839</td>
-<td style="text-align: center;">6.704373837</td>
-<td style="text-align: center;">0.09000</td>
-<td style="text-align: center;">0.16800</td>
-<td style="text-align: center;">0.28800</td>
-<td style="text-align: center;">0.15400</td>
-<td style="text-align: center;">1760.52400</td>
-<td style="text-align: center;">0.16800</td>
-<td style="text-align: center;">1629.57500</td>
-</tr>
-<tr>
-<td style="text-align: center;">GMUC</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.01700</td>
-<td style="text-align: center;">0.10900</td>
-<td style="text-align: center;">0.00200</td>
-<td style="text-align: center;">0.00800</td>
-<td style="text-align: center;">0.05600</td>
-<td style="text-align: center;">0.02800</td>
-<td style="text-align: center;">96.91500</td>
-<td style="text-align: center;">0.02800</td>
-<td style="text-align: center;">96.94200</td>
-</tr>
-<tr>
-<td style="text-align: center;">GMUC</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.01700</td>
-<td style="text-align: center;">0.10400</td>
-<td style="text-align: center;">0.12800</td>
-<td style="text-align: center;">0.16600</td>
-<td style="text-align: center;">0.23200</td>
-<td style="text-align: center;">0.17200</td>
-<td style="text-align: center;">78.76800</td>
-<td style="text-align: center;">0.16800</td>
-<td style="text-align: center;">79.02400</td>
-</tr>
-<tr>
-<td style="text-align: center;">GTransE</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">18.87849</td>
-<td style="text-align: center;">4.12786</td>
-<td style="text-align: center;">0.015953001</td>
-<td style="text-align: center;">0.107601002</td>
-<td style="text-align: center;">0.226449996</td>
-<td style="text-align: center;">0.086833</td>
-<td style="text-align: center;">957.6098633</td>
-<td style="text-align: center;">0.089041002</td>
-<td style="text-align: center;">931.9691162</td>
-</tr>
-<tr>
-<td style="text-align: center;">GTransE</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">18.87849</td>
-<td style="text-align: center;">4.12786</td>
-<td style="text-align: center;">0.042658001</td>
-<td style="text-align: center;">0.112061001</td>
-<td style="text-align: center;">0.207380995</td>
-<td style="text-align: center;">0.098444998</td>
-<td style="text-align: center;">1114.496216</td>
-<td style="text-align: center;">0.104622997</td>
-<td style="text-align: center;">978.835022</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(ComplEx)</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.230945006</td>
-<td style="text-align: center;">0.399697006</td>
-<td style="text-align: center;">0.05800</td>
-<td style="text-align: center;">0.14600</td>
-<td style="text-align: center;">0.30300</td>
-<td style="text-align: center;">0.13400</td>
-<td style="text-align: center;">1146.74900</td>
-<td style="text-align: center;">0.13600</td>
-<td style="text-align: center;">1110.41400</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(ComplEx)</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.230945006</td>
-<td style="text-align: center;">0.399697006</td>
-<td style="text-align: center;">0.05800</td>
-<td style="text-align: center;">0.13100</td>
-<td style="text-align: center;">0.26200</td>
-<td style="text-align: center;">0.12200</td>
-<td style="text-align: center;">1175.95000</td>
-<td style="text-align: center;">0.13600</td>
-<td style="text-align: center;">1099.12600</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(DistMult)</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.21575</td>
-<td style="text-align: center;">0.379233003</td>
-<td style="text-align: center;">0.05700</td>
-<td style="text-align: center;">0.14100</td>
-<td style="text-align: center;">0.28100</td>
-<td style="text-align: center;">0.12800</td>
-<td style="text-align: center;">1111.19100</td>
-<td style="text-align: center;">0.13100</td>
-<td style="text-align: center;">1085.56400</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(DistMult)</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.21575</td>
-<td style="text-align: center;">0.379233003</td>
-<td style="text-align: center;">0.05700</td>
-<td style="text-align: center;">0.12600</td>
-<td style="text-align: center;">0.24400</td>
-<td style="text-align: center;">0.11700</td>
-<td style="text-align: center;">1203.59800</td>
-<td style="text-align: center;">0.13100</td>
-<td style="text-align: center;">1092.16200</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(RotatE)</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.093751997</td>
-<td style="text-align: center;">0.248007998</td>
-<td style="text-align: center;">0.01000</td>
-<td style="text-align: center;">0.13100</td>
-<td style="text-align: center;">0.28900</td>
-<td style="text-align: center;">0.10100</td>
-<td style="text-align: center;">761.38900</td>
-<td style="text-align: center;">0.10400</td>
-<td style="text-align: center;">738.02400</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(RotatE)</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.093751997</td>
-<td style="text-align: center;">0.248007998</td>
-<td style="text-align: center;">0.02900</td>
-<td style="text-align: center;">0.12600</td>
-<td style="text-align: center;">0.25200</td>
-<td style="text-align: center;">0.10300</td>
-<td style="text-align: center;">1020.15400</td>
-<td style="text-align: center;">0.11200</td>
-<td style="text-align: center;">832.61100</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGE</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.246354997</td>
-<td style="text-align: center;">0.408643007</td>
-<td style="text-align: center;">0.05300</td>
-<td style="text-align: center;">0.12700</td>
-<td style="text-align: center;">0.23700</td>
-<td style="text-align: center;">0.11300</td>
-<td style="text-align: center;">1515.95100</td>
-<td style="text-align: center;">0.11500</td>
-<td style="text-align: center;">1479.85700</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGE</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.246354997</td>
-<td style="text-align: center;">0.408643007</td>
-<td style="text-align: center;">0.05600</td>
-<td style="text-align: center;">0.11600</td>
-<td style="text-align: center;">0.20900</td>
-<td style="text-align: center;">0.10600</td>
-<td style="text-align: center;">1616.04100</td>
-<td style="text-align: center;">0.14200</td>
-<td style="text-align: center;">1467.33600</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGE(PSL)</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.246304005</td>
-<td style="text-align: center;">0.408809006</td>
-<td style="text-align: center;">0.04900</td>
-<td style="text-align: center;">0.12400</td>
-<td style="text-align: center;">0.24000</td>
-<td style="text-align: center;">0.11100</td>
-<td style="text-align: center;">1483.42800</td>
-<td style="text-align: center;">0.11300</td>
-<td style="text-align: center;">1447.76300</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGE(PSL)</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.246304005</td>
-<td style="text-align: center;">0.408809006</td>
-<td style="text-align: center;">0.05200</td>
-<td style="text-align: center;">0.11400</td>
-<td style="text-align: center;">0.21000</td>
-<td style="text-align: center;">0.10400</td>
-<td style="text-align: center;">1581.75900</td>
-<td style="text-align: center;">0.11600</td>
-<td style="text-align: center;">1446.81900</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGsE</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.102736004</td>
-<td style="text-align: center;">0.255641013</td>
-<td style="text-align: center;">0.001595</td>
-<td style="text-align: center;">0.00678</td>
-<td style="text-align: center;">0.021217</td>
-<td style="text-align: center;">0.01128</td>
-<td style="text-align: center;">1719.268677</td>
-<td style="text-align: center;">0.011713</td>
-<td style="text-align: center;">1689.56189</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGsE</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.102736004</td>
-<td style="text-align: center;">0.255641013</td>
-<td style="text-align: center;">0.001503</td>
-<td style="text-align: center;">0.00622</td>
-<td style="text-align: center;">0.019695999</td>
-<td style="text-align: center;">0.01021</td>
-<td style="text-align: center;">1949.593506</td>
-<td style="text-align: center;">0.011458</td>
-<td style="text-align: center;">1769.067261</td>
-</tr>
-<tr>
-<td style="text-align: center;">UPGAT</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.14933</td>
-<td style="text-align: center;">0.30796</td>
-<td style="text-align: center;">0.04200</td>
-<td style="text-align: center;">0.12100</td>
-<td style="text-align: center;">0.26200</td>
-<td style="text-align: center;">0.11100</td>
-<td style="text-align: center;">1082.81800</td>
-<td style="text-align: center;">0.11300</td>
-<td style="text-align: center;">1049.43100</td>
-</tr>
-<tr>
-<td style="text-align: center;">UPGAT</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.14933</td>
-<td style="text-align: center;">0.30796</td>
-<td style="text-align: center;">0.03700</td>
-<td style="text-align: center;">0.10800</td>
-<td style="text-align: center;">0.22600</td>
-<td style="text-align: center;">0.09800</td>
-<td style="text-align: center;">1199.50300</td>
-<td style="text-align: center;">0.11000</td>
-<td style="text-align: center;">1060.36600</td>
-</tr>
-</tbody>
+<h5>Raw<a class="headerlink" href="#raw" title="Permalink to this heading"></a></h5>
+<table>
+    <thead>
+    <tr>
+        <th>Type</th>
+        <th>Model</th>
+        <th>Hits@1</th>
+        <th>Hits@3</th>
+        <th>Hits@10</th>
+        <th>MRR</th>
+        <th>MR</th>
+        <th>WMRR</th>
+        <th>WMR </th>
+    </tr>
+    </thead>
+    <tbody align="center" valign="center">
+    <tr>
+        <td rowspan="12">Normal</td>
+        <td>BEUrRE</td>
+        <td>0.030 </td>
+        <td>0.127 </td>
+        <td>0.248 </td>
+        <td>0.103 </td>
+        <td>1041.157 </td>
+        <td>0.112 </td>
+        <td>916.689  </td>
+    </tr>
+    <tr>
+        <td>FocusE</td>
+        <td>0.090 </td>
+        <td>0.168 </td>
+        <td>0.288 </td>
+        <td>0.154 </td>
+        <td>1760.524 </td>
+        <td>0.168 </td>
+        <td>1629.575  </td>
+    </tr>
+    <tr>
+        <td>GTransE</td>
+        <td>0.043 </td>
+        <td>0.112 </td>
+        <td>0.207 </td>
+        <td>0.098 </td>
+        <td>1114.496 </td>
+        <td>0.105 </td>
+        <td>978.835  </td>
+    </tr>
+    <tr>
+        <td>PASSLEAF_ComplEx</td>
+        <td>0.058 </td>
+        <td>0.131 </td>
+        <td>0.262 </td>
+        <td>0.122 </td>
+        <td>1175.950 </td>
+        <td>0.136 </td>
+        <td>1099.126  </td>
+    </tr>
+    <tr>
+        <td>PASSLEAF_DistMult</td>
+        <td>0.057 </td>
+        <td>0.126 </td>
+        <td>0.244 </td>
+        <td>0.117 </td>
+        <td>1203.598 </td>
+        <td>0.131 </td>
+        <td>1092.162  </td>
+    </tr>
+    <tr>
+        <td>PASSLEAF_RotatE</td>
+        <td>0.029 </td>
+        <td>0.126 </td>
+        <td>0.252 </td>
+        <td>0.103 </td>
+        <td>1020.154 </td>
+        <td>0.112 </td>
+        <td>832.611  </td>
+    </tr>
+    <tr>
+        <td>UKGElogi</td>
+        <td>0.056 </td>
+        <td>0.116 </td>
+        <td>0.209 </td>
+        <td>0.106 </td>
+        <td>1616.041 </td>
+        <td>0.142 </td>
+        <td>1467.336  </td>
+    </tr>
+    <tr>
+        <td>UKGElogiPSL</td>
+        <td>0.052 </td>
+        <td>0.114 </td>
+        <td>0.210 </td>
+        <td>0.104 </td>
+        <td>1581.759 </td>
+        <td>0.116 </td>
+        <td>1446.819  </td>
+    </tr>
+    <tr>
+        <td>UKGErect</td>
+        <td>0.048 </td>
+        <td>0.105 </td>
+        <td>0.196 </td>
+        <td>0.097 </td>
+        <td>1919.389 </td>
+        <td>0.106 </td>
+        <td>1765.940  </td>
+    </tr>
+    <tr>
+        <td>UKGErectPSL</td>
+        <td>0.044 </td>
+        <td>0.104 </td>
+        <td>0.203 </td>
+        <td>0.095 </td>
+        <td>1840.382 </td>
+        <td>0.105 </td>
+        <td>1690.639 </td>
+    </tr>
+    <tr>
+        <td>UKGsE</td>
+        <td>0.002 </td>
+        <td>0.006 </td>
+        <td>0.020 </td>
+        <td>0.010 </td>
+        <td>1949.594 </td>
+        <td>0.011 </td>
+        <td>1769.067  </td>
+    </tr>
+    <tr>
+        <td>UPGAT</td>
+        <td>0.037 </td>
+        <td>0.108 </td>
+        <td>0.226 </td>
+        <td>0.098 </td>
+        <td>1199.503 </td>
+        <td>0.110 </td>
+        <td>1060.366  </td>
+    </tr>
+    <tr>
+        <td>Few-shot</td>
+        <td>GMUC</td>
+        <td>0.128 </td>
+        <td>0.166 </td>
+        <td>0.232 </td>
+        <td>0.172 </td>
+        <td>78.768 </td>
+        <td>0.168 </td>
+        <td>79.024  </td>
+    </tr>
+    </tbody>
 </table></section>
 <section id="filter">
-<h3>Filter<a class="headerlink" href="#filter" title="Permalink to this heading"></a></h3>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th style="text-align: center;">Model</th>
-<th style="text-align: center;">Confidence Filter(0.7)</th>
-<th style="text-align: center;">MSE</th>
-<th style="text-align: center;">MAE</th>
-<th style="text-align: center;">Hits@1</th>
-<th style="text-align: center;">Hits@3</th>
-<th style="text-align: center;">Hits@10</th>
-<th style="text-align: center;">MRR</th>
-<th style="text-align: center;">MR</th>
-<th style="text-align: center;">WMRR</th>
-<th style="text-align: center;">WMR</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">BEUrRE</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.116559997</td>
-<td style="text-align: center;">0.282590985</td>
-<td style="text-align: center;">0.01700</td>
-<td style="text-align: center;">0.18800</td>
-<td style="text-align: center;">0.31700</td>
-<td style="text-align: center;">0.12500</td>
-<td style="text-align: center;">881.97000</td>
-<td style="text-align: center;">0.12800</td>
-<td style="text-align: center;">860.37000</td>
-</tr>
-<tr>
-<td style="text-align: center;">BEUrRE</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.116559997</td>
-<td style="text-align: center;">0.282590985</td>
-<td style="text-align: center;">0.03900</td>
-<td style="text-align: center;">0.17500</td>
-<td style="text-align: center;">0.28500</td>
-<td style="text-align: center;">0.12800</td>
-<td style="text-align: center;">1026.46500</td>
-<td style="text-align: center;">0.13800</td>
-<td style="text-align: center;">905.26700</td>
-</tr>
-<tr>
-<td style="text-align: center;">FocusE</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">83.32640839</td>
-<td style="text-align: center;">6.704373837</td>
-<td style="text-align: center;">0.16900</td>
-<td style="text-align: center;">0.27400</td>
-<td style="text-align: center;">0.38000</td>
-<td style="text-align: center;">0.24200</td>
-<td style="text-align: center;">1678.48700</td>
-<td style="text-align: center;">0.24700</td>
-<td style="text-align: center;">1631.42600</td>
-</tr>
-<tr>
-<td style="text-align: center;">FocusE</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">83.32640839</td>
-<td style="text-align: center;">6.704373837</td>
-<td style="text-align: center;">0.16400</td>
-<td style="text-align: center;">0.25400</td>
-<td style="text-align: center;">0.34900</td>
-<td style="text-align: center;">0.22800</td>
-<td style="text-align: center;">1740.28800</td>
-<td style="text-align: center;">0.25000</td>
-<td style="text-align: center;">1613.61000</td>
-</tr>
-<tr>
-<td style="text-align: center;">GMUC</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.01700</td>
-<td style="text-align: center;">0.10900</td>
-<td style="text-align: center;">0.00200</td>
-<td style="text-align: center;">0.00800</td>
-<td style="text-align: center;">0.05700</td>
-<td style="text-align: center;">0.02900</td>
-<td style="text-align: center;">95.80600</td>
-<td style="text-align: center;">0.02900</td>
-<td style="text-align: center;">95.80500</td>
-</tr>
-<tr>
-<td style="text-align: center;">GMUC</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.01700</td>
-<td style="text-align: center;">0.10400</td>
-<td style="text-align: center;">0.12800</td>
-<td style="text-align: center;">0.16700</td>
-<td style="text-align: center;">0.23200</td>
-<td style="text-align: center;">0.17300</td>
-<td style="text-align: center;">77.69500</td>
-<td style="text-align: center;">0.17100</td>
-<td style="text-align: center;">77.92600</td>
-</tr>
-<tr>
-<td style="text-align: center;">GTransE</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">18.87849</td>
-<td style="text-align: center;">4.12786</td>
-<td style="text-align: center;">0.025604</td>
-<td style="text-align: center;">0.129297003</td>
-<td style="text-align: center;">0.243200004</td>
-<td style="text-align: center;">0.101469003</td>
-<td style="text-align: center;">949.3557739</td>
-<td style="text-align: center;">0.104203001</td>
-<td style="text-align: center;">923.8496094</td>
-</tr>
-<tr>
-<td style="text-align: center;">GTransE</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">18.87849</td>
-<td style="text-align: center;">4.12786</td>
-<td style="text-align: center;">0.049759001</td>
-<td style="text-align: center;">0.129270002</td>
-<td style="text-align: center;">0.222671002</td>
-<td style="text-align: center;">0.110189997</td>
-<td style="text-align: center;">1101.196411</td>
-<td style="text-align: center;">0.118147001</td>
-<td style="text-align: center;">968.446106</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(ComplEx)</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.230945006</td>
-<td style="text-align: center;">0.399697006</td>
-<td style="text-align: center;">0.09300</td>
-<td style="text-align: center;">0.25500</td>
-<td style="text-align: center;">0.38300</td>
-<td style="text-align: center;">0.19600</td>
-<td style="text-align: center;">1135.03200</td>
-<td style="text-align: center;">0.20000</td>
-<td style="text-align: center;">1110.41400</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(ComplEx)</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.230945006</td>
-<td style="text-align: center;">0.399697006</td>
-<td style="text-align: center;">0.08600</td>
-<td style="text-align: center;">0.22300</td>
-<td style="text-align: center;">0.34000</td>
-<td style="text-align: center;">0.17500</td>
-<td style="text-align: center;">1157.33400</td>
-<td style="text-align: center;">0.19600</td>
-<td style="text-align: center;">1084.49700</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(DistMult)</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.21575</td>
-<td style="text-align: center;">0.379233003</td>
-<td style="text-align: center;">0.08300</td>
-<td style="text-align: center;">0.20400</td>
-<td style="text-align: center;">0.34000</td>
-<td style="text-align: center;">0.16900</td>
-<td style="text-align: center;">1099.70500</td>
-<td style="text-align: center;">0.17200</td>
-<td style="text-align: center;">1074.26300</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(DistMult)</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.21575</td>
-<td style="text-align: center;">0.379233003</td>
-<td style="text-align: center;">0.07800</td>
-<td style="text-align: center;">0.17800</td>
-<td style="text-align: center;">0.29600</td>
-<td style="text-align: center;">0.15100</td>
-<td style="text-align: center;">1185.32900</td>
-<td style="text-align: center;">0.17000</td>
-<td style="text-align: center;">1077.80900</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(RotatE)</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.093751997</td>
-<td style="text-align: center;">0.248007998</td>
-<td style="text-align: center;">0.01800</td>
-<td style="text-align: center;">0.18200</td>
-<td style="text-align: center;">0.32900</td>
-<td style="text-align: center;">0.12700</td>
-<td style="text-align: center;">752.46100</td>
-<td style="text-align: center;">0.13000</td>
-<td style="text-align: center;">729.27000</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(RotatE)</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.093751997</td>
-<td style="text-align: center;">0.248007998</td>
-<td style="text-align: center;">0.03700</td>
-<td style="text-align: center;">0.16700</td>
-<td style="text-align: center;">0.28800</td>
-<td style="text-align: center;">0.12500</td>
-<td style="text-align: center;">1005.76400</td>
-<td style="text-align: center;">0.13700</td>
-<td style="text-align: center;">821.43500</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGE</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.246354997</td>
-<td style="text-align: center;">0.408643007</td>
-<td style="text-align: center;">0.07400</td>
-<td style="text-align: center;">0.16400</td>
-<td style="text-align: center;">0.26600</td>
-<td style="text-align: center;">0.13900</td>
-<td style="text-align: center;">1504.80700</td>
-<td style="text-align: center;">0.14200</td>
-<td style="text-align: center;">1468.89800</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGE</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.246354997</td>
-<td style="text-align: center;">0.408643007</td>
-<td style="text-align: center;">0.07200</td>
-<td style="text-align: center;">0.14600</td>
-<td style="text-align: center;">0.23400</td>
-<td style="text-align: center;">0.12800</td>
-<td style="text-align: center;">1598.38800</td>
-<td style="text-align: center;">0.11800</td>
-<td style="text-align: center;">1481.23300</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGE(PSL)</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.246304005</td>
-<td style="text-align: center;">0.408809006</td>
-<td style="text-align: center;">0.06400</td>
-<td style="text-align: center;">0.16000</td>
-<td style="text-align: center;">0.27100</td>
-<td style="text-align: center;">0.13500</td>
-<td style="text-align: center;">1472.25500</td>
-<td style="text-align: center;">0.13700</td>
-<td style="text-align: center;">1436.77200</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGE(PSL)</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.246304005</td>
-<td style="text-align: center;">0.408809006</td>
-<td style="text-align: center;">0.06500</td>
-<td style="text-align: center;">0.14200</td>
-<td style="text-align: center;">0.23800</td>
-<td style="text-align: center;">0.12400</td>
-<td style="text-align: center;">1564.01900</td>
-<td style="text-align: center;">0.13800</td>
-<td style="text-align: center;">1432.86900</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGsE</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.102736004</td>
-<td style="text-align: center;">0.255641013</td>
-<td style="text-align: center;">0.001595</td>
-<td style="text-align: center;">0.007019</td>
-<td style="text-align: center;">0.021855</td>
-<td style="text-align: center;">0.011495</td>
-<td style="text-align: center;">1711.308228</td>
-<td style="text-align: center;">0.011936</td>
-<td style="text-align: center;">1681.697632</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGsE</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.102736004</td>
-<td style="text-align: center;">0.255641013</td>
-<td style="text-align: center;">0.001503</td>
-<td style="text-align: center;">0.006427</td>
-<td style="text-align: center;">0.020214999</td>
-<td style="text-align: center;">0.0104</td>
-<td style="text-align: center;">1936.439209</td>
-<td style="text-align: center;">0.011666</td>
-<td style="text-align: center;">1758.789795</td>
-</tr>
-<tr>
-<td style="text-align: center;">UPGAT</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.14933</td>
-<td style="text-align: center;">0.30796</td>
-<td style="text-align: center;">0.09400</td>
-<td style="text-align: center;">0.19600</td>
-<td style="text-align: center;">0.32300</td>
-<td style="text-align: center;">0.17000</td>
-<td style="text-align: center;">1067.62100</td>
-<td style="text-align: center;">0.17300</td>
-<td style="text-align: center;">1034.48500</td>
-</tr>
-<tr>
-<td style="text-align: center;">UPGAT</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.14933</td>
-<td style="text-align: center;">0.30796</td>
-<td style="text-align: center;">0.07800</td>
-<td style="text-align: center;">0.16800</td>
-<td style="text-align: center;">0.28100</td>
-<td style="text-align: center;">0.14600</td>
-<td style="text-align: center;">1177.97400</td>
-<td style="text-align: center;">0.16500</td>
-<td style="text-align: center;">1042.69500</td>
-</tr>
-</tbody>
+<h5>Filter<a class="headerlink" href="#filter" title="Permalink to this heading"></a></h5>
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Model</th>
+            <th>Hits@1</th>
+            <th>Hits@3</th>
+            <th>Hits@10</th>
+            <th>MRR</th>
+            <th>MR</th>
+            <th>WMRR</th>
+            <th>WMR </th>
+        </tr>
+    </thead>
+    <tbody align="center" valign="center">
+        <tr>
+            <td rowspan="12">Normal</td>
+            <td>BEUrRE</td>
+            <td>0.039 </td>
+            <td>0.175 </td>
+            <td>0.285 </td>
+            <td>0.128 </td>
+            <td>1026.465 </td>
+            <td>0.138 </td>
+            <td>905.267  </td>
+        </tr>
+        <tr>
+            <td>FocusE</td>
+            <td>0.164 </td>
+            <td>0.254 </td>
+            <td>0.349 </td>
+            <td>0.228 </td>
+            <td>1740.288 </td>
+            <td>0.250 </td>
+            <td>1613.610  </td>
+        </tr>
+        <tr>
+            <td>GTransE</td>
+            <td>0.050 </td>
+            <td>0.129 </td>
+            <td>0.223 </td>
+            <td>0.110 </td>
+            <td>1101.196 </td>
+            <td>0.118 </td>
+            <td>968.446  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_ComplEx</td>
+            <td>0.086 </td>
+            <td>0.223 </td>
+            <td>0.340 </td>
+            <td>0.175 </td>
+            <td>1157.334 </td>
+            <td>0.196 </td>
+            <td>1084.497  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_DistMult</td>
+            <td>0.078 </td>
+            <td>0.178 </td>
+            <td>0.296 </td>
+            <td>0.151 </td>
+            <td>1185.329 </td>
+            <td>0.170 </td>
+            <td>1077.809  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_RotatE</td>
+            <td>0.037 </td>
+            <td>0.167 </td>
+            <td>0.288 </td>
+            <td>0.125 </td>
+            <td>1005.764 </td>
+            <td>0.137 </td>
+            <td>821.435  </td>
+        </tr>
+        <tr>
+        <td>UKGElogi</td>
+        <td>0.072 </td>
+        <td>0.146 </td>
+        <td>0.234 </td>
+        <td>0.128 </td>
+        <td>1598.388 </td>
+        <td>0.118 </td>
+        <td>1481.233  </td>
+    </tr>
+    <tr>
+        <td>UKGElogiPSL</td>
+        <td>0.065 </td>
+        <td>0.142 </td>
+        <td>0.238 </td>
+        <td>0.124 </td>
+        <td>1564.019 </td>
+        <td>0.138 </td>
+        <td>1432.869  </td>
+    </tr>
+    <tr>
+        <td>UKGErect</td>
+        <td>0.060 </td>
+        <td>0.132 </td>
+        <td>0.221 </td>
+        <td>0.115 </td>
+        <td>1902.673 </td>
+        <td>0.127 </td>
+        <td>1752.800  </td>
+    </tr>
+    <tr>
+        <td>UKGErectPSL</td>
+        <td>0.053 </td>
+        <td>0.133 </td>
+        <td>0.229 </td>
+        <td>0.113 </td>
+        <td>1823.650 </td>
+        <td>0.124 </td>
+        <td>1677.477 </td>
+    </tr>
+        <tr>
+            <td>UKGsE</td>
+            <td>0.002 </td>
+            <td>0.006 </td>
+            <td>0.020 </td>
+            <td>0.010 </td>
+            <td>1936.439 </td>
+            <td>0.012 </td>
+            <td>1758.790  </td>
+        </tr>
+        <tr>
+            <td>UPGAT</td>
+            <td>0.078 </td>
+            <td>0.168 </td>
+            <td>0.281 </td>
+            <td>0.146 </td>
+            <td>1177.974 </td>
+            <td>0.165 </td>
+            <td>1042.695  </td>
+        </tr>
+        <tr>
+            <td>Few-shot</td>
+            <td>GMUC</td>
+            <td>0.128 </td>
+            <td>0.167 </td>
+            <td>0.232 </td>
+            <td>0.173 </td>
+            <td>77.695 </td>
+            <td>0.171 </td>
+            <td>77.926  </td>
+        </tr>
+    </tbody>
 </table></section>
 </section>
-<section id="nl27k">
-<h2>nl27k<a class="headerlink" href="#nl27k" title="Permalink to this heading"></a></h2>
+<section id="only-high-confidence-test-data">
+<h4>Only high-confidence test data<a class="headerlink" href="#only-high-confidence-test-data" title="Permalink to this heading"></a></h4>
 <section id="id1">
-<h3>Raw<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th style="text-align: center;">Model</th>
-<th style="text-align: center;">Confidence Filter(0.7)</th>
-<th style="text-align: center;">MSE</th>
-<th style="text-align: center;">MAE</th>
-<th style="text-align: center;">Hits@1</th>
-<th style="text-align: center;">Hits@3</th>
-<th style="text-align: center;">Hits@10</th>
-<th style="text-align: center;">MRR</th>
-<th style="text-align: center;">MR</th>
-<th style="text-align: center;">WMRR</th>
-<th style="text-align: center;">WMR</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">BEUrRE</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.089199997</td>
-<td style="text-align: center;">0.221935004</td>
-<td style="text-align: center;">0.114580996</td>
-<td style="text-align: center;">0.294553995</td>
-<td style="text-align: center;">0.436170012</td>
-<td style="text-align: center;">0.231920004</td>
-<td style="text-align: center;">549.5641479</td>
-<td style="text-align: center;">0.237371996</td>
-<td style="text-align: center;">532.7346802</td>
-</tr>
-<tr>
-<td style="text-align: center;">BEUrRE</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.089199997</td>
-<td style="text-align: center;">0.221935004</td>
-<td style="text-align: center;">0.086361997</td>
-<td style="text-align: center;">0.236710995</td>
-<td style="text-align: center;">0.357560009</td>
-<td style="text-align: center;">0.186324</td>
-<td style="text-align: center;">937.3199463</td>
-<td style="text-align: center;">0.211959004</td>
-<td style="text-align: center;">745.0280762</td>
-</tr>
-<tr>
-<td style="text-align: center;">FocusE</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">1704.796143</td>
-<td style="text-align: center;">32.64796448</td>
-<td style="text-align: center;">0.393422008</td>
-<td style="text-align: center;">0.53679502</td>
-<td style="text-align: center;">0.659085989</td>
-<td style="text-align: center;">0.48723501</td>
-<td style="text-align: center;">436.3726196</td>
-<td style="text-align: center;">0.490559012</td>
-<td style="text-align: center;">430.8166809</td>
-</tr>
-<tr>
-<td style="text-align: center;">FocusE</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">1704.796143</td>
-<td style="text-align: center;">32.64796448</td>
-<td style="text-align: center;">0.372880012</td>
-<td style="text-align: center;">0.517742991</td>
-<td style="text-align: center;">0.646003008</td>
-<td style="text-align: center;">0.468558997</td>
-<td style="text-align: center;">515.3634033</td>
-<td style="text-align: center;">0.480058998</td>
-<td style="text-align: center;">473.3652649</td>
-</tr>
-<tr>
-<td style="text-align: center;">GMUC</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.01200</td>
-<td style="text-align: center;">0.08200</td>
-<td style="text-align: center;">0.28100</td>
-<td style="text-align: center;">0.40000</td>
-<td style="text-align: center;">0.54000</td>
-<td style="text-align: center;">0.36800</td>
-<td style="text-align: center;">62.00500</td>
-<td style="text-align: center;">0.36800</td>
-<td style="text-align: center;">61.84900</td>
-</tr>
-<tr>
-<td style="text-align: center;">GMUC</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.01300</td>
-<td style="text-align: center;">0.08200</td>
-<td style="text-align: center;">0.28700</td>
-<td style="text-align: center;">0.40900</td>
-<td style="text-align: center;">0.53600</td>
-<td style="text-align: center;">0.37500</td>
-<td style="text-align: center;">71.48400</td>
-<td style="text-align: center;">0.37500</td>
-<td style="text-align: center;">71.44700</td>
-</tr>
-<tr>
-<td style="text-align: center;">GMUC+</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.01500</td>
-<td style="text-align: center;">0.10200</td>
-<td style="text-align: center;">0.29000</td>
-<td style="text-align: center;">0.42000</td>
-<td style="text-align: center;">0.57300</td>
-<td style="text-align: center;">0.43800</td>
-<td style="text-align: center;">45.77400</td>
-<td style="text-align: center;">0.38400</td>
-<td style="text-align: center;">49.80800</td>
-</tr>
-<tr>
-<td style="text-align: center;">GMUC+</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.01300</td>
-<td style="text-align: center;">0.08600</td>
-<td style="text-align: center;">0.29900</td>
-<td style="text-align: center;">0.44800</td>
-<td style="text-align: center;">0.58200</td>
-<td style="text-align: center;">0.40100</td>
-<td style="text-align: center;">49.41800</td>
-<td style="text-align: center;">0.40100</td>
-<td style="text-align: center;">49.10700</td>
-</tr>
-<tr>
-<td style="text-align: center;">GTransE</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">39.83544</td>
-<td style="text-align: center;">5.12528</td>
-<td style="text-align: center;">0.16800</td>
-<td style="text-align: center;">0.28700</td>
-<td style="text-align: center;">0.40700</td>
-<td style="text-align: center;">0.25000</td>
-<td style="text-align: center;">1434.63400</td>
-<td style="text-align: center;">0.25300</td>
-<td style="text-align: center;">1435.39700</td>
-</tr>
-<tr>
-<td style="text-align: center;">GTransE</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">39.83544</td>
-<td style="text-align: center;">5.12528</td>
-<td style="text-align: center;">0.13674</td>
-<td style="text-align: center;">0.24476</td>
-<td style="text-align: center;">0.35250</td>
-<td style="text-align: center;">0.21145</td>
-<td style="text-align: center;">2014.54199</td>
-<td style="text-align: center;">0.23173</td>
-<td style="text-align: center;">1749.63757</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(ComplEx)</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.024344999</td>
-<td style="text-align: center;">0.051764</td>
-<td style="text-align: center;">0.405427009</td>
-<td style="text-align: center;">0.543724</td>
-<td style="text-align: center;">0.661916971</td>
-<td style="text-align: center;">0.49624601</td>
-<td style="text-align: center;">184.4302216</td>
-<td style="text-align: center;">0.501959026</td>
-<td style="text-align: center;">182.8567352</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(ComplEx)</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.024344999</td>
-<td style="text-align: center;">0.051764</td>
-<td style="text-align: center;">0.372880012</td>
-<td style="text-align: center;">0.507838011</td>
-<td style="text-align: center;">0.62598002</td>
-<td style="text-align: center;">0.462505996</td>
-<td style="text-align: center;">222.9876709</td>
-<td style="text-align: center;">0.482890993</td>
-<td style="text-align: center;">204.1585846</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(DistMult)</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.023089999</td>
-<td style="text-align: center;">0.051066</td>
-<td style="text-align: center;">0.399278015</td>
-<td style="text-align: center;">0.53747803</td>
-<td style="text-align: center;">0.658012986</td>
-<td style="text-align: center;">0.490554988</td>
-<td style="text-align: center;">184.2464447</td>
-<td style="text-align: center;">0.496309012</td>
-<td style="text-align: center;">182.1270447</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(DistMult)</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.023089999</td>
-<td style="text-align: center;">0.051066</td>
-<td style="text-align: center;">0.368676007</td>
-<td style="text-align: center;">0.501568019</td>
-<td style="text-align: center;">0.621562004</td>
-<td style="text-align: center;">0.45787999</td>
-<td style="text-align: center;">214.0929108</td>
-<td style="text-align: center;">0.477825999</td>
-<td style="text-align: center;">198.7584991</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(RotatE)</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.019489</td>
-<td style="text-align: center;">0.062533997</td>
-<td style="text-align: center;">0.407476008</td>
-<td style="text-align: center;">0.54518801</td>
-<td style="text-align: center;">0.66406399</td>
-<td style="text-align: center;">0.497781008</td>
-<td style="text-align: center;">97.36394501</td>
-<td style="text-align: center;">0.503509998</td>
-<td style="text-align: center;">95.67383575</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(RotatE)</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.019489</td>
-<td style="text-align: center;">0.062533997</td>
-<td style="text-align: center;">0.36511299</td>
-<td style="text-align: center;">0.498860002</td>
-<td style="text-align: center;">0.609733999</td>
-<td style="text-align: center;">0.452515006</td>
-<td style="text-align: center;">122.3975372</td>
-<td style="text-align: center;">0.478188008</td>
-<td style="text-align: center;">109.4736633</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGE</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.028612999</td>
-<td style="text-align: center;">0.059672002</td>
-<td style="text-align: center;">0.381808013</td>
-<td style="text-align: center;">0.521764994</td>
-<td style="text-align: center;">0.644837022</td>
-<td style="text-align: center;">0.474837005</td>
-<td style="text-align: center;">198.4995117</td>
-<td style="text-align: center;">0.480791986</td>
-<td style="text-align: center;">195.9078522</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGE</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.028612999</td>
-<td style="text-align: center;">0.059672002</td>
-<td style="text-align: center;">0.343237996</td>
-<td style="text-align: center;">0.479050994</td>
-<td style="text-align: center;">0.59918803</td>
-<td style="text-align: center;">0.434240013</td>
-<td style="text-align: center;">253.240921</td>
-<td style="text-align: center;">0.457966</td>
-<td style="text-align: center;">226.2820587</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGE(PSL)</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.028677</td>
-<td style="text-align: center;">0.059657998</td>
-<td style="text-align: center;">0.384539992</td>
-<td style="text-align: center;">0.520008028</td>
-<td style="text-align: center;">0.644250989</td>
-<td style="text-align: center;">0.47556299</td>
-<td style="text-align: center;">212.7815704</td>
-<td style="text-align: center;">0.48159799</td>
-<td style="text-align: center;">210.7985077</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGE(PSL)</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.028677</td>
-<td style="text-align: center;">0.059657998</td>
-<td style="text-align: center;">0.346516013</td>
-<td style="text-align: center;">0.477055997</td>
-<td style="text-align: center;">0.598973989</td>
-<td style="text-align: center;">0.435442001</td>
-<td style="text-align: center;">265.9153442</td>
-<td style="text-align: center;">0.459026992</td>
-<td style="text-align: center;">240.2348633</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGsE</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.12202</td>
-<td style="text-align: center;">0.27065</td>
-<td style="text-align: center;">0.03543</td>
-<td style="text-align: center;">0.06695</td>
-<td style="text-align: center;">0.12376</td>
-<td style="text-align: center;">0.06560</td>
-<td style="text-align: center;">2378.45581</td>
-<td style="text-align: center;">0.06561</td>
-<td style="text-align: center;">2336.46582</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGsE</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.12202</td>
-<td style="text-align: center;">0.27065</td>
-<td style="text-align: center;">0.03000</td>
-<td style="text-align: center;">0.05800</td>
-<td style="text-align: center;">0.10800</td>
-<td style="text-align: center;">0.05700</td>
-<td style="text-align: center;">3022.76900</td>
-<td style="text-align: center;">0.06100</td>
-<td style="text-align: center;">2690.49600</td>
-</tr>
-<tr>
-<td style="text-align: center;">UPGAT</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.02922</td>
-<td style="text-align: center;">0.10107</td>
-<td style="text-align: center;">0.37900</td>
-<td style="text-align: center;">0.52000</td>
-<td style="text-align: center;">0.64500</td>
-<td style="text-align: center;">0.47300</td>
-<td style="text-align: center;">114.65800</td>
-<td style="text-align: center;">0.47700</td>
-<td style="text-align: center;">113.82700</td>
-</tr>
-<tr>
-<td style="text-align: center;">UPGAT</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.02922</td>
-<td style="text-align: center;">0.10107</td>
-<td style="text-align: center;">0.33900</td>
-<td style="text-align: center;">0.46700</td>
-<td style="text-align: center;">0.58600</td>
-<td style="text-align: center;">0.42600</td>
-<td style="text-align: center;">166.16900</td>
-<td style="text-align: center;">0.45200</td>
-<td style="text-align: center;">141.35800</td>
-</tr>
-</tbody>
+<h5>Raw<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h5>
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Model</th>
+            <th>Hits@1</th>
+            <th>Hits@3</th>
+            <th>Hits@10</th>
+            <th>MRR</th>
+            <th>MR</th>
+        </tr>
+    </thead>
+    <tbody align="center" valign="center">
+        <tr>
+            <td rowspan="12">Normal</td>
+            <td>BEUrRE</td>
+            <td>0.011 </td>
+            <td>0.130 </td>
+            <td>0.280 </td>
+            <td>0.100 </td>
+            <td>891.065 </td>
+        </tr>
+        <tr>
+            <td>FocusE</td>
+            <td>0.081 </td>
+            <td>0.175 </td>
+            <td>0.319 </td>
+            <td>0.157 </td>
+            <td>1691.038 </td>
+        </tr>
+        <tr>
+            <td>GTransE</td>
+            <td>0.016 </td>
+            <td>0.108 </td>
+            <td>0.226 </td>
+            <td>0.087 </td>
+            <td>957.610 </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_ComplEx</td>
+            <td>0.058 </td>
+            <td>0.146 </td>
+            <td>0.303 </td>
+            <td>0.134 </td>
+            <td>1146.749 </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_DistMult</td>
+            <td>0.057 </td>
+            <td>0.141 </td>
+            <td>0.281 </td>
+            <td>0.128 </td>
+            <td>1111.191 </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_RotatE</td>
+            <td>0.010 </td>
+            <td>0.131 </td>
+            <td>0.289 </td>
+            <td>0.101 </td>
+            <td>761.389 </td>
+        </tr>
+        <tr>
+            <td>UKGElogi</td>
+            <td>0.053 </td>
+            <td>0.127 </td>
+            <td>0.237 </td>
+            <td>0.113 </td>
+            <td>1515.951 </td>
+        </tr>
+        <tr>
+            <td>UKGElogiPSL</td>
+            <td>0.049 </td>
+            <td>0.124 </td>
+            <td>0.240 </td>
+            <td>0.111 </td>
+            <td>1483.428 </td>
+        </tr>
+        <tr>
+            <td>UKGErect</td>
+            <td>0.045 </td>
+            <td>0.112 </td>
+            <td>0.223 </td>
+            <td>0.102 </td>
+            <td>1773.141 </td>
+        </tr>
+        <tr>
+            <td>UKGErectPSL</td>
+            <td>0.039 </td>
+            <td>0.109 </td>
+            <td>0.231 </td>
+            <td>0.099 </td>
+            <td>1702.366 </td>
+        </tr>
+        <tr>
+            <td>UKGsE</td>
+            <td>0.002 </td>
+            <td>0.007 </td>
+            <td>0.021 </td>
+            <td>0.011 </td>
+            <td>1719.269 </td>
+        </tr>
+        <tr>
+            <td>UPGAT</td>
+            <td>0.042 </td>
+            <td>0.121 </td>
+            <td>0.262 </td>
+            <td>0.111 </td>
+            <td>1082.818 </td>
+        </tr>
+        <tr>
+            <td>Few-shot</td>
+            <td>GMUC</td>
+            <td>0.002 </td>
+            <td>0.008 </td>
+            <td>0.056 </td>
+            <td>0.028 </td>
+            <td>96.915 </td>
+        </tr>
+    </tbody>
 </table></section>
 <section id="id2">
-<h3>Filter<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th style="text-align: center;">Model</th>
-<th style="text-align: center;">Confidence Filter(0.7)</th>
-<th style="text-align: center;">MSE</th>
-<th style="text-align: center;">MAE</th>
-<th style="text-align: center;">Hits@1</th>
-<th style="text-align: center;">Hits@3</th>
-<th style="text-align: center;">Hits@10</th>
-<th style="text-align: center;">MRR</th>
-<th style="text-align: center;">MR</th>
-<th style="text-align: center;">WMRR</th>
-<th style="text-align: center;">WMR</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">BEUrRE</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.089199997</td>
-<td style="text-align: center;">0.221935004</td>
-<td style="text-align: center;">0.156060994</td>
-<td style="text-align: center;">0.385224015</td>
-<td style="text-align: center;">0.543040991</td>
-<td style="text-align: center;">0.299324006</td>
-<td style="text-align: center;">488.0508423</td>
-<td style="text-align: center;">0.306418985</td>
-<td style="text-align: center;">471.7837219</td>
-</tr>
-<tr>
-<td style="text-align: center;">BEUrRE</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.089199997</td>
-<td style="text-align: center;">0.221935004</td>
-<td style="text-align: center;">0.11693</td>
-<td style="text-align: center;">0.306755006</td>
-<td style="text-align: center;">0.441855013</td>
-<td style="text-align: center;">0.237922996</td>
-<td style="text-align: center;">874.3798218</td>
-<td style="text-align: center;">0.272213995</td>
-<td style="text-align: center;">683.2228394</td>
-</tr>
-<tr>
-<td style="text-align: center;">FocusE</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">1704.796143</td>
-<td style="text-align: center;">32.64796448</td>
-<td style="text-align: center;">0.813781023</td>
-<td style="text-align: center;">0.91791898</td>
-<td style="text-align: center;">0.956959009</td>
-<td style="text-align: center;">0.869915009</td>
-<td style="text-align: center;">384.4714966</td>
-<td style="text-align: center;">0.870938003</td>
-<td style="text-align: center;">379.7612305</td>
-</tr>
-<tr>
-<td style="text-align: center;">FocusE</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">1704.796143</td>
-<td style="text-align: center;">32.64796448</td>
-<td style="text-align: center;">0.760794997</td>
-<td style="text-align: center;">0.88371098</td>
-<td style="text-align: center;">0.945631981</td>
-<td style="text-align: center;">0.829499006</td>
-<td style="text-align: center;">459.7191162</td>
-<td style="text-align: center;">0.849004984</td>
-<td style="text-align: center;">420.1532288</td>
-</tr>
-<tr>
-<td style="text-align: center;">GMUC</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.01200</td>
-<td style="text-align: center;">0.08200</td>
-<td style="text-align: center;">0.33500</td>
-<td style="text-align: center;">0.46500</td>
-<td style="text-align: center;">0.59200</td>
-<td style="text-align: center;">0.42500</td>
-<td style="text-align: center;">58.31200</td>
-<td style="text-align: center;">0.42600</td>
-<td style="text-align: center;">58.09700</td>
-</tr>
-<tr>
-<td style="text-align: center;">GMUC</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.01300</td>
-<td style="text-align: center;">0.08200</td>
-<td style="text-align: center;">0.34400</td>
-<td style="text-align: center;">0.46200</td>
-<td style="text-align: center;">0.59200</td>
-<td style="text-align: center;">0.43000</td>
-<td style="text-align: center;">67.92000</td>
-<td style="text-align: center;">0.43200</td>
-<td style="text-align: center;">67.81300</td>
-</tr>
-<tr>
-<td style="text-align: center;">GMUC+</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.01500</td>
-<td style="text-align: center;">0.10200</td>
-<td style="text-align: center;">0.33800</td>
-<td style="text-align: center;">0.48600</td>
-<td style="text-align: center;">0.63600</td>
-<td style="text-align: center;">0.43800</td>
-<td style="text-align: center;">45.77400</td>
-<td style="text-align: center;">0.43800</td>
-<td style="text-align: center;">45.68200</td>
-</tr>
-<tr>
-<td style="text-align: center;">GMUC+</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.01300</td>
-<td style="text-align: center;">0.08600</td>
-<td style="text-align: center;">0.37100</td>
-<td style="text-align: center;">0.50500</td>
-<td style="text-align: center;">0.63800</td>
-<td style="text-align: center;">0.46300</td>
-<td style="text-align: center;">45.87400</td>
-<td style="text-align: center;">0.46500</td>
-<td style="text-align: center;">45.49500</td>
-</tr>
-<tr>
-<td style="text-align: center;">GTransE</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">39.83544</td>
-<td style="text-align: center;">5.12528</td>
-<td style="text-align: center;">0.22200</td>
-<td style="text-align: center;">0.36600</td>
-<td style="text-align: center;">0.49300</td>
-<td style="text-align: center;">0.31600</td>
-<td style="text-align: center;">1377.56400</td>
-<td style="text-align: center;">0.31900</td>
-<td style="text-align: center;">1378.50500</td>
-</tr>
-<tr>
-<td style="text-align: center;">GTransE</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">39.83544</td>
-<td style="text-align: center;">5.12528</td>
-<td style="text-align: center;">0.17914</td>
-<td style="text-align: center;">0.30818</td>
-<td style="text-align: center;">0.42461</td>
-<td style="text-align: center;">0.26475</td>
-<td style="text-align: center;">1957.77161</td>
-<td style="text-align: center;">0.29136</td>
-<td style="text-align: center;">1692.88000</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(ComplEx)</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.024344999</td>
-<td style="text-align: center;">0.051764</td>
-<td style="text-align: center;">0.669041991</td>
-<td style="text-align: center;">0.786159992</td>
-<td style="text-align: center;">0.875560999</td>
-<td style="text-align: center;">0.741258979</td>
-<td style="text-align: center;">138.8079224</td>
-<td style="text-align: center;">0.75275898</td>
-<td style="text-align: center;">138.476593</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(ComplEx)</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.024344999</td>
-<td style="text-align: center;">0.051764</td>
-<td style="text-align: center;">0.586290002</td>
-<td style="text-align: center;">0.702579021</td>
-<td style="text-align: center;">0.801267982</td>
-<td style="text-align: center;">0.661861002</td>
-<td style="text-align: center;">172.644928</td>
-<td style="text-align: center;">0.708103001</td>
-<td style="text-align: center;">157.0397034</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(DistMult)</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.023089999</td>
-<td style="text-align: center;">0.051066</td>
-<td style="text-align: center;">0.627074003</td>
-<td style="text-align: center;">0.754245996</td>
-<td style="text-align: center;">0.855943978</td>
-<td style="text-align: center;">0.706506014</td>
-<td style="text-align: center;">138.7805939</td>
-<td style="text-align: center;">0.717220008</td>
-<td style="text-align: center;">137.8641663</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(DistMult)</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.023089999</td>
-<td style="text-align: center;">0.051066</td>
-<td style="text-align: center;">0.552658021</td>
-<td style="text-align: center;">0.676356971</td>
-<td style="text-align: center;">0.782598972</td>
-<td style="text-align: center;">0.633262992</td>
-<td style="text-align: center;">163.501358</td>
-<td style="text-align: center;">0.67601198</td>
-<td style="text-align: center;">151.5425568</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(RotatE)</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.019489</td>
-<td style="text-align: center;">0.062533997</td>
-<td style="text-align: center;">0.68670702</td>
-<td style="text-align: center;">0.815927982</td>
-<td style="text-align: center;">0.883955002</td>
-<td style="text-align: center;">0.761847019</td>
-<td style="text-align: center;">50.77600861</td>
-<td style="text-align: center;">0.774339974</td>
-<td style="text-align: center;">50.19378281</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(RotatE)</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.019489</td>
-<td style="text-align: center;">0.062533997</td>
-<td style="text-align: center;">0.579877019</td>
-<td style="text-align: center;">0.706142008</td>
-<td style="text-align: center;">0.781530976</td>
-<td style="text-align: center;">0.656297028</td>
-<td style="text-align: center;">71.20301056</td>
-<td style="text-align: center;">0.715319991</td>
-<td style="text-align: center;">61.33691788</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGE</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.028612999</td>
-<td style="text-align: center;">0.059672002</td>
-<td style="text-align: center;">0.525864005</td>
-<td style="text-align: center;">0.669920027</td>
-<td style="text-align: center;">0.805289984</td>
-<td style="text-align: center;">0.621698022</td>
-<td style="text-align: center;">153.6316681</td>
-<td style="text-align: center;">0.630442023</td>
-<td style="text-align: center;">152.3144836</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGE</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.028612999</td>
-<td style="text-align: center;">0.059672002</td>
-<td style="text-align: center;">0.462020993</td>
-<td style="text-align: center;">0.597263992</td>
-<td style="text-align: center;">0.729798973</td>
-<td style="text-align: center;">0.554524004</td>
-<td style="text-align: center;">203.5079803</td>
-<td style="text-align: center;">0.592814982</td>
-<td style="text-align: center;">179.8668518</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGE(PSL)</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.028677</td>
-<td style="text-align: center;">0.059657998</td>
-<td style="text-align: center;">0.525472999</td>
-<td style="text-align: center;">0.672945976</td>
-<td style="text-align: center;">0.812121987</td>
-<td style="text-align: center;">0.622503996</td>
-<td style="text-align: center;">168.028595</td>
-<td style="text-align: center;">0.631505013</td>
-<td style="text-align: center;">167.3438416</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGE(PSL)</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.028677</td>
-<td style="text-align: center;">0.059657998</td>
-<td style="text-align: center;">0.461093992</td>
-<td style="text-align: center;">0.600184977</td>
-<td style="text-align: center;">0.733717978</td>
-<td style="text-align: center;">0.555122972</td>
-<td style="text-align: center;">216.390625</td>
-<td style="text-align: center;">0.59375298</td>
-<td style="text-align: center;">194.0056</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGsE</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.12202</td>
-<td style="text-align: center;">0.27065</td>
-<td style="text-align: center;">0.03767</td>
-<td style="text-align: center;">0.07310</td>
-<td style="text-align: center;">0.13000</td>
-<td style="text-align: center;">0.06945</td>
-<td style="text-align: center;">2329.50073</td>
-<td style="text-align: center;">0.06938</td>
-<td style="text-align: center;">2288.22217</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGsE</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.12202</td>
-<td style="text-align: center;">0.27065</td>
-<td style="text-align: center;">0.03100</td>
-<td style="text-align: center;">0.06200</td>
-<td style="text-align: center;">0.11300</td>
-<td style="text-align: center;">0.06000</td>
-<td style="text-align: center;">2973.23600</td>
-<td style="text-align: center;">0.06400</td>
-<td style="text-align: center;">2641.84000</td>
-</tr>
-<tr>
-<td style="text-align: center;">UPGAT</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.02922</td>
-<td style="text-align: center;">0.10107</td>
-<td style="text-align: center;">0.61800</td>
-<td style="text-align: center;">0.75100</td>
-<td style="text-align: center;">0.86200</td>
-<td style="text-align: center;">0.70100</td>
-<td style="text-align: center;">69.12000</td>
-<td style="text-align: center;">0.70800</td>
-<td style="text-align: center;">69.36400</td>
-</tr>
-<tr>
-<td style="text-align: center;">UPGAT</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.02922</td>
-<td style="text-align: center;">0.10107</td>
-<td style="text-align: center;">0.53000</td>
-<td style="text-align: center;">0.65400</td>
-<td style="text-align: center;">0.76500</td>
-<td style="text-align: center;">0.61100</td>
-<td style="text-align: center;">115.00400</td>
-<td style="text-align: center;">0.65800</td>
-<td style="text-align: center;">93.69200</td>
-</tr>
-</tbody>
+<h5>Filter<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h5>
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Model</th>
+            <th>Hits@1</th>
+            <th>Hits@3</th>
+            <th>Hits@10</th>
+            <th>MRR</th>
+            <th>MR</th>
+        </tr>
+    </thead>
+    <tbody align="center" valign="center">
+        <tr>
+            <td rowspan="12">Normal</td>
+            <td>BEUrRE</td>
+            <td>0.017 </td>
+            <td>0.188 </td>
+            <td>0.317 </td>
+            <td>0.125 </td>
+            <td>881.970 </td>
+        </tr>
+        <tr>
+            <td>FocusE</td>
+            <td>0.169 </td>
+            <td>0.274 </td>
+            <td>0.380 </td>
+            <td>0.242 </td>
+            <td>1678.487 </td>
+        </tr>
+        <tr>
+            <td>GTransE</td>
+            <td>0.026 </td>
+            <td>0.129 </td>
+            <td>0.243 </td>
+            <td>0.101 </td>
+            <td>949.356 </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_ComplEx</td>
+            <td>0.093 </td>
+            <td>0.255 </td>
+            <td>0.383 </td>
+            <td>0.196 </td>
+            <td>1135.032 </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_DistMult</td>
+            <td>0.083 </td>
+            <td>0.204 </td>
+            <td>0.340 </td>
+            <td>0.169 </td>
+            <td>1099.705 </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_RotatE</td>
+            <td>0.018 </td>
+            <td>0.182 </td>
+            <td>0.329 </td>
+            <td>0.127 </td>
+            <td>752.461 </td>
+        </tr>
+        <tr>
+            <td>UKGElogi</td>
+            <td>0.074 </td>
+            <td>0.164 </td>
+            <td>0.266 </td>
+            <td>0.139 </td>
+            <td>1504.807 </td>
+        </tr>
+        <tr>
+            <td>UKGElogiPSL</td>
+            <td>0.064 </td>
+            <td>0.160 </td>
+            <td>0.271 </td>
+            <td>0.135 </td>
+            <td>1472.255 </td>
+        </tr>
+        <tr>
+            <td>UKGErect</td>
+            <td>0.059 </td>
+            <td>0.146 </td>
+            <td>0.250 </td>
+            <td>0.124 </td>
+            <td>1762.605 </td>
+        </tr>
+        <tr>
+            <td>UKGErectPSL</td>
+            <td>0.049 </td>
+            <td>0.144 </td>
+            <td>0.260 </td>
+            <td>0.119 </td>
+            <td>1691.795 </td>
+        </tr>
+        <tr>
+            <td>UKGsE</td>
+            <td>0.002 </td>
+            <td>0.007 </td>
+            <td>0.022 </td>
+            <td>0.011 </td>
+            <td>1711.308 </td>
+        </tr>
+        <tr>
+            <td>UPGAT</td>
+            <td>0.094 </td>
+            <td>0.196 </td>
+            <td>0.323 </td>
+            <td>0.170 </td>
+            <td>1067.621 </td>
+        </tr>
+        <tr>
+            <td>Few-shot</td>
+            <td>GMUC</td>
+            <td>0.002 </td>
+            <td>0.008 </td>
+            <td>0.057 </td>
+            <td>0.029 </td>
+            <td>95.806 </td>
+        </tr>
+    </tbody>
 </table></section>
 </section>
-<section id="ppi5k">
-<h2>ppi5k<a class="headerlink" href="#ppi5k" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+<section id="nl27k">
+<h2>NL27K<a class="headerlink" href="#nl27k" title="Permalink to this heading"></a></h2>
 <section id="id3">
-<h3>Raw<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h3>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th style="text-align: center;">Model</th>
-<th style="text-align: center;">Confidence Filter(0.7)</th>
-<th style="text-align: center;">MSE</th>
-<th style="text-align: center;">MAE</th>
-<th style="text-align: center;">Hits@1</th>
-<th style="text-align: center;">Hits@3</th>
-<th style="text-align: center;">Hits@10</th>
-<th style="text-align: center;">MRR</th>
-<th style="text-align: center;">MR</th>
-<th style="text-align: center;">WMRR</th>
-<th style="text-align: center;">WMR</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">BEUrRE</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.036617</td>
-<td style="text-align: center;">0.157995</td>
-<td style="text-align: center;">0.00000</td>
-<td style="text-align: center;">0.04300</td>
-<td style="text-align: center;">0.22300</td>
-<td style="text-align: center;">0.07500</td>
-<td style="text-align: center;">27.47600</td>
-<td style="text-align: center;">0.75600</td>
-<td style="text-align: center;">27.24500</td>
-</tr>
-<tr>
-<td style="text-align: center;">BEUrRE</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.036617</td>
-<td style="text-align: center;">0.157995</td>
-<td style="text-align: center;">0.00005</td>
-<td style="text-align: center;">0.02500</td>
-<td style="text-align: center;">0.13700</td>
-<td style="text-align: center;">0.05300</td>
-<td style="text-align: center;">46.49800</td>
-<td style="text-align: center;">0.05900</td>
-<td style="text-align: center;">41.78300</td>
-</tr>
-<tr>
-<td style="text-align: center;">FocusE</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">176.9603577</td>
-<td style="text-align: center;">13.06495762</td>
-<td style="text-align: center;">0.06000</td>
-<td style="text-align: center;">0.15500</td>
-<td style="text-align: center;">0.40000</td>
-<td style="text-align: center;">0.16600</td>
-<td style="text-align: center;">26.96400</td>
-<td style="text-align: center;">0.16600</td>
-<td style="text-align: center;">26.86300</td>
-</tr>
-<tr>
-<td style="text-align: center;">FocusE</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">176.9603577</td>
-<td style="text-align: center;">13.06495762</td>
-<td style="text-align: center;">0.03200</td>
-<td style="text-align: center;">0.08700</td>
-<td style="text-align: center;">0.23800</td>
-<td style="text-align: center;">0.10500</td>
-<td style="text-align: center;">37.08300</td>
-<td style="text-align: center;">0.11800</td>
-<td style="text-align: center;">34.15700</td>
-</tr>
-<tr>
-<td style="text-align: center;">GTransE</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">4.62883</td>
-<td style="text-align: center;">2.03919</td>
-<td style="text-align: center;">0.007561</td>
-<td style="text-align: center;">0.093762003</td>
-<td style="text-align: center;">0.317580014</td>
-<td style="text-align: center;">0.109085001</td>
-<td style="text-align: center;">41.44915009</td>
-<td style="text-align: center;">0.109688997</td>
-<td style="text-align: center;">39.74547577</td>
-</tr>
-<tr>
-<td style="text-align: center;">GTransE</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">4.62883</td>
-<td style="text-align: center;">2.03919</td>
-<td style="text-align: center;">0.000967</td>
-<td style="text-align: center;">0.026288999</td>
-<td style="text-align: center;">0.106583998</td>
-<td style="text-align: center;">0.043067001</td>
-<td style="text-align: center;">197.1768036</td>
-<td style="text-align: center;">0.058488999</td>
-<td style="text-align: center;">141.1428833</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(ComplEx)</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.003464</td>
-<td style="text-align: center;">0.022728</td>
-<td style="text-align: center;">0.09200</td>
-<td style="text-align: center;">0.21900</td>
-<td style="text-align: center;">0.46700</td>
-<td style="text-align: center;">0.21400</td>
-<td style="text-align: center;">23.29500</td>
-<td style="text-align: center;">0.21500</td>
-<td style="text-align: center;">22.66100</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(ComplEx)</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.003464</td>
-<td style="text-align: center;">0.022728</td>
-<td style="text-align: center;">0.03100</td>
-<td style="text-align: center;">0.08100</td>
-<td style="text-align: center;">0.22800</td>
-<td style="text-align: center;">0.10200</td>
-<td style="text-align: center;">40.75600</td>
-<td style="text-align: center;">0.12700</td>
-<td style="text-align: center;">35.73000</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(DistMult)</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.003358</td>
-<td style="text-align: center;">0.021629</td>
-<td style="text-align: center;">0.09100</td>
-<td style="text-align: center;">0.21700</td>
-<td style="text-align: center;">0.46000</td>
-<td style="text-align: center;">0.21100</td>
-<td style="text-align: center;">23.74300</td>
-<td style="text-align: center;">0.21300</td>
-<td style="text-align: center;">23.10500</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(DistMult)</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.003358</td>
-<td style="text-align: center;">0.021629</td>
-<td style="text-align: center;">0.03100</td>
-<td style="text-align: center;">0.08400</td>
-<td style="text-align: center;">0.22700</td>
-<td style="text-align: center;">0.10200</td>
-<td style="text-align: center;">40.70900</td>
-<td style="text-align: center;">0.12760</td>
-<td style="text-align: center;">35.63900</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(RotatE)</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.003499</td>
-<td style="text-align: center;">0.027734</td>
-<td style="text-align: center;">0.07000</td>
-<td style="text-align: center;">0.18700</td>
-<td style="text-align: center;">0.44000</td>
-<td style="text-align: center;">0.18800</td>
-<td style="text-align: center;">16.42500</td>
-<td style="text-align: center;">0.19000</td>
-<td style="text-align: center;">16.15600</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(RotatE)</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.003499</td>
-<td style="text-align: center;">0.027734</td>
-<td style="text-align: center;">0.02300</td>
-<td style="text-align: center;">0.06900</td>
-<td style="text-align: center;">0.20700</td>
-<td style="text-align: center;">0.09000</td>
-<td style="text-align: center;">42.59500</td>
-<td style="text-align: center;">0.11300</td>
-<td style="text-align: center;">35.45800</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGE</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.003568</td>
-<td style="text-align: center;">0.023003001</td>
-<td style="text-align: center;">0.07800</td>
-<td style="text-align: center;">0.22100</td>
-<td style="text-align: center;">0.47400</td>
-<td style="text-align: center;">0.20500</td>
-<td style="text-align: center;">29.93900</td>
-<td style="text-align: center;">0.20600</td>
-<td style="text-align: center;">29.04200</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGE</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.003568</td>
-<td style="text-align: center;">0.023003001</td>
-<td style="text-align: center;">0.02900</td>
-<td style="text-align: center;">0.08200</td>
-<td style="text-align: center;">0.23400</td>
-<td style="text-align: center;">0.10100</td>
-<td style="text-align: center;">42.22400</td>
-<td style="text-align: center;">0.12500</td>
-<td style="text-align: center;">38.20200</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGE(PSL)</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.003561</td>
-<td style="text-align: center;">0.022954</td>
-<td style="text-align: center;">0.08000</td>
-<td style="text-align: center;">0.21900</td>
-<td style="text-align: center;">0.47300</td>
-<td style="text-align: center;">0.20600</td>
-<td style="text-align: center;">29.96300</td>
-<td style="text-align: center;">0.20800</td>
-<td style="text-align: center;">29.07000</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGE(PSL)</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.003561</td>
-<td style="text-align: center;">0.022954</td>
-<td style="text-align: center;">0.02900</td>
-<td style="text-align: center;">0.08200</td>
-<td style="text-align: center;">0.23300</td>
-<td style="text-align: center;">0.10100</td>
-<td style="text-align: center;">42.04100</td>
-<td style="text-align: center;">0.12500</td>
-<td style="text-align: center;">38.11500</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGsE</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.00769</td>
-<td style="text-align: center;">0.051564999</td>
-<td style="text-align: center;">0.046881001</td>
-<td style="text-align: center;">0.132703006</td>
-<td style="text-align: center;">0.386767</td>
-<td style="text-align: center;">0.150641993</td>
-<td style="text-align: center;">26.82684326</td>
-<td style="text-align: center;">0.152465001</td>
-<td style="text-align: center;">25.87584686</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGsE</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.00769</td>
-<td style="text-align: center;">0.051564999</td>
-<td style="text-align: center;">0.013076</td>
-<td style="text-align: center;">0.037477002</td>
-<td style="text-align: center;">0.126796007</td>
-<td style="text-align: center;">0.060155001</td>
-<td style="text-align: center;">85.70326996</td>
-<td style="text-align: center;">0.082328998</td>
-<td style="text-align: center;">63.27091599</td>
-</tr>
-<tr>
-<td style="text-align: center;">UPGAT</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.00319</td>
-<td style="text-align: center;">0.02704</td>
-<td style="text-align: center;">0.08800</td>
-<td style="text-align: center;">0.22700</td>
-<td style="text-align: center;">0.48800</td>
-<td style="text-align: center;">0.21500</td>
-<td style="text-align: center;">15.17000</td>
-<td style="text-align: center;">0.21700</td>
-<td style="text-align: center;">14.89500</td>
-</tr>
-<tr>
-<td style="text-align: center;">UPGAT</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.00319</td>
-<td style="text-align: center;">0.02704</td>
-<td style="text-align: center;">0.03400</td>
-<td style="text-align: center;">0.08800</td>
-<td style="text-align: center;">0.23600</td>
-<td style="text-align: center;">0.10600</td>
-<td style="text-align: center;">36.82000</td>
-<td style="text-align: center;">0.13200</td>
-<td style="text-align: center;">30.89600</td>
-</tr>
-</tbody>
+<h3>Confidence prediction<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h3>
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Model</th>
+            <th>MSE</th>
+            <th>MAE </th>
+        </tr>
+    </thead>
+    <tbody align="center" valign="center">
+        <tr>
+            <td rowspan="10">Normal</td>
+            <td>BEUrRE</td>
+            <td>0.08920 </td>
+            <td>0.22194  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_ComplEx</td>
+            <td>0.02434 </td>
+            <td>0.05176  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_DistMult</td>
+            <td>0.02309 </td>
+            <td>0.05107  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_RotatE</td>
+            <td>0.01949 </td>
+            <td>0.06253  </td>
+        </tr>
+        <tr>
+            <td>UKGElogi</td>
+            <td>0.02861 </td>
+            <td>0.05967  </td>
+        </tr>
+        <tr>
+            <td>UKGElogiPSL</td>
+            <td>0.02868 </td>
+            <td>0.05966  </td>
+        </tr>
+        <tr>
+            <td>UKGErect</td>
+            <td>0.03344 </td>
+            <td>0.07052  </td>
+        </tr>
+        <tr>
+            <td>UKGErectPSL</td>
+            <td>0.03326 </td>
+            <td>0.07015 </td>
+        </tr>
+        <tr>
+            <td>UKGsE</td>
+            <td>0.12202 </td>
+            <td>0.27065  </td>
+        </tr>
+        <tr>
+            <td>UPGAT</td>
+            <td>0.02922 </td>
+            <td>0.10107  </td>
+        </tr>
+        <tr>
+            <td rowspan="2">Few-shot</td>
+            <td>GMUC</td>
+            <td>0.01300 </td>
+            <td>0.08200  </td>
+        </tr>
+        <tr>
+            <td>GMUC+</td>
+            <td>0.01300 </td>
+            <td>0.08600  </td>
+        </tr>
+    </tbody>
 </table></section>
 <section id="id4">
-<h3>Filter<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h3>
-<table border="1" class="docutils">
-<thead>
-<tr>
-<th style="text-align: center;">Model</th>
-<th style="text-align: center;">Confidence Filter(0.7)</th>
-<th style="text-align: center;">MSE</th>
-<th style="text-align: center;">MAE</th>
-<th style="text-align: center;">Hits@1</th>
-<th style="text-align: center;">Hits@3</th>
-<th style="text-align: center;">Hits@10</th>
-<th style="text-align: center;">MRR</th>
-<th style="text-align: center;">MR</th>
-<th style="text-align: center;">WMRR</th>
-<th style="text-align: center;">WMR</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">BEUrRE</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.036617</td>
-<td style="text-align: center;">0.157995</td>
-<td style="text-align: center;">0.00100</td>
-<td style="text-align: center;">0.95600</td>
-<td style="text-align: center;">0.99200</td>
-<td style="text-align: center;">0.47900</td>
-<td style="text-align: center;">2.35400</td>
-<td style="text-align: center;">0.47900</td>
-<td style="text-align: center;">2.33500</td>
-</tr>
-<tr>
-<td style="text-align: center;">BEUrRE</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.036617</td>
-<td style="text-align: center;">0.157995</td>
-<td style="text-align: center;">0.00018</td>
-<td style="text-align: center;">0.79000</td>
-<td style="text-align: center;">0.94800</td>
-<td style="text-align: center;">0.40800</td>
-<td style="text-align: center;">7.78000</td>
-<td style="text-align: center;">0.43100</td>
-<td style="text-align: center;">6.08200</td>
-</tr>
-<tr>
-<td style="text-align: center;">FocusE</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">176.9603577</td>
-<td style="text-align: center;">13.06495762</td>
-<td style="text-align: center;">0.95600</td>
-<td style="text-align: center;">0.99100</td>
-<td style="text-align: center;">0.99500</td>
-<td style="text-align: center;">0.97400</td>
-<td style="text-align: center;">7.71000</td>
-<td style="text-align: center;">0.97500</td>
-<td style="text-align: center;">7.79700</td>
-</tr>
-<tr>
-<td style="text-align: center;">FocusE</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">176.9603577</td>
-<td style="text-align: center;">13.06495762</td>
-<td style="text-align: center;">0.93200</td>
-<td style="text-align: center;">0.98500</td>
-<td style="text-align: center;">0.99400</td>
-<td style="text-align: center;">0.95900</td>
-<td style="text-align: center;">4.38900</td>
-<td style="text-align: center;">0.96600</td>
-<td style="text-align: center;">4.73100</td>
-</tr>
-<tr>
-<td style="text-align: center;">GTransE</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">4.62883</td>
-<td style="text-align: center;">2.03919</td>
-<td style="text-align: center;">0.105860002</td>
-<td style="text-align: center;">0.605292976</td>
-<td style="text-align: center;">0.814366996</td>
-<td style="text-align: center;">0.390273988</td>
-<td style="text-align: center;">24.6695652</td>
-<td style="text-align: center;">0.395209998</td>
-<td style="text-align: center;">23.12075806</td>
-</tr>
-<tr>
-<td style="text-align: center;">GTransE</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">4.62883</td>
-<td style="text-align: center;">2.03919</td>
-<td style="text-align: center;">0.01349</td>
-<td style="text-align: center;">0.149678007</td>
-<td style="text-align: center;">0.312983006</td>
-<td style="text-align: center;">0.121468</td>
-<td style="text-align: center;">164.694931</td>
-<td style="text-align: center;">0.178894997</td>
-<td style="text-align: center;">112.0568085</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(ComplEx)</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.003464</td>
-<td style="text-align: center;">0.022728</td>
-<td style="text-align: center;">0.53300</td>
-<td style="text-align: center;">0.98900</td>
-<td style="text-align: center;">0.99600</td>
-<td style="text-align: center;">0.76200</td>
-<td style="text-align: center;">8.93200</td>
-<td style="text-align: center;">0.76600</td>
-<td style="text-align: center;">8.54100</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(ComplEx)</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.003464</td>
-<td style="text-align: center;">0.022728</td>
-<td style="text-align: center;">0.54600</td>
-<td style="text-align: center;">0.82700</td>
-<td style="text-align: center;">0.95700</td>
-<td style="text-align: center;">0.70200</td>
-<td style="text-align: center;">7.86200</td>
-<td style="text-align: center;">0.73300</td>
-<td style="text-align: center;">7.66800</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(DistMult)</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.003358</td>
-<td style="text-align: center;">0.021629</td>
-<td style="text-align: center;">0.53000</td>
-<td style="text-align: center;">0.98900</td>
-<td style="text-align: center;">0.99600</td>
-<td style="text-align: center;">0.76000</td>
-<td style="text-align: center;">9.27200</td>
-<td style="text-align: center;">0.76400</td>
-<td style="text-align: center;">8.87000</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(DistMult)</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.003358</td>
-<td style="text-align: center;">0.021629</td>
-<td style="text-align: center;">0.53300</td>
-<td style="text-align: center;">0.82000</td>
-<td style="text-align: center;">0.95300</td>
-<td style="text-align: center;">0.69300</td>
-<td style="text-align: center;">7.77900</td>
-<td style="text-align: center;">0.72600</td>
-<td style="text-align: center;">7.55200</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(RotatE)</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.003499</td>
-<td style="text-align: center;">0.027734</td>
-<td style="text-align: center;">0.31800</td>
-<td style="text-align: center;">0.94000</td>
-<td style="text-align: center;">0.98900</td>
-<td style="text-align: center;">0.63800</td>
-<td style="text-align: center;">2.03400</td>
-<td style="text-align: center;">0.64300</td>
-<td style="text-align: center;">1.99400</td>
-</tr>
-<tr>
-<td style="text-align: center;">PASSLEAF(RotatE)</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.003499</td>
-<td style="text-align: center;">0.027734</td>
-<td style="text-align: center;">0.26800</td>
-<td style="text-align: center;">0.59700</td>
-<td style="text-align: center;">0.82100</td>
-<td style="text-align: center;">0.47000</td>
-<td style="text-align: center;">9.67100</td>
-<td style="text-align: center;">0.52100</td>
-<td style="text-align: center;">7.33400</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGE</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.003568</td>
-<td style="text-align: center;">0.023003001</td>
-<td style="text-align: center;">0.40200</td>
-<td style="text-align: center;">0.99200</td>
-<td style="text-align: center;">0.99600</td>
-<td style="text-align: center;">0.69600</td>
-<td style="text-align: center;">15.92500</td>
-<td style="text-align: center;">0.69800</td>
-<td style="text-align: center;">15.27600</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGE</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.003568</td>
-<td style="text-align: center;">0.023003001</td>
-<td style="text-align: center;">0.58000</td>
-<td style="text-align: center;">0.90200</td>
-<td style="text-align: center;">0.98400</td>
-<td style="text-align: center;">0.74500</td>
-<td style="text-align: center;">9.35400</td>
-<td style="text-align: center;">0.74400</td>
-<td style="text-align: center;">10.28100</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGE(PSL)</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.003561</td>
-<td style="text-align: center;">0.022954</td>
-<td style="text-align: center;">0.40400</td>
-<td style="text-align: center;">0.99200</td>
-<td style="text-align: center;">0.99600</td>
-<td style="text-align: center;">0.69800</td>
-<td style="text-align: center;">15.96100</td>
-<td style="text-align: center;">0.70000</td>
-<td style="text-align: center;">15.31400</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGE(PSL)</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.003561</td>
-<td style="text-align: center;">0.022954</td>
-<td style="text-align: center;">0.58200</td>
-<td style="text-align: center;">0.90100</td>
-<td style="text-align: center;">0.98400</td>
-<td style="text-align: center;">0.74600</td>
-<td style="text-align: center;">9.17300</td>
-<td style="text-align: center;">0.74500</td>
-<td style="text-align: center;">10.19600</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGsE</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.00769</td>
-<td style="text-align: center;">0.051564999</td>
-<td style="text-align: center;">0.358411998</td>
-<td style="text-align: center;">0.790170014</td>
-<td style="text-align: center;">0.898298979</td>
-<td style="text-align: center;">0.591023982</td>
-<td style="text-align: center;">12.21928215</td>
-<td style="text-align: center;">0.598870993</td>
-<td style="text-align: center;">11.50269794</td>
-</tr>
-<tr>
-<td style="text-align: center;">UKGsE</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.00769</td>
-<td style="text-align: center;">0.051564999</td>
-<td style="text-align: center;">0.231537998</td>
-<td style="text-align: center;">0.398203999</td>
-<td style="text-align: center;">0.624309003</td>
-<td style="text-align: center;">0.35869801</td>
-<td style="text-align: center;">53.1516571</td>
-<td style="text-align: center;">0.418422997</td>
-<td style="text-align: center;">35.53851318</td>
-</tr>
-<tr>
-<td style="text-align: center;">UPGAT</td>
-<td style="text-align: center;">yes</td>
-<td style="text-align: center;">0.00319</td>
-<td style="text-align: center;">0.02704</td>
-<td style="text-align: center;">0.95700</td>
-<td style="text-align: center;">0.99700</td>
-<td style="text-align: center;">0.99900</td>
-<td style="text-align: center;">0.97800</td>
-<td style="text-align: center;">1.07400</td>
-<td style="text-align: center;">0.97800</td>
-<td style="text-align: center;">1.07200</td>
-</tr>
-<tr>
-<td style="text-align: center;">UPGAT</td>
-<td style="text-align: center;">no</td>
-<td style="text-align: center;">0.00319</td>
-<td style="text-align: center;">0.02704</td>
-<td style="text-align: center;">0.86200</td>
-<td style="text-align: center;">0.94900</td>
-<td style="text-align: center;">0.98600</td>
-<td style="text-align: center;">0.91000</td>
-<td style="text-align: center;">3.66200</td>
-<td style="text-align: center;">0.93800</td>
-<td style="text-align: center;">2.75900</td>
-</tr>
-</tbody>
+<h3>Link prediction<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h3>
+<section id="id5">
+<h4>All test data<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h4>
+<section id="id6">
+<h5>Raw<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h5>
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Model</th>
+            <th>Hits@1</th>
+            <th>Hits@3</th>
+            <th>Hits@10</th>
+            <th>MRR</th>
+            <th>MR</th>
+            <th>WMRR</th>
+            <th>WMR </th>
+        </tr>
+    </thead>
+    <tbody align="center" valign="center">
+        <tr>
+            <td rowspan="12">Normal</td>
+            <td>BEUrRE</td>
+            <td>0.086 </td>
+            <td>0.237 </td>
+            <td>0.358 </td>
+            <td>0.186 </td>
+            <td>937.320 </td>
+            <td>0.212 </td>
+            <td>745.028  </td>
+        </tr>
+        <tr>
+            <td>FocusE</td>
+            <td>0.373 </td>
+            <td>0.518 </td>
+            <td>0.646 </td>
+            <td>0.469 </td>
+            <td>515.363 </td>
+            <td>0.480 </td>
+            <td>473.365  </td>
+        </tr>
+        <tr>
+            <td>GTransE</td>
+            <td>0.137 </td>
+            <td>0.245 </td>
+            <td>0.353 </td>
+            <td>0.211 </td>
+            <td>2014.542 </td>
+            <td>0.232 </td>
+            <td>1749.638  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_ComplEx</td>
+            <td>0.373 </td>
+            <td>0.508 </td>
+            <td>0.626 </td>
+            <td>0.463 </td>
+            <td>222.988 </td>
+            <td>0.483 </td>
+            <td>204.159  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_DistMult</td>
+            <td>0.369 </td>
+            <td>0.502 </td>
+            <td>0.622 </td>
+            <td>0.458 </td>
+            <td>214.093 </td>
+            <td>0.478 </td>
+            <td>198.758  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_RotatE</td>
+            <td>0.365 </td>
+            <td>0.499 </td>
+            <td>0.610 </td>
+            <td>0.453 </td>
+            <td>122.398 </td>
+            <td>0.478 </td>
+            <td>109.474  </td>
+        </tr>
+        <tr>
+            <td>UKGElogi</td>
+            <td>0.343 </td>
+            <td>0.479 </td>
+            <td>0.599 </td>
+            <td>0.434 </td>
+            <td>253.241 </td>
+            <td>0.458 </td>
+            <td>226.282  </td>
+        </tr>
+        <tr>
+            <td>UKGElogiPSL</td>
+            <td>0.347 </td>
+            <td>0.477 </td>
+            <td>0.599 </td>
+            <td>0.435 </td>
+            <td>265.915 </td>
+            <td>0.459 </td>
+            <td>240.235  </td>
+        </tr>
+        <tr>
+            <td>UKGErect</td>
+            <td>0.349 </td>
+            <td>0.484 </td>
+            <td>0.607 </td>
+            <td>0.440 </td>
+            <td>220.598 </td>
+            <td>0.463 </td>
+            <td>192.629  </td>
+        </tr>
+        <tr>
+            <td>UKGErectPSL</td>
+            <td>0.348 </td>
+            <td>0.480 </td>
+            <td>0.602 </td>
+            <td>0.438 </td>
+            <td>217.576 </td>
+            <td>0.460 </td>
+            <td>191.070 </td>
+        </tr>
+        <tr>
+            <td>UKGsE</td>
+            <td>0.030 </td>
+            <td>0.058 </td>
+            <td>0.108 </td>
+            <td>0.057 </td>
+            <td>3022.769 </td>
+            <td>0.061 </td>
+            <td>2690.496  </td>
+        </tr>
+        <tr>
+            <td>UPGAT</td>
+            <td>0.339 </td>
+            <td>0.467 </td>
+            <td>0.586 </td>
+            <td>0.426 </td>
+            <td>166.169 </td>
+            <td>0.452 </td>
+            <td>141.358  </td>
+        </tr>
+        <tr>
+            <td rowspan="2">Few-shot</td>
+            <td>GMUC</td>
+            <td>0.287 </td>
+            <td>0.409 </td>
+            <td>0.536 </td>
+            <td>0.375 </td>
+            <td>71.484 </td>
+            <td>0.375 </td>
+            <td>71.447  </td>
+        </tr>
+        <tr>
+            <td>GMUC+</td>
+            <td>0.299 </td>
+            <td>0.448 </td>
+            <td>0.582 </td>
+            <td>0.401 </td>
+            <td>49.418 </td>
+            <td>0.401 </td>
+            <td>49.107  </td>
+        </tr>
+    </tbody>
 </table></section>
+<section id="id7">
+<h5>Filter<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h5>
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Model</th>
+            <th>Hits@1</th>
+            <th>Hits@3</th>
+            <th>Hits@10</th>
+            <th>MRR</th>
+            <th>MR</th>
+            <th>WMRR</th>
+            <th>WMR </th>
+        </tr>
+    </thead>
+    <tbody align="center" valign="center">
+        <tr>
+            <td rowspan="12">Normal</td>
+            <td>BEUrRE</td>
+            <td>0.117 </td>
+            <td>0.307 </td>
+            <td>0.442 </td>
+            <td>0.238 </td>
+            <td>874.380 </td>
+            <td>0.272 </td>
+            <td>683.223  </td>
+        </tr>
+        <tr>
+            <td>FocusE</td>
+            <td>0.761 </td>
+            <td>0.884 </td>
+            <td>0.946 </td>
+            <td>0.829 </td>
+            <td>459.719 </td>
+            <td>0.849 </td>
+            <td>420.153  </td>
+        </tr>
+        <tr>
+            <td>GTransE</td>
+            <td>0.179 </td>
+            <td>0.308 </td>
+            <td>0.425 </td>
+            <td>0.265 </td>
+            <td>1957.772 </td>
+            <td>0.291 </td>
+            <td>1692.880  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_ComplEx</td>
+            <td>0.586 </td>
+            <td>0.703 </td>
+            <td>0.801 </td>
+            <td>0.662 </td>
+            <td>172.645 </td>
+            <td>0.708 </td>
+            <td>157.040  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_DistMult</td>
+            <td>0.553 </td>
+            <td>0.676 </td>
+            <td>0.783 </td>
+            <td>0.633 </td>
+            <td>163.501 </td>
+            <td>0.676 </td>
+            <td>151.543  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_RotatE</td>
+            <td>0.580 </td>
+            <td>0.706 </td>
+            <td>0.782 </td>
+            <td>0.656 </td>
+            <td>71.203 </td>
+            <td>0.715 </td>
+            <td>61.337  </td>
+        </tr>
+        <tr>
+            <td>UKGElogi</td>
+            <td>0.462 </td>
+            <td>0.597 </td>
+            <td>0.730 </td>
+            <td>0.555 </td>
+            <td>203.508 </td>
+            <td>0.593 </td>
+            <td>179.867  </td>
+        </tr>
+        <tr>
+            <td>UKGElogiPSL</td>
+            <td>0.461 </td>
+            <td>0.600 </td>
+            <td>0.734 </td>
+            <td>0.555 </td>
+            <td>216.391 </td>
+            <td>0.594 </td>
+            <td>194.006  </td>
+        </tr>
+        <tr>
+            <td>UKGErect</td>
+            <td>0.452 </td>
+            <td>0.595 </td>
+            <td>0.733 </td>
+            <td>0.548 </td>
+            <td>173.215 </td>
+            <td>0.580 </td>
+            <td>148.744  </td>
+        </tr>
+        <tr>
+            <td>UKGErectPSL</td>
+            <td>0.444 </td>
+            <td>0.583 </td>
+            <td>0.726 </td>
+            <td>0.540 </td>
+            <td>170.104 </td>
+            <td>0.571 </td>
+            <td>147.006 </td>
+        </tr>
+        <tr>
+            <td>UKGsE</td>
+            <td>0.031 </td>
+            <td>0.062 </td>
+            <td>0.113 </td>
+            <td>0.060 </td>
+            <td>2973.236 </td>
+            <td>0.064 </td>
+            <td>2641.840  </td>
+        </tr>
+        <tr>
+            <td>UPGAT</td>
+            <td>0.530 </td>
+            <td>0.654 </td>
+            <td>0.765 </td>
+            <td>0.611 </td>
+            <td>115.004 </td>
+            <td>0.658 </td>
+            <td>93.692  </td>
+        </tr>
+        <tr>
+            <td rowspan="2">Few-shot</td>
+            <td>GMUC</td>
+            <td>0.344 </td>
+            <td>0.462 </td>
+            <td>0.592 </td>
+            <td>0.430 </td>
+            <td>67.920 </td>
+            <td>0.432 </td>
+            <td>67.813  </td>
+        </tr>
+        <tr>
+            <td>GMUC+</td>
+            <td>0.371 </td>
+            <td>0.505 </td>
+            <td>0.638 </td>
+            <td>0.463 </td>
+            <td>45.874 </td>
+            <td>0.465 </td>
+            <td>45.495  </td>
+        </tr>
+    </tbody>
+</table></section>
+</section>
+<section id="id8">
+<h4>Only high-confidence test data<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h4>
+<section id="id9">
+<h5>Raw<a class="headerlink" href="#id9" title="Permalink to this heading"></a></h5>
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Model</th>
+            <th>Hits@1</th>
+            <th>Hits@3</th>
+            <th>Hits@10</th>
+            <th>MRR</th>
+            <th>MR</th>
+        </tr>
+    </thead>
+    <tbody align="center" valign="center">
+        <tr>
+            <td rowspan="12">Normal</td>
+            <td>BEUrRE</td>
+            <td>0.115 </td>
+            <td>0.295 </td>
+            <td>0.436 </td>
+            <td>0.232 </td>
+            <td>549.564 </td>
+        </tr>
+        <tr>
+            <td>FocusE</td>
+            <td>0.393 </td>
+            <td>0.537 </td>
+            <td>0.659 </td>
+            <td>0.487 </td>
+            <td>436.373 </td>
+        </tr>
+        <tr>
+            <td>GTransE</td>
+            <td>0.168 </td>
+            <td>0.287 </td>
+            <td>0.407 </td>
+            <td>0.250 </td>
+            <td>1434.634 </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_ComplEx</td>
+            <td>0.405 </td>
+            <td>0.544 </td>
+            <td>0.662 </td>
+            <td>0.496 </td>
+            <td>184.430 </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_DistMult</td>
+            <td>0.399 </td>
+            <td>0.537 </td>
+            <td>0.658 </td>
+            <td>0.491 </td>
+            <td>184.246 </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_RotatE</td>
+            <td>0.407 </td>
+            <td>0.545 </td>
+            <td>0.664 </td>
+            <td>0.498 </td>
+            <td>97.364 </td>
+        </tr>
+        <tr>
+            <td>UKGElogi</td>
+            <td>0.382 </td>
+            <td>0.522 </td>
+            <td>0.645 </td>
+            <td>0.475 </td>
+            <td>198.500 </td>
+        </tr>
+        <tr>
+            <td>UKGElogiPSL</td>
+            <td>0.385 </td>
+            <td>0.520 </td>
+            <td>0.644 </td>
+            <td>0.476 </td>
+            <td>212.782 </td>
+        </tr>
+        <tr>
+            <td>UKGErect</td>
+            <td>0.388 </td>
+            <td>0.527 </td>
+            <td>0.650 </td>
+            <td>0.480 </td>
+            <td>167.922 </td>
+        </tr>
+        <tr>
+            <td>UKGErectPSL</td>
+            <td>0.386 </td>
+            <td>0.523 </td>
+            <td>0.647 </td>
+            <td>0.477 </td>
+            <td>167.543 </td>
+        </tr>
+        <tr>
+            <td>UKGsE</td>
+            <td>0.035 </td>
+            <td>0.067 </td>
+            <td>0.124 </td>
+            <td>0.066 </td>
+            <td>2378.456 </td>
+        </tr>
+        <tr>
+            <td>UPGAT</td>
+            <td>0.379 </td>
+            <td>0.520 </td>
+            <td>0.645 </td>
+            <td>0.473 </td>
+            <td>114.658 </td>
+        </tr>
+        <tr>
+            <td rowspan="2">Few-shot</td>
+            <td>GMUC</td>
+            <td>0.281 </td>
+            <td>0.400 </td>
+            <td>0.540 </td>
+            <td>0.368 </td>
+            <td>62.005 </td>
+        </tr>
+        <tr>
+            <td>GMUC+</td>
+            <td>0.290 </td>
+            <td>0.420 </td>
+            <td>0.573 </td>
+            <td>0.438 </td>
+            <td>45.774 </td>
+        </tr>
+    </tbody>
+</table></section>
+<section id="id10">
+<h5>Filter<a class="headerlink" href="#id10" title="Permalink to this heading"></a></h5>
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Model</th>
+            <th>Hits@1</th>
+            <th>Hits@3</th>
+            <th>Hits@10</th>
+            <th>MRR</th>
+            <th>MR</th>
+        </tr>
+    </thead>
+    <tbody align="center" valign="center">
+        <tr>
+            <td rowspan="12">Normal</td>
+            <td>BEUrRE</td>
+            <td>0.156 </td>
+            <td>0.385 </td>
+            <td>0.543 </td>
+            <td>0.299 </td>
+            <td>488.051 </td>
+        </tr>
+        <tr>
+            <td>FocusE</td>
+            <td>0.814 </td>
+            <td>0.918 </td>
+            <td>0.957 </td>
+            <td>0.870 </td>
+            <td>384.471 </td>
+        </tr>
+        <tr>
+            <td>GTransE</td>
+            <td>0.222 </td>
+            <td>0.366 </td>
+            <td>0.493 </td>
+            <td>0.316 </td>
+            <td>1377.564 </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_ComplEx</td>
+            <td>0.669 </td>
+            <td>0.786 </td>
+            <td>0.876 </td>
+            <td>0.741 </td>
+            <td>138.808 </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_DistMult</td>
+            <td>0.627 </td>
+            <td>0.754 </td>
+            <td>0.856 </td>
+            <td>0.707 </td>
+            <td>138.781 </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_RotatE</td>
+            <td>0.687 </td>
+            <td>0.816 </td>
+            <td>0.884 </td>
+            <td>0.762 </td>
+            <td>50.776 </td>
+        </tr>
+        <tr>
+            <td>UKGElogi</td>
+            <td>0.526 </td>
+            <td>0.670 </td>
+            <td>0.805 </td>
+            <td>0.622 </td>
+            <td>153.632 </td>
+        </tr>
+        <tr>
+            <td>UKGElogiPSL</td>
+            <td>0.525 </td>
+            <td>0.673 </td>
+            <td>0.812 </td>
+            <td>0.623 </td>
+            <td>168.029 </td>
+        </tr>
+        <tr>
+            <td>UKGErect</td>
+            <td>0.509 </td>
+            <td>0.662 </td>
+            <td>0.807 </td>
+            <td>0.609 </td>
+            <td>126.011 </td>
+        </tr>
+        <tr>
+            <td>UKGErectPSL</td>
+            <td>0.500 </td>
+            <td>0.647 </td>
+            <td>0.800 </td>
+            <td>0.599 </td>
+            <td>125.233 </td>
+        </tr>
+        <tr>
+            <td>UKGsE</td>
+            <td>0.038 </td>
+            <td>0.073 </td>
+            <td>0.130 </td>
+            <td>0.069 </td>
+            <td>2329.501 </td>
+        </tr>
+        <tr>
+            <td>UPGAT</td>
+            <td>0.618 </td>
+            <td>0.751 </td>
+            <td>0.862 </td>
+            <td>0.701 </td>
+            <td>69.120 </td>
+        </tr>
+        <tr>
+            <td rowspan="2">Few-shot</td>
+            <td>GMUC</td>
+            <td>0.335 </td>
+            <td>0.465 </td>
+            <td>0.592 </td>
+            <td>0.425 </td>
+            <td>58.312 </td>
+        </tr>
+        <tr>
+            <td>GMUC+</td>
+            <td>0.338 </td>
+            <td>0.486 </td>
+            <td>0.636 </td>
+            <td>0.438 </td>
+            <td>45.774 </td>
+        </tr>
+    </tbody>
+</table></section>
+</section>
+</section>
+</section>
+<section id="ppi5k">
+<h2>PPI5K<a class="headerlink" href="#ppi5k" title="Permalink to this heading"></a></h2>
+<section id="id11">
+<h3>Confidence prediction<a class="headerlink" href="#id11" title="Permalink to this heading"></a></h3>
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Model</th>
+            <th>MSE</th>
+            <th>MAE </th>
+        </tr>
+    </thead>
+    <tbody align="center" valign="center">
+        <tr>
+            <td rowspan="10">Normal</td>
+            <td>BEUrRE</td>
+            <td>0.03662 </td>
+            <td>0.15800  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_ComplEx</td>
+            <td>0.00346 </td>
+            <td>0.02273  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_DistMult</td>
+            <td>0.00336 </td>
+            <td>0.02163  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_RotatE</td>
+            <td>0.00350 </td>
+            <td>0.02773  </td>
+        </tr>
+        <tr>
+            <td>UKGElogi</td>
+            <td>0.00357 </td>
+            <td>0.02300  </td>
+        </tr>
+        <tr>
+            <td>UKGElogiPSL</td>
+            <td>0.00356 </td>
+            <td>0.02295  </td>
+        </tr>
+        <tr>
+            <td>UKGErect</td>
+            <td>0.00366 </td>
+            <td>0.02218  </td>
+        </tr>
+        <tr>
+            <td>UKGErectPSL</td>
+            <td>0.00366 </td>
+            <td>0.02220 </td>
+        </tr>
+        <tr>
+            <td>UKGsE</td>
+            <td>0.00769 </td>
+            <td>0.05156  </td>
+        </tr>
+        <tr>
+            <td>UPGAT</td>
+            <td>0.00319 </td>
+            <td>0.02704  </td>
+        </tr>
+    </tbody>
+</table></section>
+<section id="id12">
+<h3>Link prediction<a class="headerlink" href="#id12" title="Permalink to this heading"></a></h3>
+<section id="id13">
+<h4>All test data<a class="headerlink" href="#id13" title="Permalink to this heading"></a></h4>
+<section id="id14">
+<h5>Raw<a class="headerlink" href="#id14" title="Permalink to this heading"></a></h5>
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Model</th>
+            <th>Hits@1</th>
+            <th>Hits@3</th>
+            <th>Hits@10</th>
+            <th>MRR</th>
+            <th>MR</th>
+            <th>WMRR</th>
+            <th>WMR </th>
+        </tr>
+    </thead>
+    <tbody align="center" valign="center">
+        <tr>
+            <td rowspan="12">Normal</td>
+            <td>BEUrRE</td>
+            <td>0.000 </td>
+            <td>0.025 </td>
+            <td>0.137 </td>
+            <td>0.053 </td>
+            <td>46.498 </td>
+            <td>0.059 </td>
+            <td>41.783  </td>
+        </tr>
+        <tr>
+            <td>FocusE</td>
+            <td>0.032 </td>
+            <td>0.087 </td>
+            <td>0.238 </td>
+            <td>0.105 </td>
+            <td>37.083 </td>
+            <td>0.118 </td>
+            <td>34.157  </td>
+        </tr>
+        <tr>
+            <td>GTransE</td>
+            <td>0.001 </td>
+            <td>0.026 </td>
+            <td>0.107 </td>
+            <td>0.043 </td>
+            <td>197.177 </td>
+            <td>0.058 </td>
+            <td>141.143  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_ComplEx</td>
+            <td>0.031 </td>
+            <td>0.081 </td>
+            <td>0.228 </td>
+            <td>0.102 </td>
+            <td>40.756 </td>
+            <td>0.127 </td>
+            <td>35.730  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_DistMult</td>
+            <td>0.031 </td>
+            <td>0.084 </td>
+            <td>0.227 </td>
+            <td>0.102 </td>
+            <td>40.709 </td>
+            <td>0.128 </td>
+            <td>35.639  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_RotatE</td>
+            <td>0.023 </td>
+            <td>0.069 </td>
+            <td>0.207 </td>
+            <td>0.090 </td>
+            <td>42.595 </td>
+            <td>0.113 </td>
+            <td>35.458  </td>
+        </tr>
+        <tr>
+            <td>UKGElogi</td>
+            <td>0.029 </td>
+            <td>0.082 </td>
+            <td>0.234 </td>
+            <td>0.101 </td>
+            <td>42.224 </td>
+            <td>0.125 </td>
+            <td>38.202  </td>
+        </tr>
+        <tr>
+            <td>UKGElogiPSL</td>
+            <td>0.029 </td>
+            <td>0.082 </td>
+            <td>0.233 </td>
+            <td>0.101 </td>
+            <td>42.041 </td>
+            <td>0.125 </td>
+            <td>38.115  </td>
+        </tr>
+        <tr>
+            <td>UKGErect</td>
+            <td>0.034 </td>
+            <td>0.088 </td>
+            <td>0.239 </td>
+            <td>0.106 </td>
+            <td>53.766 </td>
+            <td>0.135 </td>
+            <td>44.890  </td>
+        </tr>
+        <tr>
+            <td>UKGErectPSL</td>
+            <td>0.033 </td>
+            <td>0.089 </td>
+            <td>0.238 </td>
+            <td>0.106 </td>
+            <td>54.403 </td>
+            <td>0.135 </td>
+            <td>45.163 </td>
+        </tr>
+        <tr>
+            <td>UKGsE</td>
+            <td>0.013 </td>
+            <td>0.037 </td>
+            <td>0.127 </td>
+            <td>0.060 </td>
+            <td>85.703 </td>
+            <td>0.082 </td>
+            <td>63.271  </td>
+        </tr>
+        <tr>
+            <td>UPGAT</td>
+            <td>0.034 </td>
+            <td>0.088 </td>
+            <td>0.236 </td>
+            <td>0.106 </td>
+            <td>36.820 </td>
+            <td>0.132 </td>
+            <td>30.896  </td>
+        </tr>
+    </tbody>
+</table></section>
+<section id="id15">
+<h5>Filter<a class="headerlink" href="#id15" title="Permalink to this heading"></a></h5>
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Model</th>
+            <th>Hits@1</th>
+            <th>Hits@3</th>
+            <th>Hits@10</th>
+            <th>MRR</th>
+            <th>MR</th>
+            <th>WMRR</th>
+            <th>WMR </th>
+        </tr>
+    </thead>
+    <tbody align="center" valign="center">
+        <tr>
+            <td rowspan="12">Normal</td>
+            <td>BEUrRE</td>
+            <td>0.000 </td>
+            <td>0.790 </td>
+            <td>0.948 </td>
+            <td>0.408 </td>
+            <td>7.780 </td>
+            <td>0.431 </td>
+            <td>6.082  </td>
+        </tr>
+        <tr>
+            <td>FocusE</td>
+            <td>0.932 </td>
+            <td>0.985 </td>
+            <td>0.994 </td>
+            <td>0.959 </td>
+            <td>4.389 </td>
+            <td>0.966 </td>
+            <td>4.731  </td>
+        </tr>
+        <tr>
+            <td>GTransE</td>
+            <td>0.013 </td>
+            <td>0.150 </td>
+            <td>0.313 </td>
+            <td>0.121 </td>
+            <td>164.695 </td>
+            <td>0.179 </td>
+            <td>112.057  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_ComplEx</td>
+            <td>0.546 </td>
+            <td>0.827 </td>
+            <td>0.957 </td>
+            <td>0.702 </td>
+            <td>7.862 </td>
+            <td>0.733 </td>
+            <td>7.668  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_DistMult</td>
+            <td>0.533 </td>
+            <td>0.820 </td>
+            <td>0.953 </td>
+            <td>0.693 </td>
+            <td>7.779 </td>
+            <td>0.726 </td>
+            <td>7.552  </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_RotatE</td>
+            <td>0.268 </td>
+            <td>0.597 </td>
+            <td>0.821 </td>
+            <td>0.470 </td>
+            <td>9.671 </td>
+            <td>0.521 </td>
+            <td>7.334  </td>
+        </tr>
+        <tr>
+            <td>UKGElogi</td>
+            <td>0.580 </td>
+            <td>0.902 </td>
+            <td>0.984 </td>
+            <td>0.745 </td>
+            <td>9.354 </td>
+            <td>0.744 </td>
+            <td>10.281  </td>
+        </tr>
+        <tr>
+            <td>UKGElogiPSL</td>
+            <td>0.582 </td>
+            <td>0.901 </td>
+            <td>0.984 </td>
+            <td>0.746 </td>
+            <td>9.173 </td>
+            <td>0.745 </td>
+            <td>10.196  </td>
+        </tr>
+        <tr>
+            <td>UKGErect</td>
+            <td>0.685 </td>
+            <td>0.913 </td>
+            <td>0.982 </td>
+            <td>0.805 </td>
+            <td>21.005 </td>
+            <td>0.820 </td>
+            <td>17.076  </td>
+        </tr>
+        <tr>
+            <td>UKGErectPSL</td>
+            <td>0.685 </td>
+            <td>0.913 </td>
+            <td>0.982 </td>
+            <td>0.805 </td>
+            <td>21.615 </td>
+            <td>0.821 </td>
+            <td>17.315 </td>
+        </tr>
+        <tr>
+            <td>UKGsE</td>
+            <td>0.232 </td>
+            <td>0.398 </td>
+            <td>0.624 </td>
+            <td>0.359 </td>
+            <td>53.152 </td>
+            <td>0.418 </td>
+            <td>35.539  </td>
+        </tr>
+        <tr>
+            <td>UPGAT</td>
+            <td>0.862 </td>
+            <td>0.949 </td>
+            <td>0.986 </td>
+            <td>0.910 </td>
+            <td>3.662 </td>
+            <td>0.938 </td>
+            <td>2.759  </td>
+        </tr>
+    </tbody>
+</table></section>
+</section>
+<section id="id16">
+<h4>Only high-confidence test data<a class="headerlink" href="#id16" title="Permalink to this heading"></a></h4>
+<section id="id17">
+<h5>Raw<a class="headerlink" href="#id17" title="Permalink to this heading"></a></h5>
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Model</th>
+            <th>Hits@1</th>
+            <th>Hits@3</th>
+            <th>Hits@10</th>
+            <th>MRR</th>
+            <th>MR</th>
+        </tr>
+    </thead>
+    <tbody align="center" valign="center">
+        <tr>
+            <td rowspan="12">Normal</td>
+            <td>BEUrRE</td>
+            <td>0.000 </td>
+            <td>0.043 </td>
+            <td>0.223 </td>
+            <td>0.075 </td>
+            <td>27.476 </td>
+        </tr>
+        <tr>
+            <td>FocusE</td>
+            <td>0.060 </td>
+            <td>0.155 </td>
+            <td>0.400 </td>
+            <td>0.166 </td>
+            <td>26.964 </td>
+        </tr>
+        <tr>
+            <td>GTransE</td>
+            <td>0.008 </td>
+            <td>0.094 </td>
+            <td>0.318 </td>
+            <td>0.109 </td>
+            <td>41.449 </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_ComplEx</td>
+            <td>0.092 </td>
+            <td>0.219 </td>
+            <td>0.467 </td>
+            <td>0.214 </td>
+            <td>23.295 </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_DistMult</td>
+            <td>0.091 </td>
+            <td>0.217 </td>
+            <td>0.460 </td>
+            <td>0.211 </td>
+            <td>23.743 </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_RotatE</td>
+            <td>0.070 </td>
+            <td>0.187 </td>
+            <td>0.440 </td>
+            <td>0.188 </td>
+            <td>16.425 </td>
+        </tr>
+        <tr>
+            <td>UKGElogi</td>
+            <td>0.078 </td>
+            <td>0.221 </td>
+            <td>0.474 </td>
+            <td>0.205 </td>
+            <td>29.939 </td>
+        </tr>
+        <tr>
+            <td>UKGElogiPSL</td>
+            <td>0.080 </td>
+            <td>0.219 </td>
+            <td>0.473 </td>
+            <td>0.206 </td>
+            <td>29.963 </td>
+        </tr>
+        <tr>
+            <td>UKGErect</td>
+            <td>0.112 </td>
+            <td>0.242 </td>
+            <td>0.495 </td>
+            <td>0.234 </td>
+            <td>31.370 </td>
+        </tr>
+        <tr>
+            <td>UKGErectPSL</td>
+            <td>0.109 </td>
+            <td>0.246 </td>
+            <td>0.486 </td>
+            <td>0.232 </td>
+            <td>31.390 </td>
+        </tr>
+        <tr>
+            <td>UKGsE</td>
+            <td>0.047 </td>
+            <td>0.133 </td>
+            <td>0.387 </td>
+            <td>0.151 </td>
+            <td>26.827 </td>
+        </tr>
+        <tr>
+            <td>UPGAT</td>
+            <td>0.088 </td>
+            <td>0.227 </td>
+            <td>0.488 </td>
+            <td>0.215 </td>
+            <td>15.170 </td>
+        </tr>
+    </tbody>
+</table></section>
+<section id="id18">
+<h5>Filter<a class="headerlink" href="#id18" title="Permalink to this heading"></a></h5>
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Model</th>
+            <th>Hits@1</th>
+            <th>Hits@3</th>
+            <th>Hits@10</th>
+            <th>MRR</th>
+            <th>MR</th>
+        </tr>
+    </thead>
+    <tbody align="center" valign="center">
+        <tr>
+            <td rowspan="12">Normal</td>
+            <td>BEUrRE</td>
+            <td>0.001 </td>
+            <td>0.956 </td>
+            <td>0.992 </td>
+            <td>0.479 </td>
+            <td>2.354 </td>
+        </tr>
+        <tr>
+            <td>FocusE</td>
+            <td>0.956 </td>
+            <td>0.991 </td>
+            <td>0.995 </td>
+            <td>0.974 </td>
+            <td>7.710 </td>
+        </tr>
+        <tr>
+            <td>GTransE</td>
+            <td>0.106 </td>
+            <td>0.605 </td>
+            <td>0.814 </td>
+            <td>0.390 </td>
+            <td>24.670 </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_ComplEx</td>
+            <td>0.533 </td>
+            <td>0.989 </td>
+            <td>0.996 </td>
+            <td>0.762 </td>
+            <td>8.932 </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_DistMult</td>
+            <td>0.530 </td>
+            <td>0.989 </td>
+            <td>0.996 </td>
+            <td>0.760 </td>
+            <td>9.272 </td>
+        </tr>
+        <tr>
+            <td>PASSLEAF_RotatE</td>
+            <td>0.318 </td>
+            <td>0.940 </td>
+            <td>0.989 </td>
+            <td>0.638 </td>
+            <td>2.034 </td>
+        </tr>
+        <tr>
+            <td>UKGElogi</td>
+            <td>0.402 </td>
+            <td>0.992 </td>
+            <td>0.996 </td>
+            <td>0.696 </td>
+            <td>15.925 </td>
+        </tr>
+        <tr>
+            <td>UKGElogiPSL</td>
+            <td>0.404 </td>
+            <td>0.992 </td>
+            <td>0.996 </td>
+            <td>0.698 </td>
+            <td>15.961 </td>
+        </tr>
+        <tr>
+            <td>UKGErect</td>
+            <td>0.671 </td>
+            <td>0.991 </td>
+            <td>0.994 </td>
+            <td>0.832 </td>
+            <td>17.512 </td>
+        </tr>
+        <tr>
+            <td>UKGErectPSL</td>
+            <td>0.675 </td>
+            <td>0.992 </td>
+            <td>0.995 </td>
+            <td>0.834 </td>
+            <td>17.482 </td>
+        </tr>
+        <tr>
+            <td>UKGsE</td>
+            <td>0.358 </td>
+            <td>0.790 </td>
+            <td>0.898 </td>
+            <td>0.591 </td>
+            <td>12.219 </td>
+        </tr>
+        <tr>
+            <td>UPGAT</td>
+            <td>0.957 </td>
+            <td>0.997 </td>
+            <td>0.999 </td>
+            <td>0.978 </td>
+            <td>1.074 </td>
+        </tr>
+    </tbody>
+</table></section>
+</section>
+</section>
 </section>
 </section>
 

@@ -5,5 +5,5 @@ Model
 .. toctree::
    :maxdepth: 1
 
-   nssmodel.rst
-   ssmodel.rst
+   ukgmodel.rst
+   fsukgmodel.rst
