@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>unKR.data.DataPreprocess &mdash; unKR 1.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
+  <title>unKR.data.DataPreprocess &mdash; unKR 1.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=4bb55277" />
 
   
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=292eb321"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -35,7 +35,7 @@
             unKR
           </a>
               <div class="version">
-                1.0.0
+                1.0.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -97,11 +97,15 @@
 <span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span> <span class="k">as</span> <span class="n">ddict</span>
+<span class="kn">from</span> <span class="nn">IPython</span> <span class="kn">import</span> <span class="n">embed</span>
 <span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">from</span> <span class="nn">torch.autograd</span> <span class="kn">import</span> <span class="n">Variable</span>
 <span class="kn">import</span> <span class="nn">random</span>
 
 
-<div class="viewcode-block" id="UKGData"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGData">[docs]</a><span class="k">class</span> <span class="nc">UKGData</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="UKGData">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGData">[docs]</a>
+<span class="k">class</span> <span class="nc">UKGData</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Data preprocessing of ukg data.</span>
 
 <span class="sd">    Attributes:</span>
@@ -159,7 +163,9 @@
         <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">use_weight</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">count_frequency</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">train_triples</span><span class="p">)</span>
 
-<div class="viewcode-block" id="UKGData.get_id"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGData.get_id">[docs]</a>    <span class="k">def</span> <span class="nf">get_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="UKGData.get_id">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGData.get_id">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get entity/relation id, and entity/relation number.</span>
 
 <span class="sd">        Update:</span>
@@ -251,35 +257,34 @@
 
                 <span class="bp">self</span><span class="o">.</span><span class="n">test_triples</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>
 
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">model_name</span> <span class="o">==</span> <span class="s1">&#39;UKGE_PSL&#39;</span><span class="p">:</span>
-            <span class="n">softlogic_temp_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">data_path</span><span class="p">,</span> <span class="s2">&quot;softlogic.tsv&quot;</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">softlogic_temp_path</span><span class="p">):</span>
-                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">data_path</span><span class="p">,</span> <span class="s2">&quot;softlogic.tsv&quot;</span><span class="p">),</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fin</span><span class="p">:</span>
-                    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fin</span><span class="p">:</span>
-                        <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
-                        <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="nb">float</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+        <span class="n">softlogic_temp_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">data_path</span><span class="p">,</span> <span class="s2">&quot;softlogic.tsv&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">softlogic_temp_path</span><span class="p">):</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">data_path</span><span class="p">,</span> <span class="s2">&quot;softlogic.tsv&quot;</span><span class="p">),</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fin</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fin</span><span class="p">:</span>
+                    <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+                    <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="nb">float</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
 
-                        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">h</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
-                            <span class="n">last_e</span> <span class="o">+=</span> <span class="mi">1</span>
-                            <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">h</span><span class="p">]</span> <span class="o">=</span> <span class="n">last_e</span>
-                            <span class="bp">self</span><span class="o">.</span><span class="n">id2ent</span><span class="p">[</span><span class="n">last_e</span><span class="p">]</span> <span class="o">=</span> <span class="n">h</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">h</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">last_e</span> <span class="o">+=</span> <span class="mi">1</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">h</span><span class="p">]</span> <span class="o">=</span> <span class="n">last_e</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">id2ent</span><span class="p">[</span><span class="n">last_e</span><span class="p">]</span> <span class="o">=</span> <span class="n">h</span>
 
-                        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
-                            <span class="n">last_e</span> <span class="o">+=</span> <span class="mi">1</span>
-                            <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="n">last_e</span>
-                            <span class="bp">self</span><span class="o">.</span><span class="n">id2ent</span><span class="p">[</span><span class="n">last_e</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">last_e</span> <span class="o">+=</span> <span class="mi">1</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="n">last_e</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">id2ent</span><span class="p">[</span><span class="n">last_e</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span>
 
-                        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
-                            <span class="n">last_r</span> <span class="o">+=</span> <span class="mi">1</span>
-                            <span class="bp">self</span><span class="o">.</span><span class="n">rel2id</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">=</span> <span class="n">last_r</span>
-                            <span class="bp">self</span><span class="o">.</span><span class="n">id2rel</span> <span class="o">=</span> <span class="n">r</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel2id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">last_r</span> <span class="o">+=</span> <span class="mi">1</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">rel2id</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">=</span> <span class="n">last_r</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">id2rel</span> <span class="o">=</span> <span class="n">r</span>
 
-                        <span class="n">h</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">h</span><span class="p">]</span>
-                        <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel2id</span><span class="p">[</span><span class="n">r</span><span class="p">]</span>
-                        <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">t</span><span class="p">]</span>
-                        <span class="bp">self</span><span class="o">.</span><span class="n">PSL_triples</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>
+                    <span class="n">h</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">h</span><span class="p">]</span>
+                    <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rel2id</span><span class="p">[</span><span class="n">r</span><span class="p">]</span>
+                    <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">[</span><span class="n">t</span><span class="p">]</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">PSL_triples</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>
 
-            <span class="bp">self</span><span class="o">.</span><span class="n">RatioOfPSL</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">PSL_triples</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">train_triples</span><span class="p">)</span> <span class="c1"># calculate the ratio of the number of PSL samples to the number of training samples.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">RatioOfPSL</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">PSL_triples</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">train_triples</span><span class="p">)</span> <span class="c1"># calculate the ratio of the number of PSL samples to the number of training samples.</span>
 
         <span class="c1"># When train student_model in UPGAT, get pseudo_triples as below.</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">model_name</span> <span class="o">==</span> <span class="s1">&#39;UPGAT&#39;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">teacher_model</span><span class="p">:</span>
@@ -301,6 +306,7 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">num_ent</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">num_rel</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rel2id</span><span class="p">)</span></div>
+
 
     <span class="c1"># def get_ndcg_test_data(self):</span>
     <span class="c1">#     # 使用test_triples构造成hr_map</span>
@@ -328,7 +334,9 @@
         <span class="c1"># exit(0)</span>
 
 
-<div class="viewcode-block" id="UKGData.get_hr2t_rt2h_from_train"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGData.get_hr2t_rt2h_from_train">[docs]</a>    <span class="k">def</span> <span class="nf">get_hr2t_rt2h_from_train</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="UKGData.get_hr2t_rt2h_from_train">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGData.get_hr2t_rt2h_from_train">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_hr2t_rt2h_from_train</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the set of hr2t and rt2h from train dataset, the data type is numpy.</span>
 
 <span class="sd">        Update:</span>
@@ -344,8 +352,11 @@
         <span class="k">for</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">rt2h_train</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">rt2h_train</span><span class="p">[(</span><span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">)]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rt2h_train</span><span class="p">[(</span><span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">)]))</span></div>
 
+
     <span class="c1"># Add by Messi</span>
-<div class="viewcode-block" id="UKGData.get_hr2t_rt2h_from_total"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGData.get_hr2t_rt2h_from_total">[docs]</a>    <span class="k">def</span> <span class="nf">get_hr2t_rt2h_from_total</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="UKGData.get_hr2t_rt2h_from_total">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGData.get_hr2t_rt2h_from_total">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_hr2t_rt2h_from_total</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the set of hr2t and rt2h from whole dataset(train+val+test), the data type is numpy.</span>
 
 <span class="sd">        Update:</span>
@@ -360,7 +371,10 @@
         <span class="k">for</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">rt2h_total</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">rt2h_total</span><span class="p">[(</span><span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">)]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rt2h_total</span><span class="p">[(</span><span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">)]))</span></div>
 
-<div class="viewcode-block" id="UKGData.count_frequency"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGData.count_frequency">[docs]</a>    <span class="nd">@staticmethod</span>
+
+<div class="viewcode-block" id="UKGData.count_frequency">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGData.count_frequency">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">count_frequency</span><span class="p">(</span><span class="n">triples</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;Get frequency of a partial triple like (head, relation) or (relation, tail).</span>
 
@@ -386,7 +400,10 @@
                 <span class="n">count</span><span class="p">[(</span><span class="n">tail</span><span class="p">,</span> <span class="o">-</span><span class="n">relation</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="k">return</span> <span class="n">count</span></div>
 
-<div class="viewcode-block" id="UKGData.get_h2rt_t2hr_from_train"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGData.get_h2rt_t2hr_from_train">[docs]</a>    <span class="k">def</span> <span class="nf">get_h2rt_t2hr_from_train</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="UKGData.get_h2rt_t2hr_from_train">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGData.get_h2rt_t2hr_from_train">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_h2rt_t2hr_from_train</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the set of h2rt and t2hr from train dataset, the data type is numpy.</span>
 
 <span class="sd">        Update:</span>
@@ -401,7 +418,10 @@
         <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">t2rh_train</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">t2rh_train</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">t2rh_train</span><span class="p">[</span><span class="n">t</span><span class="p">]))</span></div>
 
-<div class="viewcode-block" id="UKGData.get_hr_train"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGData.get_hr_train">[docs]</a>    <span class="k">def</span> <span class="nf">get_hr_train</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="UKGData.get_hr_train">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGData.get_hr_train">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_hr_train</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;Change the generation mode of batch.</span>
 <span class="sd">        Merging triples which have same head and relation for 1vsN training mode.</span>
 
@@ -409,10 +429,14 @@
 <span class="sd">            self.train_triples: The tuple(hr, t) list for training</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">t_triples</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">train_triples</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">train_triples</span> <span class="o">=</span> <span class="p">[(</span><span class="n">hr</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">t</span><span class="p">))</span> <span class="k">for</span> <span class="p">(</span><span class="n">hr</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">hr2t_train</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">train_triples</span> <span class="o">=</span> <span class="p">[(</span><span class="n">hr</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">t</span><span class="p">))</span> <span class="k">for</span> <span class="p">(</span><span class="n">hr</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">hr2t_train</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span></div>
+</div>
 
 
-<div class="viewcode-block" id="UKGEBaseSampler"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler">[docs]</a><span class="k">class</span> <span class="nc">UKGEBaseSampler</span><span class="p">(</span><span class="n">UKGData</span><span class="p">):</span>
+
+<div class="viewcode-block" id="UKGEBaseSampler">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler">[docs]</a>
+<span class="k">class</span> <span class="nc">UKGEBaseSampler</span><span class="p">(</span><span class="n">UKGData</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        data processing for UKG data, the sampling method is consistent with NeuralKG (https://github.com/zjukg/NeuralKG)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -421,7 +445,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">get_hr2t_rt2h_from_train</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">get_hr2t_rt2h_from_total</span><span class="p">()</span>
 
-<div class="viewcode-block" id="UKGEBaseSampler.corrupt_head"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.corrupt_head">[docs]</a>    <span class="k">def</span> <span class="nf">corrupt_head</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">num_max</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<div class="viewcode-block" id="UKGEBaseSampler.corrupt_head">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.corrupt_head">[docs]</a>
+    <span class="k">def</span> <span class="nf">corrupt_head</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">num_max</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Negative sampling of head entities.</span>
 
 <span class="sd">        Args:</span>
@@ -439,7 +465,10 @@
         <span class="n">neg</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">neg</span></div>
 
-<div class="viewcode-block" id="UKGEBaseSampler.corrupt_tail"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.corrupt_tail">[docs]</a>    <span class="k">def</span> <span class="nf">corrupt_tail</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">num_max</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+
+<div class="viewcode-block" id="UKGEBaseSampler.corrupt_tail">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.corrupt_tail">[docs]</a>
+    <span class="k">def</span> <span class="nf">corrupt_tail</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">num_max</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Negative sampling of tail entities.</span>
 
 <span class="sd">        Args:</span>
@@ -457,7 +486,10 @@
         <span class="n">neg</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">neg</span></div>
 
-<div class="viewcode-block" id="UKGEBaseSampler.head_batch"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.head_batch">[docs]</a>    <span class="k">def</span> <span class="nf">head_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">neg_size</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+<div class="viewcode-block" id="UKGEBaseSampler.head_batch">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.head_batch">[docs]</a>
+    <span class="k">def</span> <span class="nf">head_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">neg_size</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Negative sampling of head entities.</span>
 
 <span class="sd">        Args:</span>
@@ -477,7 +509,10 @@
             <span class="n">neg_cur_size</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">neg_tmp</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">neg_list</span><span class="p">)[:</span><span class="n">neg_size</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="UKGEBaseSampler.tail_batch"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.tail_batch">[docs]</a>    <span class="k">def</span> <span class="nf">tail_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">neg_size</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+<div class="viewcode-block" id="UKGEBaseSampler.tail_batch">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.tail_batch">[docs]</a>
+    <span class="k">def</span> <span class="nf">tail_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">neg_size</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Negative sampling of tail entities.</span>
 
 <span class="sd">        Args:</span>
@@ -497,26 +532,48 @@
             <span class="n">neg_cur_size</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">neg_tmp</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">neg_list</span><span class="p">)[:</span><span class="n">neg_size</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="UKGEBaseSampler.get_train"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.get_train">[docs]</a>    <span class="k">def</span> <span class="nf">get_train</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="UKGEBaseSampler.get_train">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.get_train">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_train</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">train_triples</span></div>
 
-<div class="viewcode-block" id="UKGEBaseSampler.get_valid"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.get_valid">[docs]</a>    <span class="k">def</span> <span class="nf">get_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="UKGEBaseSampler.get_valid">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.get_valid">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">valid_triples</span></div>
 
-<div class="viewcode-block" id="UKGEBaseSampler.get_test"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.get_test">[docs]</a>    <span class="k">def</span> <span class="nf">get_test</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="UKGEBaseSampler.get_test">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.get_test">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_test</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">test_triples</span></div>
 
-<div class="viewcode-block" id="UKGEBaseSampler.get_PSL"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.get_PSL">[docs]</a>    <span class="k">def</span> <span class="nf">get_PSL</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="UKGEBaseSampler.get_PSL">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.get_PSL">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_PSL</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">PSL_triples</span></div>
 
-<div class="viewcode-block" id="UKGEBaseSampler.get_all_true_triples"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.get_all_true_triples">[docs]</a>    <span class="k">def</span> <span class="nf">get_all_true_triples</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="UKGEBaseSampler.get_all_true_triples">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.get_all_true_triples">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_all_true_triples</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">all_true_triples</span></div>
 
-<div class="viewcode-block" id="UKGEBaseSampler.get_hr_map"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.get_hr_map">[docs]</a>    <span class="k">def</span> <span class="nf">get_hr_map</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">hr_map</span></div></div>
+
+<div class="viewcode-block" id="UKGEBaseSampler.get_hr_map">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.UKGEBaseSampler.get_hr_map">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_hr_map</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">hr_map</span></div>
+</div>
 
 
-<div class="viewcode-block" id="GMUCData"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCData">[docs]</a><span class="k">class</span> <span class="nc">GMUCData</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+<div class="viewcode-block" id="GMUCData">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCData">[docs]</a>
+<span class="k">class</span> <span class="nc">GMUCData</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Data processing for few-shot GMUC &amp; GMUC+ data.</span>
 
 <span class="sd">    Attributes:</span>
@@ -575,7 +632,9 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">rel_uc2</span> <span class="o">=</span> <span class="p">{}</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">get_ontology</span><span class="p">()</span>
 
-<div class="viewcode-block" id="GMUCData.get_tasks"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCData.get_tasks">[docs]</a>    <span class="k">def</span> <span class="nf">get_tasks</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="GMUCData.get_tasks">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCData.get_tasks">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_tasks</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get entity/relation id, and entity/relation number.</span>
 
 <span class="sd">        Update:</span>
@@ -670,7 +729,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">num_symbols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_symbols</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">pad_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_symbols</span></div>
 
-<div class="viewcode-block" id="GMUCData.get_rel2candidates"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCData.get_rel2candidates">[docs]</a>    <span class="k">def</span> <span class="nf">get_rel2candidates</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="GMUCData.get_rel2candidates">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCData.get_rel2candidates">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_rel2candidates</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the set of rel2candidates. A candidate is an entity under a relationship.</span>
 
 <span class="sd">        Update:</span>
@@ -728,7 +790,10 @@
                     <span class="n">candidates</span> <span class="o">=</span> <span class="n">candidates</span><span class="p">[:</span><span class="mi">1000</span><span class="p">]</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">rel2candidates</span><span class="p">[</span><span class="n">rel</span><span class="p">]</span> <span class="o">=</span> <span class="n">candidates</span></div>
 
-<div class="viewcode-block" id="GMUCData.get_e1rel_e2"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCData.get_e1rel_e2">[docs]</a>    <span class="k">def</span> <span class="nf">get_e1rel_e2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="GMUCData.get_e1rel_e2">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCData.get_e1rel_e2">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_e1rel_e2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the set of e1rel_e2 from all dataset.</span>
 
 <span class="sd">        Update:</span>
@@ -740,7 +805,10 @@
                 <span class="n">e1</span><span class="p">,</span> <span class="n">rel</span><span class="p">,</span> <span class="n">e2</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">triple</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">e1rel_e2</span><span class="p">[</span><span class="n">e1</span> <span class="o">+</span> <span class="n">rel</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e2</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="GMUCData.get_rele1_e2"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCData.get_rele1_e2">[docs]</a>    <span class="k">def</span> <span class="nf">get_rele1_e2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="GMUCData.get_rele1_e2">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCData.get_rele1_e2">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_rele1_e2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the set of get_rele1_e2 from dev and test dataset.</span>
 
 <span class="sd">        Update:</span>
@@ -755,7 +823,10 @@
                 <span class="n">d</span><span class="p">[</span><span class="n">h</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="p">])</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">rele1_e2</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span></div>
 
-<div class="viewcode-block" id="GMUCData.get_ontology"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCData.get_ontology">[docs]</a>    <span class="k">def</span> <span class="nf">get_ontology</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="GMUCData.get_ontology">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCData.get_ontology">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_ontology</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the IIC of the entity and UC of the relation.</span>
 
 <span class="sd">        IIC(c) = 1-\frac{log(hypo(c)+1)}{log(n)}</span>
@@ -867,7 +938,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">rel_uc1</span> <span class="o">=</span> <span class="n">rel2uc1</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">rel_uc2</span> <span class="o">=</span> <span class="n">rel2uc2</span></div>
 
-<div class="viewcode-block" id="GMUCData.build_graph"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCData.build_graph">[docs]</a>    <span class="k">def</span> <span class="nf">build_graph</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">max_</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
+
+<div class="viewcode-block" id="GMUCData.build_graph">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCData.build_graph">[docs]</a>
+    <span class="k">def</span> <span class="nf">build_graph</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">max_</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Build the graph according to path_graph.</span>
 
 <span class="sd">        Update:</span>
@@ -900,16 +974,22 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">connections</span><span class="p">[</span><span class="n">id_</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># relation</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">connections</span><span class="p">[</span><span class="n">id_</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">_</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># tail entity</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">connections</span><span class="p">[</span><span class="n">id_</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">_</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># confidence</span>
-        <span class="k">return</span> <span class="n">degrees</span></div></div>
+        <span class="k">return</span> <span class="n">degrees</span></div>
+</div>
 
 
-<div class="viewcode-block" id="GMUCBaseSampler"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCBaseSampler">[docs]</a><span class="k">class</span> <span class="nc">GMUCBaseSampler</span><span class="p">(</span><span class="n">GMUCData</span><span class="p">):</span>
+
+<div class="viewcode-block" id="GMUCBaseSampler">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCBaseSampler">[docs]</a>
+<span class="k">class</span> <span class="nc">GMUCBaseSampler</span><span class="p">(</span><span class="n">GMUCData</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Traditional GMUC random sampling mode.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
 
-<div class="viewcode-block" id="GMUCBaseSampler.generate_false"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCBaseSampler.generate_false">[docs]</a>    <span class="k">def</span> <span class="nf">generate_false</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_triples</span><span class="p">,</span> <span class="n">candidates</span><span class="p">):</span>
+<div class="viewcode-block" id="GMUCBaseSampler.generate_false">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCBaseSampler.generate_false">[docs]</a>
+    <span class="k">def</span> <span class="nf">generate_false</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_triples</span><span class="p">,</span> <span class="n">candidates</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Generate false triples.</span>
 
 <span class="sd">        Args:</span>
@@ -940,14 +1020,25 @@
 
         <span class="k">return</span> <span class="n">false_pairs</span><span class="p">,</span> <span class="n">false_left</span><span class="p">,</span> <span class="n">false_right</span></div>
 
-<div class="viewcode-block" id="GMUCBaseSampler.get_train"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCBaseSampler.get_train">[docs]</a>    <span class="k">def</span> <span class="nf">get_train</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="GMUCBaseSampler.get_train">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCBaseSampler.get_train">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_train</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">[{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="p">}</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">train_tasks</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span></div>
 
-<div class="viewcode-block" id="GMUCBaseSampler.get_valid"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCBaseSampler.get_valid">[docs]</a>    <span class="k">def</span> <span class="nf">get_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="GMUCBaseSampler.get_valid">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCBaseSampler.get_valid">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">[{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="p">}</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dev_tasks</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span></div>
 
-<div class="viewcode-block" id="GMUCBaseSampler.get_test"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCBaseSampler.get_test">[docs]</a>    <span class="k">def</span> <span class="nf">get_test</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">[{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="p">}</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">test_tasks</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span></div></div>
+
+<div class="viewcode-block" id="GMUCBaseSampler.get_test">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.DataPreprocess.GMUCBaseSampler.get_test">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_test</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="p">}</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">test_tasks</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span></div>
+</div>
+
 </pre></div>
 
            </div>

@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>unKR.eval_task.link_prediction &mdash; unKR 1.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
+  <title>unKR.eval_task.link_prediction &mdash; unKR 1.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=4bb55277" />
 
   
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=292eb321"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -35,7 +35,7 @@
             unKR
           </a>
               <div class="version">
-                1.0.0
+                1.0.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -88,9 +88,13 @@
              
   <h1>Source code for unKR.eval_task.link_prediction</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">IPython</span> <span class="kn">import</span> <span class="n">embed</span>
 
 
-<div class="viewcode-block" id="link_predict"><a class="viewcode-back" href="../../../unKR.eval_task.html#unKR.eval_task.link_prediction.link_predict">[docs]</a><span class="k">def</span> <span class="nf">link_predict</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">prediction</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">):</span>
+<div class="viewcode-block" id="link_predict">
+<a class="viewcode-back" href="../../../unKR.eval_task.html#unKR.eval_task.link_prediction.link_predict">[docs]</a>
+<span class="k">def</span> <span class="nf">link_predict</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">prediction</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;The evaluate task is predicting the head entity or tail entity in incomplete triples.</span>
 
 <span class="sd">    Args:</span>
@@ -113,7 +117,10 @@
     <span class="k">return</span> <span class="n">ranks</span><span class="o">.</span><span class="n">float</span><span class="p">()</span></div>
 
 
-<div class="viewcode-block" id="link_predict_filter"><a class="viewcode-back" href="../../../unKR.eval_task.html#unKR.eval_task.link_prediction.link_predict_filter">[docs]</a><span class="k">def</span> <span class="nf">link_predict_filter</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">confidence</span><span class="p">,</span> <span class="n">prediction</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">):</span>
+
+<div class="viewcode-block" id="link_predict_filter">
+<a class="viewcode-back" href="../../../unKR.eval_task.html#unKR.eval_task.link_prediction.link_predict_filter">[docs]</a>
+<span class="k">def</span> <span class="nf">link_predict_filter</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">confidence</span><span class="p">,</span> <span class="n">prediction</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;The evaluate task is predicting the head entity or tail entity in incomplete triples.</span>
 <span class="sd">    link_predict_filter is for high confidence test samples,</span>
 <span class="sd">    only samples higher than the set confidence will participate in link prediction tasks.</span>
@@ -139,7 +146,10 @@
     <span class="k">return</span> <span class="n">ranks</span><span class="o">.</span><span class="n">float</span><span class="p">()</span></div>
 
 
-<div class="viewcode-block" id="head_predict_filter"><a class="viewcode-back" href="../../../unKR.eval_task.html#unKR.eval_task.link_prediction.head_predict_filter">[docs]</a><span class="k">def</span> <span class="nf">head_predict_filter</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">confidence</span><span class="p">):</span>
+
+<div class="viewcode-block" id="head_predict_filter">
+<a class="viewcode-back" href="../../../unKR.eval_task.html#unKR.eval_task.link_prediction.head_predict_filter">[docs]</a>
+<span class="k">def</span> <span class="nf">head_predict_filter</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">confidence</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Getting head entity ranks (high confidence).</span>
 
 <span class="sd">    Args:</span>
@@ -161,7 +171,10 @@
     <span class="k">return</span> <span class="n">calc_ranks</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">pred_score</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="tail_predict_filter"><a class="viewcode-back" href="../../../unKR.eval_task.html#unKR.eval_task.link_prediction.tail_predict_filter">[docs]</a><span class="k">def</span> <span class="nf">tail_predict_filter</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">confidence</span><span class="p">):</span>
+
+<div class="viewcode-block" id="tail_predict_filter">
+<a class="viewcode-back" href="../../../unKR.eval_task.html#unKR.eval_task.link_prediction.tail_predict_filter">[docs]</a>
+<span class="k">def</span> <span class="nf">tail_predict_filter</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">confidence</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Getting tail entity ranks.(high confidence)</span>
 
 <span class="sd">    Args:</span>
@@ -182,7 +195,10 @@
     <span class="n">pred_score</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_score</span><span class="p">(</span><span class="n">batch_copy</span><span class="p">,</span> <span class="s2">&quot;tail_predict&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">calc_ranks</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">pred_score</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="link_predict_raw"><a class="viewcode-back" href="../../../unKR.eval_task.html#unKR.eval_task.link_prediction.link_predict_raw">[docs]</a><span class="k">def</span> <span class="nf">link_predict_raw</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">confidence</span><span class="p">,</span> <span class="n">prediction</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">):</span>
+
+<div class="viewcode-block" id="link_predict_raw">
+<a class="viewcode-back" href="../../../unKR.eval_task.html#unKR.eval_task.link_prediction.link_predict_raw">[docs]</a>
+<span class="k">def</span> <span class="nf">link_predict_raw</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">confidence</span><span class="p">,</span> <span class="n">prediction</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;The evaluate task is predicting the head entity or tail entity in incomplete triples.</span>
 <span class="sd">    Only samples higher than the set confidence will participate in link prediction tasks.</span>
 <span class="sd">    Different from link_predict_filter, this function does not filter samples that already exist in the knowledge graph when calculating the ranking of samples</span>
@@ -206,7 +222,10 @@
 
     <span class="k">return</span> <span class="n">ranks</span><span class="o">.</span><span class="n">float</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="head_predict_raw"><a class="viewcode-back" href="../../../unKR.eval_task.html#unKR.eval_task.link_prediction.head_predict_raw">[docs]</a><span class="k">def</span> <span class="nf">head_predict_raw</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">confidence</span><span class="p">):</span>
+
+<div class="viewcode-block" id="head_predict_raw">
+<a class="viewcode-back" href="../../../unKR.eval_task.html#unKR.eval_task.link_prediction.head_predict_raw">[docs]</a>
+<span class="k">def</span> <span class="nf">head_predict_raw</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">confidence</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Getting head entity ranks. (high confidence + no filter)</span>
 
 <span class="sd">    Args:</span>
@@ -228,7 +247,10 @@
     <span class="k">return</span> <span class="n">calc_ranks_raw</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">pred_score</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="tail_predict_raw"><a class="viewcode-back" href="../../../unKR.eval_task.html#unKR.eval_task.link_prediction.tail_predict_raw">[docs]</a><span class="k">def</span> <span class="nf">tail_predict_raw</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">confidence</span><span class="p">):</span>
+
+<div class="viewcode-block" id="tail_predict_raw">
+<a class="viewcode-back" href="../../../unKR.eval_task.html#unKR.eval_task.link_prediction.tail_predict_raw">[docs]</a>
+<span class="k">def</span> <span class="nf">tail_predict_raw</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">confidence</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Getting tail entity ranks. (high confidence + no filter)</span>
 
 <span class="sd">    Args:</span>
@@ -249,7 +271,10 @@
     <span class="n">pred_score</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_score</span><span class="p">(</span><span class="n">batch_copy</span><span class="p">,</span> <span class="s2">&quot;tail_predict&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">calc_ranks_raw</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">pred_score</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="head_predict"><a class="viewcode-back" href="../../../unKR.eval_task.html#unKR.eval_task.link_prediction.head_predict">[docs]</a><span class="k">def</span> <span class="nf">head_predict</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+
+<div class="viewcode-block" id="head_predict">
+<a class="viewcode-back" href="../../../unKR.eval_task.html#unKR.eval_task.link_prediction.head_predict">[docs]</a>
+<span class="k">def</span> <span class="nf">head_predict</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Getting head entity ranks.</span>
 
 <span class="sd">    Args:</span>
@@ -266,7 +291,10 @@
     <span class="k">return</span> <span class="n">calc_ranks</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">pred_score</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="tail_predict"><a class="viewcode-back" href="../../../unKR.eval_task.html#unKR.eval_task.link_prediction.tail_predict">[docs]</a><span class="k">def</span> <span class="nf">tail_predict</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+
+<div class="viewcode-block" id="tail_predict">
+<a class="viewcode-back" href="../../../unKR.eval_task.html#unKR.eval_task.link_prediction.tail_predict">[docs]</a>
+<span class="k">def</span> <span class="nf">tail_predict</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Getting tail entity ranks.</span>
 
 <span class="sd">    Args:</span>
@@ -283,7 +311,10 @@
     <span class="k">return</span> <span class="n">calc_ranks</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">pred_score</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="calc_ranks"><a class="viewcode-back" href="../../../unKR.eval_task.html#unKR.eval_task.link_prediction.calc_ranks">[docs]</a><span class="k">def</span> <span class="nf">calc_ranks</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">pred_score</span><span class="p">):</span>
+
+<div class="viewcode-block" id="calc_ranks">
+<a class="viewcode-back" href="../../../unKR.eval_task.html#unKR.eval_task.link_prediction.calc_ranks">[docs]</a>
+<span class="k">def</span> <span class="nf">calc_ranks</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">pred_score</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculating triples score ranks.</span>
 
 <span class="sd">    Args:</span>
@@ -310,7 +341,10 @@
     <span class="p">)</span>
     <span class="k">return</span> <span class="n">ranks</span></div>
 
-<div class="viewcode-block" id="calc_ranks_raw"><a class="viewcode-back" href="../../../unKR.eval_task.html#unKR.eval_task.link_prediction.calc_ranks_raw">[docs]</a><span class="k">def</span> <span class="nf">calc_ranks_raw</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">pred_score</span><span class="p">):</span>
+
+<div class="viewcode-block" id="calc_ranks_raw">
+<a class="viewcode-back" href="../../../unKR.eval_task.html#unKR.eval_task.link_prediction.calc_ranks_raw">[docs]</a>
+<span class="k">def</span> <span class="nf">calc_ranks_raw</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">pred_score</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculating triples score ranks.</span>
 <span class="sd">    Different from calc_ranks, calc_ranks_raw will not exclude samples that are already in the knowledge graph when get the ranks.</span>
 
@@ -336,6 +370,7 @@
     <span class="p">)[</span><span class="n">b_range</span><span class="p">,</span> <span class="n">idx</span><span class="p">]</span>
     <span class="p">)</span>
     <span class="k">return</span> <span class="n">ranks</span></div>
+
 
 </pre></div>
 

@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>unKR.loss.BEUrRE_Loss &mdash; unKR 1.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
+  <title>unKR.loss.BEUrRE_Loss &mdash; unKR 1.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=4bb55277" />
 
   
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=292eb321"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -35,7 +35,7 @@
             unKR
           </a>
               <div class="version">
-                1.0.0
+                1.0.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -90,7 +90,9 @@
 <span></span><span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
 
-<div class="viewcode-block" id="BEUrRE_Loss"><a class="viewcode-back" href="../../../unKR.loss.html#unKR.loss.BEUrRE_Loss.BEUrRE_Loss">[docs]</a><span class="k">class</span> <span class="nc">BEUrRE_Loss</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<div class="viewcode-block" id="BEUrRE_Loss">
+<a class="viewcode-back" href="../../../unKR.loss.html#unKR.loss.BEUrRE_Loss.BEUrRE_Loss">[docs]</a>
+<span class="k">class</span> <span class="nc">BEUrRE_Loss</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;The loss function of BEUrRE</span>
 
 <span class="sd">    Attributes:</span>
@@ -102,7 +104,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
 
-<div class="viewcode-block" id="BEUrRE_Loss.get_logic_loss"><a class="viewcode-back" href="../../../unKR.loss.html#unKR.loss.BEUrRE_Loss.BEUrRE_Loss.get_logic_loss">[docs]</a>    <span class="k">def</span> <span class="nf">get_logic_loss</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">ids</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="BEUrRE_Loss.get_logic_loss">
+<a class="viewcode-back" href="../../../unKR.loss.html#unKR.loss.BEUrRE_Loss.BEUrRE_Loss.get_logic_loss">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_logic_loss</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">ids</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculates the logic loss for the model based on transitive and composite rule regularizations.</span>
 
@@ -132,7 +136,10 @@
         <span class="k">return</span> <span class="p">(</span><span class="n">transitive_rule_reg</span> <span class="o">+</span> <span class="n">composition_rule_reg</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">ids</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="BEUrRE_Loss.main_mse_loss"><a class="viewcode-back" href="../../../unKR.loss.html#unKR.loss.BEUrRE_Loss.BEUrRE_Loss.main_mse_loss">[docs]</a>    <span class="k">def</span> <span class="nf">main_mse_loss</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">ids</span><span class="p">):</span>
+
+<div class="viewcode-block" id="BEUrRE_Loss.main_mse_loss">
+<a class="viewcode-back" href="../../../unKR.loss.html#unKR.loss.BEUrRE_Loss.BEUrRE_Loss.main_mse_loss">[docs]</a>
+    <span class="k">def</span> <span class="nf">main_mse_loss</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">ids</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Computes the Mean Squared Error (MSE) loss for the model.</span>
 
@@ -156,7 +163,10 @@
         <span class="k">return</span> <span class="n">mse</span></div>
 
 
-<div class="viewcode-block" id="BEUrRE_Loss.L2_regularization"><a class="viewcode-back" href="../../../unKR.loss.html#unKR.loss.BEUrRE_Loss.BEUrRE_Loss.L2_regularization">[docs]</a>    <span class="k">def</span> <span class="nf">L2_regularization</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">ids</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+
+<div class="viewcode-block" id="BEUrRE_Loss.L2_regularization">
+<a class="viewcode-back" href="../../../unKR.loss.html#unKR.loss.BEUrRE_Loss.BEUrRE_Loss.L2_regularization">[docs]</a>
+    <span class="k">def</span> <span class="nf">L2_regularization</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">ids</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Computes the L2 regularization loss for the model.</span>
 
@@ -198,7 +208,10 @@
         <span class="k">return</span> <span class="n">L2_reg</span></div>
 
 
-<div class="viewcode-block" id="BEUrRE_Loss.forward"><a class="viewcode-back" href="../../../unKR.loss.html#unKR.loss.BEUrRE_Loss.BEUrRE_Loss.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">ids</span><span class="p">,</span> <span class="n">negative_samples</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+
+<div class="viewcode-block" id="BEUrRE_Loss.forward">
+<a class="viewcode-back" href="../../../unKR.loss.html#unKR.loss.BEUrRE_Loss.BEUrRE_Loss.forward">[docs]</a>
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">ids</span><span class="p">,</span> <span class="n">negative_samples</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculating the total loss including MSE loss, logic loss, and L2 regularization.</span>
 
@@ -229,7 +242,9 @@
 
         <span class="n">loss</span> <span class="o">=</span> <span class="n">main_loss</span> <span class="o">+</span> <span class="n">L2_reg</span> <span class="o">+</span> <span class="n">logic_loss</span>
 
-        <span class="k">return</span> <span class="n">loss</span></div></div>
+        <span class="k">return</span> <span class="n">loss</span></div>
+</div>
+
 </pre></div>
 
            </div>

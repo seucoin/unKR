@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>unKR.loss.GMUC_Loss &mdash; unKR 1.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
+  <title>unKR.loss.GMUC_Loss &mdash; unKR 1.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=4bb55277" />
 
   
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=292eb321"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -35,7 +35,7 @@
             unKR
           </a>
               <div class="version">
-                1.0.0
+                1.0.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -92,7 +92,9 @@
 <span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
 
 
-<div class="viewcode-block" id="GMUC_Loss"><a class="viewcode-back" href="../../../unKR.loss.html#unKR.loss.GMUC_Loss.GMUC_Loss">[docs]</a><span class="k">class</span> <span class="nc">GMUC_Loss</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<div class="viewcode-block" id="GMUC_Loss">
+<a class="viewcode-back" href="../../../unKR.loss.html#unKR.loss.GMUC_Loss.GMUC_Loss">[docs]</a>
+<span class="k">class</span> <span class="nc">GMUC_Loss</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;GMUC Loss</span>
 
 <span class="sd">    Attributes:</span>
@@ -104,7 +106,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
 
-<div class="viewcode-block" id="GMUC_Loss.forward"><a class="viewcode-back" href="../../../unKR.loss.html#unKR.loss.GMUC_Loss.GMUC_Loss.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_scores</span><span class="p">,</span> <span class="n">query_scores_var</span><span class="p">,</span> <span class="n">query_ae_loss</span><span class="p">,</span> <span class="n">false_scores</span><span class="p">,</span> <span class="n">query_confidence</span><span class="p">):</span>
+<div class="viewcode-block" id="GMUC_Loss.forward">
+<a class="viewcode-back" href="../../../unKR.loss.html#unKR.loss.GMUC_Loss.GMUC_Loss.forward">[docs]</a>
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_scores</span><span class="p">,</span> <span class="n">query_scores_var</span><span class="p">,</span> <span class="n">query_ae_loss</span><span class="p">,</span> <span class="n">false_scores</span><span class="p">,</span> <span class="n">query_confidence</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            query_scores: The matching scores for link prediction.</span>
@@ -137,7 +141,9 @@
         <span class="c1"># ------ over all loss ------</span>
         <span class="n">loss</span> <span class="o">=</span> <span class="n">rank_loss</span> <span class="o">+</span> <span class="n">mae_loss</span> <span class="o">+</span> <span class="n">ae_loss</span>
 
-        <span class="k">return</span> <span class="n">loss</span></div></div>
+        <span class="k">return</span> <span class="n">loss</span></div>
+</div>
+
 </pre></div>
 
            </div>

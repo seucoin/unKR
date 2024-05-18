@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>unKR.lit_model.BEUrRELitModel &mdash; unKR 1.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
+  <title>unKR.lit_model.BEUrRELitModel &mdash; unKR 1.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=4bb55277" />
 
   
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=292eb321"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -35,7 +35,7 @@
             unKR
           </a>
               <div class="version">
-                1.0.0
+                1.0.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -91,23 +91,33 @@
 <span class="kn">from</span> <span class="nn">..eval_task</span> <span class="kn">import</span> <span class="o">*</span>
 
 
-<div class="viewcode-block" id="BEUrRELitModel"><a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BEUrRELitModel.BEUrRELitModel">[docs]</a><span class="k">class</span> <span class="nc">BEUrRELitModel</span><span class="p">(</span><span class="n">BaseLitModel</span><span class="p">):</span>
+<div class="viewcode-block" id="BEUrRELitModel">
+<a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BEUrRELitModel.BEUrRELitModel">[docs]</a>
+<span class="k">class</span> <span class="nc">BEUrRELitModel</span><span class="p">(</span><span class="n">BaseLitModel</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Processing of training, evaluation and testing.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
 
-<div class="viewcode-block" id="BEUrRELitModel.forward"><a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BEUrRELitModel.BEUrRELitModel.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+<div class="viewcode-block" id="BEUrRELitModel.forward">
+<a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BEUrRELitModel.BEUrRELitModel.forward">[docs]</a>
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="BEUrRELitModel.add_to_argparse"><a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BEUrRELitModel.BEUrRELitModel.add_to_argparse">[docs]</a>    <span class="nd">@staticmethod</span>
+
+<div class="viewcode-block" id="BEUrRELitModel.add_to_argparse">
+<a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BEUrRELitModel.BEUrRELitModel.add_to_argparse">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">add_to_argparse</span><span class="p">(</span><span class="n">parser</span><span class="p">):</span>
         <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--lr&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
         <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--weight_decay&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">parser</span></div>
 
-<div class="viewcode-block" id="BEUrRELitModel.training_step"><a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BEUrRELitModel.BEUrRELitModel.training_step">[docs]</a>    <span class="k">def</span> <span class="nf">training_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">batch_idx</span><span class="p">):</span>
+
+<div class="viewcode-block" id="BEUrRELitModel.training_step">
+<a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BEUrRELitModel.BEUrRELitModel.training_step">[docs]</a>
+    <span class="k">def</span> <span class="nf">training_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">batch_idx</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Getting samples and training in BEUrRE model.</span>
 
 <span class="sd">        Args:</span>
@@ -127,7 +137,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s2">&quot;Train|loss&quot;</span><span class="p">,</span> <span class="n">loss</span><span class="p">,</span> <span class="n">on_step</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">on_epoch</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">loss</span></div>
 
-<div class="viewcode-block" id="BEUrRELitModel.validation_step"><a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BEUrRELitModel.BEUrRELitModel.validation_step">[docs]</a>    <span class="k">def</span> <span class="nf">validation_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">batch_idx</span><span class="p">):</span>
+
+<div class="viewcode-block" id="BEUrRELitModel.validation_step">
+<a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BEUrRELitModel.BEUrRELitModel.validation_step">[docs]</a>
+    <span class="k">def</span> <span class="nf">validation_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">batch_idx</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Getting samples and validation in BEUrRE model.</span>
 
 <span class="sd">        Args:</span>
@@ -138,55 +151,40 @@
 <span class="sd">            results: mae, mse, wmr, wmrr, mr mrr and hits@1,3,5,10.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">results</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;以MSE为指标 Early Stop&quot;&quot;&quot;</span>
         <span class="n">results</span><span class="p">[</span><span class="s2">&quot;count_for_conf&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">batch</span><span class="p">[</span><span class="s1">&#39;positive_sample&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
         <span class="n">MAE</span><span class="p">,</span> <span class="n">MSE</span> <span class="o">=</span> <span class="n">conf_predict</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">)</span>
         <span class="n">results</span><span class="p">[</span><span class="s2">&quot;MAE&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">MAE</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
         <span class="n">results</span><span class="p">[</span><span class="s2">&quot;MSE&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">MSE</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
 
         <span class="n">prediction</span> <span class="o">=</span> <span class="s2">&quot;tail&quot;</span>
-        <span class="n">confidence</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">confidence_filter</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;以MRR为指标 Early Stop&quot;&quot;&quot;</span>
         <span class="n">ranks</span> <span class="o">=</span> <span class="n">link_predict</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="n">prediction</span><span class="o">=</span><span class="n">prediction</span><span class="p">)</span>
-        <span class="n">ranks_link_predict</span> <span class="o">=</span> <span class="n">link_predict_filter</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="n">confidence</span><span class="p">,</span> <span class="n">prediction</span><span class="o">=</span><span class="n">prediction</span><span class="p">)</span> <span class="c1"># get the ranks of entities in link prediction</span>
-        <span class="n">ranks_link_predict_raw</span> <span class="o">=</span> <span class="n">link_predict_raw</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="n">confidence</span><span class="p">,</span> <span class="n">prediction</span><span class="o">=</span><span class="n">prediction</span><span class="p">)</span> <span class="c1"># get the raw rank (no filter when calculate the rank)</span>
-        <span class="n">results</span><span class="p">[</span><span class="s2">&quot;count_for_link&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">numel</span><span class="p">(</span><span class="n">ranks_link_predict</span><span class="p">)</span>
-        <span class="n">results</span><span class="p">[</span><span class="s2">&quot;mrr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">ranks_link_predict</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
-        <span class="n">results</span><span class="p">[</span><span class="s2">&quot;mr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ranks_link_predict</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
-        <span class="n">results</span><span class="p">[</span><span class="s2">&quot;raw_count_for_link&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">numel</span><span class="p">(</span><span class="n">ranks_link_predict_raw</span><span class="p">)</span>
-        <span class="n">results</span><span class="p">[</span><span class="s2">&quot;raw_mrr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">ranks_link_predict_raw</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
-        <span class="n">results</span><span class="p">[</span><span class="s2">&quot;raw_mr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ranks_link_predict_raw</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+        <span class="n">results</span><span class="p">[</span><span class="s2">&quot;count_for_link&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">numel</span><span class="p">(</span><span class="n">ranks</span><span class="p">)</span>
+        <span class="n">results</span><span class="p">[</span><span class="s2">&quot;mrr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">ranks</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+        <span class="n">results</span><span class="p">[</span><span class="s2">&quot;mr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ranks</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">calc_hits</span><span class="p">:</span>
-            <span class="n">results</span><span class="p">[</span><span class="s1">&#39;hits@</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">)]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">numel</span><span class="p">(</span><span class="n">ranks_link_predict</span><span class="p">[</span><span class="n">ranks_link_predict</span> <span class="o">&lt;=</span> <span class="n">k</span><span class="p">])</span>
-            <span class="n">results</span><span class="p">[</span><span class="s1">&#39;raw_hits@</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">)]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">numel</span><span class="p">(</span><span class="n">ranks_link_predict_raw</span><span class="p">[</span><span class="n">ranks_link_predict_raw</span> <span class="o">&lt;=</span> <span class="n">k</span><span class="p">])</span>
+            <span class="n">results</span><span class="p">[</span><span class="s1">&#39;hits@</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">)]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">numel</span><span class="p">(</span><span class="n">ranks</span><span class="p">[</span><span class="n">ranks</span> <span class="o">&lt;=</span> <span class="n">k</span><span class="p">])</span>
 
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;calculate WMR   Weighted-MR &quot;&quot;&quot;</span>
-        <span class="n">pos_triple</span> <span class="o">=</span> <span class="n">batch</span><span class="p">[</span><span class="s2">&quot;positive_sample&quot;</span><span class="p">]</span>
-        <span class="n">mask</span> <span class="o">=</span> <span class="n">pos_triple</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">confidence</span>
-        <span class="k">if</span> <span class="n">prediction</span> <span class="o">==</span> <span class="s2">&quot;all&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;计算WMR   Weighted-MR &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">prediction</span> <span class="o">==</span> <span class="s2">&quot;all&quot;</span><span class="p">:</span>  <span class="c1"># 头尾实体预测平均</span>
             <span class="n">conf</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="n">batch</span><span class="p">[</span><span class="s1">&#39;positive_sample&#39;</span><span class="p">][:,</span> <span class="mi">3</span><span class="p">]]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
-            <span class="n">conf_high_score</span> <span class="o">=</span> <span class="n">conf</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
-            <span class="n">results</span><span class="p">[</span><span class="s2">&quot;wmr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ranks_link_predict</span> <span class="o">*</span> <span class="n">conf_high_score</span><span class="p">)</span>
-            <span class="n">ranks_mrr</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">ranks_link_predict</span>
-            <span class="n">results</span><span class="p">[</span><span class="s2">&quot;wmrr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ranks_mrr</span> <span class="o">*</span> <span class="n">conf_high_score</span><span class="p">)</span>
-            <span class="n">results</span><span class="p">[</span><span class="s2">&quot;sum_for_conf&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">conf_high_score</span><span class="p">)</span>
-            <span class="n">results</span><span class="p">[</span><span class="s2">&quot;raw_wmr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ranks_link_predict_raw</span> <span class="o">*</span> <span class="n">conf_high_score</span><span class="p">)</span>
-            <span class="n">ranks_mrr</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">ranks_link_predict_raw</span>
-            <span class="n">results</span><span class="p">[</span><span class="s2">&quot;raw_wmrr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ranks_mrr</span> <span class="o">*</span> <span class="n">conf_high_score</span><span class="p">)</span>
-
-        <span class="k">else</span><span class="p">:</span>
+            <span class="n">results</span><span class="p">[</span><span class="s2">&quot;wmr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ranks</span> <span class="o">*</span> <span class="n">conf</span><span class="p">)</span>
+            <span class="n">ranks_mrr</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">ranks</span>
+            <span class="n">results</span><span class="p">[</span><span class="s2">&quot;wmrr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ranks_mrr</span> <span class="o">*</span> <span class="n">conf</span><span class="p">)</span>
+            <span class="n">results</span><span class="p">[</span><span class="s2">&quot;sum_for_conf&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">conf</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span> <span class="c1"># 头尾实体预测</span>
             <span class="n">conf</span> <span class="o">=</span> <span class="n">batch</span><span class="p">[</span><span class="s1">&#39;positive_sample&#39;</span><span class="p">][:,</span> <span class="mi">3</span><span class="p">]</span>
-            <span class="n">conf_high_score</span> <span class="o">=</span> <span class="n">conf</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
-            <span class="n">results</span><span class="p">[</span><span class="s2">&quot;wmr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ranks_link_predict</span> <span class="o">*</span> <span class="n">conf_high_score</span><span class="p">)</span>
-            <span class="n">ranks_mrr</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">ranks_link_predict</span>
-            <span class="n">results</span><span class="p">[</span><span class="s2">&quot;wmrr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ranks_mrr</span> <span class="o">*</span> <span class="n">conf_high_score</span><span class="p">)</span>
-            <span class="n">results</span><span class="p">[</span><span class="s2">&quot;sum_for_conf&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">conf_high_score</span><span class="p">)</span>
-            <span class="n">results</span><span class="p">[</span><span class="s2">&quot;raw_wmr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ranks_link_predict_raw</span> <span class="o">*</span> <span class="n">conf_high_score</span><span class="p">)</span>
-            <span class="n">ranks_mrr</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">ranks_link_predict_raw</span>
-            <span class="n">results</span><span class="p">[</span><span class="s2">&quot;raw_wmrr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ranks_mrr</span> <span class="o">*</span> <span class="n">conf_high_score</span><span class="p">)</span>
-
+            <span class="n">results</span><span class="p">[</span><span class="s2">&quot;wmr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ranks</span> <span class="o">*</span> <span class="n">conf</span><span class="p">)</span>
+            <span class="n">ranks_mrr</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">ranks</span>
+            <span class="n">results</span><span class="p">[</span><span class="s2">&quot;wmrr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ranks_mrr</span> <span class="o">*</span> <span class="n">conf</span><span class="p">)</span>
+            <span class="n">results</span><span class="p">[</span><span class="s2">&quot;sum_for_conf&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">conf</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">results</span></div>
 
-<div class="viewcode-block" id="BEUrRELitModel.validation_epoch_end"><a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BEUrRELitModel.BEUrRELitModel.validation_epoch_end">[docs]</a>    <span class="k">def</span> <span class="nf">validation_epoch_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">results</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="BEUrRELitModel.validation_epoch_end">
+<a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BEUrRELitModel.BEUrRELitModel.validation_epoch_end">[docs]</a>
+    <span class="k">def</span> <span class="nf">validation_epoch_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">results</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">outputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_results</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="s2">&quot;Eval&quot;</span><span class="p">)</span>
 
         <span class="c1"># with open(os.path.join(self.args.data_path, &quot;ndcg_test.pickle&quot;), &#39;rb&#39;) as f:</span>
@@ -198,7 +196,10 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">log_dict</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">prog_bar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">on_epoch</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="BEUrRELitModel.test_step"><a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BEUrRELitModel.BEUrRELitModel.test_step">[docs]</a>    <span class="k">def</span> <span class="nf">test_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">batch_idx</span><span class="p">):</span>
+
+<div class="viewcode-block" id="BEUrRELitModel.test_step">
+<a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BEUrRELitModel.BEUrRELitModel.test_step">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">batch_idx</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Getting samples and test in BEUrRE model.</span>
 
 <span class="sd">        Args:</span>
@@ -210,54 +211,41 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">results</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
 
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;以MSE为指标 Early Stop&quot;&quot;&quot;</span>
         <span class="n">results</span><span class="p">[</span><span class="s2">&quot;count_for_conf&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">batch</span><span class="p">[</span><span class="s1">&#39;positive_sample&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
         <span class="n">MAE</span><span class="p">,</span> <span class="n">MSE</span> <span class="o">=</span> <span class="n">conf_predict</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">)</span>
         <span class="n">results</span><span class="p">[</span><span class="s2">&quot;MAE&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">MAE</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
         <span class="n">results</span><span class="p">[</span><span class="s2">&quot;MSE&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">MSE</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
 
         <span class="n">prediction</span> <span class="o">=</span> <span class="s2">&quot;tail&quot;</span>
-        <span class="n">confidence</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">confidence_filter</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;以MRR为指标 Early Stop&quot;&quot;&quot;</span>
         <span class="n">ranks</span> <span class="o">=</span> <span class="n">link_predict</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="n">prediction</span><span class="o">=</span><span class="n">prediction</span><span class="p">)</span>
-        <span class="n">ranks_link_predict</span> <span class="o">=</span> <span class="n">link_predict_filter</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="n">confidence</span><span class="p">,</span> <span class="n">prediction</span><span class="o">=</span><span class="n">prediction</span><span class="p">)</span> <span class="c1"># get the ranks of entities in link prediction</span>
-        <span class="n">ranks_link_predict_raw</span> <span class="o">=</span> <span class="n">link_predict_raw</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="n">confidence</span><span class="p">,</span> <span class="n">prediction</span><span class="o">=</span><span class="n">prediction</span><span class="p">)</span> <span class="c1"># get the raw rank (no filter when calculate the rank)</span>
-        <span class="n">results</span><span class="p">[</span><span class="s2">&quot;count_for_link&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">numel</span><span class="p">(</span><span class="n">ranks_link_predict</span><span class="p">)</span>
-        <span class="n">results</span><span class="p">[</span><span class="s2">&quot;mrr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">ranks_link_predict</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
-        <span class="n">results</span><span class="p">[</span><span class="s2">&quot;mr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ranks_link_predict</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
-        <span class="n">results</span><span class="p">[</span><span class="s2">&quot;raw_count_for_link&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">numel</span><span class="p">(</span><span class="n">ranks_link_predict_raw</span><span class="p">)</span>
-        <span class="n">results</span><span class="p">[</span><span class="s2">&quot;raw_mrr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">ranks_link_predict_raw</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
-        <span class="n">results</span><span class="p">[</span><span class="s2">&quot;raw_mr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ranks_link_predict_raw</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+        <span class="n">results</span><span class="p">[</span><span class="s2">&quot;count_for_link&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">numel</span><span class="p">(</span><span class="n">ranks</span><span class="p">)</span>
+        <span class="n">results</span><span class="p">[</span><span class="s2">&quot;mrr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">ranks</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+        <span class="n">results</span><span class="p">[</span><span class="s2">&quot;mr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ranks</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">calc_hits</span><span class="p">:</span>
-            <span class="n">results</span><span class="p">[</span><span class="s1">&#39;hits@</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">)]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">numel</span><span class="p">(</span><span class="n">ranks_link_predict</span><span class="p">[</span><span class="n">ranks_link_predict</span> <span class="o">&lt;=</span> <span class="n">k</span><span class="p">])</span>
-            <span class="n">results</span><span class="p">[</span><span class="s1">&#39;raw_hits@</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">)]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">numel</span><span class="p">(</span><span class="n">ranks_link_predict_raw</span><span class="p">[</span><span class="n">ranks_link_predict_raw</span> <span class="o">&lt;=</span> <span class="n">k</span><span class="p">])</span>
+            <span class="n">results</span><span class="p">[</span><span class="s1">&#39;hits@</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">)]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">numel</span><span class="p">(</span><span class="n">ranks</span><span class="p">[</span><span class="n">ranks</span> <span class="o">&lt;=</span> <span class="n">k</span><span class="p">])</span>
 
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;calculate WMR   Weighted-MR &quot;&quot;&quot;</span>
-        <span class="n">pos_triple</span> <span class="o">=</span> <span class="n">batch</span><span class="p">[</span><span class="s2">&quot;positive_sample&quot;</span><span class="p">]</span>
-        <span class="n">mask</span> <span class="o">=</span> <span class="n">pos_triple</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">confidence</span>
-        <span class="k">if</span> <span class="n">prediction</span> <span class="o">==</span> <span class="s2">&quot;all&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;计算WMR   Weighted-MR &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">prediction</span> <span class="o">==</span> <span class="s2">&quot;all&quot;</span><span class="p">:</span>  <span class="c1"># 头尾实体预测平均</span>
             <span class="n">conf</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="n">batch</span><span class="p">[</span><span class="s1">&#39;positive_sample&#39;</span><span class="p">][:,</span> <span class="mi">3</span><span class="p">]]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
-            <span class="n">conf_high_score</span> <span class="o">=</span> <span class="n">conf</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
-            <span class="n">results</span><span class="p">[</span><span class="s2">&quot;wmr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ranks_link_predict</span> <span class="o">*</span> <span class="n">conf_high_score</span><span class="p">)</span>
-            <span class="n">ranks_mrr</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">ranks_link_predict</span>
-            <span class="n">results</span><span class="p">[</span><span class="s2">&quot;wmrr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ranks_mrr</span> <span class="o">*</span> <span class="n">conf_high_score</span><span class="p">)</span>
-            <span class="n">results</span><span class="p">[</span><span class="s2">&quot;sum_for_conf&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">conf_high_score</span><span class="p">)</span>
-            <span class="n">results</span><span class="p">[</span><span class="s2">&quot;raw_wmr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ranks_link_predict_raw</span> <span class="o">*</span> <span class="n">conf_high_score</span><span class="p">)</span>
-            <span class="n">ranks_mrr</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">ranks_link_predict_raw</span>
-            <span class="n">results</span><span class="p">[</span><span class="s2">&quot;raw_wmrr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ranks_mrr</span> <span class="o">*</span> <span class="n">conf_high_score</span><span class="p">)</span>
-
-        <span class="k">else</span><span class="p">:</span>
+            <span class="n">results</span><span class="p">[</span><span class="s2">&quot;wmr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ranks</span> <span class="o">*</span> <span class="n">conf</span><span class="p">)</span>
+            <span class="n">ranks_mrr</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">ranks</span>
+            <span class="n">results</span><span class="p">[</span><span class="s2">&quot;wmrr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ranks_mrr</span> <span class="o">*</span> <span class="n">conf</span><span class="p">)</span>
+            <span class="n">results</span><span class="p">[</span><span class="s2">&quot;sum_for_conf&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">conf</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span> <span class="c1"># 头尾实体预测</span>
             <span class="n">conf</span> <span class="o">=</span> <span class="n">batch</span><span class="p">[</span><span class="s1">&#39;positive_sample&#39;</span><span class="p">][:,</span> <span class="mi">3</span><span class="p">]</span>
-            <span class="n">conf_high_score</span> <span class="o">=</span> <span class="n">conf</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
-            <span class="n">results</span><span class="p">[</span><span class="s2">&quot;wmr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ranks_link_predict</span> <span class="o">*</span> <span class="n">conf_high_score</span><span class="p">)</span>
-            <span class="n">ranks_mrr</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">ranks_link_predict</span>
-            <span class="n">results</span><span class="p">[</span><span class="s2">&quot;wmrr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ranks_mrr</span> <span class="o">*</span> <span class="n">conf_high_score</span><span class="p">)</span>
-            <span class="n">results</span><span class="p">[</span><span class="s2">&quot;sum_for_conf&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">conf_high_score</span><span class="p">)</span>
-            <span class="n">results</span><span class="p">[</span><span class="s2">&quot;raw_wmr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ranks_link_predict_raw</span> <span class="o">*</span> <span class="n">conf_high_score</span><span class="p">)</span>
-            <span class="n">ranks_mrr</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">ranks_link_predict_raw</span>
-            <span class="n">results</span><span class="p">[</span><span class="s2">&quot;raw_wmrr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ranks_mrr</span> <span class="o">*</span> <span class="n">conf_high_score</span><span class="p">)</span>
+            <span class="n">results</span><span class="p">[</span><span class="s2">&quot;wmr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ranks</span> <span class="o">*</span> <span class="n">conf</span><span class="p">)</span>
+            <span class="n">ranks_mrr</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">ranks</span>
+            <span class="n">results</span><span class="p">[</span><span class="s2">&quot;wmrr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ranks_mrr</span> <span class="o">*</span> <span class="n">conf</span><span class="p">)</span>
+            <span class="n">results</span><span class="p">[</span><span class="s2">&quot;sum_for_conf&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">conf</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">results</span></div>
 
-<div class="viewcode-block" id="BEUrRELitModel.test_epoch_end"><a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BEUrRELitModel.BEUrRELitModel.test_epoch_end">[docs]</a>    <span class="k">def</span> <span class="nf">test_epoch_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">results</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="BEUrRELitModel.test_epoch_end">
+<a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BEUrRELitModel.BEUrRELitModel.test_epoch_end">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_epoch_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">results</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">outputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_results</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="s2">&quot;Test&quot;</span><span class="p">)</span>
 
         <span class="c1"># with open(os.path.join(self.args.data_path, &quot;ndcg_test.pickle&quot;), &#39;rb&#39;) as f:</span>
@@ -270,7 +258,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">log_dict</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">prog_bar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">on_epoch</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="BEUrRELitModel.configure_optimizers"><a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BEUrRELitModel.BEUrRELitModel.configure_optimizers">[docs]</a>    <span class="k">def</span> <span class="nf">configure_optimizers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="BEUrRELitModel.configure_optimizers">
+<a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BEUrRELitModel.BEUrRELitModel.configure_optimizers">[docs]</a>
+    <span class="k">def</span> <span class="nf">configure_optimizers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Setting optimizer and lr_scheduler.</span>
 
 <span class="sd">        Returns:</span>
@@ -279,7 +270,9 @@
         <span class="n">optimizer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">optimizer_class</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">lr</span><span class="p">)</span>
         <span class="c1"># optim_dict = {&#39;optimizer&#39;: optimizer, &#39;lr_scheduler&#39;: StepLR}</span>
         <span class="n">optim_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;optimizer&#39;</span><span class="p">:</span> <span class="n">optimizer</span><span class="p">}</span>
-        <span class="k">return</span> <span class="n">optim_dict</span></div></div>
+        <span class="k">return</span> <span class="n">optim_dict</span></div>
+</div>
+
 </pre></div>
 
            </div>

@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>unKR.lit_model.BaseLitModel &mdash; unKR 1.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
+  <title>unKR.lit_model.BaseLitModel &mdash; unKR 1.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=4bb55277" />
 
   
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=292eb321"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -35,7 +35,7 @@
             unKR
           </a>
               <div class="version">
-                1.0.0
+                1.0.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -91,11 +91,13 @@
 <span class="kn">import</span> <span class="nn">pytorch_lightning</span> <span class="k">as</span> <span class="nn">pl</span>
 <span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span> <span class="k">as</span> <span class="n">ddict</span>
-<span class="kn">from</span> <span class="nn">unKR</span> <span class="kn">import</span> <span class="n">loss</span>
+<span class="kn">from</span> <span class="nn">src.unKR.utils.tools</span> <span class="kn">import</span> <span class="n">import_class</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 
-<div class="viewcode-block" id="Config"><a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BaseLitModel.Config">[docs]</a><span class="k">class</span> <span class="nc">Config</span><span class="p">(</span><span class="nb">dict</span><span class="p">):</span>
+<div class="viewcode-block" id="Config">
+<a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BaseLitModel.Config">[docs]</a>
+<span class="k">class</span> <span class="nc">Config</span><span class="p">(</span><span class="nb">dict</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 
@@ -103,7 +105,10 @@
         <span class="bp">self</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span></div>
 
 
-<div class="viewcode-block" id="BaseLitModel"><a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel">[docs]</a><span class="k">class</span> <span class="nc">BaseLitModel</span><span class="p">(</span><span class="n">pl</span><span class="o">.</span><span class="n">LightningModule</span><span class="p">):</span>
+
+<div class="viewcode-block" id="BaseLitModel">
+<a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel">[docs]</a>
+<span class="k">class</span> <span class="nc">BaseLitModel</span><span class="p">(</span><span class="n">pl</span><span class="o">.</span><span class="n">LightningModule</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Generic PyTorch-Lightning class that must be initialized with a PyTorch module.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -125,35 +130,58 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">h2rt_train</span> <span class="o">=</span> <span class="n">ddict</span><span class="p">(</span><span class="nb">set</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">t2rh_train</span> <span class="o">=</span> <span class="n">ddict</span><span class="p">(</span><span class="nb">set</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">neg_per_positive</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">num_neg</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">neg_per_positive</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">num_neg</span>  <span class="c1"># 负采样数量</span>
         <span class="n">optim_name</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">optim_name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">optimizer_class</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="p">,</span> <span class="n">optim_name</span><span class="p">)</span>
         <span class="n">loss_name</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">loss_name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">loss_class</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">loss</span><span class="p">,</span> <span class="n">loss_name</span><span class="p">)</span>
+        <span class="c1"># self.loss_class = getattr(loss, loss_name)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">loss_class</span> <span class="o">=</span> <span class="n">import_class</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;src.unKR.loss.</span><span class="si">{</span><span class="n">loss_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">loss</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">loss_class</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">model_name</span> <span class="o">==</span> <span class="s1">&#39;SEGNN&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">automatic_optimization</span> <span class="o">=</span> <span class="kc">False</span>
 
-<div class="viewcode-block" id="BaseLitModel.add_to_argparse"><a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.add_to_argparse">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="BaseLitModel.add_to_argparse">
+<a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.add_to_argparse">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">add_to_argparse</span><span class="p">(</span><span class="n">parser</span><span class="p">):</span>
         <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--lr&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
         <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--weight_decay&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">parser</span></div>
 
-<div class="viewcode-block" id="BaseLitModel.configure_optimizers"><a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.configure_optimizers">[docs]</a>    <span class="k">def</span> <span class="nf">configure_optimizers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="BaseLitModel.configure_optimizers">
+<a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.configure_optimizers">[docs]</a>
+    <span class="k">def</span> <span class="nf">configure_optimizers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-<div class="viewcode-block" id="BaseLitModel.forward"><a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+
+<div class="viewcode-block" id="BaseLitModel.forward">
+<a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.forward">[docs]</a>
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-<div class="viewcode-block" id="BaseLitModel.training_step"><a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.training_step">[docs]</a>    <span class="k">def</span> <span class="nf">training_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">batch_idx</span><span class="p">):</span>  <span class="c1"># pylint: disable=unused-argument</span>
+
+<div class="viewcode-block" id="BaseLitModel.training_step">
+<a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.training_step">[docs]</a>
+    <span class="k">def</span> <span class="nf">training_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">batch_idx</span><span class="p">):</span>  <span class="c1"># pylint: disable=unused-argument</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-<div class="viewcode-block" id="BaseLitModel.validation_step"><a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.validation_step">[docs]</a>    <span class="k">def</span> <span class="nf">validation_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">batch_idx</span><span class="p">):</span>  <span class="c1"># pylint: disable=unused-argument</span>
+
+<div class="viewcode-block" id="BaseLitModel.validation_step">
+<a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.validation_step">[docs]</a>
+    <span class="k">def</span> <span class="nf">validation_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">batch_idx</span><span class="p">):</span>  <span class="c1"># pylint: disable=unused-argument</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-<div class="viewcode-block" id="BaseLitModel.test_step"><a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.test_step">[docs]</a>    <span class="k">def</span> <span class="nf">test_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">batch_idx</span><span class="p">):</span>  <span class="c1"># pylint: disable=unused-argument</span>
+
+<div class="viewcode-block" id="BaseLitModel.test_step">
+<a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.test_step">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">batch_idx</span><span class="p">):</span>  <span class="c1"># pylint: disable=unused-argument</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-<div class="viewcode-block" id="BaseLitModel.get_results"><a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.get_results">[docs]</a>    <span class="k">def</span> <span class="nf">get_results</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">results</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
+
+<div class="viewcode-block" id="BaseLitModel.get_results">
+<a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.get_results">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_results</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">results</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Summarize the results of each batch and calculate the final result of the epoch</span>
 <span class="sd">        Args:</span>
 <span class="sd">            results ([type]): The results of each batch</span>
@@ -198,12 +226,15 @@
 
         <span class="k">return</span> <span class="n">outputs</span></div>
 
-<div class="viewcode-block" id="BaseLitModel.convert_semi_samples_batch"><a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.convert_semi_samples_batch">[docs]</a>    <span class="k">def</span> <span class="nf">convert_semi_samples_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">neg_samples</span><span class="p">,</span> <span class="n">neg_scores</span><span class="p">,</span> <span class="n">pos_samples</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">device</span><span class="p">):</span>
-        <span class="c1"># Calculate the total number of negative samples</span>
+
+<div class="viewcode-block" id="BaseLitModel.convert_semi_samples_batch">
+<a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.convert_semi_samples_batch">[docs]</a>
+    <span class="k">def</span> <span class="nf">convert_semi_samples_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">neg_samples</span><span class="p">,</span> <span class="n">neg_scores</span><span class="p">,</span> <span class="n">pos_samples</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">device</span><span class="p">):</span>
+        <span class="c1"># 计算负样本的总数量</span>
         <span class="n">num_neg_samples</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">pos_samples</span><span class="p">)</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">neg_samples</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-        <span class="c1"># Duplicate the positive sample so that it can be modified</span>
+        <span class="c1"># 复制正样本，以便修改</span>
         <span class="n">semi_samples_formatted</span> <span class="o">=</span> <span class="n">pos_samples</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">neg_samples</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
-        <span class="c1"># Select whether to replace the head or tail entities based on the mode</span>
+        <span class="c1"># 根据mode选择是替换头实体还是尾实体</span>
         <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;head-batch&quot;</span><span class="p">:</span>
             <span class="n">neg_samples_formatted</span> <span class="o">=</span> <span class="n">neg_samples</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">long</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
             <span class="n">semi_samples_formatted</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">neg_samples_formatted</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">double</span><span class="p">)</span>
@@ -212,20 +243,23 @@
             <span class="n">semi_samples_formatted</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">neg_samples_formatted</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">double</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid mode. Use &#39;head-batch&#39; or &#39;tail-batch&#39;.&quot;</span><span class="p">)</span>
-        <span class="c1"># Expands the score to the same shape as the negative sample size</span>
+        <span class="c1"># 将得分扩展成与负样本数量相同的形状</span>
         <span class="n">neg_scores_expanded</span> <span class="o">=</span> <span class="n">neg_scores</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
-        <span class="c1"># Add the score as a new fourth element</span>
+        <span class="c1"># 添加得分作为新的第四个元素</span>
         <span class="n">semi_samples_formatted</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="n">semi_samples_formatted</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">],</span> <span class="n">neg_scores_expanded</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">1</span><span class="p">)],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">semi_samples_formatted</span></div>
 
-<div class="viewcode-block" id="BaseLitModel.convert_neg_samples_batch"><a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.convert_neg_samples_batch">[docs]</a>    <span class="k">def</span> <span class="nf">convert_neg_samples_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos_samples</span><span class="p">,</span> <span class="n">neg_samples</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
-        <span class="c1"># Obtain the number of positive and negative samples</span>
+
+<div class="viewcode-block" id="BaseLitModel.convert_neg_samples_batch">
+<a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.convert_neg_samples_batch">[docs]</a>
+    <span class="k">def</span> <span class="nf">convert_neg_samples_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos_samples</span><span class="p">,</span> <span class="n">neg_samples</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
+        <span class="c1"># 获取正样本数量和负样本数量</span>
         <span class="n">num_pos_samples</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">pos_samples</span><span class="p">)</span>
         <span class="n">num_neg_samples_per_pos</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">neg_samples</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
         <span class="n">num_neg_samples</span> <span class="o">=</span> <span class="n">num_pos_samples</span> <span class="o">*</span> <span class="n">num_neg_samples_per_pos</span>
-        <span class="c1"># Replicate positive samples at one time</span>
+        <span class="c1"># 一次性复制正样本</span>
         <span class="n">pos_samples_formatted</span> <span class="o">=</span> <span class="n">pos_samples</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">num_neg_samples_per_pos</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-        <span class="c1"># Choose whether to replace the head or tail entity based on the mode</span>
+        <span class="c1"># 根据 mode 选择是替换头实体还是尾实体</span>
         <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;head-batch&quot;</span> <span class="ow">or</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;head_predict&quot;</span><span class="p">:</span>
             <span class="n">neg_samples_formatted</span> <span class="o">=</span> <span class="n">neg_samples</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">long</span><span class="p">()</span>
             <span class="n">pos_samples_formatted</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">neg_samples_formatted</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
@@ -234,21 +268,28 @@
             <span class="n">pos_samples_formatted</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">neg_samples_formatted</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid mode. Use &#39;head-batch&#39;, &#39;tail-batch&#39;, &#39;head_predict&#39;, or &#39;tail_predict&#39;.&quot;</span><span class="p">)</span>
-        <span class="c1"># The score is set to 0</span>
+        <span class="c1"># 得分设置为0</span>
         <span class="n">pos_samples_formatted</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
         <span class="k">return</span> <span class="n">pos_samples_formatted</span></div>
 
-<div class="viewcode-block" id="BaseLitModel.select_random_elements"><a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.select_random_elements">[docs]</a>    <span class="k">def</span> <span class="nf">select_random_elements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tensor</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-        <span class="c1"># Gets the length of the tensor</span>
+
+<div class="viewcode-block" id="BaseLitModel.select_random_elements">
+<a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.select_random_elements">[docs]</a>
+    <span class="k">def</span> <span class="nf">select_random_elements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tensor</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="c1"># 获取 tensor 的长度</span>
         <span class="n">num_elements</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tensor</span><span class="p">)</span>
-        <span class="c1"># Generate random indexes</span>
+        <span class="c1"># 生成随机索引</span>
         <span class="n">random_indices</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randperm</span><span class="p">(</span><span class="n">num_elements</span><span class="p">)[:</span><span class="n">n</span><span class="p">]</span>
-        <span class="c1"># Elements are selected based on a random index</span>
+
+        <span class="c1"># 根据随机索引选择元素</span>
         <span class="n">selected_elements</span> <span class="o">=</span> <span class="n">tensor</span><span class="p">[</span><span class="n">random_indices</span><span class="p">]</span>
 
         <span class="k">return</span> <span class="n">selected_elements</span></div>
 
-<div class="viewcode-block" id="BaseLitModel.head_batch"><a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.head_batch">[docs]</a>    <span class="k">def</span> <span class="nf">head_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">neg_size</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+<div class="viewcode-block" id="BaseLitModel.head_batch">
+<a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.head_batch">[docs]</a>
+    <span class="k">def</span> <span class="nf">head_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">neg_size</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">neg_list</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="n">neg_cur_size</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">while</span> <span class="n">neg_cur_size</span> <span class="o">&lt;</span> <span class="n">neg_size</span><span class="p">:</span>
@@ -257,7 +298,10 @@
             <span class="n">neg_cur_size</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">neg_tmp</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">neg_list</span><span class="p">)[:</span><span class="n">neg_size</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="BaseLitModel.corrupt_head"><a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.corrupt_head">[docs]</a>    <span class="k">def</span> <span class="nf">corrupt_head</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">num_max</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+
+<div class="viewcode-block" id="BaseLitModel.corrupt_head">
+<a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.corrupt_head">[docs]</a>
+    <span class="k">def</span> <span class="nf">corrupt_head</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">num_max</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
         <span class="n">tmp</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">num_ent</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">num_max</span><span class="p">,))</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">filter_flag</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">tmp</span>
@@ -265,7 +309,10 @@
         <span class="n">neg</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">neg</span></div>
 
-<div class="viewcode-block" id="BaseLitModel.tail_batch"><a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.tail_batch">[docs]</a>    <span class="k">def</span> <span class="nf">tail_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">neg_size</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+<div class="viewcode-block" id="BaseLitModel.tail_batch">
+<a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.tail_batch">[docs]</a>
+    <span class="k">def</span> <span class="nf">tail_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">neg_size</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">neg_list</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="n">neg_cur_size</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">while</span> <span class="n">neg_cur_size</span> <span class="o">&lt;</span> <span class="n">neg_size</span><span class="p">:</span>
@@ -274,13 +321,18 @@
             <span class="n">neg_cur_size</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">neg_tmp</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">neg_list</span><span class="p">)[:</span><span class="n">neg_size</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="BaseLitModel.corrupt_tail"><a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.corrupt_tail">[docs]</a>    <span class="k">def</span> <span class="nf">corrupt_tail</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">num_max</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+
+<div class="viewcode-block" id="BaseLitModel.corrupt_tail">
+<a class="viewcode-back" href="../../../unKR.lit_model.html#unKR.lit_model.BaseLitModel.BaseLitModel.corrupt_tail">[docs]</a>
+    <span class="k">def</span> <span class="nf">corrupt_tail</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">num_max</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
         <span class="n">tmp</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">num_ent</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">num_max</span><span class="p">,))</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">filter_flag</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">tmp</span>
         <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">in1d</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hr2t_train</span><span class="p">[(</span><span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">)],</span> <span class="n">assume_unique</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">invert</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="n">neg</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
-        <span class="k">return</span> <span class="n">neg</span></div></div>
+        <span class="k">return</span> <span class="n">neg</span></div>
+</div>
+
 </pre></div>
 
            </div>

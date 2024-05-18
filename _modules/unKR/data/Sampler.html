@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>unKR.data.Sampler &mdash; unKR 1.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
+  <title>unKR.data.Sampler &mdash; unKR 1.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=4bb55277" />
 
   
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=292eb321"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -35,7 +35,7 @@
             unKR
           </a>
               <div class="version">
-                1.0.0
+                1.0.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -87,11 +87,25 @@
            <div itemprop="articleBody">
              
   <h1>Source code for unKR.data.Sampler</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">.DataPreprocess</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">torch.autograd</span> <span class="kn">import</span> <span class="n">Variable</span>
+<span></span><span class="kn">from</span> <span class="nn">numpy.random.mtrand</span> <span class="kn">import</span> <span class="n">normal</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">Dataset</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span> <span class="k">as</span> <span class="n">ddict</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">.DataPreprocess</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">IPython</span> <span class="kn">import</span> <span class="n">embed</span>
+<span class="kn">import</span> <span class="nn">dgl</span>
+<span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">queue</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span>
+<span class="kn">import</span> <span class="nn">math</span>
 
 
-<div class="viewcode-block" id="UKGEUniSampler"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGEUniSampler">[docs]</a><span class="k">class</span> <span class="nc">UKGEUniSampler</span><span class="p">(</span><span class="n">UKGEBaseSampler</span><span class="p">):</span>
+<div class="viewcode-block" id="UKGEUniSampler">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGEUniSampler">[docs]</a>
+<span class="k">class</span> <span class="nc">UKGEUniSampler</span><span class="p">(</span><span class="n">UKGEBaseSampler</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Random negative sampling </span>
 <span class="sd">    Filtering out positive samples and selecting some samples randomly as negative samples.</span>
 
@@ -103,7 +117,9 @@
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cross_sampling_flag</span> <span class="o">=</span> <span class="mi">0</span>
 
-<div class="viewcode-block" id="UKGEUniSampler.sampling"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGEUniSampler.sampling">[docs]</a>    <span class="k">def</span> <span class="nf">sampling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<div class="viewcode-block" id="UKGEUniSampler.sampling">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGEUniSampler.sampling">[docs]</a>
+    <span class="k">def</span> <span class="nf">sampling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Filtering out positive samples and selecting some samples randomly as negative samples.</span>
 
 <span class="sd">        Args:</span>
@@ -160,7 +176,10 @@
             <span class="n">batch_data</span><span class="p">[</span><span class="s2">&quot;adj_matrix&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">adj_matrix</span>
         <span class="k">return</span> <span class="n">batch_data</span></div>
 
-<div class="viewcode-block" id="UKGEUniSampler.uni_sampling"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGEUniSampler.uni_sampling">[docs]</a>    <span class="k">def</span> <span class="nf">uni_sampling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+
+<div class="viewcode-block" id="UKGEUniSampler.uni_sampling">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGEUniSampler.uni_sampling">[docs]</a>
+    <span class="k">def</span> <span class="nf">uni_sampling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
         <span class="n">batch_data</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="n">neg_head_list</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="n">neg_tail_list</span> <span class="o">=</span> <span class="p">[]</span>
@@ -175,17 +194,24 @@
         <span class="n">batch_data</span><span class="p">[</span><span class="s1">&#39;negative_tail&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arrary</span><span class="p">(</span><span class="n">neg_tail_list</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">batch_data</span></div>
 
-<div class="viewcode-block" id="UKGEUniSampler.get_sampling_keys"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGEUniSampler.get_sampling_keys">[docs]</a>    <span class="k">def</span> <span class="nf">get_sampling_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="UKGEUniSampler.get_sampling_keys">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGEUniSampler.get_sampling_keys">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_sampling_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">model_name</span> <span class="o">==</span> <span class="s1">&#39;UPGAT&#39;</span><span class="p">:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">teacher_model</span><span class="p">:</span>
                 <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;positive_sample&#39;</span><span class="p">,</span> <span class="s1">&#39;negative_sample&#39;</span><span class="p">,</span> <span class="s1">&#39;mode&#39;</span><span class="p">,</span> <span class="s1">&#39;adj_matrix&#39;</span><span class="p">]</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;positive_sample&#39;</span><span class="p">,</span> <span class="s1">&#39;negative_sample&#39;</span><span class="p">,</span> <span class="s1">&#39;mode&#39;</span><span class="p">,</span> <span class="s1">&#39;adj_matrix&#39;</span><span class="p">,</span> <span class="s1">&#39;pseudo_sample&#39;</span><span class="p">]</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;positive_sample&#39;</span><span class="p">,</span> <span class="s1">&#39;negative_sample&#39;</span><span class="p">,</span> <span class="s1">&#39;mode&#39;</span><span class="p">]</span></div></div>
+            <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;positive_sample&#39;</span><span class="p">,</span> <span class="s1">&#39;negative_sample&#39;</span><span class="p">,</span> <span class="s1">&#39;mode&#39;</span><span class="p">]</span></div>
+</div>
 
 
-<div class="viewcode-block" id="UKGEPSLSampler"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGEPSLSampler">[docs]</a><span class="k">class</span> <span class="nc">UKGEPSLSampler</span><span class="p">(</span><span class="n">UKGEBaseSampler</span><span class="p">):</span>
+
+<div class="viewcode-block" id="UKGEPSLSampler">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGEPSLSampler">[docs]</a>
+<span class="k">class</span> <span class="nc">UKGEPSLSampler</span><span class="p">(</span><span class="n">UKGEBaseSampler</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Random negative sampling Filtering out positive samples and selecting some samples randomly as negative samples.</span>
 <span class="sd">    UKGEPSLSampler is for UKGE_PSL</span>
 
@@ -197,7 +223,9 @@
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cross_sampling_flag</span> <span class="o">=</span> <span class="mi">0</span>
 
-<div class="viewcode-block" id="UKGEPSLSampler.sampling"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGEPSLSampler.sampling">[docs]</a>    <span class="k">def</span> <span class="nf">sampling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<div class="viewcode-block" id="UKGEPSLSampler.sampling">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGEPSLSampler.sampling">[docs]</a>
+    <span class="k">def</span> <span class="nf">sampling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Filtering out positive samples and selecting some samples randomly as negative samples.</span>
 
 <span class="sd">        Args:</span>
@@ -249,7 +277,10 @@
 
         <span class="k">return</span> <span class="n">batch_data</span></div>
 
-<div class="viewcode-block" id="UKGEPSLSampler.uni_sampling"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGEPSLSampler.uni_sampling">[docs]</a>    <span class="k">def</span> <span class="nf">uni_sampling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+
+<div class="viewcode-block" id="UKGEPSLSampler.uni_sampling">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGEPSLSampler.uni_sampling">[docs]</a>
+    <span class="k">def</span> <span class="nf">uni_sampling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
         <span class="n">batch_data</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="n">neg_head_list</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="n">neg_tail_list</span> <span class="o">=</span> <span class="p">[]</span>
@@ -264,10 +295,17 @@
         <span class="n">batch_data</span><span class="p">[</span><span class="s1">&#39;negative_tail&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arrary</span><span class="p">(</span><span class="n">neg_tail_list</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">batch_data</span></div>
 
-<div class="viewcode-block" id="UKGEPSLSampler.get_sampling_keys"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGEPSLSampler.get_sampling_keys">[docs]</a>    <span class="k">def</span> <span class="nf">get_sampling_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;positive_sample&#39;</span><span class="p">,</span> <span class="s1">&#39;negative_sample&#39;</span><span class="p">,</span> <span class="s1">&#39;mode&#39;</span><span class="p">]</span></div></div>
 
-<div class="viewcode-block" id="UKGETestSampler"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGETestSampler">[docs]</a><span class="k">class</span> <span class="nc">UKGETestSampler</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="UKGEPSLSampler.get_sampling_keys">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGEPSLSampler.get_sampling_keys">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_sampling_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;positive_sample&#39;</span><span class="p">,</span> <span class="s1">&#39;negative_sample&#39;</span><span class="p">,</span> <span class="s1">&#39;mode&#39;</span><span class="p">]</span></div>
+</div>
+
+
+<div class="viewcode-block" id="UKGETestSampler">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGETestSampler">[docs]</a>
+<span class="k">class</span> <span class="nc">UKGETestSampler</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Sampling triples and recording positive triples for testing.</span>
 <span class="sd">    We offer two test sample methods: one is to use the same method as neuralkg to process the test set,</span>
 <span class="sd">    and the other is to only use high confidence samples from the test set for testing</span>
@@ -290,7 +328,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">get_hr2t_rt2h_from_all</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">num_ent</span> <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">num_ent</span>
 
-<div class="viewcode-block" id="UKGETestSampler.get_hr2t_rt2h_from_all"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGETestSampler.get_hr2t_rt2h_from_all">[docs]</a>    <span class="k">def</span> <span class="nf">get_hr2t_rt2h_from_all</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="UKGETestSampler.get_hr2t_rt2h_from_all">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGETestSampler.get_hr2t_rt2h_from_all">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_hr2t_rt2h_from_all</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the set of hr2t and rt2h from all datasets(train, valid, and test), the data type is tensor.</span>
 <span class="sd">        Update:</span>
 <span class="sd">            self.hr2t_all: The set of hr2t.</span>
@@ -314,7 +354,10 @@
         <span class="k">for</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">rt2h_all_high_score</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">rt2h_all_high_score</span><span class="p">[(</span><span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">)]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rt2h_all_high_score</span><span class="p">[(</span><span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">)]))</span></div>
 
-<div class="viewcode-block" id="UKGETestSampler.sampling"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGETestSampler.sampling">[docs]</a>    <span class="k">def</span> <span class="nf">sampling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+
+<div class="viewcode-block" id="UKGETestSampler.sampling">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGETestSampler.sampling">[docs]</a>
+    <span class="k">def</span> <span class="nf">sampling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Sampling triples and recording positive triples for testing.</span>
 
 <span class="sd">        Args:</span>
@@ -344,7 +387,10 @@
         <span class="n">batch_data</span><span class="p">[</span><span class="s2">&quot;tail_label_filter&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tail_label_filter</span>
         <span class="k">return</span> <span class="n">batch_data</span></div>
 
-<div class="viewcode-block" id="UKGETestSampler.construct_hr_map"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGETestSampler.construct_hr_map">[docs]</a>    <span class="k">def</span> <span class="nf">construct_hr_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+
+<div class="viewcode-block" id="UKGETestSampler.construct_hr_map">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGETestSampler.construct_hr_map">[docs]</a>
+    <span class="k">def</span> <span class="nf">construct_hr_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
         <span class="n">hr_map</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">for</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
             <span class="n">w</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
@@ -358,12 +404,19 @@
 
         <span class="k">return</span> <span class="n">hr_map</span></div>
 
-<div class="viewcode-block" id="UKGETestSampler.get_sampling_keys"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGETestSampler.get_sampling_keys">[docs]</a>    <span class="k">def</span> <span class="nf">get_sampling_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;positive_sample&quot;</span><span class="p">,</span> <span class="s2">&quot;head_label&quot;</span><span class="p">,</span> <span class="s2">&quot;tail_label&quot;</span><span class="p">]</span></div></div>
+
+<div class="viewcode-block" id="UKGETestSampler.get_sampling_keys">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.UKGETestSampler.get_sampling_keys">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_sampling_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;positive_sample&quot;</span><span class="p">,</span> <span class="s2">&quot;head_label&quot;</span><span class="p">,</span> <span class="s2">&quot;tail_label&quot;</span><span class="p">]</span></div>
+</div>
+
         <span class="c1"># return [&quot;positive_sample&quot;]</span>
 
 
-<div class="viewcode-block" id="GMUCSampler"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.GMUCSampler">[docs]</a><span class="k">class</span> <span class="nc">GMUCSampler</span><span class="p">(</span><span class="n">GMUCBaseSampler</span><span class="p">):</span>
+<div class="viewcode-block" id="GMUCSampler">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.GMUCSampler">[docs]</a>
+<span class="k">class</span> <span class="nc">GMUCSampler</span><span class="p">(</span><span class="n">GMUCBaseSampler</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;GMUC sampling</span>
 <span class="sd">        Process task-based data.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -371,7 +424,9 @@
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
 
-<div class="viewcode-block" id="GMUCSampler.sampling"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.GMUCSampler.sampling">[docs]</a>    <span class="k">def</span> <span class="nf">sampling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<div class="viewcode-block" id="GMUCSampler.sampling">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.GMUCSampler.sampling">[docs]</a>
+    <span class="k">def</span> <span class="nf">sampling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Filtering out positive samples and selecting some samples randomly as negative samples.</span>
 
 <span class="sd">        Args:</span>
@@ -463,7 +518,10 @@
 
         <span class="k">return</span> <span class="n">batch_data</span></div>
 
-<div class="viewcode-block" id="GMUCSampler.get_meta"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.GMUCSampler.get_meta">[docs]</a>    <span class="k">def</span> <span class="nf">get_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
+
+<div class="viewcode-block" id="GMUCSampler.get_meta">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.GMUCSampler.get_meta">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;get meta data</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">if_GPU</span><span class="p">:</span>
@@ -481,11 +539,18 @@
 
         <span class="k">return</span> <span class="n">left_connections</span><span class="p">,</span> <span class="n">left_degrees</span><span class="p">,</span> <span class="n">right_connections</span><span class="p">,</span> <span class="n">right_degrees</span></div>
 
-<div class="viewcode-block" id="GMUCSampler.get_sampling_keys"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.GMUCSampler.get_sampling_keys">[docs]</a>    <span class="k">def</span> <span class="nf">get_sampling_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;support&#39;</span><span class="p">,</span> <span class="s1">&#39;query&#39;</span><span class="p">,</span> <span class="s1">&#39;false&#39;</span><span class="p">,</span> <span class="s1">&#39;query_confidence&#39;</span><span class="p">,</span> <span class="s1">&#39;support_meta&#39;</span><span class="p">,</span> <span class="s1">&#39;query_meta&#39;</span><span class="p">,</span> <span class="s1">&#39;false_meta&#39;</span><span class="p">]</span></div></div>
+
+<div class="viewcode-block" id="GMUCSampler.get_sampling_keys">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.GMUCSampler.get_sampling_keys">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_sampling_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;support&#39;</span><span class="p">,</span> <span class="s1">&#39;query&#39;</span><span class="p">,</span> <span class="s1">&#39;false&#39;</span><span class="p">,</span> <span class="s1">&#39;query_confidence&#39;</span><span class="p">,</span> <span class="s1">&#39;support_meta&#39;</span><span class="p">,</span> <span class="s1">&#39;query_meta&#39;</span><span class="p">,</span> <span class="s1">&#39;false_meta&#39;</span><span class="p">]</span></div>
+</div>
 
 
-<div class="viewcode-block" id="GMUCTestSampler"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.GMUCTestSampler">[docs]</a><span class="k">class</span> <span class="nc">GMUCTestSampler</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+<div class="viewcode-block" id="GMUCTestSampler">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.GMUCTestSampler">[docs]</a>
+<span class="k">class</span> <span class="nc">GMUCTestSampler</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Sampling triples and recording positive triples for testing.</span>
 
 <span class="sd">    Attributes:</span>
@@ -505,7 +570,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">symbol2id</span> <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">symbol2id</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ent2id</span> <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">ent2id</span>
 
-<div class="viewcode-block" id="GMUCTestSampler.sampling"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.GMUCTestSampler.sampling">[docs]</a>    <span class="k">def</span> <span class="nf">sampling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<div class="viewcode-block" id="GMUCTestSampler.sampling">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.GMUCTestSampler.sampling">[docs]</a>
+    <span class="k">def</span> <span class="nf">sampling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Sampling triples and recording positive triples for testing.</span>
 
 <span class="sd">        Args:</span>
@@ -524,11 +591,18 @@
 
         <span class="k">return</span> <span class="n">batch_data</span></div>
 
-<div class="viewcode-block" id="GMUCTestSampler.get_sampling_keys"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.GMUCTestSampler.get_sampling_keys">[docs]</a>    <span class="k">def</span> <span class="nf">get_sampling_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;query&quot;</span><span class="p">,</span> <span class="s2">&quot;triples&quot;</span><span class="p">]</span></div></div>
+
+<div class="viewcode-block" id="GMUCTestSampler.get_sampling_keys">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.GMUCTestSampler.get_sampling_keys">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_sampling_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;query&quot;</span><span class="p">,</span> <span class="s2">&quot;triples&quot;</span><span class="p">]</span></div>
+</div>
 
 
-<div class="viewcode-block" id="KGDataset"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.KGDataset">[docs]</a><span class="k">class</span> <span class="nc">KGDataset</span><span class="p">(</span><span class="n">Dataset</span><span class="p">):</span>
+
+<div class="viewcode-block" id="KGDataset">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.Sampler.KGDataset">[docs]</a>
+<span class="k">class</span> <span class="nc">KGDataset</span><span class="p">(</span><span class="n">Dataset</span><span class="p">):</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">triples</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">triples</span> <span class="o">=</span> <span class="n">triples</span>
@@ -538,6 +612,7 @@
 
     <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">triples</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span></div>
+
 </pre></div>
 
            </div>

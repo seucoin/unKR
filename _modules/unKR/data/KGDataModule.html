@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>unKR.data.KGDataModule &mdash; unKR 1.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
+  <title>unKR.data.KGDataModule &mdash; unKR 1.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=4bb55277" />
 
   
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=292eb321"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -35,7 +35,7 @@
             unKR
           </a>
               <div class="version">
-                1.0.0
+                1.0.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -97,7 +97,9 @@
 <span class="kn">import</span> <span class="nn">pytorch_lightning</span> <span class="k">as</span> <span class="nn">pl</span>
 
 
-<div class="viewcode-block" id="KGDataModule"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.KGDataModule.KGDataModule">[docs]</a><span class="k">class</span> <span class="nc">KGDataModule</span><span class="p">(</span><span class="n">BaseDataModule</span><span class="p">):</span>
+<div class="viewcode-block" id="KGDataModule">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.KGDataModule.KGDataModule">[docs]</a>
+<span class="k">class</span> <span class="nc">KGDataModule</span><span class="p">(</span><span class="n">BaseDataModule</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Base DataModule.</span>
 <span class="sd">    Learn more at https://pytorch-lightning.readthedocs.io/en/stable/datamodules.html</span>
@@ -112,20 +114,28 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">train_sampler</span> <span class="o">=</span> <span class="n">train_sampler</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">test_sampler</span> <span class="o">=</span> <span class="n">test_sampler</span>
 
-<div class="viewcode-block" id="KGDataModule.get_data_config"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.KGDataModule.KGDataModule.get_data_config">[docs]</a>    <span class="k">def</span> <span class="nf">get_data_config</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="KGDataModule.get_data_config">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.KGDataModule.KGDataModule.get_data_config">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_data_config</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return important settings of the dataset, which will be passed to instantiate models.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">{</span>
             <span class="s2">&quot;num_training_steps&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_training_steps</span><span class="p">,</span>
             <span class="s2">&quot;num_labels&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_labels</span><span class="p">,</span>
         <span class="p">}</span></div>
 
-<div class="viewcode-block" id="KGDataModule.prepare_data"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.KGDataModule.KGDataModule.prepare_data">[docs]</a>    <span class="k">def</span> <span class="nf">prepare_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="KGDataModule.prepare_data">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.KGDataModule.KGDataModule.prepare_data">[docs]</a>
+    <span class="k">def</span> <span class="nf">prepare_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Use this method to do things that might write to disk or that need to be done only from a single GPU in distributed settings (so don&#39;t set state `self.x = y`).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">pass</span></div>
 
-<div class="viewcode-block" id="KGDataModule.setup"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.KGDataModule.KGDataModule.setup">[docs]</a>    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stage</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+<div class="viewcode-block" id="KGDataModule.setup">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.KGDataModule.KGDataModule.setup">[docs]</a>
+    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stage</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Split into train, val, test, and set dims.</span>
 <span class="sd">        Should assign `torch Dataset` objects to self.data_train, self.data_val, and optionally self.data_test.</span>
@@ -134,7 +144,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">data_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">train_sampler</span><span class="o">.</span><span class="n">get_valid</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data_test</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">train_sampler</span><span class="o">.</span><span class="n">get_test</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="KGDataModule.get_train_bs"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.KGDataModule.KGDataModule.get_train_bs">[docs]</a>    <span class="k">def</span> <span class="nf">get_train_bs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="KGDataModule.get_train_bs">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.KGDataModule.KGDataModule.get_train_bs">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_train_bs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Get batch size for training.</span>
 
 <span class="sd">        If the num_batches isn`t zero, it will divide data_train by num_batches to get batch size.</span>
@@ -149,7 +162,10 @@
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;train_bs or num_batches must specify one&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">train_bs</span></div>
 
-<div class="viewcode-block" id="KGDataModule.train_dataloader"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.KGDataModule.KGDataModule.train_dataloader">[docs]</a>    <span class="k">def</span> <span class="nf">train_dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="KGDataModule.train_dataloader">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.KGDataModule.KGDataModule.train_dataloader">[docs]</a>
+    <span class="k">def</span> <span class="nf">train_dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">train_bs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_train_bs</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">DataLoader</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">data_train</span><span class="p">,</span>
@@ -161,7 +177,10 @@
             <span class="n">collate_fn</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">train_sampler</span><span class="o">.</span><span class="n">sampling</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="KGDataModule.val_dataloader"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.KGDataModule.KGDataModule.val_dataloader">[docs]</a>    <span class="k">def</span> <span class="nf">val_dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="KGDataModule.val_dataloader">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.KGDataModule.KGDataModule.val_dataloader">[docs]</a>
+    <span class="k">def</span> <span class="nf">val_dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">DataLoader</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">data_val</span><span class="p">,</span>
             <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
@@ -171,7 +190,10 @@
             <span class="n">collate_fn</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">test_sampler</span><span class="o">.</span><span class="n">sampling</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="KGDataModule.test_dataloader"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.KGDataModule.KGDataModule.test_dataloader">[docs]</a>    <span class="k">def</span> <span class="nf">test_dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="KGDataModule.test_dataloader">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.KGDataModule.KGDataModule.test_dataloader">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">DataLoader</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">data_test</span><span class="p">,</span>
             <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
@@ -179,10 +201,14 @@
             <span class="n">num_workers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">num_workers</span><span class="p">,</span>
             <span class="n">pin_memory</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
             <span class="n">collate_fn</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">test_sampler</span><span class="o">.</span><span class="n">sampling</span><span class="p">,</span>
-        <span class="p">)</span></div></div>
+        <span class="p">)</span></div>
+</div>
 
 
-<div class="viewcode-block" id="GMUCDataModule"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.KGDataModule.GMUCDataModule">[docs]</a><span class="k">class</span> <span class="nc">GMUCDataModule</span><span class="p">(</span><span class="n">BaseDataModule</span><span class="p">):</span>
+
+<div class="viewcode-block" id="GMUCDataModule">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.KGDataModule.GMUCDataModule">[docs]</a>
+<span class="k">class</span> <span class="nc">GMUCDataModule</span><span class="p">(</span><span class="n">BaseDataModule</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    GMUC Base DataModule.</span>
 <span class="sd">    Learn more at https://pytorch-lightning.readthedocs.io/en/stable/datamodules.html</span>
@@ -196,20 +222,28 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">train_sampler</span> <span class="o">=</span> <span class="n">train_sampler</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">test_sampler</span> <span class="o">=</span> <span class="n">test_sampler</span>
 
-<div class="viewcode-block" id="GMUCDataModule.get_data_config"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.KGDataModule.GMUCDataModule.get_data_config">[docs]</a>    <span class="k">def</span> <span class="nf">get_data_config</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="GMUCDataModule.get_data_config">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.KGDataModule.GMUCDataModule.get_data_config">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_data_config</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return important settings of the dataset, which will be passed to instantiate models.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">{</span>
             <span class="s2">&quot;num_training_steps&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_training_steps</span><span class="p">,</span>
             <span class="s2">&quot;num_labels&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_labels</span><span class="p">,</span>
         <span class="p">}</span></div>
 
-<div class="viewcode-block" id="GMUCDataModule.prepare_data"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.KGDataModule.GMUCDataModule.prepare_data">[docs]</a>    <span class="k">def</span> <span class="nf">prepare_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="GMUCDataModule.prepare_data">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.KGDataModule.GMUCDataModule.prepare_data">[docs]</a>
+    <span class="k">def</span> <span class="nf">prepare_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Use this method to do things that might write to disk or that need to be done only from a single GPU in distributed settings (so don&#39;t set state `self.x = y`).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">pass</span></div>
 
-<div class="viewcode-block" id="GMUCDataModule.setup"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.KGDataModule.GMUCDataModule.setup">[docs]</a>    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stage</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+<div class="viewcode-block" id="GMUCDataModule.setup">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.KGDataModule.GMUCDataModule.setup">[docs]</a>
+    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stage</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Split into train, val, test, and set dims.</span>
 <span class="sd">        Should assign `torch Dataset` objects to self.data_train, self.data_val, and optionally self.data_test.</span>
@@ -218,7 +252,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">data_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">train_sampler</span><span class="o">.</span><span class="n">get_valid</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data_test</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">train_sampler</span><span class="o">.</span><span class="n">get_test</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="GMUCDataModule.train_dataloader"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.KGDataModule.GMUCDataModule.train_dataloader">[docs]</a>    <span class="k">def</span> <span class="nf">train_dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="GMUCDataModule.train_dataloader">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.KGDataModule.GMUCDataModule.train_dataloader">[docs]</a>
+    <span class="k">def</span> <span class="nf">train_dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># self.train_bs = self.get_train_bs()</span>
         <span class="k">return</span> <span class="n">DataLoader</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">data_train</span><span class="p">,</span>
@@ -229,7 +266,10 @@
             <span class="n">collate_fn</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">train_sampler</span><span class="o">.</span><span class="n">sampling</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="GMUCDataModule.val_dataloader"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.KGDataModule.GMUCDataModule.val_dataloader">[docs]</a>    <span class="k">def</span> <span class="nf">val_dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="GMUCDataModule.val_dataloader">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.KGDataModule.GMUCDataModule.val_dataloader">[docs]</a>
+    <span class="k">def</span> <span class="nf">val_dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># print(self.data_val)</span>
         <span class="k">return</span> <span class="n">DataLoader</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">data_val</span><span class="p">,</span>
@@ -239,14 +279,19 @@
             <span class="n">collate_fn</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">test_sampler</span><span class="o">.</span><span class="n">sampling</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="GMUCDataModule.test_dataloader"><a class="viewcode-back" href="../../../unKR.data.html#unKR.data.KGDataModule.GMUCDataModule.test_dataloader">[docs]</a>    <span class="k">def</span> <span class="nf">test_dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="GMUCDataModule.test_dataloader">
+<a class="viewcode-back" href="../../../unKR.data.html#unKR.data.KGDataModule.GMUCDataModule.test_dataloader">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">DataLoader</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">data_test</span><span class="p">,</span>
             <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
             <span class="n">num_workers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">num_workers</span><span class="p">,</span>
             <span class="n">pin_memory</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
             <span class="n">collate_fn</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">test_sampler</span><span class="o">.</span><span class="n">sampling</span><span class="p">,</span>
-        <span class="p">)</span></div></div>
+        <span class="p">)</span></div>
+</div>
+
 </pre></div>
 
            </div>
