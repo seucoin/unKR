@@ -14,8 +14,8 @@ project = 'unKR'
 copyright = '2024, SEUKGE'
 author = 'SEU'
 
-release = '0.9'
-version = '0.9.1'
+release = '1.0.1'
+version = '1.0.1'
 
 # -- General configuration
 
