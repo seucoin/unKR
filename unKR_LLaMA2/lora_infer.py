@@ -124,21 +124,17 @@ if __name__ == "__main__":
         for line in content:
             query = line.split('\t')
             print('query: ', query[0])
-            print('truth: ', float(query[1].strip().strip(".")[:5]))
+            print('truth: ', query[1].strip()))
             print("-------------------------------")
-            real = float(query[1].strip().strip(".")[:5])
             try:
                 pre = evaluate(query[0])
                 # pre = float(pre[:pre.index("</s>")])
-                print('predicted: ')
-                print(pre)
+                print('predicted: ' pre)
                 print("###############################")
-                # result=abs(pre-real)*abs(pre-real)+result
-                # num = num+1
-                f2.write(query[0]+'\t'+str(real)+'\t'+str(pre)+'\n')
+                f2.write(query[0]+'\t'+query[1].strip()+'\t'+pre+'\n')
             except:
                 print("###############################")
-                f2.write(query[0]+'\t'+str(real)+'\t'+''+'\n')
+                f2.write(query[0]+'\t'+query[1].strip()+'\t'+''+'\n')
 
 
     

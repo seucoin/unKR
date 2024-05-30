@@ -1,4 +1,4 @@
-# unKR_LLaMA
+# unKR_LLaMA2
 We perform instruction tuning with [LLaMA-2-7B](https://huggingface.co/meta-llama/Llama-2-7b) by LoRA. We design instruction prompts for confidence prediction and tail entity prediction tasks. Through instruction tuning, the large language model can obtaine the reasoning ability on UKGs.
 
 
@@ -24,3 +24,15 @@ Set the `LORA_WEIGHTS` as the path of saved checkpoints and `TEST_DATA_PATH` as 
 python lora_infer.py
 ```
 We provide our trained models at [here](https://drive.google.com/drive/folders/1_vitwjZt0A5QZRwQr02X3bNm6HO6Snp5?usp=drive_link).
+
+
+
+## Results
+The results of confidence prediction (MSE, MAE) and link prediction (Hits@1) are as follows:
+
+|Dataset        | MSE   |MAE    | Hits@1       |
+|-----------|-----------|-----------|-----------|
+| CN15K | 0.03110 | 0.08980 | 0.15767 |
+| NL27K | 0.05848 | 0.13009 | 0.35599 |
+
+
