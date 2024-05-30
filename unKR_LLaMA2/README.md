@@ -11,7 +11,7 @@ We use CN15K and NL27k for LLM instruction tuning. You can use the preprocessed 
 ### 2. LLaMA Instruction Tuning
 2.1 Firstly, put [LLaMA2-7B](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf) model files under ./models/LLaMA-HF/.
 
-2.2 In our experiments, we utilized an A100 GPU for all LLaMA models. Set the `DATA_PATH` as your own dataset path and `OUTPUT_DIR` for model output path. And then run 
+2.2 In our experiments, we utilized A100 GPU for training. Set the `DATA_PATH` as your own dataset path and `OUTPUT_DIR` for model output path. And then run 
 
 ```
 python lora_finetune.py
