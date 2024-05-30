@@ -1,0 +1,36 @@
+relatedto,is related to
+hascontext,is a word used in the context of
+isa,is a subtype or a specific instance of
+synonym,is a synonym of
+atlocation,at location
+etymologicallyrelatedto,is etymologically related to
+distinctfrom,is distinct from
+haslastsubevent,is an event that concludes with subevent
+usedfor,is used for
+similarto,is similar to
+desires,desires
+antonym,is an antonym of
+dbpedia,dbpedia
+partof,is a part of
+formof,is an inflected form of
+hasa,has a
+capableof,is capable of
+instanceof,is an instance of
+hasprerequisite,has prerequisite
+motivatedbygoal,is motivated by goal
+derivedfrom,is derived from
+hassubevent,has subevent
+causes,causes
+receivesaction,receives action
+hasproperty,has property
+entails,entails
+hasfirstsubevent,is an event that begins with subevent
+notdesires,not desires
+causesdesire,causes desire for
+madeof,is made of
+nothasproperty,not has property
+createdby,is created by
+locatednear,is located near
+notcapableof,is not capable of
+definedas,is defined as
+mannerof,is a manner of
