@@ -35,4 +35,5 @@ The results of confidence prediction (MSE, MAE) and link prediction (Hits@1) are
 | CN15K | 0.03110 | 0.08980 | 0.15767 |
 | NL27K | 0.05848 | 0.13009 | 0.35599 |
 
+By contrast with other UKG representation learning models, for CN15K, unKR_LLaMA achieves state-of-the-art results on both confidence prediction and link prediction tasks, but the performance on NL27k is lower than most UKG representation learning models.
 
