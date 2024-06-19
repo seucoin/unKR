@@ -355,10 +355,29 @@ KGDataModule.py:
 
 <br>
 
+## Citation
+Please cite our paper if you use unKR in your work.
+```
+@inproceedings{unkr,
+  author    = {Jingting Wang and
+               Tianxing Wu and
+               Shilin Chen and
+               Yunchang Liu and
+               Shutong Zhu and
+               Wei Li and
+               Jingyi Xu and
+               Guilin Qi},
+  title     = {unKR: A Python Library for Uncertain Knowledge Graph Reasoning by Representation Learning},
+  booktitle = {{SIGIR}},
+  pages     = {},
+  publisher = {{ACM}},
+  year      = {2024}
+}
 
+```
 
-# unKR Core Team
+## unKR Core Team
 
-**Southeast University**: Jingting Wang, Tianxing Wu, Shilin Chen, Yunchang Liu, Shutong Zhu, Wei Li, Jingyi Xu, Guilin Qi.
+**Southeast University**: Tianxing Wu, Jingting Wang, Shilin Chen, Yunchang Liu, Shutong Zhu, Wei Li, Jingyi Xu, Guilin Qi.
 
 
