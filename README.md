@@ -369,7 +369,7 @@ Please cite our paper if you use unKR in your work.
                Guilin Qi},
   title     = {unKR: A Python Library for Uncertain Knowledge Graph Reasoning by Representation Learning},
   booktitle = {{SIGIR}},
-  pages     = {},
+  pages     = {2822--2826},
   publisher = {{ACM}},
   year      = {2024}
 }
