@@ -5,9 +5,11 @@ from unKR.utils import *
 from unKR.data.Sampler import *
 
 
-def main(arg_path):
-    args = setup_parser()  # set parser
-    args = load_config(args, arg_path)
+def main():
+    parser = setup_parser()  # set parser
+    args = parser.parse_args()
+    if args.load_config:
+        args = load_config(args, args.config_path)
     seed_everything(args.seed)
     monitor_name = "Eval_" + args.monitor
     model_checkpoint_filename = "{epoch}-{" + monitor_name + ":.5f}"
@@ -92,4 +94,4 @@ def main(arg_path):
 
 
 if __name__ == "__main__":
-    main(arg_path='config/nl27k/GMUC_nl27k.yaml')
+    main()
