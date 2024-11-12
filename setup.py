@@ -10,7 +10,7 @@ with open("README.md", 'r', encoding='utf-8') as fh:
 
 setuptools.setup(
     name='unKR',
-    version='0.8.1',
+    version='1.0.1',
     author='SEUKGE',
     author_email='slchen@seu.edu.cn',
     url='https://github.com/CodeSlogan/unKR',
