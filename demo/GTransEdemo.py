@@ -69,6 +69,7 @@ def main(arg_path):
         default_root_dir="training/logs",
         gpus="0,",
         check_val_every_n_epoch=args.check_val_every_n_epoch,
+        max_epochs=args.max_epochs,  # 添加 max_epochs 参数
     )
     '''Save the parameters to config'''
     if args.save_config:
