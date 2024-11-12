@@ -1,4 +1,5 @@
-torch==1.9.1+cu111 -f https://download.pytorch.org/whl/torch_stable.html
+-f https://download.pytorch.org/whl/cu111/torch_stable.html
+torch==1.9.1+cu111
 pytorch_lightning==1.5.10
 PyYAML>=6.0
 wandb>=0.12.7
