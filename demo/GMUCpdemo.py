@@ -60,15 +60,26 @@ def main(arg_path):
     )
     callbacks = [early_callback, model_checkpoint]
     # initialize trainer
-    trainer = pl.Trainer.from_argparse_args(
-        args,
-        callbacks=callbacks,
-        logger=logger,
-        default_root_dir="training/logs",
-        gpus="0,",
-        check_val_every_n_epoch=args.check_val_every_n_epoch,
-        max_epochs=args.max_epochs,  # 添加 max_epochs 参数
-    )
+    if args.gpu != "cpu":
+        trainer = pl.Trainer.from_argparse_args(
+            args,
+            callbacks=callbacks,
+            logger=logger,
+            default_root_dir="training/logs",
+            gpus="0,",
+            check_val_every_n_epoch=args.check_val_every_n_epoch,
+            max_epochs=args.max_epochs,  # 添加 max_epochs 参数
+        )
+    else:
+        trainer = pl.Trainer.from_argparse_args(
+            args,
+            callbacks=callbacks,
+            logger=logger,
+            default_root_dir="training/logs",
+            # gpus="0,",
+            check_val_every_n_epoch=args.check_val_every_n_epoch,
+            max_epochs=args.max_epochs,  # 添加 max_epochs 参数
+        )
     '''保存参数到config'''
     if args.save_config:
         save_config(args)
