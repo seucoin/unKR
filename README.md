@@ -362,7 +362,6 @@ Please cite our paper if you use unKR in your work.
   author    = {Jingting Wang and
                Tianxing Wu and
                Shilin Chen and
-               Haofen Wang and
                Yunchang Liu and
                Shutong Zhu and
                Wei Li and
@@ -379,6 +378,6 @@ Please cite our paper if you use unKR in your work.
 
 ## unKR Core Team
 
-**Southeast University**: Tianxing Wu, Jingting Wang, Shilin Chen, Yunchang Liu, Shutong Zhu, Wei Li, Jingyi Xu, Guilin Qi.
+**Southeast University**: Tianxing Wu, Haofen Wang, Jingting Wang, Shilin Chen, Yunchang Liu, Shutong Zhu, Wei Li, Jingyi Xu, Guilin Qi.
 
 
