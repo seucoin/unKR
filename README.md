@@ -362,6 +362,7 @@ Please cite our paper if you use unKR in your work.
   author    = {Jingting Wang and
                Tianxing Wu and
                Shilin Chen and
+               Haofen Wang and
                Yunchang Liu and
                Shutong Zhu and
                Wei Li and
