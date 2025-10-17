@@ -1,1 +1,1 @@
-code will come soon.
+The code will be released before October 20, 2025.
