@@ -4,8 +4,7 @@ import torch.nn as nn
 import scipy.stats as stats
 import numpy as np
 
-# min_old, max_old = 0.41562477969017253, 0.604478177772596  # sigma06
-# min_new, max_new = 0.1, 1.0
+# the loss of ssCDL
 
 def generate_distribution(conf, sigma, size):
     gauss = stats.norm(conf, sigma)
@@ -49,7 +48,7 @@ class ssCDL_loss(nn.Module):
                 conf_ldl_stack = torch.clamp(conf_ldl_stack, min=1e-9)
                 kl_divergence = torch.sum(conf_ldl_stack * torch.log(conf_ldl_stack / pred_distribution)) # get kl divergence
                 neg_pred_distribution = neg_pred_distribution.reshape(-1,101)
-                loss_2 = MSE_pos + MSE_neg/self.args.num_neg
+                # loss_2 = MSE_pos + MSE_neg/self.args.num_neg
                 loss_3 = rank_scores.sum()
                 sigma1 = torch.exp(self.model.log_sigma1)
                 sigma2 = torch.exp(self.model.log_sigma2)
@@ -105,7 +104,7 @@ class ssCDL_loss(nn.Module):
                 kl_divergence_semi = torch.sum(
                     conf_ldl_stack_semi * torch.log(conf_ldl_stack_semi / pred_semi_distribution))  # get kl_divergence for pseudo labeled data
 
-                loss_2 = MSE_pos + MSE_neg / self.args.num_neg
+                # loss_2 = MSE_pos + MSE_neg / self.args.num_neg
 
                 loss_3 = rank_scores.sum()
 
@@ -118,7 +117,7 @@ class ssCDL_loss(nn.Module):
                 task2_loss = (1 / (2 * sigma2 ** 2)) * (loss_3 / 10) + self.model.log_sigma2
 
                 loss = task1_loss + task2_loss
-        else: # meta
+        else: # loss in meta self training period
             if semi_sample == None:
                 # loss to update CDL-RL without pseudo labeled data
                 neg_pred_distribution = neg_pred_distribution.to('cuda')
@@ -137,7 +136,7 @@ class ssCDL_loss(nn.Module):
                 condition = rank_scores > 0
                 rank_scores[~condition] = 0
                 MSE_pos = torch.sum((expected_values - confidence) ** 2)
-                MSE_neg = torch.sum(expected_values_neg ** 2)
+                # MSE_neg = torch.sum(expected_values_neg ** 2)
                 conf_ldl_stack = torch.stack(conf_ldl)
                 pred_distribution = pred_distribution.squeeze(1)
                 conf_ldl_stack = conf_ldl_stack.to(pred_distribution.dtype)

@@ -7,9 +7,9 @@ import scipy.stats as stats
 
 # min_old, max_old = 0.41562477969017253, 0.604478177772596  # sigma06
 
-min_new, max_new = 0.1, 1.0
+# min_new, max_new = 0.1, 1.0
 
-class MLP(nn.Module):
+class MLP(nn.Module): # i.e.,FCN1, the FCN to get an (n+1)-dimensional vector
     # num_in = h || r || t
     def __init__(self, num_in, num_hid1, num_hid2, num_out = 101) -> None:
         super().__init__()
@@ -35,7 +35,7 @@ class MLP(nn.Module):
 
         return pred_distri
 
-class MLP_rank(nn.Module):
+class MLP_rank(nn.Module): # i.e.,FCN2, the FCN to get a scalar
     # num_in = h || r || t
     def __init__(self, num_in, num_hid1, num_hid2, num_out = 1) -> None:
         super().__init__()
@@ -69,8 +69,8 @@ class ssCDL(Model):
         self.args = args
         self.ent_emb = None
         self.rel_emb = None
-        self.mlp_conf = MLP(self.args.emb_dim * 3, 1024, 512) # mlp to compute confidence distribution
-        self.mlp_rank = MLP_rank(self.args.emb_dim * 3, 1024, 512) # mlp to compute rank score
+        self.mlp_conf = MLP(self.args.emb_dim * 3, 1024, 512) # FCN to compute confidence distribution
+        self.mlp_rank = MLP_rank(self.args.emb_dim * 3, 1024, 512) # FCN to compute rank score
         self.mlp_conf_meta = MLP(self.args.emb_dim * 3, 1024, 512)
         self.mlp_tmp = MLP(self.args.emb_dim * 3, 1024, 512)
         self.ce_loss = nn.CrossEntropyLoss()

@@ -110,6 +110,7 @@ class UKGEUniSampler(UKGEBaseSampler):
             data_ldl = batch_data["positive_sample"].clone()
             conf = []
             onehot = []
+            # transform confidence into confidence distribution
             for triples in data_ldl:
                 ldl = generate_distribution(triples[3].item(),self.sigma,self.size)
                 # print(ldl)

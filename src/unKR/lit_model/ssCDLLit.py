@@ -10,8 +10,7 @@ import scipy.stats as stats
 
 from ..eval_task.nDCG import mean_ndcg
 
-# min_old, max_old = 0.41562477969017253, 0.604478177772596  # sigma06
-# min_new, max_new = 0.1, 1.0
+# The training process of ssCDL
 
 def generate_distribution_tensor(conf, sigma, size):
     linspace = torch.linspace(0, 1, size, device=conf.device)
@@ -67,7 +66,7 @@ class ssCDLLitModel(BaseLitModel):
             conf_ldl = batch["conf_ldl"]
             pred_distribution, rank_score_pos = self.model(pos_sample)    # get predicted confidence distribution and rank score for positive samples
             neg_pred_distribution, rank_score_neg = self.model(pos_sample, neg_sample, mode)  # get predicted confidence distribution and for negative samples
-            if self.epoch_num < 30 + 1:
+            if self.epoch_num < 30 + 1: # in the number of epoch is too small, only use labeled data to update CDL-RL
                 loss = self.loss(pred_distribution, pos_sample, conf_ldl, neg_pred_distribution, rank_score_pos,
                                  rank_score_neg, 'main') # update CDL-RL without pseudo labeled data
             else:
@@ -202,7 +201,7 @@ class ssCDLLitModel(BaseLitModel):
                              filtered_conf_ldl_semi_tensor, rank_score_semi, neg_pred_semi_distribution,
                              rank_score_semi_neg)
 
-            # get the parameters of CDL-RL after updating it once, i.e., theta
+            # get the parameters of CDL-RL before updating it once, i.e., theta
             for param in self.model.mlp_conf.parameters():
                 param.requires_grad = True
             fast_weights = OrderedDict(
@@ -220,7 +219,7 @@ class ssCDLLitModel(BaseLitModel):
             else:
                 lr = self.args.lr / 10
 
-            # get theta+
+            # get the parameters of CDL-RL after updating it once, i.e., theta+
             fast_weights = OrderedDict(
                 (name, param - lr * grad if grad is not None else param) for
                 ((name, param), grad, data) in
