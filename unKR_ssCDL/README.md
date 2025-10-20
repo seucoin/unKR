@@ -2,11 +2,11 @@
 
 Source code for NeurIPS paper: Uncertain Knowledge Graph Completion via Semi-Supervised Confidence Distribution Learning.
 
-Uncertain knowledge graphs (UKGs) associate each triple with a conffdence score to provide more precise knowledge representations. Recently, since real-world
+Uncertain knowledge graphs (UKGs) associate each triple with a conffidence score to provide more precise knowledge representations. Recently, since real-world
 UKGs suffer from the incompleteness, uncertain knowledge graph (UKG) completion
- attracts more attention, aiming to complete missing triples and conffdences.
+ attracts more attention, aiming to complete missing triples and confidences.
 Current studies attempt to learn UKG embeddings to solve this problem, but
-they neglect the extremely imbalanced distributions of triple conffdences. This
+they neglect the extremely imbalanced distributions of triple confidences. This
 causes that the learnt embeddings are insufficient to high-quality UKG completion.
 Thus, in this paper, to address the above issue, we propose a new **s**emi-**s**upervised
 **C**onfidence **D**istribution **L**earning (**ssCDL**) method for UKG completion, where
