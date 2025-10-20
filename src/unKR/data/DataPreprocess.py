@@ -133,7 +133,7 @@ class UKGData(object):
                 self.train_triples.append((h, r, t, w))
             print(self.interval_counts)
 
-        with open(os.path.join(self.args.data_path, "test.tsv"), encoding='utf-8') as fin:
+        with open(os.path.join(self.args.data_path, "val.tsv"), encoding='utf-8') as fin:
             for line in fin:
                 line = line.rstrip('\n').split('\t')
                 h, r, t, w = line[0], line[1], line[2], float(line[3])
@@ -160,7 +160,7 @@ class UKGData(object):
                 self.valid_triples.append((h, r, t, w))
 
 
-        with open(os.path.join(self.args.data_path, "val.tsv"), encoding='utf-8') as fin:
+        with open(os.path.join(self.args.data_path, "test.tsv"), encoding='utf-8') as fin:
             for line in fin:
                 line = line.rstrip('\n').split('\t')
                 h, r, t, w = line[0], line[1], line[2], float(line[3])
