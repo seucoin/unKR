@@ -9,3 +9,4 @@ from .PASSLEAF_Loss import PASSLEAF_Loss
 from .UKGsE_Loss import UKGsE_Loss
 from .UPGAT_Loss import UPGAT_Loss
 from .GTransE_Loss import GTransE_Loss
+from .ssCDL_loss import ssCDL_loss

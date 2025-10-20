@@ -10,13 +10,13 @@ import os
 from collections import defaultdict as ddict
 from tqdm import tqdm
 import random
-
+import scipy.stats as stats
 
 class UKGData(object):
     """Data preprocessing of ukg data.
 
     Attributes:
-        args: Some pre-set parameters, such as dataset path, etc. 
+        args: Some pre-set parameters, such as dataset path, etc.
         ent2id: Encoding the entity in triples, type: dict.
         rel2id: Encoding the relation in triples, type: dict.
         id2ent: Decoding the entity in triples, type: dict.
@@ -47,6 +47,7 @@ class UKGData(object):
         self.id2rel = {}
         # store the ID of the sample
         self.train_triples = []
+        self.interval_counts = {f"{i / 10:.1f}-{(i + 1) / 10:.1f}": 0 for i in range(11)}
         self.valid_triples = []
         self.test_triples = []
         self.PSL_triples = []
@@ -57,18 +58,34 @@ class UKGData(object):
         self.pseudo_triples = []
         self.pseudo_dataiter = None
         # for calculating nDCG
-        # self.hr_map = {}
+        self.hr_map = {}
         self.hr2t_train = ddict(set)
         self.rt2h_train = ddict(set)
         self.h2rt_train = ddict(set)
         self.t2rh_train = ddict(set)
         self.hr2t_total = ddict(set)
         self.rt2h_total = ddict(set)
+        # for sscdl
+        self.train_triples_ldl = []
+        self.valid_triples_ldl = []
+        self.test_triples_ldl = []
+        # self.lower_bound = 0
+        # self.upper_bound = 0
+
 
         self.get_id()
         # self.get_ndcg_test_data()
         if args.use_weight:
             self.count = self.count_frequency(self.train_triples)
+
+    def generate_distribution(self, conf, sigma, size):
+        """
+        根据conf生成标签分布
+        """
+        gauss = stats.norm(conf, sigma)
+        pdf = gauss.pdf(np.linspace(0, 1, size))
+        label_dis = pdf / np.sum(pdf)
+        return label_dis
 
     def get_id(self):
         """Get entity/relation id, and entity/relation number.
@@ -108,33 +125,13 @@ class UKGData(object):
                 r = self.rel2id[r]
                 t = self.ent2id[t]
 
+                interval = int(w * 10)
+                interval_key = f"{interval / 10:.1f}-{(interval + 1) / 10:.1f}"
+                # print(self.interval_counts.keys())
+                self.interval_counts[interval_key] += 1
+
                 self.train_triples.append((h, r, t, w))
-
-        with open(os.path.join(self.args.data_path, "val.tsv"), encoding='utf-8') as fin:
-            for line in fin:
-                line = line.rstrip('\n').split('\t')
-                h, r, t, w = line[0], line[1], line[2], float(line[3])
-
-                if self.ent2id.get(h) == None:
-                    last_e += 1
-                    self.ent2id[h] = last_e
-                    self.id2ent[last_e] = h
-
-                if self.ent2id.get(t) == None:
-                    last_e += 1
-                    self.ent2id[t] = last_e
-                    self.id2ent[last_e] = t
-
-                if self.rel2id.get(r) == None:
-                    last_r += 1
-                    self.rel2id[r] = last_r
-                    self.id2rel[last_r] = r
-
-                h = self.ent2id[h]
-                r = self.rel2id[r]
-                t = self.ent2id[t]
-
-                self.valid_triples.append((h, r, t, w))
+            print(self.interval_counts)
 
         with open(os.path.join(self.args.data_path, "test.tsv"), encoding='utf-8') as fin:
             for line in fin:
@@ -160,7 +157,35 @@ class UKGData(object):
                 r = self.rel2id[r]
                 t = self.ent2id[t]
 
+                self.valid_triples.append((h, r, t, w))
+
+
+        with open(os.path.join(self.args.data_path, "val.tsv"), encoding='utf-8') as fin:
+            for line in fin:
+                line = line.rstrip('\n').split('\t')
+                h, r, t, w = line[0], line[1], line[2], float(line[3])
+
+                if self.ent2id.get(h) == None:
+                    last_e += 1
+                    self.ent2id[h] = last_e
+                    self.id2ent[last_e] = h
+
+                if self.ent2id.get(t) == None:
+                    last_e += 1
+                    self.ent2id[t] = last_e
+                    self.id2ent[last_e] = t
+
+                if self.rel2id.get(r) == None:
+                    last_r += 1
+                    self.rel2id[r] = last_r
+                    self.id2rel[last_r] = r
+
+                h = self.ent2id[h]
+                r = self.rel2id[r]
+                t = self.ent2id[t]
+
                 self.test_triples.append((h, r, t, w))
+
 
         if self.args.model_name == 'UKGE_PSL':
             softlogic_temp_path = os.path.join(self.args.data_path, "softlogic.tsv")
@@ -210,28 +235,54 @@ class UKGData(object):
                 self.train_triples + self.valid_triples + self.test_triples
             )
 
+        if self.args.model_name == 'ssCDL':
+            sigma = self.args.sigma
+            size = self.args.size
+            conf_low = 0.1
+            conf_high = 1
+
+            gauss = stats.norm(conf_low, sigma)
+            pdf = gauss.pdf(np.linspace(0, 1, size))
+            label_dis = pdf / np.sum(pdf)
+            x = np.linspace(0, 1, size)
+            # 计算加权期望
+            weighted_expectation = np.sum(x * label_dis)
+            # print(f"Normalized lower bound (conf={conf_low}, sigma={sigma}): {weighted_expectation}")
+            self.args.lower_bound = weighted_expectation
+
+            gauss = stats.norm(conf_high, sigma)
+            pdf = gauss.pdf(np.linspace(0, 1, size))
+            label_dis = pdf / np.sum(pdf)
+            x = np.linspace(0, 1, size)
+            # 计算加权期望
+            weighted_expectation = np.sum(x * label_dis)
+            # print(f"Normalized upper bound (conf={conf_high}, sigma={sigma}): {weighted_expectation}")
+            self.args.upper_bound = weighted_expectation
+            # exit(0)
+
+
         self.args.num_ent = len(self.ent2id)
         self.args.num_rel = len(self.rel2id)
 
-    # def get_ndcg_test_data(self):
-    #     # 使用test_triples构造成hr_map
-    #     with open(os.path.join(self.args.data_path, "ndcg_test.pickle"), 'rb') as f:
-    #         self.hr_map = pickle.load(f)  # unpickle
+    def get_ndcg_test_data(self):
+        # 使用test_triples构造成hr_map
+        with open(os.path.join(self.args.data_path, "ndcg_test.pickle"), 'rb') as f:
+            self.hr_map = pickle.load(f)  # unpickle
 
-        # self.hr_map = {}
-        # for triple in self.test_triples:
-        #     h, r, t, w = triple
-        #     if self.hr_map.get(h) is None:
-        #         self.hr_map[h] = {}
-        #     if self.hr_map[h].get(r) is None:
-        #         self.hr_map[h][r] = {t: w}
-        #     else:
-        #         self.hr_map[h][r][t] = w
+        self.hr_map = {}
+        for triple in self.test_triples:
+            h, r, t, w = triple
+            if self.hr_map.get(h) is None:
+                self.hr_map[h] = {}
+            if self.hr_map[h].get(r) is None:
+                self.hr_map[h][r] = {t: w}
+            else:
+                self.hr_map[h][r][t] = w
 
-        # tmp = 0
-        # for h in self.hr_map:
-        #     for r in self.hr_map[h]:
-        #         tmp = max(tmp, len(self.hr_map[h][r].keys()))
+        tmp = 0
+        for h in self.hr_map:
+            for r in self.hr_map[h]:
+                tmp = max(tmp, len(self.hr_map[h][r].keys()))
         #
         # print(self.hr_map)
         # print(len(self.hr_map.keys()))
@@ -416,6 +467,15 @@ class UKGEBaseSampler(UKGData):
 
     def get_test(self):
         return self.test_triples
+
+    def get_train_ldl(self):
+        return self.train_triples_ldl
+
+    def get_valid_ldl(self):
+        return self.valid_triples_ldl
+
+    def get_test_ldl(self):
+        return self.test_triples_ldl
 
     def get_PSL(self):
         return self.PSL_triples

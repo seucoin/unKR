@@ -1,9 +1,27 @@
+import torch
+
 from .DataPreprocess import *
 from torch.autograd import Variable
 
+def generate_distribution(conf, sigma, size):
+
+    gauss = stats.norm(conf, sigma)
+    pdf = gauss.pdf(np.linspace(0, 1, size))
+    label_dis = pdf/np.sum(pdf)
+    return label_dis
+
+
+def generate_one_hot_distribution(conf, size):
+    index = int(conf * (size - 1))
+
+    label_dis = np.zeros(size)
+
+    label_dis[index] = 1.0
+
+    return label_dis
 
 class UKGEUniSampler(UKGEBaseSampler):
-    """Random negative sampling 
+    """Random negative sampling
     Filtering out positive samples and selecting some samples randomly as negative samples.
 
     Attributes:
@@ -13,6 +31,8 @@ class UKGEUniSampler(UKGEBaseSampler):
     def __init__(self, args):
         super().__init__(args)
         self.cross_sampling_flag = 0
+        self.sigma = args.sigma
+        self.size = args.size
 
     def sampling(self, data):
         """Filtering out positive samples and selecting some samples randomly as negative samples.
@@ -23,7 +43,7 @@ class UKGEUniSampler(UKGEBaseSampler):
         Returns:
             batch_data: The training data.
         """
-
+        torch.set_printoptions(precision=8)
         batch_data = {}
         neg_ent_sample = []
         subsampling_weight = []
@@ -38,17 +58,33 @@ class UKGEUniSampler(UKGEBaseSampler):
                     subsampling_weight.append(weight)
         else:
             batch_data['mode'] = "tail-batch"
+            # print(data)
             for h, r, t, _ in data:
                 neg_tail = self.tail_batch(h, r, t, self.args.num_neg)
                 neg_ent_sample.append(neg_tail)
                 if self.args.use_weight:
                     weight = self.count[(h, r)] + self.count[(t, -r - 1)]
                     subsampling_weight.append(weight)
+        small_data = []
+        neg_ent_sample_small = []
+        for h, r, t, s in data:
+            if s <= 0.5:
+                small_data.append((h, r, t, s))
+        for h, r, t, _ in small_data:
+            neg_tail = self.tail_batch(h, r, t, self.args.num_neg)
+            neg_ent_sample_small.append(neg_tail)
+            # if self.args.use_weight:
+            #     weight = self.count[(h, r)] + self.count[(t, -r - 1)]
+            #     subsampling_weight.append(weight)
         batch_data["ori_data"] = data # storage the original data, it will be used in PASSLEAFLitModel.
+        # batch_data['small_data'] = []
+        batch_data['small_data'] = small_data
         batch_data["positive_sample"] = torch.tensor(np.array(data))
         batch_data['negative_sample'] = torch.LongTensor(np.array(neg_ent_sample))
         batch_data['true_head'] = self.rt2h_train
         batch_data['true_tail'] = self.hr2t_train
+        batch_data["small_data_positive_sample"] = torch.tensor(np.array(small_data))
+        batch_data["small_data_negative_sample"] = torch.tensor(np.array(neg_ent_sample_small))
         if self.args.use_weight:
             batch_data["subsampling_weight"] = torch.sqrt(1 / torch.tensor(subsampling_weight))
 
@@ -69,6 +105,60 @@ class UKGEUniSampler(UKGEBaseSampler):
             head, rela, tail = train_data.t()
             self.adj_matrix = (torch.stack((head, tail)), rela)
             batch_data["adj_matrix"] = self.adj_matrix
+
+        if self.args.model_name == 'ssCDL':
+            data_ldl = batch_data["positive_sample"].clone()
+            conf = []
+            onehot = []
+            for triples in data_ldl:
+                ldl = generate_distribution(triples[3].item(),self.sigma,self.size)
+                # print(ldl)
+                tmp = torch.from_numpy(ldl)
+                # print(tmp.size())
+                conf.append(tmp)
+            batch_data["conf_ldl"] = conf
+            # for triples in data_ldl:
+            for triples in data_ldl:
+                ldl = generate_one_hot_distribution(triples[3].item(),self.size)
+                # print(ldl)
+                tmp = torch.from_numpy(ldl)
+                # print(tmp.size())
+                onehot.append(tmp)
+            batch_data["onehot"] = onehot
+
+            data_ldl = batch_data["small_data_positive_sample"].clone()
+            conf_small = []
+            onehot_small = []
+            for triples in data_ldl:
+                ldl = generate_distribution(triples[3].item(), self.sigma, self.size)
+                # print(ldl)
+                tmp = torch.from_numpy(ldl)
+                # print(tmp.size())
+                conf_small.append(tmp)
+
+            batch_data["small_data_conf_ldl"] = conf_small
+            # for triples in data_ldl:
+            for triples in data_ldl:
+                ldl = generate_one_hot_distribution(triples[3].item(),self.size)
+                # print(ldl)
+                tmp = torch.from_numpy(ldl)
+                # print(tmp.size())
+                onehot_small.append(tmp)
+            batch_data["small_data_onehot"] = onehot_small
+
+            train_triples_num = len(self.train_triples)
+
+            interval_ratios = {key: count / train_triples_num for key, count in self.interval_counts.items()}
+            weights_tensor = torch.zeros(len(data))
+
+            for idx, (_, _, _, s) in enumerate(data):
+                interval_index = int(s * 10)
+                interval_key = f"{interval_index / 10:.1f}-{(interval_index + 1) / 10:.1f}"  # 更新区间的表示方式
+
+                weight = interval_ratios[interval_key]
+                weights_tensor[idx] = weight
+            batch_data['weights_tensor'] = weights_tensor
+
         return batch_data
 
     def uni_sampling(self, data):

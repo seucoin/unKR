@@ -39,8 +39,8 @@ def link_predict_filter(batch, model, confidence, prediction="all"):
         ranks: The rank of the triple to be predicted.
     """
     if prediction == "all":
-        tail_ranks = tail_predict_filter(batch, model)
-        head_ranks = head_predict_filter(batch, model)
+        tail_ranks = tail_predict_filter(batch, model, confidence)
+        head_ranks = head_predict_filter(batch, model, confidence)
         ranks = torch.cat([tail_ranks, head_ranks])
     elif prediction == "head":
         ranks = head_predict_filter(batch, model, confidence)
@@ -211,7 +211,8 @@ def calc_ranks(idx, label, pred_score):
     # Set the score of the sample with label 1 to be very low and filter it to exclude samples that are already in the knowledge graph
     pred_score = torch.where(label.bool(), -torch.ones_like(pred_score) * 10000000, pred_score)
     pred_score[b_range, idx] = target_pred
-
+    # print(
+    #     torch.argsort(pred_score, dim=1, descending=True))
     # Get the ranking of each score in the pred_score.
     ranks = (
             1
@@ -219,6 +220,10 @@ def calc_ranks(idx, label, pred_score):
         torch.argsort(pred_score, dim=1, descending=True), dim=1, descending=False
     )[b_range, idx]
     )
+    # print(ranks)
+    # print(torch.argsort(
+    #     torch.argsort(pred_score, dim=1, descending=True), dim=1, descending=False
+    # )[b_range,0])
     return ranks
 
 def calc_ranks_raw(idx, label, pred_score):

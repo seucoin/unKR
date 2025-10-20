@@ -8,3 +8,5 @@ from .UKGsELitModel import UKGsELitModel
 from .GTransELitModel import GTransELitModel
 from .UPGATLitModel import UPGATLitModel
 from .FocusELitModel import FocusELitModel
+from .ssCDLLit import ssCDLLitModel
+
