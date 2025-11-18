@@ -31,8 +31,9 @@ class UKGEUniSampler(UKGEBaseSampler):
     def __init__(self, args):
         super().__init__(args)
         self.cross_sampling_flag = 0
-        self.sigma = args.sigma
-        self.size = args.size
+        if self.args.model_name == 'ssCDL':
+            self.sigma = args.sigma
+            self.size = args.size
 
     def sampling(self, data):
         """Filtering out positive samples and selecting some samples randomly as negative samples.
