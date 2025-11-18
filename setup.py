@@ -10,10 +10,10 @@ with open("README.md", 'r', encoding='utf-8') as fh:
 
 setuptools.setup(
     name='unKR',
-    version='1.0.1',
+    version='1.0.3',
     author='SEUKGE',
     author_email='slchen@seu.edu.cn',
-    url='https://github.com/CodeSlogan/unKR',
+    url='https://github.com/seucoin/unKR',
     description='An Open Source Library for uncertain Knowledge Reasoning',
     package_dir={"": "src"},
     packages=setuptools.find_packages("src"),
